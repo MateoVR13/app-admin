@@ -122,40 +122,89 @@
   }
 
   /* ============================================================
-     YouTube IFrame API — empuja calidad HD del video de fondo
-     YouTube ya no respeta &vq= como parámetro forzado, así que
-     hay que pedir HD vía API al cargar y cuando cambie la calidad.
+     PARTÍCULAS — canvas con puntos flotantes (paleta UA)
      ============================================================ */
-  window.onYouTubeIframeAPIReady = function () {
-    if (typeof YT === "undefined" || !YT.Player) return;
-    const el = document.getElementById("landingHeroVideo");
-    if (!el) return;
+  function bootParticles() {
+    if (reducedMotion) return;
+    const canvas = document.querySelector("[data-particles]");
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    const dpr = window.devicePixelRatio || 1;
 
-    new YT.Player("landingHeroVideo", {
-      events: {
-        onReady: (e) => {
-          try {
-            e.target.mute();
-            e.target.setPlaybackQuality("hd1080");
-            e.target.playVideo();
-          } catch (err) {
-            /* silencio: algunos navegadores bloquean autoplay */
-          }
-        },
-        onPlaybackQualityChange: (e) => {
-          const ok = ["hd1080", "hd1440", "hd2160", "highres"];
-          if (!ok.includes(e.data)) {
-            try { e.target.setPlaybackQuality("hd1080"); } catch (err) {}
-          }
-        },
-      },
+    let W, H, particles;
+    const COLORS = [
+      "rgba(117, 195, 62, 0.6)",   // #75c33e — landing accent
+      "rgba(167, 220, 130, 0.45)", // verde lima más claro
+      "rgba(255, 255, 255, 0.4)",  // blanco suave
+    ];
+    const COUNT = 60;
+
+    function resize() {
+      const rect = canvas.getBoundingClientRect();
+      W = rect.width;
+      H = rect.height;
+      canvas.width = W * dpr;
+      canvas.height = H * dpr;
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.scale(dpr, dpr);
+    }
+
+    function init() {
+      resize();
+      particles = [];
+      for (let i = 0; i < COUNT; i++) {
+        particles.push({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          vx: (Math.random() - 0.5) * 0.25,
+          vy: (Math.random() - 0.5) * 0.25 - 0.08, // ligera deriva hacia arriba
+          r: 0.8 + Math.random() * 2.2,
+          color: COLORS[Math.floor(Math.random() * COLORS.length)],
+          twinkle: Math.random() * Math.PI * 2,
+          twinkleSpeed: 0.005 + Math.random() * 0.015,
+        });
+      }
+    }
+
+    function frame() {
+      ctx.clearRect(0, 0, W, H);
+      for (const p of particles) {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.twinkle += p.twinkleSpeed;
+
+        // Wrap-around: reaparece por el lado contrario
+        if (p.x < -10) p.x = W + 10;
+        if (p.x > W + 10) p.x = -10;
+        if (p.y < -10) p.y = H + 10;
+        if (p.y > H + 10) p.y = -10;
+
+        const flicker = 0.5 + 0.5 * Math.sin(p.twinkle);
+        ctx.globalAlpha = 0.4 + flicker * 0.6;
+        ctx.fillStyle = p.color;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      requestAnimationFrame(frame);
+    }
+
+    init();
+    requestAnimationFrame(frame);
+
+    // Re-init al redimensionar (debounced)
+    let resizeTimer;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(init, 200);
     });
-  };
+  }
 
   function boot() {
     bootHero();
     bootCounters();
     bootCTA();
+    bootParticles();
   }
 
   if (document.readyState === "loading") {

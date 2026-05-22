@@ -3,8 +3,10 @@
    Estilo Universidad de América (ref: Arquitectura)
    ============================================================ */
 
-/* La página del landing usa un fondo verde profundo en lugar de paper */
+/* La página del landing usa un fondo verde profundo en lugar de paper.
+   --landing-accent es el verde lima de la marca para esta vista. */
 .landing-page {
+  --landing-accent: #75c33e;
   background: var(--ua-green-950);
   color: var(--ink-light);
   min-height: 100vh;
@@ -17,7 +19,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: clamp(48px, 6vw, 96px) clamp(24px, 4vw, 64px);
+  padding: clamp(28px, 4vw, 56px) clamp(24px, 4vw, 64px);
   text-align: center;
   isolation: isolate;
   overflow: hidden;
@@ -35,105 +37,92 @@
   filter: grayscale(0.2) saturate(0.6);
 }
 
-/* Overlay verde institucional sobre el video — más suave para dejar
-   respirar el video manteniendo legibilidad del texto en el centro. */
+/* Overlay verde oscuro plano sobre el video (réplica exacta de ArquiLab).
+   Color uniforme rgba(28, 48, 0, 0.72) — el video se ve detrás pero
+   con un tinte oliva profundo que da máximo contraste al texto blanco. */
 .landing-hero::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
-  background:
-    radial-gradient(ellipse at 50% 50%, rgba(0, 47, 32, 0.32), rgba(0, 47, 32, 0.62) 70%),
-    linear-gradient(180deg, rgba(0, 47, 32, 0.4), rgba(0, 30, 18, 0.72));
+  background: rgba(28, 48, 0, 0.72);
 }
 
-/* Video de YouTube como fondo a pantalla completa.
-   Se escala +25% para que la UI de YouTube (título arriba-izquierda,
-   nombre del canal, etc.) quede fuera del viewport visible. */
+/* Video local como fondo a pantalla completa con object-fit cover */
 .landing-hero-video {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1.25);
-  width: 100vw;
-  height: 56.25vw;          /* 16:9 sobre 100vw */
-  min-width: 177.78vh;      /* 16:9 sobre 100vh — fuerza cover en vistas verticales */
-  min-height: 100vh;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   z-index: -2;
   border: 0;
   pointer-events: none;
-}
-
-/* En portrait/móvil el iframe ya viene más alto por min-width:177vh,
-   así que el zoom necesario para esconder la franja superior crece. */
-@media (max-width: 720px) {
-  .landing-hero-video {
-    transform: translate(-50%, -50%) scale(1.8);
-  }
 }
 
 /* ============================================================
    ELEMENTOS DEL HERO
    ============================================================ */
 
-/* Logo central */
+/* Logo central — solo el icono (favicon), no el logo full text */
 .landing-hero-brand {
   display: inline-block;
-  margin-bottom: clamp(24px, 3vw, 40px);
+  margin-bottom: clamp(14px, 2vw, 24px);
   animation: landingFadeDown 800ms var(--ease-out) both;
 }
 
 .landing-hero-brand img {
-  width: clamp(96px, 9vw, 148px);
+  width: clamp(56px, 5vw, 80px);
   height: auto;
-  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.5));
 }
 
-/* Eyebrow pill */
+/* Eyebrow pill — borde + texto + icono en #75c33e, fondo translúcido
+   de un verde un poco más oscuro para coherencia con el acento. */
 .landing-hero-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 22px;
+  gap: 8px;
+  padding: 8px 16px;
   border-radius: var(--radius-pill);
-  background: var(--ua-green-700);
-  color: #fff;
-  border: 1.5px solid var(--ua-green-600);
+  background: rgba(90, 154, 48, 0.22);    /* verde más oscuro translúcido */
+  color: var(--landing-accent);            /* #75c33e */
+  border: 1px solid var(--landing-accent); /* #75c33e */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   font-family: var(--font-mono);
-  font-size: 0.86rem;
+  font-size: 0.67rem;       /* equivale a 0.89rem × 0.75 (escala hero) */
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-bottom: clamp(28px, 4vw, 48px);
-  box-shadow:
-    0 10px 26px rgba(0, 90, 56, 0.44),
-    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  margin-bottom: clamp(18px, 2.5vw, 28px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
   animation: landingFadeUp 700ms 120ms var(--ease-out) both;
 }
 
 .landing-hero-eyebrow svg {
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   stroke-width: 2;
+  color: var(--landing-accent);   /* mismo #75c33e */
 }
 
-/* Headline gigante */
+/* Headline gigante — clamp × 0.75 para escala hero */
 .landing-hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.6rem, 3.5vw + 1.6rem, 5.8rem);
+  font-size: clamp(1.8rem, 2.25vw + 1.05rem, 3.75rem);
   font-weight: 900;
   letter-spacing: -0.024em;
   line-height: 1;
   text-transform: uppercase;
   color: #fff;
-  margin-bottom: clamp(28px, 3vw, 40px);
+  margin-bottom: clamp(18px, 2vw, 28px);
   max-width: 18ch;
-  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
 }
 
 .landing-hero-title .accent {
   display: inline-block;
-  color: var(--ua-lime);
+  color: var(--landing-accent);
   font-style: normal;
 }
 
@@ -143,9 +132,9 @@
   padding-bottom: 0.05em;
 }
 
-/* Subhead destacado */
+/* Subhead destacado — clamp × 0.75 para escala hero */
 .landing-hero-subhead {
-  font-size: clamp(1.04rem, 0.4vw + 0.95rem, 1.32rem);
+  font-size: clamp(0.78rem, 0.3vw + 0.71rem, 0.99rem);
   font-weight: 500;
   color: rgba(255, 255, 255, 0.92);
   max-width: 36ch;
@@ -159,12 +148,12 @@
   color: #fff;
 }
 
-/* Body copy */
+/* Body copy — clamp × 0.75 para escala hero (manteniendo el +15% que ya tenía) */
 .landing-hero-body {
-  font-size: clamp(0.94rem, 0.2vw + 0.92rem, 1.05rem);
+  font-size: clamp(0.81rem, 0.17vw + 0.8rem, 0.91rem);
   color: rgba(255, 255, 255, 0.74);
   max-width: 40ch;
-  margin: 0 0 clamp(36px, 4vw, 56px);
+  margin: 0 0 clamp(22px, 2.5vw, 36px);
   line-height: 1.5;
   animation: landingFadeUp 700ms 400ms var(--ease-out) both;
 }
@@ -175,7 +164,7 @@
   flex-wrap: wrap;
   gap: 14px;
   justify-content: center;
-  margin-bottom: clamp(48px, 7vw, 80px);
+  margin-bottom: clamp(28px, 3.5vw, 48px);
   animation: landingFadeUp 700ms 500ms var(--ease-out) both;
 }
 
@@ -183,11 +172,11 @@
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  height: 56px;
-  padding: 0 30px;
+  height: 60px;
+  padding: 0 34px;
   border-radius: var(--radius-pill);
   font-family: var(--font-sans);
-  font-size: 1rem;
+  font-size: 0.9rem;        /* 1.2rem × 0.75 (escala hero, manteniendo +20% del CTA) */
   font-weight: 700;
   letter-spacing: -0.005em;
   border: 1.5px solid transparent;
@@ -207,20 +196,21 @@
 }
 
 .landing-cta-primary {
-  background: var(--ua-green-700);
+  background: var(--landing-accent);   /* #75c33e */
   color: #fff;
-  border-color: var(--ua-green-600);
+  border-color: var(--landing-accent);
   box-shadow:
-    0 10px 24px rgba(0, 90, 56, 0.42),
-    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+    0 10px 24px rgba(117, 195, 62, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
 }
 
 .landing-cta-primary:hover {
   transform: translateY(-2px);
-  background: var(--ua-green-600);
+  background: #65b02e;                 /* +1 paso más oscuro */
+  border-color: #65b02e;
   box-shadow:
-    0 16px 32px rgba(10, 140, 84, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    0 16px 32px rgba(117, 195, 62, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.26);
 }
 
 .landing-cta-primary:hover svg { transform: translateX(3px); }
@@ -246,7 +236,7 @@
   display: flex;
   align-items: stretch;
   gap: 0;
-  padding-top: clamp(28px, 3vw, 40px);
+  padding-top: clamp(18px, 2vw, 28px);
   border-top: 1px solid rgba(255, 255, 255, 0.14);
   animation: landingFadeUp 700ms 620ms var(--ease-out) both;
 }
@@ -272,7 +262,7 @@
 
 .landing-stat strong {
   font-family: var(--font-display);
-  font-size: clamp(2.6rem, 2.4vw + 1.6rem, 4.2rem);
+  font-size: clamp(2.25rem, 2.1vw + 1.5rem, 3.75rem);     /* × 0.75 escala hero */
   font-weight: 900;
   letter-spacing: -0.03em;
   color: #fff;
@@ -284,7 +274,7 @@
 
 .landing-stat strong sup {
   font-size: 0.5em;
-  color: var(--ua-lime);
+  color: var(--landing-accent);
   font-weight: 800;
   margin-left: 4px;
   margin-top: 0.05em;
@@ -298,7 +288,7 @@
    dentro de <strong> y heredaría el font-size pequeño. */
 .landing-stat > span {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.54rem;         /* 0.72rem × 0.75 (escala hero) */
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -313,7 +303,7 @@
   left: 50%;
   transform: translateX(-50%);
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.53rem;       /* 0.7rem × 0.75 (escala hero) */
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -358,6 +348,20 @@
 }
 
 /* ============================================================
+   PARTÍCULAS DE FONDO — canvas dentro del hero, sobre el video y
+   el overlay (z:-1), debajo del contenido (z:auto).
+   ============================================================ */
+.landing-particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.55;
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 720px) {
@@ -367,5 +371,5 @@
     justify-content: center;
   }
   .landing-cta { width: 100%; justify-content: center; max-width: 320px; }
-  .landing-foot { font-size: 0.62rem; }
+  .landing-foot { font-size: 0.47rem; }   /* 0.62 × 0.75 */
 }
