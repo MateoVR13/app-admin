@@ -15,7 +15,7 @@
 module.exports = {
   apps: [
     {
-      name: "app-admin-yedatech",
+      name: "app-admin",
       script: "./server/index.js",
       cwd: __dirname,
       node_args: "--experimental-sqlite",
