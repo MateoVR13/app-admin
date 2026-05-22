@@ -1038,6 +1038,197 @@
 .module-foot-cta button:disabled { opacity: 0.55; cursor: not-allowed; }
 .module-foot-cta button:disabled:hover { transform: none; box-shadow: none; }
 
+/* ============================================================
+   VIDEO — embed responsive (Wistia, YouTube, Vimeo, etc.)
+   El iframe del proveedor se inserta dentro de un wrapper 16:9.
+   ============================================================ */
+.module-video {
+  margin: 0;
+  padding: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--slate);
+  border: 1px solid var(--paper-line);
+  box-shadow: var(--shadow-1);
+  transition: border-color var(--motion-base) var(--ease-out),
+              box-shadow var(--motion-base) var(--ease-out);
+}
+.module-video:hover {
+  border-color: color-mix(in srgb, var(--program-accent) 28%, var(--paper-line));
+  box-shadow: var(--shadow-2);
+}
+
+.module-video-caption {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--paper-line);
+  background: var(--paper-warm);
+}
+.module-video-caption small {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--program-accent-700);
+  margin-bottom: 4px;
+}
+.module-video-caption h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 800;
+  letter-spacing: -0.018em;
+  line-height: 1.25;
+  color: var(--ink);
+}
+.module-video-caption p {
+  margin: 6px 0 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+/* El iframe de Wistia trae sus propios inline-styles (padding-top 56.25%
+   para 16:9), pero forzamos que ocupe todo el ancho del wrapper. */
+.module-video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 640px) {
+  .module-video-caption { padding: 12px 14px; }
+  .module-video-caption h3 { font-size: 1rem; }
+}
+
+/* ============================================================
+   RETO CTA — llamado prominente al reto al final del último bloque
+   ============================================================ */
+.module-reto-cta {
+  position: relative;
+  margin-top: 32px;
+  padding: clamp(28px, 4vw, 44px) clamp(24px, 4vw, 48px);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--ua-yellow) 28%, transparent), transparent 55%),
+    radial-gradient(circle at 0% 100%, color-mix(in srgb, var(--program-accent) 30%, transparent), transparent 55%),
+    linear-gradient(180deg, var(--slab) 0%, var(--slab-2, var(--slab)) 100%);
+  color: var(--ink-light);
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow: var(--shadow-3);
+  display: grid;
+  gap: 14px;
+  text-align: left;
+}
+
+.module-reto-cta-decor {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.45;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1.6px);
+  background-size: 22px 22px;
+  mask-image: linear-gradient(135deg, #000 25%, transparent 88%);
+  -webkit-mask-image: linear-gradient(135deg, #000 25%, transparent 88%);
+  pointer-events: none;
+}
+
+.module-reto-cta-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px 6px 6px;
+  width: max-content;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+}
+.module-reto-cta-tag b {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-full);
+  background: var(--ua-yellow);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 900;
+}
+
+.module-reto-cta h3 {
+  margin: 4px 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 1.1rem + 1.8vw, 2.1rem);
+  font-weight: 900;
+  letter-spacing: -0.028em;
+  line-height: 1.08;
+  color: var(--ink-light);
+  max-width: 32ch;
+}
+
+.module-reto-cta p {
+  margin: 0;
+  font-size: clamp(0.95rem, 0.9rem + 0.3vw, 1.05rem);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 58ch;
+}
+.module-reto-cta p b { color: var(--ua-yellow); font-weight: 700; }
+
+.module-reto-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 14px 24px;
+  width: max-content;
+  border-radius: var(--radius-pill);
+  background: var(--ua-yellow);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.008em;
+  cursor: pointer;
+  transition: transform var(--motion-fast) var(--ease-out),
+              box-shadow var(--motion-base) var(--ease-out);
+}
+.module-reto-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px -10px color-mix(in srgb, var(--ua-yellow-600) 70%, transparent);
+}
+.module-reto-cta-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2.2;
+  transition: transform var(--motion-fast) var(--ease-out);
+}
+.module-reto-cta-btn:hover svg { transform: translateX(4px); }
+
+@media (max-width: 640px) {
+  .module-reto-cta {
+    padding: 22px 18px;
+    margin-top: 24px;
+  }
+  .module-reto-cta h3 { font-size: 1.3rem; }
+  .module-reto-cta-btn {
+    padding: 12px 18px;
+    font-size: 0.92rem;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 @media (max-width: 640px) {
   .module-foot-cta { grid-template-columns: 1fr; }
   .module-foot-cta button,
@@ -2055,6 +2246,22 @@
 }
 @media (max-width: 1100px) {
   .bloque-layout.is-toc-left { grid-template-columns: 1fr; }
+}
+/* TOC compacta y sin sticky en móvil para que no robe pantalla */
+@media (max-width: 640px) {
+  .bloque-toc {
+    position: static;
+    max-height: none;
+    padding: 16px 14px;
+    gap: 10px;
+  }
+  .bloque-layout,
+  .bloque-layout.is-toc-left {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px 14px;
+  }
+  .bloque-content { gap: 28px; }
 }
 
 /* Tema "stacked" — barra horizontal arriba con número, luego eyebrow/título */
@@ -3733,3 +3940,77 @@ abbr.gloss:hover,
   padding-top: 4px;
 }
 .module-slider-demo-note b { color: var(--ink); font-weight: 700; }
+
+/* ============================================================
+   POLISH MÓVIL — ajustes finales para tablet (≤1024) y móvil (≤640)
+   ============================================================ */
+@media (max-width: 1024px) {
+  /* Header del módulo más compacto en tablet */
+  .module-head { padding: clamp(20px, 3vw, 32px); }
+  .module-head-inner { gap: 24px; }
+  .module-bloque-head { max-width: 100%; }
+}
+
+@media (max-width: 640px) {
+  /* Hero del módulo */
+  .module-head { padding: 18px 14px; }
+  .module-eyebrow { font-size: 0.62rem; margin-bottom: 10px; }
+  .module-meta { flex-wrap: wrap; gap: 6px; }
+  .module-meta-pill { font-size: 0.66rem; padding: 4px 10px; }
+  .module-outcome { padding: 16px 14px; }
+  .module-outcome h2 { font-size: 1.1rem; }
+  .module-outcome li { font-size: 0.88rem; }
+
+  /* Bloques (módulo y overview) */
+  .module-bloque { gap: 20px; }
+  .module-bloque-title { font-size: 1.25rem; }
+  .module-bloque-lede { font-size: 0.92rem; }
+
+  /* Tema head */
+  .module-tema-head { padding: 12px 4px 14px; }
+
+  /* Prose */
+  .module-prose { font-size: 0.94rem; }
+  .module-prose h3 { font-size: 1.1rem; }
+  .module-prose h4 { font-size: 1rem; }
+  .module-prose p { line-height: 1.55; }
+
+  /* Quickcheck touch-friendly */
+  .module-quickcheck { padding: 16px 14px; }
+  .module-quickcheck-opt { padding: 14px 14px; min-height: 44px; }
+  .module-quickcheck-opt span { font-size: 0.9rem; }
+
+  /* Flashcard */
+  .module-flashcard { padding: 16px 14px; }
+  .module-flashcard-q p { font-size: 0.96rem; }
+
+  /* Accordion */
+  .module-accordion-head { padding: 14px 16px; }
+  .module-accordion-body { padding: 0 16px 14px; }
+
+  /* TOC actions full-width */
+  .bloque-toc-action { width: 100%; justify-content: center; }
+
+  /* Bloque hero stack */
+  .bloque-head {
+    grid-template-columns: 1fr;
+    padding: 20px 14px;
+    gap: 14px;
+  }
+  .bloque-head-banner { display: none; }
+
+  /* Index cards */
+  .module-index-card { padding: 18px 16px; }
+  .module-index-body h3 { font-size: 1.15rem; }
+  .module-index-body p { font-size: 0.9rem; }
+
+  /* Aha box ya tiene @720, refinamos */
+  .module-aha { padding: 14px 16px; }
+  .module-aha-icon img { width: 160px; }
+  .module-aha-copy p { font-size: 0.92rem; }
+
+  /* Infografía ya tiene @820, refinamos */
+  .module-infografia-text { padding: 16px 14px; }
+  .module-infografia-text h5 { font-size: 1rem; }
+  .module-infografia-text p { font-size: 0.88rem; }
+}

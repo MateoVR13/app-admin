@@ -1,0 +1,735 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/webp" href="assets/brand/favicon.ico" />
+    <title>Reto · TechCorp · 90 días como COO · Universidad de América</title>
+    <meta name="description" content="Reto integrador del programa de Administración: simulador de los primeros 90 días como COO de TechCorp." />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        try {
+          var p = JSON.parse(localStorage.getItem("ua-a11y-prefs") || "{}");
+          var h = document.documentElement;
+          h.setAttribute("data-text-size", p.textSize || "md");
+          h.setAttribute("data-contrast", p.contrast || "default");
+          h.setAttribute("data-color-mode", p.colorMode || "default");
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="programa is-coo-sim" data-program="admin">
+    <svg class="svg-defs" aria-hidden="true" focusable="false">
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></symbol>
+      <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5" /><path d="m11 6-6 6 6 6" /></symbol>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8" /><path d="M5 10v11h5v-7h4v7h5V10" /></symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2" /><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" /></symbol>
+      <symbol id="i-scan" viewBox="0 0 24 24"><path d="M5 7V5h2" /><path d="M17 5h2v2" /><path d="M19 17v2h-2" /><path d="M7 19H5v-2" /><circle cx="12" cy="12" r="3" /></symbol>
+      <symbol id="i-box" viewBox="0 0 24 24"><path d="m12 3 9 4-9 5-9-5z" /><path d="M3 7v10l9 5 9-5V7" /><path d="M12 12v10" /></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12" /><path d="M18 6L6 18" /></symbol>
+      <symbol id="i-a11y" viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="1.6" /><path d="M5 8h14" /><path d="M9 8v5" /><path d="M15 8v5" /><path d="M9 13l-2 8" /><path d="M15 13l2 8" /></symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15-6.7L21 8" /><path d="M21 3v5h-5" /><path d="M21 12a9 9 0 0 1-15 6.7L3 16" /><path d="M3 21v-5h5" /></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="4" /><circle cx="12" cy="12" r="3" /><path d="M16.5 7.5h.01" /></symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 8h2V5h-2a4 4 0 0 0-4 4v2H8v3h2v5h3v-5h3l1-3h-4V9a1 1 0 0 1 1-1Z" /></symbol>
+      <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M4 8a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3Z" /><path d="m10 9 5 3-5 3Z" /></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M6 10v9" /><path d="M6 6v.01" /><path d="M11 19v-9" /><path d="M11 14a4 4 0 0 1 8 0v5" /></symbol>
+      <!-- Iconos Lucide para el COO sim -->
+      <symbol id="i-inbox" viewBox="0 0 24 24"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11Z"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+      <symbol id="i-bar-chart" viewBox="0 0 24 24"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+      <symbol id="i-building" viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></symbol>
+      <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol>
+      <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></symbol>
+    </svg>
+
+    <svg class="a11y-defs" aria-hidden="true" focusable="false">
+      <defs>
+        <filter id="a11y-protanopia"><feColorMatrix type="matrix" values="0.567,0.433,0,0,0  0.558,0.442,0,0,0  0,0.242,0.758,0,0  0,0,0,1,0" /></filter>
+        <filter id="a11y-deuteranopia"><feColorMatrix type="matrix" values="0.625,0.375,0,0,0  0.7,0.3,0,0,0  0,0.3,0.7,0,0  0,0,0,1,0" /></filter>
+        <filter id="a11y-tritanopia"><feColorMatrix type="matrix" values="0.95,0.05,0,0,0  0,0.433,0.567,0,0  0,0.475,0.525,0,0  0,0,0,1,0" /></filter>
+        <filter id="a11y-achromatopsia"><feColorMatrix type="matrix" values="0.299,0.587,0.114,0,0  0.299,0.587,0.114,0,0  0.299,0.587,0.114,0,0  0,0,0,1,0" /></filter>
+      </defs>
+    </svg>
+
+    <div class="page-content">
+    <div class="app-shell">
+
+      <aside class="sidebar" aria-label="Navegación principal">
+        <a class="sidebar-brand" href="app.html#inicio" aria-label="Universidad de América">
+          <img src="assets/brand/logo-ua.png" alt="Universidad de América" />
+        </a>
+        <nav class="sidebar-nav">
+          <span class="sidebar-nav-label">Aplicativo</span>
+          <a class="sidebar-link" href="app.html#inicio"><svg aria-hidden="true"><use href="#i-home"></use></svg><span>Inicio</span></a>
+          <a class="sidebar-link is-active" href="app.html#programas"><svg aria-hidden="true"><use href="#i-briefcase"></use></svg><span>Programas</span></a>
+          <a class="sidebar-link" href="app.html#experiencia"><svg aria-hidden="true"><use href="#i-scan"></use></svg><span>Experiencia</span></a>
+          <a class="sidebar-link" href="app.html#recursos"><svg aria-hidden="true"><use href="#i-box"></use></svg><span>Recursos</span></a>
+        </nav>
+        <div class="sidebar-footer">
+          <b>Universidad de América</b>
+          Facultad de Ciencias Administrativas · Bogotá
+        </div>
+      </aside>
+
+      <div class="workspace">
+
+        <!-- ============================================================
+             HEADER — COO sim · timeline 90 días
+        ============================================================ -->
+        <header class="coo-head">
+          <nav class="module-breadcrumb" aria-label="Migas de pan">
+            <a href="programa-administracion.html">
+              <svg aria-hidden="true"><use href="#i-arrow-left"></use></svg>
+              Administración
+            </a>
+            <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+            <span>Simulador del COO</span>
+          </nav>
+
+          <div class="coo-head-row">
+            <div class="coo-head-meta">
+              <span class="coo-head-tag">Caso TechCorp</span>
+              <h1>Tus primeros <em>90 días</em> como COO.</h1>
+            </div>
+
+            <div class="coo-timeline" data-timeline aria-label="Línea de tiempo">
+              <div class="coo-timeline-rail">
+                <div class="coo-timeline-fill" data-timeline-fill></div>
+              </div>
+              <ol class="coo-timeline-marks">
+                <li class="coo-timeline-mark is-active" data-day="1">
+                  <span class="coo-timeline-dot"></span>
+                  <span class="coo-timeline-label"><b>Día 1</b><em>Llegas a TechCorp</em></span>
+                </li>
+                <li class="coo-timeline-mark" data-day="30">
+                  <span class="coo-timeline-dot"></span>
+                  <span class="coo-timeline-label"><b>Día 30</b><em>Alerta de talento</em></span>
+                </li>
+                <li class="coo-timeline-mark" data-day="60">
+                  <span class="coo-timeline-dot"></span>
+                  <span class="coo-timeline-label"><b>Día 60</b><em>Junta directiva</em></span>
+                </li>
+                <li class="coo-timeline-mark" data-day="90">
+                  <span class="coo-timeline-dot"></span>
+                  <span class="coo-timeline-label"><b>Día 90</b><em>Asamblea</em></span>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </header>
+
+        <main class="coo-body">
+
+          <!-- ============================================================
+               LEFT — BANDEJA DE ENTRADA (los mensajes son las decisiones)
+          ============================================================ -->
+          <section class="coo-inbox" aria-label="Bandeja de entrada del COO">
+
+            <!-- Intro orientadora (solo visible antes del primer mensaje) -->
+            <aside class="coo-howto" data-howto>
+              <svg class="coo-howto-icon" aria-hidden="true"><use href="#i-inbox"></use></svg>
+              <div>
+                <strong>Cómo funciona tu primer trimestre</strong>
+                <p>Vas a recibir <b>4 mensajes</b> de tu equipo directivo a lo largo de 90 días. Cada uno te pide una decisión. El <b>tablero de la derecha</b> reacciona en vivo: verás el ánimo de tu equipo y las 4 perspectivas del Balanced Scorecard moverse. Al día 91 la Junta evalúa tu gestión.</p>
+              </div>
+            </aside>
+
+            <!-- =====================================================
+                 DECISIÓN 1 · DÍA 1 — CFO sobre productividad
+            ===================================================== -->
+            <article class="coo-message" data-decision="1">
+              <header class="coo-message-head">
+                <div class="coo-avatar is-cfo" aria-hidden="true">AC</div>
+                <div class="coo-message-meta">
+                  <div class="coo-message-from">
+                    <b>Andrés Castro</b> · CFO
+                    <span class="coo-message-day">Día 1</span>
+                  </div>
+                  <h2 class="coo-message-subject">Asunto: Caída del 15% en productividad — propuesta urgente</h2>
+                </div>
+              </header>
+
+              <div class="coo-message-scroll">
+              <div class="coo-message-body">
+                <p>Bienvenido al equipo, COO. Vamos directo al punto.</p>
+                <p>
+                  La productividad cayó <b>15% en los últimos 6 meses</b>. El
+                  comité financiero ya tiene una propuesta: instalar un software
+                  de control de tiempos y movimientos para los desarrolladores
+                  (enfoque tipo Taylor). Yo creo que es lo más rápido. La
+                  directora de talento, Karen, opina diferente.
+                </p>
+                <p class="coo-message-ask">¿Qué decides hacer?</p>
+              </div>
+
+              <div class="coo-options" data-options="d1" data-multi="false">
+                <button class="coo-option" type="button" data-value="taylor">
+                  <span class="coo-option-mark"></span>
+                  <div class="coo-option-body">
+                    <span class="coo-option-title">Aprobar el software de control de tiempos</span>
+                    <p>Métricas duras, dashboards de productividad por persona. Es la jugada de la <b>administración científica de Taylor</b>: maximizar eficiencia midiendo todo. Acelera resultados visibles, tensiona la cultura.</p>
+                  </div>
+                </button>
+                <button class="coo-option" type="button" data-value="mayo">
+                  <span class="coo-option-mark"></span>
+                  <div class="coo-option-body">
+                    <span class="coo-option-title">Empoderar a los líderes intermedios</span>
+                    <p>Le das autonomía a los tech leads para diagnosticar causas y abres espacios de retroalimentación (<b>Relaciones Humanas de Mayo</b>). Tarda más en mostrar resultados, pero construye base sólida.</p>
+                  </div>
+                </button>
+                <button class="coo-option" type="button" data-value="hibrido">
+                  <span class="coo-option-mark"></span>
+                  <div class="coo-option-body">
+                    <span class="coo-option-title">Métricas por equipo + autonomía interna</span>
+                    <p>Defines indicadores de resultado por equipo (no por persona) y dejas que cada uno decida cómo lograrlos. La <b>síntesis moderna</b>: mides el «qué», respetas el «cómo». La más difícil de ejecutar.</p>
+                  </div>
+                </button>
+                <button class="coo-option" type="button" data-value="esquivar">
+                  <span class="coo-option-mark"></span>
+                  <div class="coo-option-body">
+                    <span class="coo-option-title">Tercerizar las áreas con peor desempeño</span>
+                    <p>Mover el problema fuera del balance contratando un proveedor externo. Resultados visibles rápido pero <b>pierdes conocimiento interno</b> y quedas dependiente del proveedor.</p>
+                  </div>
+                </button>
+              </div>
+
+              </div><!-- /.coo-message-scroll -->
+
+              <div class="coo-message-foot">
+                <button class="coo-nav-btn is-prev" type="button" data-nav="prev" disabled>
+                  <svg aria-hidden="true"><use href="#i-arrow-left"></use></svg>
+                  Anterior
+                </button>
+                <button class="coo-nav-btn is-send" type="button" data-nav="next">
+                  Enviar respuesta
+                  <svg aria-hidden="true"><use href="#i-send"></use></svg>
+                </button>
+              </div>
+            </article>
+
+            <!-- =====================================================
+                 DECISIÓN 2 · DÍA 30 — Tech Lead a punto de renunciar
+            ===================================================== -->
+            <article class="coo-message" data-decision="2">
+              <header class="coo-message-head">
+                <div class="coo-avatar is-tech" aria-hidden="true">JM</div>
+                <div class="coo-message-meta">
+                  <div class="coo-message-from">
+                    <b>Javier Mora</b> · Tech Lead Backend
+                    <span class="coo-message-day">Día 30</span>
+                  </div>
+                  <h2 class="coo-message-subject">Asunto: Conversación 1:1 — quiero hablarte de mi futuro aquí</h2>
+                </div>
+              </header>
+
+              <div class="coo-message-scroll">
+              <div class="coo-message-body">
+                <p>Hola COO, me tomo 5 minutos de tu calendario.</p>
+                <p>
+                  Tres ingenieros senior renunciaron este mes, todos para
+                  multinacionales que pagan 2× más. Yo también recibí oferta.
+                  Sé que no hay caja para subir salarios (<b>factor higiénico</b>
+                  según Herzberg), pero hay <b>factores motivacionales</b> que
+                  sí podemos activar. Te pido que elijas <b>al menos 2</b> para
+                  mostrarle al equipo que vamos en serio.
+                </p>
+                <p class="coo-message-ask">¿Qué factores motivacionales activas?</p>
+              </div>
+
+              <div class="coo-options" data-options="d2" data-multi="true">
+                <button class="coo-option" type="button" data-value="carrera">
+                  <span class="coo-option-mark"></span>
+                  <div class="coo-option-body">
+                    <span class="coo-option-tag">Motivacional</span>
+                    <span class="coo-option-title">Plan de carrera + mentoría técnica</span>
+                    <p>Ruta clara junior → senior → staff con mentor asignado. El talento se queda por <b>desarrollo</b>, no por sueldo.</p>
+                  </div>
+                </button>
+                <button class="coo-option" type="button" data-value="autonomia">
+                  <span class="coo-option-mark"></span>
+                  <div class="coo-option-body">
+                    <span class="coo-option-tag">Motivacional</span>
+                    <span class="coo-option-title">Autonomía + flexibilidad horaria y remoto</span>
+                    <p>Cada equipo decide horario y modo de trabajo. <b>Confianza en resultados</b>, no en presencia.</p>
+                  </div>
+                </button>
+                <button class="coo-option" type="button" data-value="reconocimiento">
+                  <span class="coo-option-mark"></span>
+                  <div class="coo-option-body">
+                    <span class="coo-option-tag">Motivacional</span>
+                    <span class="coo-option-title">Reconocimiento público de logros</span>
+                    <p>Demos mensuales, blog técnico, conferencias. El <b>reconocimiento social</b> motiva tanto como el dinero.</p>
+                  </div>
+                </button>
+                <button class="coo-option" type="button" data-value="proyectos">
+                  <span class="coo-option-mark"></span>
+                  <div class="coo-option-body">
+                    <span class="coo-option-tag">Motivacional</span>
+                    <span class="coo-option-title">Proyectos de alto impacto + responsabilidad real</span>
+                    <p>Responsabilidad end-to-end de productos críticos. El talento se queda cuando su trabajo <b>deja huella</b>.</p>
+                  </div>
+                </button>
+                <button class="coo-option" type="button" data-value="oficina">
+                  <span class="coo-option-mark"></span>
+                  <div class="coo-option-body">
+                    <span class="coo-option-tag">Higiénico</span>
+                    <span class="coo-option-title">Renovar oficina y beneficios físicos</span>
+                    <p>Mesas de pingpong, snacks gratis. Según Herzberg estos son <b>factores higiénicos</b>: previenen quejas pero no retienen.</p>
+                  </div>
+                </button>
+              </div>
+
+              </div><!-- /.coo-message-scroll -->
+
+              <div class="coo-message-foot">
+                <button class="coo-nav-btn is-prev" type="button" data-nav="prev">
+                  <svg aria-hidden="true"><use href="#i-arrow-left"></use></svg>
+                  Anterior
+                </button>
+                <button class="coo-nav-btn is-send" type="button" data-nav="next">
+                  Enviar plan a Javier
+                  <svg aria-hidden="true"><use href="#i-send"></use></svg>
+                </button>
+              </div>
+            </article>
+
+            <!-- =====================================================
+                 DECISIÓN 3 · DÍA 60 — CEO presiona por recorte
+            ===================================================== -->
+            <article class="coo-message" data-decision="3">
+              <header class="coo-message-head">
+                <div class="coo-avatar is-ceo" aria-hidden="true">CR</div>
+                <div class="coo-message-meta">
+                  <div class="coo-message-from">
+                    <b>Carolina Restrepo</b> · CEO
+                    <span class="coo-message-day">Día 60</span>
+                  </div>
+                  <h2 class="coo-message-subject">Asunto: Sesión de junta — caja apretada, propuestas urgentes</h2>
+                </div>
+              </header>
+
+              <div class="coo-message-scroll">
+              <div class="coo-message-body">
+                <p>COO, gracias por el reporte del primer mes.</p>
+                <p>
+                  La junta directiva me pidió presentar opciones para proteger
+                  el flujo de caja. La propuesta más fuerte: <b>recortar 30%
+                  del personal</b>. Yo quiero tu lectura desde el
+                  <b>Balanced Scorecard</b>: ¿cómo afecta cada decisión las
+                  cuatro perspectivas? Lo que ahorras en una puede destruir
+                  en otra.
+                </p>
+                <p class="coo-message-ask">¿Qué propones a la junta?</p>
+              </div>
+
+              <div class="coo-options" data-options="d3" data-multi="false">
+                <button class="coo-option" type="button" data-value="aceptar">
+                  <span class="coo-option-mark"></span>
+                  <div class="coo-option-body">
+                    <span class="coo-option-title">Aceptar el recorte del 30%</span>
+                    <p>Salvas la caja en el corto plazo, pero el conocimiento se va con la gente. Procesos sufren, clientes notan demoras. <b>La perspectiva financiera mejora hoy y empeora todas las demás mañana.</b></p>
+                  </div>
+                </button>
+                <button class="coo-option" type="button" data-value="selectivo">
+                  <span class="coo-option-mark"></span>
+                  <div class="coo-option-body">
+                    <span class="coo-option-title">Recorte selectivo del 10% + congelar contrataciones</span>
+                    <p>Identificas áreas con sobre-capacidad y negocias un ajuste quirúrgico. <b>Impacto medio</b> en todas las perspectivas, ninguna queda destruida.</p>
+                  </div>
+                </button>
+                <button class="coo-option" type="button" data-value="voluntario">
+                  <span class="coo-option-mark"></span>
+                  <div class="coo-option-body">
+                    <span class="coo-option-title">Reducción salarial voluntaria temporal (6 meses)</span>
+                    <p>Propones bajar 10–15% del salario manteniendo todos los puestos. Si el equipo cree, lo acepta. <b>Preserva talento y cultura</b>, exige liderazgo de alta confianza.</p>
+                  </div>
+                </button>
+                <button class="coo-option" type="button" data-value="vender">
+                  <span class="coo-option-mark"></span>
+                  <div class="coo-option-body">
+                    <span class="coo-option-title">Vender una línea de negocio no esencial</span>
+                    <p>Vendes la consultoría puntual (no estratégica) y enfocas todo el equipo en el SaaS principal. <b>Pierdes ingresos diversificados</b>, ganas foco y caja sin tocar al equipo.</p>
+                  </div>
+                </button>
+              </div>
+
+              </div><!-- /.coo-message-scroll -->
+
+              <div class="coo-message-foot">
+                <button class="coo-nav-btn is-prev" type="button" data-nav="prev">
+                  <svg aria-hidden="true"><use href="#i-arrow-left"></use></svg>
+                  Anterior
+                </button>
+                <button class="coo-nav-btn is-send" type="button" data-nav="next">
+                  Llevar propuesta a la junta
+                  <svg aria-hidden="true"><use href="#i-send"></use></svg>
+                </button>
+              </div>
+            </article>
+
+            <!-- =====================================================
+                 DECISIÓN 4 · DÍA 90 — HR sobre cultura y comunicación
+            ===================================================== -->
+            <article class="coo-message" data-decision="4">
+              <header class="coo-message-head">
+                <div class="coo-avatar is-hr" aria-hidden="true">KM</div>
+                <div class="coo-message-meta">
+                  <div class="coo-message-from">
+                    <b>Karen Mendoza</b> · Directora de Talento
+                    <span class="coo-message-day">Día 90</span>
+                  </div>
+                  <h2 class="coo-message-subject">Asunto: Asamblea general próxima — ¿qué estilo de comunicación elegimos?</h2>
+                </div>
+              </header>
+
+              <div class="coo-message-scroll">
+              <div class="coo-message-body">
+                <p>COO, terminamos el trimestre. Es momento de hablarle al equipo.</p>
+                <p>
+                  Las últimas decisiones generaron incertidumbre. Hay rumores
+                  y baja de moral. Tanto el <b>liderazgo resonante (Goleman)</b>
+                  como el <b>ciclo PDCA</b> apuntan a que la comunicación
+                  reconstruye confianza. Quiero coordinar contigo el estilo
+                  para la asamblea del viernes.
+                </p>
+                <p class="coo-message-ask">¿Cómo te comunicas con la organización?</p>
+              </div>
+
+              <div class="coo-options" data-options="d4" data-multi="false">
+                <button class="coo-option" type="button" data-value="memo">
+                  <span class="coo-option-mark"></span>
+                  <div class="coo-option-body">
+                    <span class="coo-option-title">Memorando formal + KPIs estrictos por correo</span>
+                    <p>Comunicación escrita con metas duras y métricas semanales. <b>Autoridad formal pura</b>: rápido y claro, pero frío. La gente acata sin compromiso real.</p>
+                  </div>
+                </button>
+                <button class="coo-option" type="button" data-value="townhall">
+                  <span class="coo-option-mark"></span>
+                  <div class="coo-option-body">
+                    <span class="coo-option-title">Town halls semanales + canal abierto de preguntas</span>
+                    <p>Reuniones públicas donde explicas decisiones, abres preguntas difíciles y respondes con honestidad. <b>Autoridad moral construida con transparencia</b>.</p>
+                  </div>
+                </button>
+                <button class="coo-option" type="button" data-value="coaching">
+                  <span class="coo-option-mark"></span>
+                  <div class="coo-option-body">
+                    <span class="coo-option-title">Coaching ejecutivo + actualizaciones trimestrales</span>
+                    <p>Inversión en formación de líderes intermedios (inteligencia emocional, gestión de cambio). <b>Balance entre desarrollo y reporte</b>, bueno a mediano plazo.</p>
+                  </div>
+                </button>
+                <button class="coo-option" type="button" data-value="silencio">
+                  <span class="coo-option-mark"></span>
+                  <div class="coo-option-body">
+                    <span class="coo-option-title">No comunicar nada: esperar a tener resultados</span>
+                    <p>Esperas a tener «buenas noticias». <b>El silencio se interpreta como mala señal</b> y los rumores llenan el vacío. La cultura se daña sin que te enteres.</p>
+                  </div>
+                </button>
+              </div>
+
+              </div><!-- /.coo-message-scroll -->
+
+              <div class="coo-message-foot">
+                <button class="coo-nav-btn is-prev" type="button" data-nav="prev">
+                  <svg aria-hidden="true"><use href="#i-arrow-left"></use></svg>
+                  Anterior
+                </button>
+                <button class="coo-nav-btn is-finish" type="button" data-nav="finish" disabled>
+                  Convocar Junta evaluativa
+                  <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+                </button>
+              </div>
+            </article>
+
+          </section>
+
+          <!-- ============================================================
+               RIGHT — TABLERO DEL COO (team panel + BSC bars + log)
+          ============================================================ -->
+          <aside class="coo-dashboard" aria-label="Tablero del director de operaciones">
+
+            <!-- TEAM PANEL — 8 personas clave con mood -->
+            <section class="coo-team">
+              <header class="coo-panel-head">
+                <svg aria-hidden="true"><use href="#i-users"></use></svg>
+                <div>
+                  <small>Equipo clave</small>
+                  <h3>8 personas que sostienen TechCorp</h3>
+                </div>
+              </header>
+              <ul class="coo-team-grid" data-team>
+                <li class="coo-team-member" data-member="AC">
+                  <div class="coo-team-avatar is-cfo">AC</div>
+                  <div class="coo-team-info">
+                    <b>Andrés Castro</b>
+                    <span>CFO</span>
+                  </div>
+                  <span class="coo-team-mood" data-mood-label>neutral</span>
+                </li>
+                <li class="coo-team-member" data-member="JM">
+                  <div class="coo-team-avatar is-tech">JM</div>
+                  <div class="coo-team-info">
+                    <b>Javier Mora</b>
+                    <span>Tech Lead</span>
+                  </div>
+                  <span class="coo-team-mood" data-mood-label>neutral</span>
+                </li>
+                <li class="coo-team-member" data-member="CR">
+                  <div class="coo-team-avatar is-ceo">CR</div>
+                  <div class="coo-team-info">
+                    <b>Carolina R.</b>
+                    <span>CEO</span>
+                  </div>
+                  <span class="coo-team-mood" data-mood-label>neutral</span>
+                </li>
+                <li class="coo-team-member" data-member="KM">
+                  <div class="coo-team-avatar is-hr">KM</div>
+                  <div class="coo-team-info">
+                    <b>Karen M.</b>
+                    <span>Talento</span>
+                  </div>
+                  <span class="coo-team-mood" data-mood-label>neutral</span>
+                </li>
+                <li class="coo-team-member" data-member="AR">
+                  <div class="coo-team-avatar">AR</div>
+                  <div class="coo-team-info">
+                    <b>Ana Ruiz</b>
+                    <span>Frontend Lead</span>
+                  </div>
+                  <span class="coo-team-mood" data-mood-label>neutral</span>
+                </li>
+                <li class="coo-team-member" data-member="LV">
+                  <div class="coo-team-avatar">LV</div>
+                  <div class="coo-team-info">
+                    <b>Laura Vega</b>
+                    <span>Product Mgr</span>
+                  </div>
+                  <span class="coo-team-mood" data-mood-label>neutral</span>
+                </li>
+                <li class="coo-team-member" data-member="DS">
+                  <div class="coo-team-avatar">DS</div>
+                  <div class="coo-team-info">
+                    <b>Diego Sánchez</b>
+                    <span>DevOps</span>
+                  </div>
+                  <span class="coo-team-mood" data-mood-label>neutral</span>
+                </li>
+                <li class="coo-team-member" data-member="MR">
+                  <div class="coo-team-avatar">MR</div>
+                  <div class="coo-team-info">
+                    <b>María Rodríguez</b>
+                    <span>QA Lead</span>
+                  </div>
+                  <span class="coo-team-mood" data-mood-label>neutral</span>
+                </li>
+              </ul>
+            </section>
+
+            <!-- BSC — Balanced Scorecard con 4 barras verticales -->
+            <section class="coo-bsc">
+              <header class="coo-panel-head">
+                <svg aria-hidden="true"><use href="#i-bar-chart"></use></svg>
+                <div>
+                  <small>Balanced Scorecard</small>
+                  <h3>Las 4 perspectivas de Kaplan &amp; Norton</h3>
+                </div>
+              </header>
+              <ul class="coo-bsc-bars">
+                <li class="coo-bsc-item" data-bsc="financiera">
+                  <div class="coo-bsc-bar">
+                    <div class="coo-bsc-bar-fill" data-bar-fill style="height:0%"></div>
+                  </div>
+                  <span class="coo-bsc-label">Financiera</span>
+                  <span class="coo-bsc-value" data-bar-value>—</span>
+                </li>
+                <li class="coo-bsc-item" data-bsc="procesos">
+                  <div class="coo-bsc-bar">
+                    <div class="coo-bsc-bar-fill" data-bar-fill style="height:0%"></div>
+                  </div>
+                  <span class="coo-bsc-label">Procesos</span>
+                  <span class="coo-bsc-value" data-bar-value>—</span>
+                </li>
+                <li class="coo-bsc-item" data-bsc="clientes">
+                  <div class="coo-bsc-bar">
+                    <div class="coo-bsc-bar-fill" data-bar-fill style="height:0%"></div>
+                  </div>
+                  <span class="coo-bsc-label">Clientes</span>
+                  <span class="coo-bsc-value" data-bar-value>—</span>
+                </li>
+                <li class="coo-bsc-item" data-bsc="aprendizaje">
+                  <div class="coo-bsc-bar">
+                    <div class="coo-bsc-bar-fill" data-bar-fill style="height:0%"></div>
+                  </div>
+                  <span class="coo-bsc-label">Aprendizaje</span>
+                  <span class="coo-bsc-value" data-bar-value>—</span>
+                </li>
+              </ul>
+            </section>
+
+            <!-- LOG — bitácora de decisiones tomadas -->
+            <section class="coo-log">
+              <header class="coo-panel-head">
+                <svg aria-hidden="true"><use href="#i-clock"></use></svg>
+                <div>
+                  <small>Bitácora</small>
+                  <h3>Decisiones tomadas hasta ahora</h3>
+                </div>
+              </header>
+              <ol class="coo-log-list" data-log>
+                <li class="coo-log-empty">Aún no has tomado decisiones. La primera es del CFO.</li>
+              </ol>
+            </section>
+
+            <div class="coo-dashboard-actions">
+              <button class="coo-action-btn is-ghost" type="button" data-reset>
+                <svg aria-hidden="true"><use href="#i-refresh"></use></svg>
+                Reiniciar simulador
+              </button>
+              <a class="coo-action-btn is-primary" href="programa-administracion.html">
+                Salir
+                <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+              </a>
+            </div>
+
+          </aside>
+
+        </main>
+
+        <footer class="workspace-footer">
+          <div class="workspace-footer-meta">
+            <b>Universidad de América</b> · Ciencias Administrativas · Bogotá
+          </div>
+          <div class="workspace-footer-social" aria-label="Redes sociales">
+            <a href="#" aria-label="Instagram"><svg><use href="#i-instagram"></use></svg></a>
+            <a href="#" aria-label="Facebook"><svg><use href="#i-facebook"></use></svg></a>
+            <a href="#" aria-label="YouTube"><svg><use href="#i-youtube"></use></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg><use href="#i-linkedin"></use></svg></a>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+    </div>
+
+    <!-- ============================================================
+         BOARD REPORT — modal de cierre, estilo "junta directiva"
+    ============================================================ -->
+    <div class="coo-board-modal" data-modal aria-hidden="true">
+      <div class="coo-board-backdrop" data-modal-close></div>
+      <canvas class="coo-board-confetti" data-confetti aria-hidden="true"></canvas>
+      <div class="coo-board-content" role="dialog" aria-modal="true" aria-labelledby="board-title">
+        <button class="coo-board-close" type="button" aria-label="Cerrar" data-modal-close>
+          <svg aria-hidden="true"><use href="#i-close"></use></svg>
+        </button>
+
+        <!-- Banner celebrativo arriba del acta -->
+        <div class="coo-board-cheer">
+          <div class="coo-board-cheer-icon" aria-hidden="true">
+            <svg><use href="#i-trophy"></use></svg>
+          </div>
+          <div class="coo-board-cheer-text">
+            <strong data-modal-cheer-title>¡Felicitaciones! Completaste tu primer trimestre</strong>
+            <span data-modal-cheer-sub>Has dirigido a TechCorp por 90 días — la Junta tiene sus conclusiones.</span>
+          </div>
+          <svg class="coo-board-cheer-sparkle" aria-hidden="true"><use href="#i-sparkles"></use></svg>
+        </div>
+
+        <header class="coo-board-head">
+          <div class="coo-board-letterhead">
+            <svg aria-hidden="true"><use href="#i-building"></use></svg>
+            <div>
+              <small>TechCorp · Junta Directiva</small>
+              <span>Sesión extraordinaria · Día 91</span>
+            </div>
+          </div>
+          <h2 id="board-title" data-modal-title>Reporte de gestión del COO</h2>
+          <p class="coo-board-verdict" data-modal-verdict>—</p>
+        </header>
+
+        <div class="coo-board-body">
+          <!-- Panel 1: tu retrato final del equipo -->
+          <section class="coo-board-section">
+            <h4>Retrato final del equipo</h4>
+            <div data-modal-team class="coo-board-team"></div>
+          </section>
+
+          <!-- Panel 2: tarjeta de calificación BSC -->
+          <section class="coo-board-section">
+            <h4>Tarjeta de calificación · Balanced Scorecard</h4>
+            <div data-modal-bsc class="coo-board-bsc"></div>
+          </section>
+
+          <!-- Panel 3: las 4 decisiones tomadas -->
+          <section class="coo-board-section">
+            <h4>Resumen de tus 4 decisiones</h4>
+            <ol data-modal-decisions class="coo-board-decisions"></ol>
+          </section>
+
+          <!-- Panel 4: feedback narrativo de la junta -->
+          <section class="coo-board-section">
+            <h4>Acta de la junta — recomendaciones</h4>
+            <div data-modal-feedback class="coo-board-feedback"></div>
+          </section>
+        </div>
+
+        <footer class="coo-board-foot">
+          <button class="coo-action-btn is-ghost" type="button" data-reset>
+            <svg aria-hidden="true"><use href="#i-refresh"></use></svg>
+            Reiniciar simulador
+          </button>
+          <a class="coo-action-btn is-primary" href="programa-administracion.html">
+            Volver al programa
+            <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+          </a>
+        </footer>
+      </div>
+    </div>
+
+    <button class="a11y-fab" type="button" aria-label="Opciones de accesibilidad" aria-expanded="false" data-a11y-fab>
+      <svg aria-hidden="true"><use href="#i-a11y"></use></svg>
+    </button>
+
+    <aside class="a11y-panel" role="dialog" aria-label="Panel de accesibilidad" data-a11y-panel>
+      <div class="a11y-panel-head">
+        <div><h3>Accesibilidad</h3><small>Ajusta la experiencia</small></div>
+        <button class="a11y-panel-close" type="button" aria-label="Cerrar panel" data-a11y-close>
+          <svg aria-hidden="true"><use href="#i-close"></use></svg>
+        </button>
+      </div>
+      <div class="a11y-group">
+        <span class="a11y-group-label">Tamaño de fuente <b data-mono>A</b></span>
+        <div class="a11y-options">
+          <button type="button" data-pref="textSize" data-value="sm"><span>A</span></button>
+          <button type="button" data-pref="textSize" data-value="md"><span>A</span></button>
+          <button type="button" data-pref="textSize" data-value="lg"><span>A</span></button>
+          <button type="button" data-pref="textSize" data-value="xl"><span>A</span></button>
+        </div>
+      </div>
+      <div class="a11y-group">
+        <span class="a11y-group-label">Contraste</span>
+        <div class="a11y-options is-2">
+          <button type="button" data-pref="contrast" data-value="default">Normal</button>
+          <button type="button" data-pref="contrast" data-value="high">Alto</button>
+        </div>
+      </div>
+      <div class="a11y-group">
+        <span class="a11y-group-label">Daltonismo</span>
+        <div class="a11y-options is-5" style="grid-template-columns: repeat(5, minmax(0,1fr));">
+          <button type="button" data-pref="colorMode" data-value="default">Off</button>
+          <button type="button" data-pref="colorMode" data-value="protanopia">Pro</button>
+          <button type="button" data-pref="colorMode" data-value="deuteranopia">Deu</button>
+          <button type="button" data-pref="colorMode" data-value="tritanopia">Tri</button>
+          <button type="button" data-pref="colorMode" data-value="achromatopsia">Acro</button>
+        </div>
+      </div>
+      <button type="button" class="a11y-reset" data-a11y-reset>↺ Restaurar valores por defecto</button>
+    </aside>
+
+    <script src="src/js/mobile-nav.js" defer></script>
+    <script src="src/js/accessibility.js" defer></script>
+    <script src="src/js/reto-admin.js" defer></script>
+  </body>
+</html>

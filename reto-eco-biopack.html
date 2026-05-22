@@ -19,7 +19,7 @@
       })();
     </script>
   </head>
-  <body class="programa" data-program="economy">
+  <body class="programa is-reto" data-program="economy">
     <svg class="svg-defs" aria-hidden="true" focusable="false">
       <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></symbol>
       <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5" /><path d="m11 6-6 6 6 6" /></symbol>
@@ -36,6 +36,11 @@
       <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 8h2V5h-2a4 4 0 0 0-4 4v2H8v3h2v5h3v-5h3l1-3h-4V9a1 1 0 0 1 1-1Z" /></symbol>
       <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M4 8a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3Z" /><path d="m10 9 5 3-5 3Z" /></symbol>
       <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M6 10v9" /><path d="M6 6v.01" /><path d="M11 19v-9" /><path d="M11 14a4 4 0 0 1 8 0v5" /></symbol>
+      <!-- Iconos celebrativos del modal — Lucide icons (lucide.dev) -->
+      <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol>
+      <symbol id="i-star" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></symbol>
+      <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+      <symbol id="i-graduation-cap" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
     </svg>
 
     <svg class="a11y-defs" aria-hidden="true" focusable="false">
@@ -132,11 +137,24 @@
             <b>3</b>
             <span>Arancel verde</span>
           </button>
+          <button class="reto-progress-step" type="button" data-goto="4">
+            <b>4</b>
+            <span>Competencia</span>
+          </button>
         </nav>
 
         <main class="reto-body">
 
           <div class="reto-phases">
+
+          <!-- Intro de orientación (solo visible antes de la 1ª decisión) -->
+          <aside class="reto-howto" data-howto>
+            <div class="reto-howto-icon" aria-hidden="true">i</div>
+            <div class="reto-howto-text">
+              <strong>Cómo funciona el reto</strong>
+              <p>Tomarás <b>4 decisiones</b> reales sobre BioPack, una a la vez. Cada elección actualiza el <b>tablero a la derecha</b> en tiempo real (utilidad, evidencia, ambiental, riesgo, posicionamiento). No hay una respuesta correcta única — busca <b>coherencia</b> con lo que quieres lograr. Al terminar verás tu perfil de estratega.</p>
+            </div>
+          </aside>
 
           <!-- ====================================================
                FASE 1 — Choque cambiario
@@ -462,8 +480,93 @@
                 <svg aria-hidden="true"><use href="#i-arrow-left"></use></svg>
                 Anterior
               </button>
-              <button class="reto-phase-nav-btn is-next" type="button" data-nav="next" disabled>
-                Reto completo
+              <button class="reto-phase-nav-btn is-next" type="button" data-nav="next">
+                Siguiente
+                <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+              </button>
+            </div>
+          </section>
+
+          <!-- ====================================================
+               FASE 4 — Defensa frente a competencia
+          ==================================================== -->
+          <section class="reto-phase" id="fase-4" data-phase="4">
+            <header class="reto-phase-head">
+              <span class="reto-phase-num">4</span>
+              <div class="reto-phase-copy">
+                <span class="reto-phase-eyebrow">Estructura de mercado</span>
+                <h2 class="reto-phase-title">Llegaron 3 competidores chinos con empaques biodegradables 30% más baratos.</h2>
+              </div>
+            </header>
+
+            <div class="reto-prompt">
+              <small>El escenario</small>
+              <p>
+                Cuando tu innovación funciona, otros la copian. Tu ventaja en
+                costos ya no es única y los nuevos jugadores vienen con
+                <b>precios agresivos</b>. Tu cliente europeo empieza a
+                preguntar por descuentos. ¿Cómo proteges tu negocio sin
+                renunciar a lo que te hace BioPack?
+              </p>
+            </div>
+
+            <div class="reto-options" data-options="fase4" data-multi="false">
+              <button class="reto-option" type="button" data-value="precio">
+                <span class="reto-option-check"></span>
+                <span class="reto-option-tag">Opción A</span>
+                <span class="reto-option-title">Bajar el precio para no perder clientes</span>
+                <span class="reto-option-text">
+                  Igualas o casi igualas el precio de los nuevos competidores.
+                  Mantienes la cuota de mercado en el corto plazo, pero entras
+                  en una <b>guerra de precios</b> que destruye márgenes para
+                  todos. Quien tenga más caja gana — y los chinos suelen tener más.
+                </span>
+              </button>
+
+              <button class="reto-option" type="button" data-value="marca">
+                <span class="reto-option-check"></span>
+                <span class="reto-option-tag">Opción B</span>
+                <span class="reto-option-title">Reforzar marca, sello verde y servicio</span>
+                <span class="reto-option-text">
+                  Invertes en certificaciones, trazabilidad y atención técnica
+                  para que el cliente vea por qué BioPack vale más. Es la
+                  estrategia de <b>diferenciación</b>: no compites en precio,
+                  compites en confianza y propósito. Defiende el margen.
+                </span>
+              </button>
+
+              <button class="reto-option" type="button" data-value="id">
+                <span class="reto-option-check"></span>
+                <span class="reto-option-tag">Opción C</span>
+                <span class="reto-option-title">Invertir en I+D para una próxima generación</span>
+                <span class="reto-option-text">
+                  Desarrollas un nuevo polímero con propiedades que los chinos
+                  no pueden copiar fácil (mayor resistencia, menor huella de
+                  carbono). Apuesta a <b>largo plazo</b>: 24 meses de inversión
+                  fuerte, pero te aleja del comoditización.
+                </span>
+              </button>
+
+              <button class="reto-option" type="button" data-value="alianza">
+                <span class="reto-option-check"></span>
+                <span class="reto-option-tag">Opción D</span>
+                <span class="reto-option-title">Alianzas exclusivas con grandes clientes europeos</span>
+                <span class="reto-option-text">
+                  Firmas contratos de varios años con 2–3 cadenas grandes a
+                  cambio de exclusividad y mejor precio. Te aseguras volumen
+                  estable, pero quedas <b>dependiente</b> de pocos clientes:
+                  si uno se va, el golpe es enorme.
+                </span>
+              </button>
+            </div>
+
+            <div class="reto-phase-nav">
+              <button class="reto-phase-nav-btn is-prev" type="button" data-nav="prev">
+                <svg aria-hidden="true"><use href="#i-arrow-left"></use></svg>
+                Anterior
+              </button>
+              <button class="reto-phase-nav-btn is-next" type="button" data-nav="finish" disabled>
+                Ver mi resultado
                 <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg>
               </button>
             </div>
@@ -594,6 +697,41 @@
     </div>
     </div>
 
+    <!-- Modal de cierre del reto -->
+    <div class="reto-modal" data-modal aria-hidden="true">
+      <div class="reto-modal-backdrop" data-modal-close></div>
+      <canvas class="reto-modal-confetti" data-confetti aria-hidden="true"></canvas>
+      <div class="reto-modal-content" role="dialog" aria-modal="true" aria-labelledby="reto-modal-title">
+        <button class="reto-modal-close" type="button" aria-label="Cerrar" data-modal-close>
+          <svg aria-hidden="true"><use href="#i-close"></use></svg>
+        </button>
+        <div class="reto-modal-header">
+          <div class="reto-modal-celebration">
+            <div class="reto-modal-icon" data-modal-icon>
+              <svg aria-hidden="true"><use href="#i-trophy" data-modal-icon-use></use></svg>
+            </div>
+            <span class="reto-modal-tag" data-modal-tag>¡Reto completo!</span>
+          </div>
+          <h2 id="reto-modal-title" data-modal-title>¡Felicitaciones!</h2>
+          <p class="reto-modal-subtitle" data-modal-subtitle>Tu perfil de estratega</p>
+        </div>
+        <div class="reto-modal-body">
+          <section class="reto-modal-summary" data-modal-summary></section>
+          <section class="reto-modal-feedback" data-modal-feedback></section>
+        </div>
+        <div class="reto-modal-actions">
+          <button class="reto-dashboard-btn is-ghost" type="button" data-reset>
+            <svg aria-hidden="true"><use href="#i-refresh"></use></svg>
+            Reiniciar reto
+          </button>
+          <a class="reto-dashboard-btn is-primary" href="programa-economia.html">
+            Volver al programa
+            <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
     <button class="a11y-fab" type="button" aria-label="Opciones de accesibilidad" aria-expanded="false" data-a11y-fab>
       <svg aria-hidden="true"><use href="#i-a11y"></use></svg>
     </button>
@@ -634,6 +772,7 @@
       <button type="button" class="a11y-reset" data-a11y-reset>↺ Restaurar valores por defecto</button>
     </aside>
 
+    <script src="src/js/mobile-nav.js" defer></script>
     <script src="src/js/accessibility.js" defer></script>
     <script src="src/js/reto-biopack.js" defer></script>
   </body>

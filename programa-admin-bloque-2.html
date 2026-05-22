@@ -762,16 +762,21 @@
                 </div>
               </figure>
 
-              <div class="module-foot-cta" data-reveal>
-                <div>
-                  <small>Próximo paso</small>
-                  <h4>Reto integrador · Simulador de decisiones directivas «TechCorp»</h4>
-                </div>
-                <button type="button" disabled title="Próximamente">
-                  <span>Próximamente</span>
+              <aside class="module-reto-cta" data-reveal aria-label="Llamado al reto integrador">
+                <div class="module-reto-cta-decor" aria-hidden="true"></div>
+                <span class="module-reto-cta-tag"><b>R</b> Reto integrador</span>
+                <h3>¿Listo para tomar las decisiones de un COO?</h3>
+                <p>
+                  Cuatro decisiones reales en <b>TechCorp</b>, una empresa
+                  tecnológica colombiana en crisis. Tu tablero del Balanced
+                  Scorecard reacciona en vivo a cada elección y al final
+                  descubres tu perfil de director.
+                </p>
+                <a class="module-reto-cta-btn" href="reto-admin-techcorp.html">
+                  Empezar el reto
                   <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg>
-                </button>
-              </div>
+                </a>
+              </aside>
             </section>
 
           </main>
@@ -794,7 +799,7 @@
             </ol>
             <div class="bloque-toc-actions">
               <a class="bloque-toc-action" href="programa-admin-bloque-1.html">Bloque 1 · Fundamentos</a>
-              <a class="bloque-toc-action is-next is-disabled" aria-disabled="true">Reto · próximamente</a>
+              <a class="bloque-toc-action is-next" href="reto-admin-techcorp.html">Reto · TechCorp</a>
             </div>
           </aside>
         </div>
@@ -805,9 +810,9 @@
             <small><svg aria-hidden="true"><use href="#i-arrow-left"></use></svg> Bloque anterior</small>
             <h5>Bloque 1 · Fundamentos de la administración</h5>
           </a>
-          <a class="bloque-nav-card is-next is-disabled" aria-disabled="true">
+          <a class="bloque-nav-card is-next" href="reto-admin-techcorp.html">
             <small>Reto integrador <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg></small>
-            <h5>Próximamente · TechCorp</h5>
+            <h5>TechCorp · Simulador de decisiones directivas</h5>
           </a>
         </nav>
 
@@ -876,6 +881,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="src/js/mobile-nav.js" defer></script>
     <script src="src/js/accessibility.js" defer></script>
     <script src="src/js/programa-modulo.js" defer></script>
   </body>

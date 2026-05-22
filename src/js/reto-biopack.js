@@ -153,6 +153,66 @@
     },
   };
 
+  // Fase 4: defensa frente a competencia (estructura de mercado)
+  const FASE4 = {
+    precio: {
+      label: "Bajar el precio",
+      badge: "Guerra de precios",
+      tone: "warn",
+      stats: [
+        { k: "Margen final", v: "8%", tone: "warn" },
+        { k: "Cuota de mercado", v: "Sostiene", tone: "" },
+        { k: "Riesgo de quiebra", v: "Alto", tone: "warn" },
+      ],
+      text: [
+        "Igualar precios funciona <b>hasta que el bolsillo del más grande aguanta más que el tuyo</b>. Los competidores chinos tienen escala y subsidios; en una guerra de precios prolongada, tú pierdes primero.",
+        "Y aunque sobrevivas, BioPack pierde su narrativa: dejas de ser «la opción biodegradable premium» para ser «otro empaque barato más». Recuperar imagen toma años.",
+      ],
+    },
+    marca: {
+      label: "Reforzar marca y diferenciación",
+      badge: "Defiende el margen",
+      tone: "ok",
+      stats: [
+        { k: "Margen final", v: "32%", tone: "ok" },
+        { k: "Premium sostenible", v: "Sí", tone: "ok" },
+        { k: "Inversión", v: "Media", tone: "" },
+      ],
+      text: [
+        "Es la estrategia de <b>diferenciación</b>: el cliente paga más por algo que percibe como distinto. Certificación verificable, soporte técnico y trazabilidad son cosas que los competidores chinos no pueden copiar de un día para otro.",
+        "Combinada con el sello «Cero Residuos» de la Fase 3, esta es la jugada que <b>convierte la innovación en una ventaja sostenible</b>, no solo temporal.",
+      ],
+    },
+    id: {
+      label: "Invertir en I+D",
+      badge: "Apuesta a largo plazo",
+      tone: "ok",
+      stats: [
+        { k: "Tiempo a mercado", v: "24 meses", tone: "warn" },
+        { k: "Margen futuro", v: "40%+", tone: "ok" },
+        { k: "Riesgo técnico", v: "Medio", tone: "" },
+      ],
+      text: [
+        "Apostar a I+D te aleja de la comoditización: cuando los chinos te alcancen en este polímero, tú ya estarás vendiendo el siguiente. Es la lógica de Schumpeter — <b>destrucción creativa</b> como defensa permanente.",
+        "El riesgo es el tiempo: 24 meses sin nueva entrada de ingreso desde la innovación. Combina mal con caja apretada; combina muy bien con una marca fuerte que sostenga el negocio mientras tanto.",
+      ],
+    },
+    alianza: {
+      label: "Alianzas exclusivas",
+      badge: "Volumen asegurado",
+      tone: "warn",
+      stats: [
+        { k: "Margen final", v: "28%", tone: "ok" },
+        { k: "Cuota asegurada", v: "Sí", tone: "ok" },
+        { k: "Dependencia", v: "Alta", tone: "warn" },
+      ],
+      text: [
+        "Aseguras ventas estables firmando 3–5 años con grandes cadenas. La utilidad sufre un poco (descuentos por exclusividad) pero duermes tranquilo: <b>el competidor chino no puede entrar a esos clientes</b>.",
+        "El precio escondido es la <b>dependencia</b>: si una de las cadenas no te renueva, pierdes una porción enorme del negocio de un solo golpe. No es defensa, es atrincherarse.",
+      ],
+    },
+  };
+
   /* ============================================================
      Estado + persistencia
      ============================================================ */
@@ -161,17 +221,18 @@
   function loadState() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
-      if (!raw) return { fase1: null, fase2: [], fase3: null, currentPhase: 1 };
+      if (!raw) return { fase1: null, fase2: [], fase3: null, fase4: null, currentPhase: 1 };
       const parsed = JSON.parse(raw);
       const cp = Number(parsed.currentPhase);
       return {
         fase1: parsed.fase1 || null,
         fase2: Array.isArray(parsed.fase2) ? parsed.fase2 : [],
         fase3: parsed.fase3 || null,
-        currentPhase: cp >= 1 && cp <= 3 ? cp : 1,
+        fase4: parsed.fase4 || null,
+        currentPhase: cp >= 1 && cp <= 4 ? cp : 1,
       };
     } catch {
-      return { fase1: null, fase2: [], fase3: null, currentPhase: 1 };
+      return { fase1: null, fase2: [], fase3: null, fase4: null, currentPhase: 1 };
     }
   }
 
@@ -203,11 +264,13 @@
     1: "Impacto de tu decisión",
     2: "Calidad de tu evidencia",
     3: "Evaluación de tu alternativa",
+    4: "Defensa competitiva",
   };
   const IMPACT_PROMPTS = {
     1: "Elige una opción en la fase 1 para ver su efecto sobre BioPack.",
     2: "Selecciona al menos una fuente para evaluar la calidad de la evidencia.",
     3: "Escoge un camino en la fase 3 para ver su impacto integral.",
+    4: "Decide cómo defiendes BioPack frente a los nuevos competidores.",
   };
 
   function buildImpactFase1() {
@@ -289,6 +352,21 @@
     };
   }
 
+  function buildImpactFase4() {
+    const choice = state.fase4;
+    if (!choice) return null;
+    const d = FASE4[choice];
+    return {
+      badge: d.badge,
+      gridHTML: d.stats.map((s) => `
+        <div class="reto-dashboard-impact-stat ${s.tone ? "is-" + s.tone : ""}">
+          <small>${s.k}</small>
+          <b>${s.v}</b>
+        </div>`).join(""),
+      textHTML: d.text.map((t) => `<p>${t}</p>`).join(""),
+    };
+  }
+
   function renderDashboardImpact() {
     const panel = document.querySelector("[data-dashboard-impact]");
     if (!panel) return;
@@ -302,7 +380,8 @@
 
     const builder = phase === 1 ? buildImpactFase1
                   : phase === 2 ? buildImpactFase2
-                  : buildImpactFase3;
+                  : phase === 3 ? buildImpactFase3
+                  : buildImpactFase4;
     const impact = builder();
 
     if (!impact) {
@@ -333,11 +412,12 @@
     if (n === 1) return true;
     if (n === 2) return !!state.fase1;
     if (n === 3) return state.fase2.length >= 1;
+    if (n === 4) return !!state.fase3;
     return false;
   }
 
   function goToPhase(n) {
-    const clamped = Math.max(1, Math.min(3, n));
+    const clamped = Math.max(1, Math.min(4, n));
     if (clamped === state.currentPhase) return;
     if (!isPhaseUnlocked(clamped)) return;
     state.currentPhase = clamped;
@@ -370,26 +450,34 @@
     B: { utilidad: 3, ambiental: 3, posicionamiento: 3, riesgo: 3 },
     C: { utilidad: 2, ambiental: 1, posicionamiento: 1, riesgo: 1 },
   };
+  const FASE4_LEVELS = {
+    precio:  { utilidad: 1, ambiental: 2, posicionamiento: 1, riesgo: 1 },
+    marca:   { utilidad: 3, ambiental: 3, posicionamiento: 3, riesgo: 2 },
+    id:      { utilidad: 2, ambiental: 3, posicionamiento: 3, riesgo: 2 },
+    alianza: { utilidad: 3, ambiental: 2, posicionamiento: 2, riesgo: 1 },
+  };
 
   // Mapas para mostrar etiqueta y porcentaje según nivel
   const LEVEL_LABEL = { 0: "—", 1: "Bajo", 2: "Medio", 3: "Alto" };
   const LEVEL_PCT   = { 0: 0,   1: 28,    2: 62,     3: 92 };
   const LEVEL_TONE  = { 0: "empty", 1: "bad", 2: "mid", 3: "good" };
 
-  // Promedia 2 niveles (>0), redondeando hacia arriba si hay datos parciales
-  function combine(a, b) {
-    if (a === undefined && b === undefined) return 0;
-    if (a === undefined) return b;
-    if (b === undefined) return a;
-    return Math.round((a + b) / 2);
+  // Promedia un conjunto de niveles (>0), redondeando al entero más cercano
+  function combineMany(values) {
+    const filled = values.filter((v) => typeof v === "number" && v > 0);
+    if (filled.length === 0) return 0;
+    return Math.round(filled.reduce((a, b) => a + b, 0) / filled.length);
   }
 
   function computeIndicators() {
     const f1 = state.fase1 ? FASE1_LEVELS[state.fase1] : {};
     const f3 = state.fase3 ? FASE3_LEVELS[state.fase3] : {};
+    const f4 = state.fase4 ? FASE4_LEVELS[state.fase4] : {};
 
-    // Utilidad: combina f1.utilidad + f3.utilidad
-    const utilidad = combine(f1.utilidad, f3.utilidad);
+    const utilidad        = combineMany([f1.utilidad, f3.utilidad, f4.utilidad]);
+    const ambiental       = combineMany([f3.ambiental, f4.ambiental]);
+    const riesgo          = combineMany([f1.riesgo, f3.riesgo, f4.riesgo]);
+    const posicionamiento = combineMany([f3.posicionamiento, f4.posicionamiento]);
 
     // Evidencia: derivada del score 0-10 de fase 2
     let evidencia = 0;
@@ -406,15 +494,6 @@
       else if (score >= 5) evidencia = 2;
       else evidencia = 1;
     }
-
-    // Ambiental: solo desde fase 3
-    const ambiental = f3.ambiental || 0;
-
-    // Riesgo: combina f1.riesgo + f3.riesgo (qué tan PROTEGIDO está)
-    const riesgo = combine(f1.riesgo, f3.riesgo);
-
-    // Posicionamiento: solo desde fase 3
-    const posicionamiento = f3.posicionamiento || 0;
 
     return { utilidad, evidencia, ambiental, riesgo, posicionamiento };
   }
@@ -561,12 +640,19 @@
       }
     });
 
-    // Barra de avance + contador
-    const done = [state.fase1, state.fase2.length > 0, state.fase3].filter(Boolean).length;
+    // Barra de avance + contador (4 fases)
+    const done = [state.fase1, state.fase2.length > 0, state.fase3, state.fase4].filter(Boolean).length;
     const progressEl = document.querySelector("[data-dashboard-progress]");
-    if (progressEl) progressEl.innerHTML = `<b>${done}</b> / 3`;
+    if (progressEl) progressEl.innerHTML = `<b>${done}</b> / 4`;
     const fillEl = document.querySelector("[data-progress-fill]");
-    if (fillEl) fillEl.style.width = (done / 3) * 100 + "%";
+    if (fillEl) fillEl.style.width = (done / 4) * 100 + "%";
+
+    // Howto intro visible solo antes de la 1ª decisión
+    const howto = document.querySelector("[data-howto]");
+    if (howto) {
+      const showHowto = state.currentPhase === 1 && !state.fase1;
+      howto.classList.toggle("is-hidden", !showHowto);
+    }
   }
 
   /* ============================================================
@@ -578,6 +664,7 @@
       1: !!state.fase1,
       2: state.fase2.length > 0,
       3: !!state.fase3,
+      4: !!state.fase4,
     };
 
     steps.forEach((step) => {
@@ -602,11 +689,10 @@
       const n = Number(phaseEl.dataset.phase);
       const prevBtn = phaseEl.querySelector('[data-nav="prev"]');
       const nextBtn = phaseEl.querySelector('[data-nav="next"]');
+      const finishBtn = phaseEl.querySelector('[data-nav="finish"]');
       if (prevBtn) prevBtn.disabled = n === 1;
-      if (nextBtn) {
-        if (n === 3) nextBtn.disabled = true;
-        else nextBtn.disabled = !isPhaseUnlocked(n + 1);
-      }
+      if (nextBtn) nextBtn.disabled = !isPhaseUnlocked(n + 1);
+      if (finishBtn) finishBtn.disabled = !state.fase4;
     });
   }
 
@@ -614,7 +700,6 @@
      Event handlers
      ============================================================ */
 
-  let autoAdvanceTimer = null;
   function handleOptionClick(e) {
     const btn = e.currentTarget;
     const container = btn.closest("[data-options]");
@@ -633,14 +718,8 @@
 
     persist();
     renderAll();
-
-    // Auto-avance: fase 1 (single-select) → fase 2 después de que el usuario
-    // vea el feedback en el dashboard. Fase 2 requiere clic explícito en
-    // Siguiente porque es multi-select. Fase 3 es la última.
-    if (autoAdvanceTimer) clearTimeout(autoAdvanceTimer);
-    if (faseKey === "fase1" && state.fase1 && state.currentPhase === 1) {
-      autoAdvanceTimer = setTimeout(() => goToPhase(2), 850);
-    }
+    // Sin auto-avance: el usuario confirma con "Siguiente" (fases 1-3)
+    // o con "Ver mi resultado" (fase 4) tras revisar el feedback en el dashboard.
   }
 
   function handleReset() {
@@ -648,15 +727,21 @@
     state.fase1 = null;
     state.fase2 = [];
     state.fase3 = null;
+    state.fase4 = null;
     state.currentPhase = 1;
     persist();
+    closeCompletionModal();
     renderAll();
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   function handleNavClick(e) {
     const dir = e.currentTarget.dataset.nav;
-    goToPhase(state.currentPhase + (dir === "next" ? 1 : -1));
+    if (dir === "finish") {
+      showCompletionModal();
+    } else {
+      goToPhase(state.currentPhase + (dir === "next" ? 1 : -1));
+    }
   }
 
   function handleStepperClick(e) {
@@ -672,10 +757,237 @@
     renderOptions("fase1");
     renderOptions("fase2");
     renderOptions("fase3");
+    renderOptions("fase4");
     renderDashboard();
     renderDashboardImpact();
     renderProgress();
     renderPhaseNav();
+  }
+
+  /* ============================================================
+     Modal de cierre — perfil de estratega + feedback
+     ============================================================ */
+  const PROFILES = {
+    visionario: {
+      tag: "¡Magnífico!",
+      title: "¡Eres un Estratega Visionario!",
+      subtitle: "Defendiste el negocio sin renunciar a su propósito — lograste algo que pocos consiguen.",
+      feedback: "Combinaste protección financiera, evidencia robusta, inversión en valor sostenible y diferenciación. BioPack sale del reto <b>más resistente y más fiel a su razón de ser</b>. Esta es la jugada que construye empresas duraderas.",
+      tone: "good",
+      icon: "#i-trophy",
+    },
+    pragmatico: {
+      tag: "¡Bien hecho!",
+      title: "¡Eres un Pragmático Sólido!",
+      subtitle: "Mantuviste el equilibrio entre rentabilidad y propósito.",
+      feedback: "Tus decisiones cuidan la utilidad sin ignorar el contexto. BioPack queda en buena forma, aunque <b>queda margen para apostar más fuerte por la diferenciación</b> que la haría imbatible en el largo plazo. ¡Felicitaciones!",
+      tone: "good",
+      icon: "#i-star",
+    },
+    reactivo: {
+      tag: "¡Reto completado!",
+      title: "¡Lo lograste, Defensor Reactivo!",
+      subtitle: "Resolviste el corto plazo. Ahora puedes apuntar más alto.",
+      feedback: "Algunas decisiones apagaron incendios sin construir capacidad nueva. BioPack sobrevive ahora, pero su ventaja competitiva no se profundiza. <b>Revisa especialmente las decisiones de Fase 3 y 4</b> e intenta de nuevo — la diferencia entre defender y avanzar está a un click.",
+      tone: "mid",
+      icon: "#i-target",
+    },
+    aprendiz: {
+      tag: "¡Reto completado!",
+      title: "¡Completaste el reto!",
+      subtitle: "Cada decisión es un aprendizaje. Tienes pistas valiosas para tu próximo intento.",
+      feedback: "Varias jugadas erosionaron la posición de BioPack. Te recomendamos volver a la teoría de los bloques <b>(externalidades, evidencia y estrategia competitiva)</b> y reintentar el reto con esa lente. ¡Vas a brillar en la próxima!",
+      tone: "bad",
+      icon: "#i-graduation-cap",
+    },
+  };
+
+  function getResultProfile() {
+    const ind = computeIndicators();
+    const vals = Object.values(ind).filter((v) => v > 0);
+    if (vals.length === 0) return null;
+    const avg = vals.reduce((a, b) => a + b, 0) / vals.length;
+    let key;
+    if (avg >= 2.6)      key = "visionario";
+    else if (avg >= 2.0) key = "pragmatico";
+    else if (avg >= 1.5) key = "reactivo";
+    else                 key = "aprendiz";
+    return { ...PROFILES[key], avg, key };
+  }
+
+  const IND_LABEL = {
+    utilidad: "Utilidad",
+    evidencia: "Evidencia",
+    ambiental: "Ambiental",
+    riesgo: "Riesgo",
+    posicionamiento: "Posicionamiento",
+  };
+
+  function showCompletionModal() {
+    const ready = state.fase1 && state.fase2.length >= 1 && state.fase3 && state.fase4;
+    const modal = document.querySelector("[data-modal]");
+    if (!ready || !modal) return;
+
+    const profile = getResultProfile();
+    if (!profile) return;
+    const ind = computeIndicators();
+
+    modal.querySelector("[data-modal-title]").textContent = profile.title;
+    modal.querySelector("[data-modal-subtitle]").textContent = profile.subtitle;
+    const tagEl = modal.querySelector("[data-modal-tag]");
+    if (tagEl) tagEl.textContent = profile.tag;
+    const iconUse = modal.querySelector("[data-modal-icon-use]");
+    if (iconUse) iconUse.setAttribute("href", profile.icon);
+
+    const sourcesLabel = state.fase2
+      .map((k) => FASE2_METHODS[k]?.label || k)
+      .join(", ");
+    modal.querySelector("[data-modal-summary]").innerHTML = `
+      <h4>Tus 4 decisiones</h4>
+      <ul>
+        <li><span>Fase 1</span><b>${FASE1[state.fase1].label}</b></li>
+        <li><span>Fase 2</span><b>${sourcesLabel}</b></li>
+        <li><span>Fase 3</span><b>${FASE3[state.fase3].label}</b></li>
+        <li><span>Fase 4</span><b>${FASE4[state.fase4].label}</b></li>
+      </ul>
+    `;
+
+    const indItems = Object.entries(ind)
+      .map(([k, v]) => `
+        <div class="reto-modal-ind is-${LEVEL_TONE[v]}">
+          <span>${IND_LABEL[k]}</span>
+          <b>${LEVEL_LABEL[v]}</b>
+        </div>
+      `).join("");
+    modal.querySelector("[data-modal-feedback]").innerHTML = `
+      <p>${profile.feedback}</p>
+      <div class="reto-modal-inds">${indItems}</div>
+    `;
+
+    modal.dataset.tone = profile.tone;
+    modal.classList.add("is-open");
+    document.body.classList.add("is-modal-open");
+
+    // Confeti: intensidad según tono (más para visionario/pragmático)
+    const intensity = profile.tone === "good" ? 1.0
+                    : profile.tone === "mid"  ? 0.65
+                    :                            0.4;
+    fireConfetti(intensity);
+  }
+
+  function closeCompletionModal() {
+    const modal = document.querySelector("[data-modal]");
+    if (modal) modal.classList.remove("is-open");
+    document.body.classList.remove("is-modal-open");
+    stopConfetti();
+  }
+
+  /* ============================================================
+     Confeti — canvas-based, vanilla, sin librerías
+     ============================================================ */
+  let confettiRAF = null;
+  function fireConfetti(intensity = 1) {
+    const canvas = document.querySelector("[data-confetti]");
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    const dpr = window.devicePixelRatio || 1;
+    const rect = canvas.getBoundingClientRect();
+    canvas.width  = rect.width  * dpr;
+    canvas.height = rect.height * dpr;
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.scale(dpr, dpr);
+
+    const W = rect.width;
+    const H = rect.height;
+    const colors = [
+      "#22c55e", "#16a34a", "#f59e0b", "#fbbf24",
+      "#3b82f6", "#06b6d4", "#ec4899", "#a855f7", "#ef4444",
+    ];
+    const N = Math.round(140 * intensity);
+    const particles = [];
+
+    // Dos "cañones" — uno desde la izquierda inferior, otro desde la derecha
+    function spawn(count, originX, vxBias) {
+      for (let i = 0; i < count; i++) {
+        const angle = (Math.random() * 0.6 - 0.3) - Math.PI / 2;
+        const speed = 14 + Math.random() * 10;
+        particles.push({
+          x: originX,
+          y: H * 0.95,
+          vx: Math.cos(angle) * speed + vxBias,
+          vy: Math.sin(angle) * speed,
+          gravity: 0.32,
+          drag: 0.992,
+          size: 6 + Math.random() * 7,
+          rot: Math.random() * Math.PI * 2,
+          vrot: (Math.random() - 0.5) * 0.32,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          shape: Math.random() < 0.45 ? "rect" : Math.random() < 0.7 ? "circle" : "strip",
+          life: 1,
+        });
+      }
+    }
+    spawn(N / 2, W * 0.15,  6);
+    spawn(N / 2, W * 0.85, -6);
+
+    // Segunda oleada con delay
+    setTimeout(() => {
+      if (!document.querySelector("[data-modal].is-open")) return;
+      spawn(Math.round(N * 0.4), W * 0.5, 0);
+    }, 350);
+
+    let frames = 0;
+    const maxFrames = 280;
+
+    function frame() {
+      ctx.clearRect(0, 0, W, H);
+      let alive = 0;
+      for (const p of particles) {
+        if (p.y > H + 30) continue;
+        alive++;
+        p.vx *= p.drag;
+        p.vy = p.vy * p.drag + p.gravity;
+        p.x += p.vx;
+        p.y += p.vy;
+        p.rot += p.vrot;
+        p.life = Math.max(0, 1 - frames / maxFrames);
+
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rot);
+        ctx.globalAlpha = Math.min(1, p.life * 1.3);
+        ctx.fillStyle = p.color;
+        if (p.shape === "rect") {
+          ctx.fillRect(-p.size / 2, -p.size / 3, p.size, p.size * 0.66);
+        } else if (p.shape === "strip") {
+          ctx.fillRect(-p.size / 2, -1.5, p.size, 3);
+        } else {
+          ctx.beginPath();
+          ctx.arc(0, 0, p.size / 2, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        ctx.restore();
+      }
+      frames++;
+      if (alive > 0 && frames < maxFrames) {
+        confettiRAF = requestAnimationFrame(frame);
+      } else {
+        ctx.clearRect(0, 0, W, H);
+        confettiRAF = null;
+      }
+    }
+    if (confettiRAF) cancelAnimationFrame(confettiRAF);
+    confettiRAF = requestAnimationFrame(frame);
+  }
+
+  function stopConfetti() {
+    if (confettiRAF) cancelAnimationFrame(confettiRAF);
+    confettiRAF = null;
+    const canvas = document.querySelector("[data-confetti]");
+    if (canvas) {
+      const ctx = canvas.getContext("2d");
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
   }
 
   function boot() {
@@ -688,7 +1000,15 @@
     document.querySelectorAll("[data-goto]").forEach((btn) => {
       btn.addEventListener("click", handleStepperClick);
     });
-    document.querySelector("[data-reset]")?.addEventListener("click", handleReset);
+    document.querySelectorAll("[data-reset]").forEach((btn) => {
+      btn.addEventListener("click", handleReset);
+    });
+    document.querySelectorAll("[data-modal-close]").forEach((el) => {
+      el.addEventListener("click", closeCompletionModal);
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeCompletionModal();
+    });
     initRadar();
     renderAll();
   }
