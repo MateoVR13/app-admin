@@ -1,0 +1,781 @@
+﻿<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/webp" href="assets/brand/favicon.ico" />
+    <title>Bloque 1 · Fundamentos de la administración · Universidad de América</title>
+    <meta name="description" content="Bloque 1 del programa de Administración de Empresas: fundamentos teóricos de la disciplina." />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        try {
+          var p = JSON.parse(localStorage.getItem("ua-a11y-prefs") || "{}");
+          var h = document.documentElement;
+          h.setAttribute("data-text-size", p.textSize || "md");
+          h.setAttribute("data-contrast", p.contrast || "default");
+          h.setAttribute("data-color-mode", p.colorMode || "default");
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="programa" data-program="admin">
+    <svg class="svg-defs" aria-hidden="true" focusable="false">
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></symbol>
+      <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5" /><path d="m11 6-6 6 6 6" /></symbol>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8" /><path d="M5 10v11h5v-7h4v7h5V10" /></symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2" /><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" /></symbol>
+      <symbol id="i-scan" viewBox="0 0 24 24"><path d="M5 7V5h2" /><path d="M17 5h2v2" /><path d="M19 17v2h-2" /><path d="M7 19H5v-2" /><circle cx="12" cy="12" r="3" /></symbol>
+      <symbol id="i-box" viewBox="0 0 24 24"><path d="m12 3 9 4-9 5-9-5z" /><path d="M3 7v10l9 5 9-5V7" /><path d="M12 12v10" /></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12" /><path d="M18 6L6 18" /></symbol>
+      <symbol id="i-a11y" viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="1.6" /><path d="M5 8h14" /><path d="M9 8v5" /><path d="M15 8v5" /><path d="M9 13l-2 8" /><path d="M15 13l2 8" /></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a3 3 0 0 1 3-3h13v17H7a3 3 0 0 0-3 3z" /><path d="M4 5v17" /><path d="M9 6h6" /><path d="M9 10h7" /></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.4" /><path d="M2.5 20c.5-3.6 3.4-5.5 6.5-5.5s6 1.9 6.5 5.5" /><circle cx="17" cy="8" r="2.6" /><path d="M16 14.6c2.7.4 4.7 2.4 5 5.4" /></symbol>
+      <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 7v10" /><path d="M9.5 9.5c0-1.2 1-2 2.5-2s2.5.7 2.5 2-1 1.6-2.5 1.6-2.5.4-2.5 1.6 1 2 2.5 2 2.5-.8 2.5-2" /></symbol>
+      <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2" /><path d="M9 6V3M15 6V3M9 21v-3M15 21v-3M21 9h-3M21 15h-3M3 9h3M3 15h3" /><rect x="10" y="10" width="4" height="4" /></symbol>
+      <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 11v6" /><circle cx="12" cy="8" r="0.6" fill="currentColor" /></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.4 8 9 4.6-.6 8-4.5 8-9V6Z" /></symbol>
+      <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="5" /><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none" /></symbol>
+      <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="m15 9-2 5-5 2 2-5z" /></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6" /><path d="m20 20-4-4" /></symbol>
+      <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20h4l10-10-4-4L4 16Z" /><path d="m14 6 4 4" /></symbol>
+      <symbol id="i-network" viewBox="0 0 24 24"><rect x="3" y="3" width="6" height="6" /><rect x="15" y="3" width="6" height="6" /><rect x="9" y="15" width="6" height="6" /><path d="M6 9v3h12V9" /><path d="M12 12v3" /></symbol>
+      <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6" width="14" height="12" rx="2" /><path d="m17 10 4-2v8l-4-2z" /></symbol>
+      <symbol id="i-headphones" viewBox="0 0 24 24"><path d="M4 14a8 8 0 0 1 16 0v3" /><path d="M4 14v4a2 2 0 0 0 2 2h2v-7H6a2 2 0 0 0-2 2Z" /><path d="M20 14v4a2 2 0 0 1-2 2h-2v-7h2a2 2 0 0 1 2 2Z" /></symbol>
+      <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h9l5 5v13H6Z" /><path d="M14 3v6h6" /><path d="M9 14h6" /><path d="M9 18h4" /></symbol>
+      <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" /><circle cx="9" cy="10" r="2" /><path d="m4 18 5-5 5 5 3-3 3 3" /></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="4" /><circle cx="12" cy="12" r="3" /><path d="M16.5 7.5h.01" /></symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 8h2V5h-2a4 4 0 0 0-4 4v2H8v3h2v5h3v-5h3l1-3h-4V9a1 1 0 0 1 1-1Z" /></symbol>
+      <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M4 8a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3Z" /><path d="m10 9 5 3-5 3Z" /></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M6 10v9" /><path d="M6 6v.01" /><path d="M11 19v-9" /><path d="M11 14a4 4 0 0 1 8 0v5" /></symbol>
+    </svg>
+
+    <svg class="a11y-defs" aria-hidden="true" focusable="false">
+      <defs>
+        <filter id="a11y-protanopia"><feColorMatrix type="matrix" values="0.567,0.433,0,0,0  0.558,0.442,0,0,0  0,0.242,0.758,0,0  0,0,0,1,0" /></filter>
+        <filter id="a11y-deuteranopia"><feColorMatrix type="matrix" values="0.625,0.375,0,0,0  0.7,0.3,0,0,0  0,0.3,0.7,0,0  0,0,0,1,0" /></filter>
+        <filter id="a11y-tritanopia"><feColorMatrix type="matrix" values="0.95,0.05,0,0,0  0,0.433,0.567,0,0  0,0.475,0.525,0,0  0,0,0,1,0" /></filter>
+        <filter id="a11y-achromatopsia"><feColorMatrix type="matrix" values="0.299,0.587,0.114,0,0  0.299,0.587,0.114,0,0  0.299,0.587,0.114,0,0  0,0,0,1,0" /></filter>
+      </defs>
+    </svg>
+
+    <div class="page-content">
+    <div class="app-shell">
+
+      <aside class="sidebar" aria-label="Navegación principal">
+        <a class="sidebar-brand" href="app.html#inicio" aria-label="Universidad de América">
+          <img src="assets/brand/logo-ua.png" alt="Universidad de América" />
+        </a>
+
+        <nav class="sidebar-nav">
+          <span class="sidebar-nav-label">Aplicativo</span>
+          <a class="sidebar-link" href="app.html#inicio">
+            <svg aria-hidden="true"><use href="#i-home"></use></svg><span>Inicio</span>
+          </a>
+          <a class="sidebar-link is-active" href="app.html#programas">
+            <svg aria-hidden="true"><use href="#i-briefcase"></use></svg><span>Programas</span>
+          </a>
+          <a class="sidebar-link" href="app.html#experiencia">
+            <svg aria-hidden="true"><use href="#i-scan"></use></svg><span>Experiencia</span>
+          </a>
+          <a class="sidebar-link" href="app.html#recursos">
+            <svg aria-hidden="true"><use href="#i-box"></use></svg><span>Recursos</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <b>Universidad de América</b>
+          Facultad de Ciencias Administrativas · Bogotá
+        </div>
+      </aside>
+
+      <div class="workspace">
+
+        <!-- HEADER DEL BLOQUE -->
+        <header class="bloque-head">
+          <div class="bloque-head-inner">
+            <nav class="module-breadcrumb" aria-label="Migas de pan">
+              <a href="programa-administracion.html">
+                <svg aria-hidden="true"><use href="#i-arrow-left"></use></svg>
+                Administración de Empresas
+              </a>
+              <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+              <span>Bloque 1</span>
+            </nav>
+
+            <span class="bloque-head-tag"><b>1</b>Bloque teórico</span>
+
+            <h1>
+              Fundamentos de la <em>administración</em>.
+            </h1>
+
+            <p class="bloque-head-lede">
+              Toda empresa que conoces —desde la tienda de tu barrio
+              hasta Bavaria— tiene a alguien tomando decisiones todos
+              los días: a quién contratar, qué precio cobrar, cómo
+              organizar a la gente. Eso es administrar. En este bloque
+              vas a entender de dónde sale esa disciplina y cómo
+              <b>leer cualquier organización</b> con criterio.
+            </p>
+
+            <div class="bloque-head-meta">
+              <span class="module-meta-pill">
+                <svg aria-hidden="true"><use href="#i-book"></use></svg>
+                <b>6</b> temas
+              </span>
+              <span class="module-meta-pill">
+                <svg aria-hidden="true"><use href="#i-clock"></use></svg>
+                <b>~75</b> min
+              </span>
+            </div>
+          </div>
+          <aside class="bloque-head-figure" aria-hidden="true">
+            <img src="assets/images/hero-admin-b1-fundamentos.png" alt="" loading="lazy" />
+          </aside>
+        </header>
+
+        <!-- LAYOUT 2 COLUMNAS: contenido + TOC -->
+        <div class="bloque-layout">
+
+          <!-- ============================
+               CONTENIDO
+          ============================ -->
+          <main class="bloque-content">
+
+            <!-- TEMA 01 — INTRODUCCIÓN -->
+            <section class="module-tema" id="introduccion" data-tema>
+              <header class="module-tema-head" data-reveal>
+                <span class="module-tema-num">01</span>
+                <div class="module-tema-copy">
+                  <span class="module-tema-eyebrow">Introducción</span>
+                  <h2 class="module-tema-title">Administrar no es solo mandar: es lograr que las cosas pasen.</h2>
+                  <p class="module-tema-lede">
+                    Si alguna vez organizaste un viaje con amigos, ya
+                    administraste algo: tuviste que decidir destino,
+                    repartir gastos, ponerle ritmo al grupo y verificar
+                    al final si valió la pena. Administrar una empresa
+                    es eso mismo, pero con mucho más en juego.
+                  </p>
+                </div>
+        </header>
+
+              <div class="module-aha" data-reveal>
+                <div class="module-aha-icon"><img src="assets/images/aha-admin-b1-panaderia.png" alt="" loading="lazy" /></div>
+                <div class="module-aha-copy">
+                  <small>Para entenderlo</small>
+                  <p>
+                    Imagina una panadería del barrio. Cada mañana
+                    alguien decide <b>qué</b> hornear, <b>cuánto</b>
+                    hornear, <b>quién</b> atiende la caja y <b>a qué
+                    precio</b> vender. Si esa persona decide bien, el
+                    pan se vende y la panadería sigue abierta. Si
+                    decide mal —por ejemplo, hornea poco y se queda
+                    sin pan a las 10 a.m.— pierde plata y clientes.
+                    Esa persona es la que administra.
+                  </p>
+                </div>
+              </div>
+
+              <div class="module-split" data-reveal>
+                <div class="module-prose">
+                  <p>
+                    En una empresa, <b>administrar</b> significa
+                    definir prioridades, organizar el trabajo, guiar a
+                    las personas y verificar si las decisiones están
+                    produciendo valor. No se reduce a dar órdenes:
+                    implica entender al mismo tiempo lo humano, lo
+                    técnico y lo económico.
+                  </p>
+                  <p>
+                    Se estudia como disciplina porque tiene <em>conceptos
+                    propios</em>, <em>métodos comprobados</em> y una
+                    <em>historia</em> que nos dice qué funciona y qué
+                    falla. Lo que aprendas aquí te servirá para
+                    interpretar decisiones gerenciales que verás cada
+                    día en las noticias y en cualquier empresa donde
+                    trabajes.
+                  </p>
+                </div>
+
+                <aside class="module-split-aside">
+                  <h5>Dos palabras parecidas que no son lo mismo</h5>
+                  <dl>
+                    <div>
+                      <dt>Eficiencia</dt>
+                      <dd>Hacer las cosas con poco desperdicio. Hornear el pan usando solo la harina necesaria.</dd>
+                    </div>
+                    <div>
+                      <dt>Eficacia</dt>
+                      <dd>Lograr el objetivo correcto. Hornear el pan que la gente sí quiere comprar.</dd>
+                    </div>
+                  </dl>
+                </aside>
+              </div>
+
+              <details class="module-accordion" data-reveal>
+                <summary class="module-accordion-head">
+                  <span class="module-accordion-tag">+</span>
+                  <span class="module-accordion-title">¿Una empresa puede ser eficiente y no ser eficaz?</span>
+                  <span class="module-accordion-toggle"></span>
+                </summary>
+                <div class="module-accordion-body">
+                  <p>
+                    Sí, y es uno de los errores más comunes. Imagina
+                    una fábrica que <b>produce 1.000 sillas al día con
+                    cero desperdicio</b> (super eficiente), pero
+                    resulta que nadie quiere ese modelo de silla. Es
+                    eficientísima haciendo algo que nadie le compra.
+                    Es ineficaz.
+                  </p>
+                  <p>
+                    Lo contrario también pasa: una empresa <b>logra su
+                    objetivo</b> (es eficaz) pero gasta el doble de lo
+                    necesario en lograrlo (ineficiente). Las dos
+                    fallas son comunes. Un buen administrador busca
+                    las dos cosas al tiempo.
+                  </p>
+                </div>
+              </details>
+
+              <div class="module-callout" data-reveal>
+                <small>Lo que vas a poder hacer</small>
+                <p>
+                  Después de este bloque podrás analizar la
+                  administración como una disciplina: conectar sus
+                  conceptos, su historia y su rol profesional para
+                  interpretar decisiones que se toman en organizaciones
+                  reales hoy.
+                </p>
+              </div>
+
+            </section>
+
+            <!-- TEMA 02 — CONCEPTOS ESENCIALES -->
+            <section class="module-tema" id="conceptos" data-tema>
+              <header class="module-tema-head" data-reveal>
+                <span class="module-tema-num">02</span>
+                <div class="module-tema-copy">
+                  <span class="module-tema-eyebrow">Marco conceptual</span>
+                  <h2 class="module-tema-title">Tres palabras que se parecen pero no son lo mismo.</h2>
+                  <p class="module-tema-lede">
+                    Administración, organización y gestión suenan
+                    parecidas y a veces se usan como sinónimos. No lo
+                    son. Fíjalas bien ahora porque las vas a usar todo
+                    el programa.
+                  </p>
+                </div>
+              </header>
+
+              <div class="module-tabs" data-tabs data-reveal>
+                <div class="module-tabs-nav" role="tablist">
+                  <button class="module-tabs-btn is-active" type="button" role="tab" data-tab="c-admin">
+                    <span>01</span> Administración
+                  </button>
+                  <button class="module-tabs-btn" type="button" role="tab" data-tab="c-org">
+                    <span>02</span> Organización
+                  </button>
+                  <button class="module-tabs-btn" type="button" role="tab" data-tab="c-gestion">
+                    <span>03</span> Gestión
+                  </button>
+                </div>
+                <div class="module-tabs-panels">
+                  <div class="module-tabs-panel is-active" role="tabpanel" data-panel="c-admin">
+                    <h5>Administración · el proceso completo</h5>
+                    <p>
+                      Es el proceso de <b>planear, organizar, dirigir y
+                      controlar</b> los recursos de una empresa para
+                      alcanzar sus objetivos de forma eficiente y
+                      eficaz. Es lo que vas a aprender a hacer en esta
+                      carrera. Piensa en ella como el «libreto»
+                      completo del negocio.
+                    </p>
+                    <div class="module-tabs-panel-meta">
+                      <span>Ejemplo · <b>diseñar el plan anual de la panadería</b></span>
+                    </div>
+                  </div>
+                  <div class="module-tabs-panel" role="tabpanel" data-panel="c-org">
+                    <h5>Organización · el escenario donde todo pasa</h5>
+                    <p>
+                      Es el <b>sistema social</b> compuesto por
+                      personas, procesos, tecnología, reglas, cultura y
+                      objetivos. Es el lugar donde aplicas la
+                      administración. Toda empresa, ONG, hospital o
+                      universidad es una organización. Tu colegio, un
+                      equipo de fútbol y la Alcaldía también.
+                    </p>
+                    <div class="module-tabs-panel-meta">
+                      <span>Ejemplo · <b>la panadería como tal: dueño, panaderos, hornos, recetas, marca</b></span>
+                    </div>
+                  </div>
+                  <div class="module-tabs-panel" role="tabpanel" data-panel="c-gestion">
+                    <h5>Gestión · la práctica diaria</h5>
+                    <p>
+                      Es la <b>capacidad cotidiana</b> de tomar
+                      decisiones, asignar recursos, resolver tensiones
+                      y dar seguimiento a resultados. Si administrar es
+                      escribir el libreto, gestionar es actuarlo todos
+                      los días. Requiere criterio técnico y
+                      sensibilidad humana al tiempo.
+                    </p>
+                    <div class="module-tabs-panel-meta">
+                      <span>Ejemplo · <b>decidir hoy a quién prestarle el horno cuando dos panaderos lo necesitan</b></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="module-quote" data-reveal>
+                <p>
+                  La administración es el proceso de planificar, organizar, dirigir
+                  y controlar el uso de los recursos para alcanzar los objetivos
+                  organizacionales de manera eficiente y eficaz.
+                </p>
+                <footer>Fuente · <b>Robbins &amp; Coulter</b> · Administración (2014)</footer>
+              </div>
+            </section>
+
+            <!-- TEMA 03 — RECURSOS -->
+            <section class="module-tema" id="recursos" data-tema>
+              <header class="module-tema-head" data-reveal>
+                <span class="module-tema-num">03</span>
+                <div class="module-tema-copy">
+                  <span class="module-tema-eyebrow">Qué administra una empresa</span>
+                  <h2 class="module-tema-title">Toda decisión gerencial mueve al menos uno de estos seis recursos.</h2>
+                  <p class="module-tema-lede">
+                    Cuando alguien dice «hay que mejorar la empresa»,
+                    en realidad está hablando de cambiar algo de estos
+                    seis. Aprender a verlos por separado es el primer
+                    paso para tomar decisiones con criterio en
+                    cualquier cargo gerencial.
+                  </p>
+                </div>
+              </header>
+
+              <div class="module-aha" data-reveal>
+                <div class="module-aha-icon"><img src="assets/images/aha-admin-b1-contratacion.png" alt="" loading="lazy" /></div>
+                <div class="module-aha-copy">
+                  <small>Para entenderlo</small>
+                  <p>
+                    Cuando un gerente dice «vamos a contratar dos
+                    diseñadores nuevos», en una sola frase está
+                    moviendo cinco recursos al tiempo: <b>capital</b>
+                    (los sueldos), <b>talento</b> (sus capacidades),
+                    <b>tiempo</b> (cuánto tarda en buscarlos),
+                    <b>tecnología</b> (equipos y software) e
+                    <b>información</b> (los datos que les pasen para
+                    trabajar). Por eso ninguna decisión gerencial es
+                    tan «simple» como suena.
+                  </p>
+                </div>
+              </div>
+
+              <div class="module-grid is-3" data-reveal>
+                <article class="module-card">
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-clock"></use></svg></div>
+                  <h4 class="module-card-title">Tiempo</h4>
+                  <p class="module-card-text">Prioridades, calendario, ciclos de mejora y oportunidad.</p>
+                </article>
+                <article class="module-card">
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-users"></use></svg></div>
+                  <h4 class="module-card-title">Talento</h4>
+                  <p class="module-card-text">Capacidades, motivación, liderazgo, cultura y aprendizaje.</p>
+                </article>
+                <article class="module-card">
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-coin"></use></svg></div>
+                  <h4 class="module-card-title">Capital</h4>
+                  <p class="module-card-text">Presupuesto, flujo de caja, inversión y sostenibilidad.</p>
+                </article>
+                <article class="module-card">
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-cpu"></use></svg></div>
+                  <h4 class="module-card-title">Tecnología</h4>
+                  <p class="module-card-text">Herramientas, datos, automatización y productividad.</p>
+                </article>
+                <article class="module-card">
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-info"></use></svg></div>
+                  <h4 class="module-card-title">Información</h4>
+                  <p class="module-card-text">Indicadores, diagnósticos, evidencia y retroalimentación.</p>
+                </article>
+                <article class="module-card">
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-shield"></use></svg></div>
+                  <h4 class="module-card-title">Reputación</h4>
+                  <p class="module-card-text">Confianza de clientes, aliados, comunidad y colaboradores.</p>
+                </article>
+              </div>
+
+              <figure class="module-infografia" data-reveal>
+                <div class="module-infografia-image">
+                  <img src="assets/images/infografia-admin-b1-mapa-recursos.png" alt="Diagnostica una empresa real en seis preguntas" loading="lazy" />
+                </div>
+                <div class="module-infografia-text">
+                  <small>Infografía</small>
+                  <h5>Diagnostica una empresa real en seis preguntas</h5>
+                  <p>Esta plantilla descargable te da seis casillas: una por cada recurso (Tiempo, Talento, Capital, Tecnología, Información, Reputación). En cada una escribes lo que la empresa <b>tiene</b> y lo que le <b>falta</b>.</p>
+                  <p>Es el mismo ejercicio que hace un consultor cuando entra por primera vez a una organización. Si la usas con una empresa que conoces, ya estás haciendo administración aplicada.</p>
+                </div>
+              </figure>
+            </section>
+
+            <!-- TEMA 04 — EVOLUCIÓN DEL PENSAMIENTO -->
+            <section class="module-tema" id="evolucion" data-tema>
+              <header class="module-tema-head" data-reveal>
+                <span class="module-tema-num">04</span>
+                <div class="module-tema-copy">
+                  <span class="module-tema-eyebrow">Evolución del pensamiento</span>
+                  <h2 class="module-tema-title">De la eficiencia mecánica a la empresa como sistema humano.</h2>
+                  <p class="module-tema-lede">
+                    Tres escuelas marcaron la forma en que entendemos hoy la
+                    administración. Cada una aporta una lente útil; ninguna agota
+                    la realidad organizacional.
+                  </p>
+                </div>
+        </header>
+
+              <!-- Sub-tema: línea de tiempo -->
+              <div class="module-subtema">
+                <h3 class="module-subtema-title">Línea de tiempo</h3>
+                <div class="module-timeline" data-reveal>
+                  <div class="module-timeline-step">
+                    <b>~1911</b>
+                    <h5>Administración científica</h5>
+                    <span>Taylor estudia el trabajo como ingeniero: tiempos, movimientos, eficiencia.</span>
+                  </div>
+                  <div class="module-timeline-step">
+                    <b>~1916</b>
+                    <h5>Teoría clásica</h5>
+                    <span>Fayol observa la empresa completa: funciones, estructura, dirección.</span>
+                  </div>
+                  <div class="module-timeline-step">
+                    <b>~1932</b>
+                    <h5>Relaciones humanas</h5>
+                    <span>Mayo descubre que el grupo, el clima y la pertenencia mueven la productividad.</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sub-tema: cards comparativos -->
+              <div class="module-subtema">
+                <h3 class="module-subtema-title">Lo que aporta y lo que limita a cada escuela</h3>
+                <div class="module-grid is-3" data-reveal>
+                  <article class="module-card is-compare">
+                    <span class="module-card-tag">Administración científica</span>
+                    <span class="module-card-author">Autor · <b>Frederick Taylor</b></span>
+                    <p class="module-card-text">
+                      Propuso estudiar el trabajo de forma sistemática: medir tareas,
+                      eliminar movimientos innecesarios, estandarizar métodos y
+                      aumentar productividad.
+                    </p>
+                    <div class="module-card-compare">
+                      <div class="pro">
+                        <span>Aporta</span>
+                        <p>Orden, medición, especialización y eficiencia.</p>
+                      </div>
+                      <div class="con">
+                        <span>Límite</span>
+                        <p>Puede reducir a la persona a un ejecutor si se aplica sin criterio humano.</p>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="module-card is-compare">
+                    <span class="module-card-tag">Teoría clásica</span>
+                    <span class="module-card-author">Autor · <b>Henri Fayol</b></span>
+                    <p class="module-card-text">
+                      Observó la empresa desde la dirección general. Sus principios
+                      dieron forma a funciones, jerarquías, unidad de mando,
+                      coordinación y responsabilidad.
+                    </p>
+                    <div class="module-card-compare">
+                      <div class="pro">
+                        <span>Aporta</span>
+                        <p>Claridad de autoridad, estructura y funciones administrativas.</p>
+                      </div>
+                      <div class="con">
+                        <span>Límite</span>
+                        <p>Puede volverse rígida si la estructura pesa más que el propósito.</p>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="module-card is-compare">
+                    <span class="module-card-tag">Relaciones humanas</span>
+                    <span class="module-card-author">Autor · <b>Elton Mayo</b></span>
+                    <p class="module-card-text">
+                      Los estudios de Hawthorne mostraron que la productividad
+                      también depende de pertenencia, atención, comunicación y
+                      clima social.
+                    </p>
+                    <div class="module-card-compare">
+                      <div class="pro">
+                        <span>Aporta</span>
+                        <p>Motivación, escucha, cohesión y seguridad psicológica.</p>
+                      </div>
+                      <div class="con">
+                        <span>Límite</span>
+                        <p>No reemplaza la necesidad de procesos y objetivos claros.</p>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <!-- Síntesis como spotlight oscuro -->
+              <div class="module-spotlight" data-reveal>
+                <small>Síntesis</small>
+                <h4>Una organización necesita eficiencia, estructura y humanidad.</h4>
+                <p>
+                  El administrador moderno no elige una sola escuela: integra
+                  herramientas según el problema, el contexto y las personas
+                  involucradas. Taylor te ayuda a medir, Fayol a estructurar y
+                  Mayo a escuchar; en una decisión real probablemente uses las tres.
+                </p>
+              </div>
+
+              <div class="module-quickcheck" data-quickcheck data-reveal>
+                <div class="module-quickcheck-head">
+                  <small>Comprueba si lo entendiste</small>
+                </div>
+                <p class="module-quickcheck-q">
+                  Una empresa decide cronometrar cada movimiento de
+                  sus operarios para detectar pasos innecesarios y
+                  optimizar la producción. ¿Qué escuela administrativa
+                  está aplicando?
+                </p>
+                <div class="module-quickcheck-opts">
+                  <button type="button" class="module-quickcheck-opt" data-letter="A" data-correct="true">
+                    <span>Administración científica de Taylor: midiendo tiempos y movimientos para mejorar la productividad.</span>
+                  </button>
+                  <button type="button" class="module-quickcheck-opt" data-letter="B">
+                    <span>Teoría clásica de Fayol: enfocada en la estructura general de la empresa.</span>
+                  </button>
+                  <button type="button" class="module-quickcheck-opt" data-letter="C">
+                    <span>Relaciones humanas de Mayo: porque toma en cuenta a los operarios.</span>
+                  </button>
+                </div>
+                <div class="module-quickcheck-feedback"
+                  data-correct-msg="Exacto. Cronometrar tareas y eliminar movimientos innecesarios es la huella exacta de Taylor. Sirve para ganar eficiencia, pero <b>cuidado</b>: si se aplica sin sensibilidad puede reducir a la persona a un ejecutor mecánico."
+                  data-wrong-msg="No es esa. Fayol miraba el organigrama y la dirección general; Mayo descubrió que las personas no son máquinas. <b>Cronometrar tareas es la marca registrada de Taylor</b> y su Administración Científica. La respuesta correcta es la A."></div>
+              </div>
+
+            </section>
+
+            <!-- TEMA 05 — ROL PROFESIONAL -->
+            <section class="module-tema" id="rol" data-tema>
+              <header class="module-tema-head" data-reveal>
+                <span class="module-tema-num">05</span>
+                <div class="module-tema-copy">
+                  <span class="module-tema-eyebrow">Rol profesional</span>
+                  <h2 class="module-tema-title">Qué hace, en concreto, un administrador de empresas.</h2>
+                  <p class="module-tema-lede">
+                    En lugar de una lista abstracta de funciones, mira el rol como
+                    cuatro verbos que se encadenan. Cada decisión gerencial seria
+                    pasa por los cuatro.
+                  </p>
+                </div>
+              </header>
+
+              <div class="module-grid is-4" data-reveal>
+                <article class="module-card is-step">
+                  <div class="module-card-step"><b>01</b> Diagnosticas</div>
+                  <p class="module-card-text">
+                    Lees datos, escuchas a personas, identificas causas y distingues
+                    síntomas de problemas reales.
+                  </p>
+                </article>
+                <article class="module-card is-step">
+                  <div class="module-card-step"><b>02</b> Diseñas</div>
+                  <p class="module-card-text">
+                    Construyes planes, procesos, estructuras, equipos y mecanismos
+                    de seguimiento.
+                  </p>
+                </article>
+                <article class="module-card is-step">
+                  <div class="module-card-step"><b>03</b> Decides</div>
+                  <p class="module-card-text">
+                    Priorizas recursos cuando hay incertidumbre, presión y
+                    consecuencias humanas.
+                  </p>
+                </article>
+                <article class="module-card is-step">
+                  <div class="module-card-step"><b>04</b> Movilizas</div>
+                  <p class="module-card-text">
+                    Conectas propósito, comunicación, liderazgo y motivación para
+                    lograr ejecución.
+                  </p>
+                </article>
+              </div>
+
+              <div class="module-flashcard" data-reveal>
+                <div class="module-flashcard-q">
+                  <small>Piensa antes de ver la respuesta</small>
+                  <p>
+                    El gerente de una cadena de gimnasios se entera
+                    que un local lleva tres meses con baja en
+                    asistencia. ¿Por cuál de los cuatro verbos debería
+                    empezar?
+                  </p>
+                </div>
+                <button type="button" class="module-flashcard-reveal">Ver respuesta</button>
+                <div class="module-flashcard-a">
+                  <small>Respuesta</small>
+                  <p>
+                    Por <b>diagnosticar</b>. Sin entender por qué bajó
+                    (¿abrieron un gimnasio nuevo cerca?, ¿hay
+                    descontento con el personal?, ¿cambió el horario
+                    del trabajo de los socios?), cualquier decisión
+                    es a ciegas. Solo después de diagnosticar tiene
+                    sentido <b>diseñar</b> un plan, <b>decidir</b>
+                    qué cambiar y <b>movilizar</b> al equipo para
+                    ejecutarlo. Saltarse el primer paso es la causa
+                    más común de fracasos gerenciales.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <!-- TEMA 06 — ACTIVIDAD DE COMPRENSIÓN -->
+            <section class="module-tema" id="actividad" data-tema>
+              <header class="module-tema-head" data-reveal>
+                <span class="module-tema-num">06</span>
+                <div class="module-tema-copy">
+                  <span class="module-tema-eyebrow">Cierre del bloque</span>
+                  <h2 class="module-tema-title">Pon a prueba lo que acabas de aprender.</h2>
+                  <p class="module-tema-lede">
+                    Antes de seguir, haz este ejercicio breve. No tiene
+                    respuesta única: lo importante es que clasifiques con criterio.
+                  </p>
+                </div>
+              </header>
+
+              <div class="module-callout is-activity" data-reveal>
+                <small>Actividad de comprensión</small>
+                <h4>Analiza una empresa que conozcas</h4>
+                <p>
+                  Piensa en una empresa cercana (donde trabaja alguien de tu familia,
+                  un comercio del barrio, una marca que admires) y elige
+                  <b>un problema reciente</b> que esté enfrentando. Clasifícalo en
+                  una de estas cinco categorías: eficiencia, estructura, motivación,
+                  estrategia o control. Esta clasificación será la base del caso
+                  integrador del programa.
+                </p>
+              </div>
+
+              <figure class="module-infografia is-reversed" data-reveal>
+                <div class="module-infografia-image">
+                  <img src="assets/images/infografia-admin-b1-sintesis-bloque.png" alt="Los 6 temas del bloque, en una sola página" loading="lazy" />
+                </div>
+                <div class="module-infografia-text">
+                  <small>Infografía</small>
+                  <h5>Los 6 temas del bloque, en una sola página</h5>
+                  <p>Una hoja con los conceptos clave: qué es administrar, los tres conceptos esenciales, los seis recursos, las tres escuelas (Taylor, Fayol, Mayo) y los cuatro verbos del rol profesional.</p>
+                  <p>Útil como repaso rápido antes de seguir, o como material para revisar después de meses. Imprímela y pégala donde la veas mientras estudias el bloque 2.</p>
+                </div>
+              </figure>
+            </section>
+
+          </main>
+
+          <!-- ============================
+               TOC STICKY
+          ============================ -->
+          <aside class="bloque-toc" aria-label="Índice del bloque">
+            <div class="bloque-toc-head">
+              <small>En este bloque</small>
+              <span>6 temas</span>
+            </div>
+            <ol class="bloque-toc-list" data-toc>
+              <li><a class="bloque-toc-link" href="#introduccion">Introducción</a></li>
+              <li><a class="bloque-toc-link" href="#conceptos">Conceptos esenciales</a></li>
+              <li><a class="bloque-toc-link" href="#recursos">Recursos de la empresa</a></li>
+              <li><a class="bloque-toc-link" href="#evolucion">Evolución del pensamiento</a></li>
+              <li><a class="bloque-toc-link" href="#rol">Rol profesional</a></li>
+              <li><a class="bloque-toc-link" href="#actividad">Actividad de comprensión</a></li>
+            </ol>
+            <div class="bloque-toc-actions">
+              <a class="bloque-toc-action is-disabled" aria-disabled="true">Inicio del programa</a>
+              <a class="bloque-toc-action is-next" href="programa-admin-bloque-2.html">Bloque 2 · Proceso administrativo</a>
+            </div>
+          </aside>
+        </div>
+
+        <!-- FOOTER NAV: anterior / siguiente -->
+        <nav class="bloque-nav-foot" aria-label="Navegación entre bloques">
+          <a class="bloque-nav-card is-disabled" aria-disabled="true">
+            <small><svg aria-hidden="true"><use href="#i-arrow-left"></use></svg> Bloque anterior</small>
+            <h5>—</h5>
+          </a>
+          <a class="bloque-nav-card is-next" href="programa-admin-bloque-2.html">
+            <small>Siguiente bloque <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg></small>
+            <h5>Bloque 2 · Proceso administrativo</h5>
+          </a>
+        </nav>
+
+        <footer class="workspace-footer">
+          <div class="workspace-footer-meta">
+            <b>Universidad de América</b> · Ciencias Administrativas · Bogotá
+          </div>
+          <div class="workspace-footer-social" aria-label="Redes sociales">
+            <a href="#" aria-label="Instagram"><svg><use href="#i-instagram"></use></svg></a>
+            <a href="#" aria-label="Facebook"><svg><use href="#i-facebook"></use></svg></a>
+            <a href="#" aria-label="YouTube"><svg><use href="#i-youtube"></use></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg><use href="#i-linkedin"></use></svg></a>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+    </div>
+
+    <button class="a11y-fab" type="button" aria-label="Opciones de accesibilidad" aria-expanded="false" data-a11y-fab>
+      <svg aria-hidden="true"><use href="#i-a11y"></use></svg>
+    </button>
+
+    <aside class="a11y-panel" role="dialog" aria-label="Panel de accesibilidad" data-a11y-panel>
+      <div class="a11y-panel-head">
+        <div>
+          <h3>Accesibilidad</h3>
+          <small>Ajusta la experiencia</small>
+        </div>
+        <button class="a11y-panel-close" type="button" aria-label="Cerrar panel" data-a11y-close>
+          <svg aria-hidden="true"><use href="#i-close"></use></svg>
+        </button>
+      </div>
+
+      <div class="a11y-group">
+        <span class="a11y-group-label">Tamaño de fuente <b data-mono>A</b></span>
+        <div class="a11y-options">
+          <button type="button" data-pref="textSize" data-value="sm"><span>A</span></button>
+          <button type="button" data-pref="textSize" data-value="md"><span>A</span></button>
+          <button type="button" data-pref="textSize" data-value="lg"><span>A</span></button>
+          <button type="button" data-pref="textSize" data-value="xl"><span>A</span></button>
+        </div>
+      </div>
+
+      <div class="a11y-group">
+        <span class="a11y-group-label">Contraste</span>
+        <div class="a11y-options is-2">
+          <button type="button" data-pref="contrast" data-value="default">Normal</button>
+          <button type="button" data-pref="contrast" data-value="high">Alto</button>
+        </div>
+      </div>
+
+      <div class="a11y-group">
+        <span class="a11y-group-label">Daltonismo</span>
+        <div class="a11y-options is-5" style="grid-template-columns: repeat(5, minmax(0,1fr));">
+          <button type="button" data-pref="colorMode" data-value="default" title="Sin filtro">Off</button>
+          <button type="button" data-pref="colorMode" data-value="protanopia" title="Protanopia (rojo)">Pro</button>
+          <button type="button" data-pref="colorMode" data-value="deuteranopia" title="Deuteranopia (verde)">Deu</button>
+          <button type="button" data-pref="colorMode" data-value="tritanopia" title="Tritanopia (azul)">Tri</button>
+          <button type="button" data-pref="colorMode" data-value="achromatopsia" title="Achromatopsia (grises)">Acro</button>
+        </div>
+      </div>
+
+      <button type="button" class="a11y-reset" data-a11y-reset>↺ Restaurar valores por defecto</button>
+    </aside>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="src/js/accessibility.js" defer></script>
+    <script src="src/js/programa-modulo.js" defer></script>
+  </body>
+</html>

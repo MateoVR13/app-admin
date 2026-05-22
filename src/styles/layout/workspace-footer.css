@@ -1,0 +1,58 @@
+/* ============================================================
+   WORKSPACE FOOTER — minimal
+   ============================================================ */
+.workspace-footer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 18px;
+  align-items: center;
+  padding: 22px clamp(28px, 4vw, 56px);
+  border-top: 1px solid var(--paper-line);
+  background: var(--paper-soft);
+}
+
+.workspace-footer-meta {
+  font-family: var(--font-mono);
+  font-size: var(--font-mono-sm);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.workspace-footer-meta b { color: var(--ua-green-900); }
+
+.workspace-footer-social {
+  display: flex;
+  gap: 8px;
+}
+
+.workspace-footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: var(--slate);
+  border: 1px solid var(--paper-line);
+  color: var(--muted);
+  transition:
+    color var(--motion-fast) var(--ease-out),
+    background var(--motion-fast) var(--ease-out),
+    border-color var(--motion-fast) var(--ease-out),
+    transform var(--motion-fast) var(--ease-out);
+}
+
+.workspace-footer-social a:hover {
+  color: var(--ua-green-900);
+  background: var(--ua-green-50);
+  border-color: var(--ua-green-700);
+  transform: translateY(-2px);
+}
+
+.workspace-footer-social svg { width: 16px; height: 16px; }
+
+@media (max-width: 640px) {
+  .workspace-footer { grid-template-columns: 1fr; justify-items: start; gap: 14px; }
+}

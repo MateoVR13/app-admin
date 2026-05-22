@@ -1,0 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,600;1,700&family=JetBrains+Mono:wght@400;500;700;800&display=swap");
+
+@import "./src/styles/abstracts/tokens.css";
+@import "./src/styles/base/base.css";
+
+@import "./src/styles/sections/landing-hero.css";
+@import "./src/styles/sections/accessibility.css";

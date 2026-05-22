@@ -1,0 +1,295 @@
+/* ============================================================
+   ACCESSIBILITY — panel flotante + modificadores globales
+   - Tamaño de fuente
+   - Modo de contraste
+   - Simulación de daltonismo (CMV via SVG filters)
+   ============================================================ */
+
+/* ============================================================
+   1. ESCALA DE FUENTE — multiplicador en root
+   ============================================================ */
+html[data-text-size="sm"]  { font-size: 14px; }
+html[data-text-size="md"]  { font-size: 16px; } /* default */
+html[data-text-size="lg"]  { font-size: 18px; }
+html[data-text-size="xl"]  { font-size: 20px; }
+
+/* ============================================================
+   2. CONTRASTE — high contrast overrides
+   ============================================================ */
+html[data-contrast="high"] {
+  --paper:          #fff8d4;
+  --paper-soft:     #fff3b8;
+  --paper-warm:     #fff8d4;
+  --paper-deep:     #fff0a0;
+  --paper-line:     #5a4a00;
+  --paper-line-strong: #3a3000;
+
+  --slate:          #ffffff;
+  --slate-soft:     #ffffff;
+  --slate-line:     #5a4a00;
+
+  --ink:            #000000;
+  --ink-soft:       #0a0a0a;
+  --muted:          #1a1a1a;
+  --muted-soft:     #2a2a2a;
+  --faint:          #3a3a3a;
+  --line:           #5a4a00;
+
+  --ua-green-900:   #003020;
+  --ua-green-800:   #003020;
+  --ua-green-700:   #003020;
+  --ua-yellow:      #ffc800;
+  --ua-orange:      #cc4400;
+  --ua-teal:        #005a66;
+  --ua-purple:      #4a0a82;
+  --ua-lime-700:    #3a5800;
+}
+
+html[data-contrast="high"] body {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+html[data-contrast="high"] .program-card,
+html[data-contrast="high"] .process-step,
+html[data-contrast="high"] .sample-lesson,
+html[data-contrast="high"] .sample-quiz,
+html[data-contrast="high"] .sample-decision,
+html[data-contrast="high"] .sample-concept,
+html[data-contrast="high"] .footer-cta {
+  border-width: 2px;
+}
+
+html[data-contrast="high"] .btn-primary {
+  border-width: 2px;
+  border-color: #000;
+}
+
+html[data-contrast="high"] :focus-visible {
+  outline: 3px solid #000;
+  outline-offset: 4px;
+}
+
+/* ============================================================
+   3. DALTONISMO — filtros SVG aplicados al wrapper .page-content
+   Nota: NO aplicar el filter directamente al body. Los elementos
+   `position: fixed` dentro de un padre con `filter` se posicionan
+   respecto a ese padre (no al viewport), y el FAB desaparece.
+   Por eso el FAB y el panel viven FUERA de .page-content.
+   ============================================================ */
+html[data-color-mode="protanopia"]    .page-content { filter: url(#a11y-protanopia); }
+html[data-color-mode="deuteranopia"]  .page-content { filter: url(#a11y-deuteranopia); }
+html[data-color-mode="tritanopia"]    .page-content { filter: url(#a11y-tritanopia); }
+html[data-color-mode="achromatopsia"] .page-content { filter: url(#a11y-achromatopsia); }
+
+/* ============================================================
+   PANEL FLOATING — botón fijo + panel
+   ============================================================ */
+.a11y-fab {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 200;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-full);
+  background: var(--ua-green-900);
+  color: var(--ua-yellow);
+  border: 2px solid var(--ua-yellow);
+  box-shadow: var(--shadow-3);
+  cursor: pointer;
+  transition:
+    transform var(--motion-fast) var(--ease-spring),
+    background var(--motion-fast) var(--ease-out);
+}
+
+.a11y-fab:hover {
+  transform: scale(1.05);
+  background: var(--ua-green-800);
+}
+
+.a11y-fab svg {
+  width: 26px;
+  height: 26px;
+  stroke-width: 2;
+}
+
+.a11y-fab[aria-expanded="true"] {
+  background: var(--ua-yellow);
+  color: var(--ua-green-900);
+}
+
+.a11y-panel {
+  position: fixed;
+  right: 20px;
+  bottom: 88px;
+  z-index: 199;
+  width: min(340px, calc(100vw - 40px));
+  padding: 22px;
+  border-radius: var(--radius-lg);
+  background: var(--slate);
+  border: 1px solid var(--paper-line);
+  box-shadow: var(--shadow-4);
+  opacity: 0;
+  transform: translateY(12px) scale(0.97);
+  pointer-events: none;
+  transition:
+    opacity var(--motion-base) var(--ease-out),
+    transform var(--motion-base) var(--ease-out);
+}
+
+.a11y-panel.is-open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.a11y-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--paper-line);
+}
+
+.a11y-panel-head h3 {
+  font-size: 0.96rem;
+  font-weight: 800;
+  letter-spacing: -0.012em;
+  color: var(--ink);
+}
+
+.a11y-panel-head small {
+  display: block;
+  margin-top: 2px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ua-green-800);
+}
+
+.a11y-panel-close {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-full);
+  background: var(--paper-warm);
+  border: 1px solid var(--paper-line);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.a11y-panel-close:hover { background: var(--paper-deep); }
+
+.a11y-panel-close svg { width: 14px; height: 14px; stroke-width: 2.4; }
+
+.a11y-group {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.a11y-group:last-child { margin-bottom: 0; }
+
+.a11y-group-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.a11y-group-label b {
+  color: var(--ua-green-800);
+  font-weight: 800;
+}
+
+.a11y-options {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.a11y-options.is-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.a11y-options.is-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+
+.a11y-options button {
+  display: grid;
+  place-items: center;
+  height: 42px;
+  border-radius: var(--radius);
+  background: var(--paper-warm);
+  border: 1px solid var(--paper-line);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background var(--motion-fast) var(--ease-out),
+    border-color var(--motion-fast) var(--ease-out),
+    transform var(--motion-fast) var(--ease-out);
+}
+
+.a11y-options button:hover {
+  border-color: var(--ua-green-700);
+  transform: translateY(-1px);
+}
+
+.a11y-options button.is-active {
+  background: var(--ua-green-900);
+  color: var(--ua-yellow);
+  border-color: var(--ua-green-900);
+}
+
+.a11y-options button[data-text-size="sm"] span { font-size: 0.72rem; }
+.a11y-options button[data-text-size="md"] span { font-size: 0.84rem; }
+.a11y-options button[data-text-size="lg"] span { font-size: 0.94rem; }
+.a11y-options button[data-text-size="xl"] span { font-size: 1.06rem; }
+
+.a11y-reset {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.a11y-reset:hover { color: var(--ua-green-900); }
+
+/* SVG defs container */
+.a11y-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+@media (max-width: 720px) {
+  .a11y-fab { right: 14px; bottom: 14px; width: 50px; height: 50px; }
+  .a11y-fab svg { width: 22px; height: 22px; }
+  .a11y-panel { right: 14px; bottom: 76px; }
+}

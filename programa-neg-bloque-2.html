@@ -1,0 +1,509 @@
+﻿<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/webp" href="assets/brand/favicon.ico" />
+    <title>Bloque 2 · Documentación con fuentes oficiales · Universidad de América</title>
+    <meta name="description" content="Bloque 2 del programa de Negocios Internacionales: documentación de oportunidades con fuentes oficiales." />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        try {
+          var p = JSON.parse(localStorage.getItem("ua-a11y-prefs") || "{}");
+          var h = document.documentElement;
+          h.setAttribute("data-text-size", p.textSize || "md");
+          h.setAttribute("data-contrast", p.contrast || "default");
+          h.setAttribute("data-color-mode", p.colorMode || "default");
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="programa" data-program="business">
+    <svg class="svg-defs" aria-hidden="true" focusable="false">
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></symbol>
+      <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5" /><path d="m11 6-6 6 6 6" /></symbol>
+      <symbol id="i-arrow-out" viewBox="0 0 24 24"><path d="M7 17 17 7" /><path d="M9 7h8v8" /></symbol>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8" /><path d="M5 10v11h5v-7h4v7h5V10" /></symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2" /><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" /></symbol>
+      <symbol id="i-scan" viewBox="0 0 24 24"><path d="M5 7V5h2" /><path d="M17 5h2v2" /><path d="M19 17v2h-2" /><path d="M7 19H5v-2" /><circle cx="12" cy="12" r="3" /></symbol>
+      <symbol id="i-box" viewBox="0 0 24 24"><path d="m12 3 9 4-9 5-9-5z" /><path d="M3 7v10l9 5 9-5V7" /><path d="M12 12v10" /></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12" /><path d="M18 6L6 18" /></symbol>
+      <symbol id="i-a11y" viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="1.6" /><path d="M5 8h14" /><path d="M9 8v5" /><path d="M15 8v5" /><path d="M9 13l-2 8" /><path d="M15 13l2 8" /></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a3 3 0 0 1 3-3h13v17H7a3 3 0 0 0-3 3z" /><path d="M4 5v17" /><path d="M9 6h6" /><path d="M9 10h7" /></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M3 12h18" /><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18" /></symbol>
+      <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3" /><circle cx="18" cy="18" r="3" /><path d="M6 9v6a4 4 0 0 0 4 4h5" /><path d="M18 15v-6a4 4 0 0 0-4-4H9" /></symbol>
+      <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 7v10" /><path d="M9.5 9.5c0-1.2 1-2 2.5-2s2.5.7 2.5 2-1 1.6-2.5 1.6-2.5.4-2.5 1.6 1 2 2.5 2 2.5-.8 2.5-2" /></symbol>
+      <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h9l5 5v13H6Z" /><path d="M14 3v6h6" /><path d="M9 14h6" /><path d="M9 18h4" /></symbol>
+      <symbol id="i-link" viewBox="0 0 24 24"><path d="M9 15a4 4 0 0 1 0-6l3-3a4 4 0 0 1 6 6l-1.5 1.5" /><path d="M15 9a4 4 0 0 1 0 6l-3 3a4 4 0 0 1-6-6l1.5-1.5" /></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6" /><path d="m20 20-4-4" /></symbol>
+      <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" /><circle cx="9" cy="10" r="2" /><path d="m4 18 5-5 5 5 3-3 3 3" /></symbol>
+      <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6" width="14" height="12" rx="2" /><path d="m17 10 4-2v8l-4-2z" /></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="4" /><circle cx="12" cy="12" r="3" /><path d="M16.5 7.5h.01" /></symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 8h2V5h-2a4 4 0 0 0-4 4v2H8v3h2v5h3v-5h3l1-3h-4V9a1 1 0 0 1 1-1Z" /></symbol>
+      <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M4 8a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3Z" /><path d="m10 9 5 3-5 3Z" /></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M6 10v9" /><path d="M6 6v.01" /><path d="M11 19v-9" /><path d="M11 14a4 4 0 0 1 8 0v5" /></symbol>
+    </svg>
+
+    <svg class="a11y-defs" aria-hidden="true" focusable="false">
+      <defs>
+        <filter id="a11y-protanopia"><feColorMatrix type="matrix" values="0.567,0.433,0,0,0  0.558,0.442,0,0,0  0,0.242,0.758,0,0  0,0,0,1,0" /></filter>
+        <filter id="a11y-deuteranopia"><feColorMatrix type="matrix" values="0.625,0.375,0,0,0  0.7,0.3,0,0,0  0,0.3,0.7,0,0  0,0,0,1,0" /></filter>
+        <filter id="a11y-tritanopia"><feColorMatrix type="matrix" values="0.95,0.05,0,0,0  0,0.433,0.567,0,0  0,0.475,0.525,0,0  0,0,0,1,0" /></filter>
+        <filter id="a11y-achromatopsia"><feColorMatrix type="matrix" values="0.299,0.587,0.114,0,0  0.299,0.587,0.114,0,0  0.299,0.587,0.114,0,0  0,0,0,1,0" /></filter>
+      </defs>
+    </svg>
+
+    <div class="page-content">
+    <div class="app-shell">
+
+      <aside class="sidebar" aria-label="Navegación principal">
+        <a class="sidebar-brand" href="app.html#inicio" aria-label="Universidad de América">
+          <img src="assets/brand/logo-ua.png" alt="Universidad de América" />
+        </a>
+        <nav class="sidebar-nav">
+          <span class="sidebar-nav-label">Aplicativo</span>
+          <a class="sidebar-link" href="app.html#inicio"><svg aria-hidden="true"><use href="#i-home"></use></svg><span>Inicio</span></a>
+          <a class="sidebar-link is-active" href="app.html#programas"><svg aria-hidden="true"><use href="#i-briefcase"></use></svg><span>Programas</span></a>
+          <a class="sidebar-link" href="app.html#experiencia"><svg aria-hidden="true"><use href="#i-scan"></use></svg><span>Experiencia</span></a>
+          <a class="sidebar-link" href="app.html#recursos"><svg aria-hidden="true"><use href="#i-box"></use></svg><span>Recursos</span></a>
+        </nav>
+        <div class="sidebar-footer">
+          <b>Universidad de América</b>
+          Facultad de Ciencias Administrativas · Bogotá
+        </div>
+      </aside>
+
+      <div class="workspace">
+
+        <header class="bloque-head">
+          <div class="bloque-head-inner">
+            <nav class="module-breadcrumb" aria-label="Migas de pan">
+              <a href="programa-negocios.html">
+                <svg aria-hidden="true"><use href="#i-arrow-left"></use></svg>
+                Negocios Internacionales
+              </a>
+              <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+              <span>Bloque 2</span>
+            </nav>
+
+            <span class="bloque-head-tag"><b>2</b>Bloque teórico</span>
+
+            <h1>Documentación: <em>la oportunidad existe</em> cuando puedes <em>probarla</em>.</h1>
+
+            <p class="bloque-head-lede">
+              Una vez identificas la oportunidad, el siguiente paso es
+              documentarla con fuentes oficiales. El cruce de información
+              entre Procolombia, Bancóldex, agencias de inversión y los TLC
+              vigentes es lo que convierte una intuición en un caso defendible.
+            </p>
+
+            <div class="bloque-head-meta">
+              <span class="module-meta-pill">
+                <svg aria-hidden="true"><use href="#i-book"></use></svg>
+                <b>4</b> temas
+              </span>
+              <span class="module-meta-pill">
+                <svg aria-hidden="true"><use href="#i-clock"></use></svg>
+                <b>~55</b> min
+              </span>
+            </div>
+          </div>
+          <aside class="bloque-head-figure" aria-hidden="true">
+            <img src="assets/images/hero-neg-b2-documentacion.png" alt="" loading="lazy" />
+          </aside>
+        </header>
+
+        <div class="bloque-layout is-toc-left">
+
+          <aside class="bloque-toc" aria-label="Índice del bloque">
+          <ol class="bloque-toc-list" data-toc>
+            <li><a class="bloque-toc-link" href="#tlc">Política comercial · TLC</a></li>
+            <li><a class="bloque-toc-link" href="#agencias">Agencias de inversión</a></li>
+            <li><a class="bloque-toc-link" href="#procolombia">Ruta exportadora</a></li>
+            <li><a class="bloque-toc-link" href="#cruce">Cruce de información</a></li>
+          </ol>
+          <div class="bloque-toc-actions">
+            <a class="bloque-toc-action" href="programa-neg-bloque-1.html">Bloque 1 · Identificación</a>
+            <a class="bloque-toc-action is-next" href="programa-neg-bloque-3.html">Bloque 3 · Simulación de costos</a>
+          </div>
+        </aside>
+
+          <main class="bloque-content">
+
+            <div class="module-callout" data-reveal>
+              <small>Resultado de aprendizaje</small>
+              <p>
+                Documento oportunidades de negocio e inversión mediante
+                fuentes oficiales de política comercial, agencias de inversión
+                y rutas exportadoras para sustentar decisiones estratégicas
+                con evidencia verificable.
+              </p>
+            </div>
+
+            <!-- TEMA 01 — TLC -->
+            <section class="module-tema" id="tlc" data-tema>
+              <header class="module-tema-head" data-reveal>
+                <span class="module-tema-num" data-label="Tema">01</span>
+                <div class="module-tema-copy">
+                  <span class="module-tema-eyebrow">Política comercial</span>
+                  <h2 class="module-tema-title">Los TLC son el primer mapa que mira un negociador.</h2>
+                  <p class="module-tema-lede">
+                    Un Tratado de Libre Comercio define qué mercados quedan
+                    abiertos, con qué condiciones y qué barreras desaparecen.
+                    Es la base sobre la que se construye cualquier estrategia
+                    de inserción internacional.
+                  </p>
+                </div>
+        </header>
+
+              <div class="module-aha" data-reveal>
+                <div class="module-aha-icon">💡</div>
+                <div class="module-aha-copy">
+                  <small>Para entenderlo</small>
+                  <p>
+                    Imagina dos productores idénticos de café especial:
+                    uno en Colombia, otro en Vietnam. Ambos quieren
+                    vender a Alemania. Colombia tiene un TLC vigente con
+                    la Unión Europea desde 2013, así que el café
+                    colombiano <b>entra sin pagar arancel</b>. Vietnam
+                    no tiene ese acuerdo, así que paga ~7,5% extra. A
+                    igual calidad y precio, el colombiano gana de
+                    entrada solo por el TLC. Por eso revisar los TLC
+                    no es burocracia: es estrategia.
+                  </p>
+                </div>
+              </div>
+
+              <div class="module-prose" data-reveal>
+                <p>
+                  Para que una oportunidad sea viable necesitas confirmar que
+                  Colombia tiene alguna <b>herramienta de política comercial</b>
+                  con el mercado de destino: un TLC vigente, un acuerdo de
+                  complementación o un sistema de preferencias arancelarias.
+                  Sin eso, los aranceles pueden volver al producto inviable
+                  aunque sea excelente.
+                </p>
+                <p>
+                  El portal oficial del Ministerio de Comercio mantiene la
+                  lista de acuerdos vigentes, en negociación y los suspendidos,
+                  con el detalle de productos y plazos de desgravación.
+                </p>
+              </div>
+
+              <a class="module-link-resource" href="https://www.tlc.gov.co" target="_blank" rel="noopener" data-reveal>
+                <div class="module-link-resource-icon"><svg aria-hidden="true"><use href="#i-globe"></use></svg></div>
+                <div class="module-link-resource-copy">
+                  <small>Fuente oficial · MinComercio</small>
+                  <h5>Portal de Tratados de Libre Comercio de Colombia</h5>
+                  <p>
+                    Información completa de los acuerdos comerciales vigentes,
+                    aranceles, reglas de origen y procedimientos de
+                    aprovechamiento.
+                  </p>
+                  <code>tlc.gov.co</code>
+                </div>
+                <span class="module-link-resource-cta">Abrir <svg aria-hidden="true"><use href="#i-arrow-out"></use></svg></span>
+              </a>
+            </section>
+
+            <!-- TEMA 02 — AGENCIAS DE INVERSIÓN -->
+            <section class="module-tema" id="agencias" data-tema>
+              <header class="module-tema-head" data-reveal>
+                <span class="module-tema-num" data-label="Tema">02</span>
+                <div class="module-tema-copy">
+                  <span class="module-tema-eyebrow">Agencias de inversión</span>
+                  <h2 class="module-tema-title">Quién publica oportunidades reales con respaldo institucional.</h2>
+                  <p class="module-tema-lede">
+                    Las agencias de promoción de inversión publican
+                    convocatorias, sectores priorizados y rondas de negocio.
+                    Son fuente primaria para detectar oportunidades antes de
+                    que se vuelvan competidas.
+                  </p>
+                </div>
+        </header>
+
+              <div class="module-grid" style="grid-template-columns: repeat(2, minmax(0,1fr));" data-reveal>
+                <article class="module-card is-left-accent">
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-globe"></use></svg></div>
+                  <span class="module-card-tag">Nivel nacional</span>
+                  <h4 class="module-card-title">Invest in Colombia</h4>
+                  <p class="module-card-text">
+                    Buscador de oportunidades de inversión por sector y región.
+                    Cada ficha incluye potencial de mercado, marco regulatorio
+                    e incentivos disponibles.
+                  </p>
+                </article>
+                <article class="module-card is-left-accent">
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-globe"></use></svg></div>
+                  <span class="module-card-tag">Nivel regional</span>
+                  <h4 class="module-card-title">Invest in Bogotá</h4>
+                  <p class="module-card-text">
+                    Versión territorial para la región capital. Permite
+                    cruzar oportunidades nacionales con la oferta específica
+                    de Bogotá y su zona metropolitana.
+                  </p>
+                </article>
+              </div>
+
+              <a class="module-link-resource" href="https://investincolombia.com.co/es/buscador-oportunidades-inversion/inversionista" target="_blank" rel="noopener" data-reveal>
+                <div class="module-link-resource-icon"><svg aria-hidden="true"><use href="#i-search"></use></svg></div>
+                <div class="module-link-resource-copy">
+                  <small>Fuente oficial · ProColombia</small>
+                  <h5>Buscador de oportunidades de inversión</h5>
+                  <p>Catálogo nacional de proyectos con potencial de inversión, filtrable por sector, región y tipo de inversionista.</p>
+                  <code>investincolombia.com.co/buscador-oportunidades-inversion</code>
+                </div>
+                <span class="module-link-resource-cta">Abrir <svg aria-hidden="true"><use href="#i-arrow-out"></use></svg></span>
+              </a>
+
+              <a class="module-link-resource" href="https://es.investinbogota.org" target="_blank" rel="noopener" data-reveal>
+                <div class="module-link-resource-icon"><svg aria-hidden="true"><use href="#i-search"></use></svg></div>
+                <div class="module-link-resource-copy">
+                  <small>Fuente oficial · Cámara de Comercio de Bogotá</small>
+                  <h5>Invest in Bogotá</h5>
+                  <p>Información para inversionistas sobre la región capital: sectores estratégicos, talento, infraestructura e incentivos.</p>
+                  <code>es.investinbogota.org</code>
+                </div>
+                <span class="module-link-resource-cta">Abrir <svg aria-hidden="true"><use href="#i-arrow-out"></use></svg></span>
+              </a>
+            </section>
+
+            <!-- TEMA 03 — PROCOLOMBIA RUTA EXPORTADORA -->
+            <section class="module-tema" id="procolombia" data-tema>
+              <header class="module-tema-head" data-reveal>
+                <span class="module-tema-num" data-label="Tema">03</span>
+                <div class="module-tema-copy">
+                  <span class="module-tema-eyebrow">Ruta exportadora</span>
+                  <h2 class="module-tema-title">Procolombia trazó el camino: tú lo aplicas a tu producto.</h2>
+                  <p class="module-tema-lede">
+                    Procolombia construyó una ruta paso a paso para acompañar
+                    a un exportador desde el diagnóstico hasta la primera
+                    venta internacional. Es la guía operativa más usada por
+                    los negociadores asesores en Colombia.
+                  </p>
+                </div>
+        </header>
+
+              <div class="module-grid is-4" data-reveal>
+                <article class="module-card is-left-accent">
+                  <span class="module-card-tag">Etapa 1</span>
+                  <h4 class="module-card-title">Diagnóstico</h4>
+                  <p class="module-card-text">
+                    Evaluación de la capacidad exportadora del producto y de
+                    la empresa.
+                  </p>
+                </article>
+                <article class="module-card is-left-accent">
+                  <span class="module-card-tag">Etapa 2</span>
+                  <h4 class="module-card-title">Preparación</h4>
+                  <p class="module-card-text">
+                    Adecuación de producto, empaque, certificaciones y
+                    capacidad productiva al mercado destino.
+                  </p>
+                </article>
+                <article class="module-card is-left-accent">
+                  <span class="module-card-tag">Etapa 3</span>
+                  <h4 class="module-card-title">Promoción</h4>
+                  <p class="module-card-text">
+                    Participación en ruedas de negocio, ferias y misiones
+                    comerciales para encontrar compradores.
+                  </p>
+                </article>
+                <article class="module-card is-left-accent">
+                  <span class="module-card-tag">Etapa 4</span>
+                  <h4 class="module-card-title">Negociación</h4>
+                  <p class="module-card-text">
+                    Cierre de contrato, definición de Incoterms, logística
+                    y primera operación de exportación.
+                  </p>
+                </article>
+              </div>
+
+              <a class="module-link-resource" href="https://procolombia.co/colombiatrade/exportador/exportar-desde-colombia" target="_blank" rel="noopener" data-reveal>
+                <div class="module-link-resource-icon"><svg aria-hidden="true"><use href="#i-route"></use></svg></div>
+                <div class="module-link-resource-copy">
+                  <small>Fuente oficial · ProColombia</small>
+                  <h5>Ruta exportadora paso a paso</h5>
+                  <p>Guía oficial de Procolombia para preparar, promocionar y cerrar la primera exportación, con herramientas descargables.</p>
+                  <code>procolombia.co/colombiatrade/exportador/exportar-desde-colombia</code>
+                </div>
+                <span class="module-link-resource-cta">Abrir <svg aria-hidden="true"><use href="#i-arrow-out"></use></svg></span>
+              </a>
+            </section>
+
+            <!-- TEMA 04 — CRUCE DE INFORMACIÓN -->
+            <section class="module-tema" id="cruce" data-tema>
+              <header class="module-tema-head" data-reveal>
+                <span class="module-tema-num" data-label="Tema">04</span>
+                <div class="module-tema-copy">
+                  <span class="module-tema-eyebrow">Método del negociador</span>
+                  <h2 class="module-tema-title">El cruce de fuentes es lo que reafirma la oportunidad.</h2>
+                  <p class="module-tema-lede">
+                    Una sola fuente nunca alcanza. El negociador asesor cruza
+                    información oficial para reducir el margen de error y
+                    construir un caso con evidencia que aguante revisión.
+                  </p>
+                </div>
+        </header>
+
+              <div class="module-spotlight is-dots" data-reveal>
+                <small>El método</small>
+                <h4>Tres fuentes, una sola conclusión.</h4>
+                <p>
+                  Si <b>Procolombia</b> identifica el sector como prioritario,
+                  el portal de <b>TLC</b> confirma un acuerdo vigente con el
+                  mercado y la <b>agencia de inversión</b> publica una
+                  convocatoria activa, la oportunidad pasa de hipótesis a
+                  caso documentado. Esa triangulación es lo que distingue al
+                  negociador profesional del entusiasta improvisado.
+                </p>
+              </div>
+
+              <div class="module-subjects">
+                <span class="module-subjects-label">
+                  <svg aria-hidden="true"><use href="#i-link"></use></svg>
+                  Se conecta con
+                </span>
+                <span class="module-subjects-pill">Logística y distribución física internacional</span>
+                <span class="module-subjects-pill">Investigación de mercados</span>
+                <span class="module-subjects-pill">Marketing internacional</span>
+                <span class="module-subjects-pill">Legislación cambiaria y aduanera</span>
+              </div>
+
+              <div class="module-flashcard" data-reveal>
+                <div class="module-flashcard-q">
+                  <small>Piensa antes de ver la respuesta</small>
+                  <p>
+                    Un emprendedor te dice: «Tengo una idea genial
+                    para exportar aguacate hass a Corea del Sur, ya
+                    investigué y se vende caro allá». ¿Qué le
+                    preguntas para verificar si es una oportunidad
+                    documentada o solo una intuición?
+                  </p>
+                </div>
+                <button type="button" class="module-flashcard-reveal">Ver respuesta</button>
+                <div class="module-flashcard-a">
+                  <small>Respuesta</small>
+                  <p>
+                    Tres preguntas, una por cada fuente oficial:
+                  </p>
+                  <p>
+                    1) <b>¿Está el aguacate hass en el buscador de
+                    Invest in Colombia o de Procolombia como sector
+                    priorizado?</b> Si no aparece, no es prioridad
+                    nacional y va a costar más conseguir
+                    acompañamiento.
+                  </p>
+                  <p>
+                    2) <b>¿Colombia tiene TLC vigente con Corea del
+                    Sur?</b> Sí lo tiene desde 2016, así que los
+                    aranceles están desgravados.
+                  </p>
+                  <p>
+                    3) <b>¿Cuál es el requisito sanitario
+                    específico?</b> Corea exige tratamiento de frío
+                    bajo el protocolo SPS. Si el productor no lo
+                    cumple, no hay exportación posible aunque haya
+                    TLC.
+                  </p>
+                  <p>
+                    Solo después de las tres respuestas verificadas
+                    en fuente oficial puedes decir <b>«esto es una
+                    oportunidad documentada»</b> en lugar de «esto
+                    me sonó bien».
+                  </p>
+                </div>
+              </div>
+
+              <div class="module-callout is-activity" data-reveal>
+                <small>Actividad de cierre</small>
+                <h4>Triangula una oportunidad con las tres fuentes</h4>
+                <p>
+                  Toma el producto que identificaste antes y
+                  documéntalo: ¿aparece en el buscador de Invest in Colombia
+                  como sector priorizado?, ¿con qué países tiene Colombia TLC
+                  vigente?, ¿qué etapa de la ruta exportadora de Procolombia
+                  necesitarías para sacarlo? Construye una ficha de una
+                  página con las tres respuestas y sus URLs como soporte.
+                </p>
+              </div>
+            </section>
+
+          </main>
+        </div>
+
+        <nav class="bloque-nav-foot" aria-label="Navegación entre bloques">
+          <a class="bloque-nav-card" href="programa-neg-bloque-1.html">
+            <small><svg aria-hidden="true"><use href="#i-arrow-left"></use></svg> Bloque anterior</small>
+            <h5>Bloque 1 · Identificación de la oportunidad</h5>
+          </a>
+          <a class="bloque-nav-card is-next" href="programa-neg-bloque-3.html">
+            <small>Siguiente bloque <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg></small>
+            <h5>Bloque 3 · Simulación de costos de exportación</h5>
+          </a>
+        </nav>
+
+        <footer class="workspace-footer">
+          <div class="workspace-footer-meta">
+            <b>Universidad de América</b> · Ciencias Administrativas · Bogotá
+          </div>
+          <div class="workspace-footer-social" aria-label="Redes sociales">
+            <a href="#" aria-label="Instagram"><svg><use href="#i-instagram"></use></svg></a>
+            <a href="#" aria-label="Facebook"><svg><use href="#i-facebook"></use></svg></a>
+            <a href="#" aria-label="YouTube"><svg><use href="#i-youtube"></use></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg><use href="#i-linkedin"></use></svg></a>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+    </div>
+
+    <button class="a11y-fab" type="button" aria-label="Opciones de accesibilidad" aria-expanded="false" data-a11y-fab>
+      <svg aria-hidden="true"><use href="#i-a11y"></use></svg>
+    </button>
+
+    <aside class="a11y-panel" role="dialog" aria-label="Panel de accesibilidad" data-a11y-panel>
+      <div class="a11y-panel-head">
+        <div><h3>Accesibilidad</h3><small>Ajusta la experiencia</small></div>
+        <button class="a11y-panel-close" type="button" aria-label="Cerrar panel" data-a11y-close>
+          <svg aria-hidden="true"><use href="#i-close"></use></svg>
+        </button>
+      </div>
+      <div class="a11y-group">
+        <span class="a11y-group-label">Tamaño de fuente <b data-mono>A</b></span>
+        <div class="a11y-options">
+          <button type="button" data-pref="textSize" data-value="sm"><span>A</span></button>
+          <button type="button" data-pref="textSize" data-value="md"><span>A</span></button>
+          <button type="button" data-pref="textSize" data-value="lg"><span>A</span></button>
+          <button type="button" data-pref="textSize" data-value="xl"><span>A</span></button>
+        </div>
+      </div>
+      <div class="a11y-group">
+        <span class="a11y-group-label">Contraste</span>
+        <div class="a11y-options is-2">
+          <button type="button" data-pref="contrast" data-value="default">Normal</button>
+          <button type="button" data-pref="contrast" data-value="high">Alto</button>
+        </div>
+      </div>
+      <div class="a11y-group">
+        <span class="a11y-group-label">Daltonismo</span>
+        <div class="a11y-options is-5" style="grid-template-columns: repeat(5, minmax(0,1fr));">
+          <button type="button" data-pref="colorMode" data-value="default">Off</button>
+          <button type="button" data-pref="colorMode" data-value="protanopia">Pro</button>
+          <button type="button" data-pref="colorMode" data-value="deuteranopia">Deu</button>
+          <button type="button" data-pref="colorMode" data-value="tritanopia">Tri</button>
+          <button type="button" data-pref="colorMode" data-value="achromatopsia">Acro</button>
+        </div>
+      </div>
+      <button type="button" class="a11y-reset" data-a11y-reset>↺ Restaurar valores por defecto</button>
+    </aside>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="src/js/accessibility.js" defer></script>
+    <script src="src/js/programa-modulo.js" defer></script>
+  </body>
+</html>

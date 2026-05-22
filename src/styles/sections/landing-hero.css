@@ -1,0 +1,371 @@
+/* ============================================================
+   LANDING HERO — pantalla completa, fotografía + overlay verde
+   Estilo Universidad de América (ref: Arquitectura)
+   ============================================================ */
+
+/* La página del landing usa un fondo verde profundo en lugar de paper */
+.landing-page {
+  background: var(--ua-green-950);
+  color: var(--ink-light);
+  min-height: 100vh;
+}
+
+.landing-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: clamp(48px, 6vw, 96px) clamp(24px, 4vw, 64px);
+  text-align: center;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+/* Fallback: foto estática debajo del iframe (visible solo si el video no carga) */
+.landing-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background:
+    var(--landing-hero-bg, url("../../../assets/modules/administracion-empresas.png"))
+      center/cover no-repeat;
+  filter: grayscale(0.2) saturate(0.6);
+}
+
+/* Overlay verde institucional sobre el video — más suave para dejar
+   respirar el video manteniendo legibilidad del texto en el centro. */
+.landing-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(0, 47, 32, 0.32), rgba(0, 47, 32, 0.62) 70%),
+    linear-gradient(180deg, rgba(0, 47, 32, 0.4), rgba(0, 30, 18, 0.72));
+}
+
+/* Video de YouTube como fondo a pantalla completa.
+   Se escala +25% para que la UI de YouTube (título arriba-izquierda,
+   nombre del canal, etc.) quede fuera del viewport visible. */
+.landing-hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.25);
+  width: 100vw;
+  height: 56.25vw;          /* 16:9 sobre 100vw */
+  min-width: 177.78vh;      /* 16:9 sobre 100vh — fuerza cover en vistas verticales */
+  min-height: 100vh;
+  z-index: -2;
+  border: 0;
+  pointer-events: none;
+}
+
+/* En portrait/móvil el iframe ya viene más alto por min-width:177vh,
+   así que el zoom necesario para esconder la franja superior crece. */
+@media (max-width: 720px) {
+  .landing-hero-video {
+    transform: translate(-50%, -50%) scale(1.8);
+  }
+}
+
+/* ============================================================
+   ELEMENTOS DEL HERO
+   ============================================================ */
+
+/* Logo central */
+.landing-hero-brand {
+  display: inline-block;
+  margin-bottom: clamp(24px, 3vw, 40px);
+  animation: landingFadeDown 800ms var(--ease-out) both;
+}
+
+.landing-hero-brand img {
+  width: clamp(96px, 9vw, 148px);
+  height: auto;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.4));
+}
+
+/* Eyebrow pill */
+.landing-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border-radius: var(--radius-pill);
+  background: var(--ua-green-700);
+  color: #fff;
+  border: 1.5px solid var(--ua-green-600);
+  font-family: var(--font-mono);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: clamp(28px, 4vw, 48px);
+  box-shadow:
+    0 10px 26px rgba(0, 90, 56, 0.44),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  animation: landingFadeUp 700ms 120ms var(--ease-out) both;
+}
+
+.landing-hero-eyebrow svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2;
+}
+
+/* Headline gigante */
+.landing-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 3.5vw + 1.6rem, 5.8rem);
+  font-weight: 900;
+  letter-spacing: -0.024em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: clamp(28px, 3vw, 40px);
+  max-width: 18ch;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+.landing-hero-title .accent {
+  display: inline-block;
+  color: var(--ua-lime);
+  font-style: normal;
+}
+
+.landing-hero-title .line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.05em;
+}
+
+/* Subhead destacado */
+.landing-hero-subhead {
+  font-size: clamp(1.04rem, 0.4vw + 0.95rem, 1.32rem);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 36ch;
+  margin: 0 0 14px;
+  line-height: 1.45;
+  animation: landingFadeUp 700ms 320ms var(--ease-out) both;
+}
+
+.landing-hero-subhead b {
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Body copy */
+.landing-hero-body {
+  font-size: clamp(0.94rem, 0.2vw + 0.92rem, 1.05rem);
+  color: rgba(255, 255, 255, 0.74);
+  max-width: 40ch;
+  margin: 0 0 clamp(36px, 4vw, 56px);
+  line-height: 1.5;
+  animation: landingFadeUp 700ms 400ms var(--ease-out) both;
+}
+
+/* CTAs */
+.landing-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin-bottom: clamp(48px, 7vw, 80px);
+  animation: landingFadeUp 700ms 500ms var(--ease-out) both;
+}
+
+.landing-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  height: 56px;
+  padding: 0 30px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition:
+    transform var(--motion-fast) var(--ease-out),
+    background var(--motion-fast) var(--ease-out),
+    border-color var(--motion-fast) var(--ease-out),
+    box-shadow var(--motion-base) var(--ease-out);
+}
+
+.landing-cta svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2.2;
+  transition: transform var(--motion-fast) var(--ease-out);
+}
+
+.landing-cta-primary {
+  background: var(--ua-green-700);
+  color: #fff;
+  border-color: var(--ua-green-600);
+  box-shadow:
+    0 10px 24px rgba(0, 90, 56, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.landing-cta-primary:hover {
+  transform: translateY(-2px);
+  background: var(--ua-green-600);
+  box-shadow:
+    0 16px 32px rgba(10, 140, 84, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.landing-cta-primary:hover svg { transform: translateX(3px); }
+
+.landing-cta-secondary {
+  background: rgba(0, 0, 0, 0.28);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.34);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.landing-cta-secondary:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.landing-cta-secondary svg { fill: currentColor; stroke: none; }
+
+/* Stats row */
+.landing-hero-stats {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  padding-top: clamp(28px, 3vw, 40px);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  animation: landingFadeUp 700ms 620ms var(--ease-out) both;
+}
+
+.landing-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 0 clamp(24px, 4vw, 56px);
+  position: relative;
+}
+
+.landing-stat + .landing-stat::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 14%;
+  bottom: 14%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.landing-stat strong {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 2.4vw + 1.6rem, 4.2rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #fff;
+  line-height: 0.9;
+  font-variant-numeric: tabular-nums;
+  display: inline-flex;
+  align-items: flex-start;
+}
+
+.landing-stat strong sup {
+  font-size: 0.5em;
+  color: var(--ua-lime);
+  font-weight: 800;
+  margin-left: 4px;
+  margin-top: 0.05em;
+  top: 0;
+  position: relative;
+  line-height: 1;
+}
+
+/* Hijo directo solamente: el label.
+   Importante usar `>` para no pisar el <span data-counter> que vive
+   dentro de <strong> y heredaría el font-size pequeño. */
+.landing-stat > span {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.62);
+  text-align: center;
+}
+
+/* Footer mini */
+.landing-foot {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.38);
+  z-index: 1;
+}
+
+.landing-foot a {
+  color: rgba(255, 255, 255, 0.52);
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.24);
+  text-underline-offset: 3px;
+  transition: color var(--motion-fast) var(--ease-out);
+}
+
+.landing-foot a:hover {
+  color: var(--ua-yellow);
+}
+
+/* ============================================================
+   ANIMACIONES base (las complementa GSAP cuando carga)
+   ============================================================ */
+@keyframes landingFadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes landingFadeDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-hero-brand,
+  .landing-hero-eyebrow,
+  .landing-hero-subhead,
+  .landing-hero-body,
+  .landing-hero-actions,
+  .landing-hero-stats {
+    animation: none !important;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 720px) {
+  .landing-hero-stats {
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .landing-cta { width: 100%; justify-content: center; max-width: 320px; }
+  .landing-foot { font-size: 0.62rem; }
+}

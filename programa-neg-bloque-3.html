@@ -1,0 +1,546 @@
+﻿<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/webp" href="assets/brand/favicon.ico" />
+    <title>Bloque 3 · Simulación de costos · Universidad de América</title>
+    <meta name="description" content="Bloque 3 del programa de Negocios Internacionales: simulación de costos de exportación, riesgo país e Incoterms." />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        try {
+          var p = JSON.parse(localStorage.getItem("ua-a11y-prefs") || "{}");
+          var h = document.documentElement;
+          h.setAttribute("data-text-size", p.textSize || "md");
+          h.setAttribute("data-contrast", p.contrast || "default");
+          h.setAttribute("data-color-mode", p.colorMode || "default");
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="programa" data-program="business">
+    <svg class="svg-defs" aria-hidden="true" focusable="false">
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></symbol>
+      <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5" /><path d="m11 6-6 6 6 6" /></symbol>
+      <symbol id="i-arrow-out" viewBox="0 0 24 24"><path d="M7 17 17 7" /><path d="M9 7h8v8" /></symbol>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8" /><path d="M5 10v11h5v-7h4v7h5V10" /></symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2" /><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" /></symbol>
+      <symbol id="i-scan" viewBox="0 0 24 24"><path d="M5 7V5h2" /><path d="M17 5h2v2" /><path d="M19 17v2h-2" /><path d="M7 19H5v-2" /><circle cx="12" cy="12" r="3" /></symbol>
+      <symbol id="i-box" viewBox="0 0 24 24"><path d="m12 3 9 4-9 5-9-5z" /><path d="M3 7v10l9 5 9-5V7" /><path d="M12 12v10" /></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12" /><path d="M18 6L6 18" /></symbol>
+      <symbol id="i-a11y" viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="1.6" /><path d="M5 8h14" /><path d="M9 8v5" /><path d="M15 8v5" /><path d="M9 13l-2 8" /><path d="M15 13l2 8" /></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a3 3 0 0 1 3-3h13v17H7a3 3 0 0 0-3 3z" /><path d="M4 5v17" /><path d="M9 6h6" /><path d="M9 10h7" /></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.4 8 9 4.6-.6 8-4.5 8-9V6Z" /></symbol>
+      <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4 2 20h20Z" /><path d="M12 10v5" /><circle cx="12" cy="18" r="0.6" fill="currentColor" /></symbol>
+      <symbol id="i-truck" viewBox="0 0 24 24"><path d="M1 7h13v10H1z" /><path d="M14 10h5l3 3v4h-8" /><circle cx="6" cy="18" r="2" /><circle cx="18" cy="18" r="2" /></symbol>
+      <symbol id="i-ship" viewBox="0 0 24 24"><path d="M3 18c2 1.5 4 1.5 6 0s4-1.5 6 0 4 1.5 6 0" /><path d="M4 14l1-4h14l1 4" /><path d="M12 3v7" /><path d="M9 6h6" /></symbol>
+      <symbol id="i-plane" viewBox="0 0 24 24"><path d="M3 11h6l4-7h3l-2 7h6l-3 4h-5l-3 5h-3l1-5h-4z" /></symbol>
+      <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 7v10" /><path d="M9.5 9.5c0-1.2 1-2 2.5-2s2.5.7 2.5 2-1 1.6-2.5 1.6-2.5.4-2.5 1.6 1 2 2.5 2 2.5-.8 2.5-2" /></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M3 12h18" /><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18" /></symbol>
+      <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h9l5 5v13H6Z" /><path d="M14 3v6h6" /><path d="M9 14h6" /><path d="M9 18h4" /></symbol>
+      <symbol id="i-link" viewBox="0 0 24 24"><path d="M9 15a4 4 0 0 1 0-6l3-3a4 4 0 0 1 6 6l-1.5 1.5" /><path d="M15 9a4 4 0 0 1 0 6l-3 3a4 4 0 0 1-6-6l1.5-1.5" /></symbol>
+      <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" /><circle cx="9" cy="10" r="2" /><path d="m4 18 5-5 5 5 3-3 3 3" /></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="4" /><circle cx="12" cy="12" r="3" /><path d="M16.5 7.5h.01" /></symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 8h2V5h-2a4 4 0 0 0-4 4v2H8v3h2v5h3v-5h3l1-3h-4V9a1 1 0 0 1 1-1Z" /></symbol>
+      <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M4 8a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3Z" /><path d="m10 9 5 3-5 3Z" /></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M6 10v9" /><path d="M6 6v.01" /><path d="M11 19v-9" /><path d="M11 14a4 4 0 0 1 8 0v5" /></symbol>
+    </svg>
+
+    <svg class="a11y-defs" aria-hidden="true" focusable="false">
+      <defs>
+        <filter id="a11y-protanopia"><feColorMatrix type="matrix" values="0.567,0.433,0,0,0  0.558,0.442,0,0,0  0,0.242,0.758,0,0  0,0,0,1,0" /></filter>
+        <filter id="a11y-deuteranopia"><feColorMatrix type="matrix" values="0.625,0.375,0,0,0  0.7,0.3,0,0,0  0,0.3,0.7,0,0  0,0,0,1,0" /></filter>
+        <filter id="a11y-tritanopia"><feColorMatrix type="matrix" values="0.95,0.05,0,0,0  0,0.433,0.567,0,0  0,0.475,0.525,0,0  0,0,0,1,0" /></filter>
+        <filter id="a11y-achromatopsia"><feColorMatrix type="matrix" values="0.299,0.587,0.114,0,0  0.299,0.587,0.114,0,0  0.299,0.587,0.114,0,0  0,0,0,1,0" /></filter>
+      </defs>
+    </svg>
+
+    <div class="page-content">
+    <div class="app-shell">
+
+      <aside class="sidebar" aria-label="Navegación principal">
+        <a class="sidebar-brand" href="app.html#inicio" aria-label="Universidad de América">
+          <img src="assets/brand/logo-ua.png" alt="Universidad de América" />
+        </a>
+        <nav class="sidebar-nav">
+          <span class="sidebar-nav-label">Aplicativo</span>
+          <a class="sidebar-link" href="app.html#inicio"><svg aria-hidden="true"><use href="#i-home"></use></svg><span>Inicio</span></a>
+          <a class="sidebar-link is-active" href="app.html#programas"><svg aria-hidden="true"><use href="#i-briefcase"></use></svg><span>Programas</span></a>
+          <a class="sidebar-link" href="app.html#experiencia"><svg aria-hidden="true"><use href="#i-scan"></use></svg><span>Experiencia</span></a>
+          <a class="sidebar-link" href="app.html#recursos"><svg aria-hidden="true"><use href="#i-box"></use></svg><span>Recursos</span></a>
+        </nav>
+        <div class="sidebar-footer">
+          <b>Universidad de América</b>
+          Facultad de Ciencias Administrativas · Bogotá
+        </div>
+      </aside>
+
+      <div class="workspace">
+
+        <header class="bloque-head">
+          <div class="bloque-head-inner">
+            <nav class="module-breadcrumb" aria-label="Migas de pan">
+              <a href="programa-negocios.html">
+                <svg aria-hidden="true"><use href="#i-arrow-left"></use></svg>
+                Negocios Internacionales
+              </a>
+              <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+              <span>Bloque 3</span>
+            </nav>
+
+            <span class="bloque-head-tag"><b>3</b>Bloque teórico</span>
+
+            <h1>Simulación de costos: <em>antes de exportar</em>, calcula <em>todo lo que cuesta</em>.</h1>
+
+            <p class="bloque-head-lede">
+              Identificaste la oportunidad y la documentaste. Ahora viene la
+              parte que decide si el negocio es viable: calcular costos,
+              cubrir riesgos y proyectar beneficios. Cada peso que no
+              proyectes hoy aparece como pérdida mañana.
+            </p>
+
+            <div class="bloque-head-meta">
+              <span class="module-meta-pill">
+                <svg aria-hidden="true"><use href="#i-book"></use></svg>
+                <b>4</b> temas
+              </span>
+              <span class="module-meta-pill">
+                <svg aria-hidden="true"><use href="#i-clock"></use></svg>
+                <b>~70</b> min
+              </span>
+            </div>
+          </div>
+          <aside class="bloque-head-figure" aria-hidden="true">
+            <img src="assets/images/hero-neg-b3-costos.png" alt="" loading="lazy" />
+          </aside>
+        </header>
+
+        <div class="bloque-layout is-toc-left">
+
+          <aside class="bloque-toc" aria-label="Índice del bloque">
+          <ol class="bloque-toc-list" data-toc>
+            <li><a class="bloque-toc-link" href="#riesgo">Riesgo país y sector</a></li>
+            <li><a class="bloque-toc-link" href="#costos">Costos de exportación</a></li>
+            <li><a class="bloque-toc-link" href="#logistica">Logística internacional</a></li>
+            <li><a class="bloque-toc-link" href="#incoterms">Incoterms 2020</a></li>
+          </ol>
+          <div class="bloque-toc-actions">
+            <a class="bloque-toc-action" href="programa-neg-bloque-2.html">Bloque 2 · Documentación</a>
+            <a class="bloque-toc-action is-next" href="programa-neg-bloque-4.html">Bloque 4 · Financiamiento</a>
+          </div>
+        </aside>
+
+          <main class="bloque-content">
+
+            <div class="module-callout" data-reveal>
+              <small>Resultado de aprendizaje</small>
+              <p>
+                Simulo costos de exportación mediante riesgo país, costos
+                operativos, logística internacional e Incoterms para
+                proyectar la viabilidad financiera de una oportunidad de
+                negocio.
+              </p>
+            </div>
+
+            <!-- TEMA 01 — RIESGO PAÍS Y SECTOR -->
+            <section class="module-tema" id="riesgo" data-tema>
+              <header class="module-tema-head" data-reveal>
+                <span class="module-tema-num" data-label="Tema">01</span>
+                <div class="module-tema-copy">
+                  <span class="module-tema-eyebrow">Riesgo país y sector</span>
+                  <h2 class="module-tema-title">Antes de costear, evalúa qué tan estable es el destino.</h2>
+                  <p class="module-tema-lede">
+                    El riesgo país y el riesgo sectorial determinan qué tan
+                    probable es que tu inversión se vea afectada por factores
+                    fuera de tu control: política, regulación, economía o
+                    crisis sectorial.
+                  </p>
+                </div>
+        </header>
+
+              <div class="module-aha" data-reveal>
+                <div class="module-aha-icon">💡</div>
+                <div class="module-aha-copy">
+                  <small>Para entenderlo</small>
+                  <p>
+                    Antes de la guerra entre Rusia y Ucrania (febrero
+                    2022), muchas empresas colombianas vendían
+                    productos a esos dos países sin pensarlo dos
+                    veces. De la noche a la mañana se quedaron con
+                    contenedores varados, pagos congelados y bancos
+                    que no procesaban transferencias. <b>Eso es riesgo
+                    país en acción</b>: un evento fuera de tu control
+                    que cambia todo. Por eso un negociador serio
+                    siempre lo evalúa antes de comprometerse con un
+                    destino.
+                  </p>
+                </div>
+              </div>
+
+              <div class="module-grid" style="grid-template-columns: repeat(2, minmax(0,1fr));" data-reveal>
+                <article class="module-card is-left-accent">
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-globe"></use></svg></div>
+                  <span class="module-card-tag">Riesgo país</span>
+                  <h4 class="module-card-title">¿Qué tan estable es el destino?</h4>
+                  <p class="module-card-text">
+                    Mide la probabilidad de que un país no cumpla sus
+                    obligaciones financieras. Se nutre de estabilidad
+                    política, inflación, deuda pública, calificación
+                    crediticia y conflictividad social.
+                  </p>
+                </article>
+                <article class="module-card is-left-accent">
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-alert"></use></svg></div>
+                  <span class="module-card-tag">Riesgo sector</span>
+                  <h4 class="module-card-title">¿Qué tan vulnerable es la industria?</h4>
+                  <p class="module-card-text">
+                    Mide la exposición específica del sector al que perteneces:
+                    cambios regulatorios, sustitutos tecnológicos, ciclos de
+                    materias primas o tensiones comerciales.
+                  </p>
+                </article>
+              </div>
+
+              <div class="module-prose" data-reveal>
+                <p>
+                  El riesgo no se elimina, se <b>asume con criterio</b>. Un
+                  mercado de alto riesgo puede compensarse con un margen
+                  mayor; un mercado estable acepta márgenes más ajustados.
+                  El negociador profesional documenta el riesgo antes de
+                  firmar, no después.
+                </p>
+              </div>
+            </section>
+
+            <!-- TEMA 02 — COSTOS DE EXPORTACIÓN -->
+            <section class="module-tema" id="costos" data-tema>
+              <header class="module-tema-head" data-reveal>
+                <span class="module-tema-num" data-label="Tema">02</span>
+                <div class="module-tema-copy">
+                  <span class="module-tema-eyebrow">Costos de exportación</span>
+                  <h2 class="module-tema-title">El precio FOB es solo la mitad del cálculo.</h2>
+                  <p class="module-tema-lede">
+                    Exportar tiene muchos más costos que producir. Si no los
+                    listas todos, descubres tarde que el margen real era cero
+                    o negativo. Estos son los cuatro grandes bloques que
+                    debes calcular.
+                  </p>
+                </div>
+        </header>
+
+              <div class="module-grid is-4" data-reveal>
+                <article class="module-card is-left-accent">
+                  <span class="module-card-tag">Categoría 1</span>
+                  <h4 class="module-card-title">Producto en origen</h4>
+                  <p class="module-card-text">
+                    Costo de producción, empaque internacional, certificaciones
+                    y marcaje según mercado destino.
+                  </p>
+                </article>
+                <article class="module-card is-left-accent">
+                  <span class="module-card-tag">Categoría 2</span>
+                  <h4 class="module-card-title">Trámites y aduana</h4>
+                  <p class="module-card-text">
+                    Documentación, agente de aduana, inspecciones, certificados
+                    sanitarios o fitosanitarios.
+                  </p>
+                </article>
+                <article class="module-card is-left-accent">
+                  <span class="module-card-tag">Categoría 3</span>
+                  <h4 class="module-card-title">Transporte internacional</h4>
+                  <p class="module-card-text">
+                    Flete (marítimo, aéreo o terrestre), seguro internacional
+                    y manejo en puerto de embarque y desembarque.
+                  </p>
+                </article>
+                <article class="module-card is-left-accent">
+                  <span class="module-card-tag">Categoría 4</span>
+                  <h4 class="module-card-title">Aranceles y financieros</h4>
+                  <p class="module-card-text">
+                    Aranceles del país destino, gastos bancarios, cobertura
+                    cambiaria y costo financiero del capital invertido.
+                  </p>
+                </article>
+              </div>
+
+              <a class="module-link-resource" href="https://procolombia.co/colombiatrade/exportador/herramientas-del-exportador/rutas-y-tarifas-de-transporte" target="_blank" rel="noopener" data-reveal>
+                <div class="module-link-resource-icon"><svg aria-hidden="true"><use href="#i-ship"></use></svg></div>
+                <div class="module-link-resource-copy">
+                  <small>Fuente oficial · ProColombia</small>
+                  <h5>Rutas y tarifas de transporte internacional</h5>
+                  <p>Herramienta para consultar rutas, tarifas referenciales y tiempos de tránsito desde Colombia hacia los principales mercados.</p>
+                  <code>procolombia.co/colombiatrade/exportador/herramientas-del-exportador/rutas-y-tarifas-de-transporte</code>
+                </div>
+                <span class="module-link-resource-cta">Abrir <svg aria-hidden="true"><use href="#i-arrow-out"></use></svg></span>
+              </a>
+
+              <figure class="module-infografia is-reversed" data-reveal>
+                <div class="module-infografia-image">
+                  <img src="assets/images/infografia-neg-b3-rutas-tarifas.png" alt="Tres rutas, tres realidades distintas" loading="lazy" />
+                </div>
+                <div class="module-infografia-text">
+                  <small>Infografía</small>
+                  <h5>Tres rutas, tres realidades distintas</h5>
+                  <p>Desde Colombia, los tres principales corredores de exportación tienen tiempos y modos muy distintos: <b>Miami</b> (3 días por aire), <b>Rotterdam</b> (18 días por mar) y <b>Shanghái</b> (28 días).</p>
+                  <p>Elegir mal el destino o el modo puede convertir un buen producto en un mal negocio. Procolombia publica tarifas y tiempos referenciales actualizados para que el negociador pueda costear antes de comprometer un contenedor.</p>
+                </div>
+              </figure>
+            </section>
+
+            <!-- TEMA 03 — LOGÍSTICA INTERNACIONAL -->
+            <section class="module-tema" id="logistica" data-tema>
+              <header class="module-tema-head" data-reveal>
+                <span class="module-tema-num" data-label="Tema">03</span>
+                <div class="module-tema-copy">
+                  <span class="module-tema-eyebrow">Logística internacional</span>
+                  <h2 class="module-tema-title">El modo de transporte cambia el precio final del producto.</h2>
+                  <p class="module-tema-lede">
+                    Aéreo es rápido pero caro; marítimo es barato pero lento;
+                    terrestre solo aplica para países vecinos. La elección
+                    del modo de transporte es estratégica: define márgenes,
+                    tiempos de entrega y nivel de servicio al cliente.
+                  </p>
+                </div>
+        </header>
+
+              <div class="module-grid is-3" data-reveal>
+                <article class="module-card is-left-accent">
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-ship"></use></svg></div>
+                  <span class="module-card-tag">Modo · marítimo</span>
+                  <h4 class="module-card-title">Volumen y costo bajo</h4>
+                  <p class="module-card-text">
+                    Ideal para grandes volúmenes, productos no perecederos y
+                    rutas intercontinentales. Tiempos de tránsito largos
+                    (15-40 días).
+                  </p>
+                </article>
+                <article class="module-card is-left-accent">
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-plane"></use></svg></div>
+                  <span class="module-card-tag">Modo · aéreo</span>
+                  <h4 class="module-card-title">Velocidad y producto premium</h4>
+                  <p class="module-card-text">
+                    Indispensable para perecederos (flores, frutas), bienes
+                    de alto valor y entregas urgentes. Tiempos de 1-5 días,
+                    costo significativamente mayor.
+                  </p>
+                </article>
+                <article class="module-card is-left-accent">
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-truck"></use></svg></div>
+                  <span class="module-card-tag">Modo · terrestre</span>
+                  <h4 class="module-card-title">Frontera y mercados vecinos</h4>
+                  <p class="module-card-text">
+                    Útil para Ecuador, Venezuela y conexión con la Comunidad
+                    Andina. Tiempos cortos pero limitado por capacidad vial
+                    y trámites fronterizos.
+                  </p>
+                </article>
+              </div>
+            </section>
+
+            <!-- TEMA 04 — INCOTERMS -->
+            <section class="module-tema" id="incoterms" data-tema>
+              <header class="module-tema-head" data-reveal>
+                <span class="module-tema-num" data-label="Tema">04</span>
+                <div class="module-tema-copy">
+                  <span class="module-tema-eyebrow">Incoterms 2020</span>
+                  <h2 class="module-tema-title">Quién paga qué y hasta dónde llega tu responsabilidad.</h2>
+                  <p class="module-tema-lede">
+                    Los Incoterms son reglas internacionales que definen las
+                    obligaciones del vendedor y el comprador en una operación
+                    de comercio exterior. Cada sigla cambia <b>el precio
+                    final</b>, el seguro y el momento exacto en que
+                    transfieres el riesgo.
+                  </p>
+                </div>
+        </header>
+
+              <div class="module-grid is-4" data-reveal>
+                <article class="module-card is-left-accent">
+                  <span class="module-card-tag">EXW</span>
+                  <h4 class="module-card-title">Ex Works</h4>
+                  <p class="module-card-text">
+                    El vendedor entrega en su fábrica. El comprador asume
+                    todo el resto: transporte, seguro, trámites y aranceles.
+                  </p>
+                </article>
+                <article class="module-card is-left-accent">
+                  <span class="module-card-tag">FOB</span>
+                  <h4 class="module-card-title">Free On Board</h4>
+                  <p class="module-card-text">
+                    El vendedor entrega a bordo del buque en puerto de
+                    embarque. A partir de ahí, riesgo y costo pasan al
+                    comprador.
+                  </p>
+                </article>
+                <article class="module-card is-left-accent">
+                  <span class="module-card-tag">CIF</span>
+                  <h4 class="module-card-title">Cost, Insurance, Freight</h4>
+                  <p class="module-card-text">
+                    El vendedor paga costo, seguro y flete hasta el puerto
+                    destino. El riesgo, sin embargo, ya pasó al comprador
+                    desde el embarque.
+                  </p>
+                </article>
+                <article class="module-card is-left-accent">
+                  <span class="module-card-tag">DDP</span>
+                  <h4 class="module-card-title">Delivered Duty Paid</h4>
+                  <p class="module-card-text">
+                    El vendedor entrega en el destino final, con aranceles
+                    pagados. Máxima comodidad para el comprador, máximo
+                    riesgo para el vendedor.
+                  </p>
+                </article>
+              </div>
+
+              <div class="module-spotlight is-dots" data-reveal>
+                <small>Cómo elegir el Incoterm</small>
+                <h4>El Incoterm no es preferencia: es estrategia comercial.</h4>
+                <p>
+                  Si recién empiezas a exportar, un <b>EXW o FOB</b> reduce
+                  tu carga operativa y aprendes con riesgo controlado. Si ya
+                  dominas la logística internacional, asumir <b>CIF o DDP</b>
+                  te permite vender un producto «llave en mano» y capturar
+                  ese margen adicional. La elección debe alinearse con tu
+                  capacidad operativa, no con lo que pida el cliente.
+                </p>
+              </div>
+
+              <div class="module-quickcheck" data-quickcheck data-reveal>
+                <div class="module-quickcheck-head">
+                  <small>Comprueba si lo entendiste</small>
+                </div>
+                <p class="module-quickcheck-q">
+                  Vendes café especial a un comprador alemán y tu
+                  contrato dice «FOB Cartagena». El barco se hunde a
+                  mitad de océano sin seguro. ¿Quién asume la pérdida?
+                </p>
+                <div class="module-quickcheck-opts">
+                  <button type="button" class="module-quickcheck-opt" data-letter="A">
+                    <span>Tú, porque era tu mercancía hasta que llegara a Alemania.</span>
+                  </button>
+                  <button type="button" class="module-quickcheck-opt" data-letter="B" data-correct="true">
+                    <span>El comprador alemán, porque con FOB el riesgo pasó a él al cruzar la borda del buque en Cartagena.</span>
+                  </button>
+                  <button type="button" class="module-quickcheck-opt" data-letter="C">
+                    <span>La naviera, siempre.</span>
+                  </button>
+                </div>
+                <div class="module-quickcheck-feedback"
+                  data-correct-msg="Correcto. <b>FOB significa que el riesgo se transfiere al comprador en el puerto de embarque</b>. Si él no contrató seguro al recibir el riesgo, la pérdida es suya. Por eso los Incoterms no son detalles legales: son el lugar exacto donde cambia tu exposición al riesgo."
+                  data-wrong-msg="No es esa. Con <b>FOB</b>, el momento en que el riesgo pasa al comprador es cuando la mercancía cruza la borda del buque en el puerto de embarque (Cartagena). Si después se hunde sin seguro, es problema del comprador, no del vendedor ni de la naviera. La respuesta correcta es la B."></div>
+              </div>
+
+              <div class="module-subjects">
+                <span class="module-subjects-label">
+                  <svg aria-hidden="true"><use href="#i-link"></use></svg>
+                  Se conecta con
+                </span>
+                <span class="module-subjects-pill">Finanzas internacionales</span>
+                <span class="module-subjects-pill">Mercado de capitales</span>
+                <span class="module-subjects-pill">Juegos gerenciales</span>
+              </div>
+
+              <figure class="module-infografia" data-reveal>
+                <div class="module-infografia-image">
+                  <img src="assets/images/infografia-neg-b3-incoterms-2020.png" alt="Incoterms: quién paga qué hasta dónde" loading="lazy" />
+                </div>
+                <div class="module-infografia-text">
+                  <small>Infografía</small>
+                  <h5>Incoterms: quién paga qué hasta dónde</h5>
+                  <p>Este diagrama muestra la cadena completa de una exportación — desde la fábrica hasta el cliente final — y los cuatro Incoterms más usados: <b>EXW</b>, <b>FOB</b>, <b>CIF</b> y <b>DDP</b>. Cada barra de color marca hasta dónde llega tu responsabilidad como vendedor.</p>
+                  <p>Elegir un Incoterm no es preferencia: es decidir cuánto del costo y del riesgo asumes tú vs. el comprador. Una mala elección puede borrar tu margen de un solo viaje.</p>
+                </div>
+              </figure>
+
+              <div class="module-callout is-activity" data-reveal>
+                <small>Actividad de cierre</small>
+                <h4>Simula los costos de tu oportunidad</h4>
+                <p>
+                  Toma el producto y mercado que documentaste antes.
+                  Define un volumen anual estimado, elige modo de transporte
+                  e Incoterm, y arma una tabla con las cuatro categorías de
+                  costo. Si el margen final es menor al 10 %, replantea el
+                  Incoterm o el mercado. Esa decisión es lo que distingue
+                  una oportunidad real de una hipótesis optimista.
+                </p>
+              </div>
+            </section>
+
+          </main>
+        </div>
+
+        <nav class="bloque-nav-foot" aria-label="Navegación entre bloques">
+          <a class="bloque-nav-card" href="programa-neg-bloque-2.html">
+            <small><svg aria-hidden="true"><use href="#i-arrow-left"></use></svg> Bloque anterior</small>
+            <h5>Bloque 2 · Documentación</h5>
+          </a>
+          <a class="bloque-nav-card is-next" href="programa-neg-bloque-4.html">
+            <small>Siguiente bloque <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg></small>
+            <h5>Bloque 4 · Financiamiento y cooperación</h5>
+          </a>
+        </nav>
+
+        <footer class="workspace-footer">
+          <div class="workspace-footer-meta">
+            <b>Universidad de América</b> · Ciencias Administrativas · Bogotá
+          </div>
+          <div class="workspace-footer-social" aria-label="Redes sociales">
+            <a href="#" aria-label="Instagram"><svg><use href="#i-instagram"></use></svg></a>
+            <a href="#" aria-label="Facebook"><svg><use href="#i-facebook"></use></svg></a>
+            <a href="#" aria-label="YouTube"><svg><use href="#i-youtube"></use></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg><use href="#i-linkedin"></use></svg></a>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+    </div>
+
+    <button class="a11y-fab" type="button" aria-label="Opciones de accesibilidad" aria-expanded="false" data-a11y-fab>
+      <svg aria-hidden="true"><use href="#i-a11y"></use></svg>
+    </button>
+
+    <aside class="a11y-panel" role="dialog" aria-label="Panel de accesibilidad" data-a11y-panel>
+      <div class="a11y-panel-head">
+        <div><h3>Accesibilidad</h3><small>Ajusta la experiencia</small></div>
+        <button class="a11y-panel-close" type="button" aria-label="Cerrar panel" data-a11y-close>
+          <svg aria-hidden="true"><use href="#i-close"></use></svg>
+        </button>
+      </div>
+      <div class="a11y-group">
+        <span class="a11y-group-label">Tamaño de fuente <b data-mono>A</b></span>
+        <div class="a11y-options">
+          <button type="button" data-pref="textSize" data-value="sm"><span>A</span></button>
+          <button type="button" data-pref="textSize" data-value="md"><span>A</span></button>
+          <button type="button" data-pref="textSize" data-value="lg"><span>A</span></button>
+          <button type="button" data-pref="textSize" data-value="xl"><span>A</span></button>
+        </div>
+      </div>
+      <div class="a11y-group">
+        <span class="a11y-group-label">Contraste</span>
+        <div class="a11y-options is-2">
+          <button type="button" data-pref="contrast" data-value="default">Normal</button>
+          <button type="button" data-pref="contrast" data-value="high">Alto</button>
+        </div>
+      </div>
+      <div class="a11y-group">
+        <span class="a11y-group-label">Daltonismo</span>
+        <div class="a11y-options is-5" style="grid-template-columns: repeat(5, minmax(0,1fr));">
+          <button type="button" data-pref="colorMode" data-value="default">Off</button>
+          <button type="button" data-pref="colorMode" data-value="protanopia">Pro</button>
+          <button type="button" data-pref="colorMode" data-value="deuteranopia">Deu</button>
+          <button type="button" data-pref="colorMode" data-value="tritanopia">Tri</button>
+          <button type="button" data-pref="colorMode" data-value="achromatopsia">Acro</button>
+        </div>
+      </div>
+      <button type="button" class="a11y-reset" data-a11y-reset>↺ Restaurar valores por defecto</button>
+    </aside>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="src/js/accessibility.js" defer></script>
+    <script src="src/js/programa-modulo.js" defer></script>
+  </body>
+</html>

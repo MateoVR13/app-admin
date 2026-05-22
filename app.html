@@ -1,0 +1,363 @@
+﻿<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/webp" href="assets/brand/favicon.ico" />
+    <title>Universidad de América · Ciencias Administrativas</title>
+    <meta name="description" content="Simulador Inteligente de Experiencias Empresariales y Económicas. Universidad de América." />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        try {
+          var p = JSON.parse(localStorage.getItem("ua-a11y-prefs") || "{}");
+          var h = document.documentElement;
+          h.setAttribute("data-text-size", p.textSize || "md");
+          h.setAttribute("data-contrast", p.contrast || "default");
+          h.setAttribute("data-color-mode", p.colorMode || "default");
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <svg class="svg-defs" aria-hidden="true" focusable="false">
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></symbol>
+      <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14" /><path d="m6 13 6 6 6-6" /></symbol>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8" /><path d="M5 10v11h5v-7h4v7h5V10" /></symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2" /><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" /></symbol>
+      <symbol id="i-scan" viewBox="0 0 24 24"><path d="M5 7V5h2" /><path d="M17 5h2v2" /><path d="M19 17v2h-2" /><path d="M7 19H5v-2" /><circle cx="12" cy="12" r="3" /></symbol>
+      <symbol id="i-box" viewBox="0 0 24 24"><path d="m12 3 9 4-9 5-9-5z" /><path d="M3 7v10l9 5 9-5V7" /><path d="M12 12v10" /></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12" /><path d="M18 6L6 18" /></symbol>
+      <symbol id="i-a11y" viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="1.6" /><path d="M5 8h14" /><path d="M9 8v5" /><path d="M15 8v5" /><path d="M9 13l-2 8" /><path d="M15 13l2 8" /></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a3 3 0 0 1 3-3h13v17H7a3 3 0 0 0-3 3z" /><path d="M4 5v17" /><path d="M9 6h6" /><path d="M9 10h7" /></symbol>
+      <symbol id="i-gamepad" viewBox="0 0 24 24"><path d="M7 9h10a5 5 0 0 1 4 8l-1 2a2 2 0 0 1-3-.2L15 16H9l-2 2.8a2 2 0 0 1-3 .2l-1-2a5 5 0 0 1 4-8Z" /><path d="M8 12v4" /><path d="M6 14h4" /><path d="M16 13h.01" /><path d="M18 15h.01" /></symbol>
+      <symbol id="i-branch" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3" /><circle cx="18" cy="6" r="3" /><circle cx="12" cy="18" r="3" /><path d="M8.5 8.5 11 15" /><path d="m15.5 8.5-2.5 6.5" /></symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="m7 15 4-4 3 3 5-7" /><path d="M16 7h3v3" /></symbol>
+      <symbol id="i-lightbulb" viewBox="0 0 24 24"><path d="M9 18h6" /><path d="M10 22h4" /><path d="M8 14a6 6 0 1 1 8 0c-1 1-1 2-1 4H9c0-2 0-3-1-4Z" /></symbol>
+      <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="5" /><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none" /></symbol>
+      <symbol id="i-quote" viewBox="0 0 24 24"><path d="M8 8h-2a3 3 0 0 0-3 3v6h6v-6h-3" /><path d="M20 8h-2a3 3 0 0 0-3 3v6h6v-6h-3" /></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="4" /><circle cx="12" cy="12" r="3" /><path d="M16.5 7.5h.01" /></symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 8h2V5h-2a4 4 0 0 0-4 4v2H8v3h2v5h3v-5h3l1-3h-4V9a1 1 0 0 1 1-1Z" /></symbol>
+      <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M4 8a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3Z" /><path d="m10 9 5 3-5 3Z" /></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M6 10v9" /><path d="M6 6v.01" /><path d="M11 19v-9" /><path d="M11 14a4 4 0 0 1 8 0v5" /></symbol>
+    </svg>
+
+    <svg class="a11y-defs" aria-hidden="true" focusable="false">
+      <defs>
+        <filter id="a11y-protanopia"><feColorMatrix type="matrix" values="0.567,0.433,0,0,0  0.558,0.442,0,0,0  0,0.242,0.758,0,0  0,0,0,1,0" /></filter>
+        <filter id="a11y-deuteranopia"><feColorMatrix type="matrix" values="0.625,0.375,0,0,0  0.7,0.3,0,0,0  0,0.3,0.7,0,0  0,0,0,1,0" /></filter>
+        <filter id="a11y-tritanopia"><feColorMatrix type="matrix" values="0.95,0.05,0,0,0  0,0.433,0.567,0,0  0,0.475,0.525,0,0  0,0,0,1,0" /></filter>
+        <filter id="a11y-achromatopsia"><feColorMatrix type="matrix" values="0.299,0.587,0.114,0,0  0.299,0.587,0.114,0,0  0.299,0.587,0.114,0,0  0,0,0,1,0" /></filter>
+      </defs>
+    </svg>
+
+    <!-- Wrapper para que el filtro de daltonismo no afecte al FAB fixed -->
+    <div class="page-content">
+    <div class="app-shell">
+
+      <!-- ===========================================================
+           SIDEBAR
+      =========================================================== -->
+      <aside class="sidebar" aria-label="Navegación principal">
+        <a class="sidebar-brand" href="#inicio" aria-label="Universidad de América">
+          <img src="assets/brand/logo-ua.png" alt="Universidad de América" />
+        </a>
+
+        <nav class="sidebar-nav">
+          <span class="sidebar-nav-label">Aplicativo</span>
+
+          <a class="sidebar-link is-active" href="#inicio" data-nav-link>
+            <svg aria-hidden="true"><use href="#i-home"></use></svg>
+            <span>Inicio</span>
+          </a>
+          <a class="sidebar-link" href="#programas" data-nav-link>
+            <svg aria-hidden="true"><use href="#i-briefcase"></use></svg>
+            <span>Programas</span>
+          </a>
+          <a class="sidebar-link" href="#experiencia" data-nav-link>
+            <svg aria-hidden="true"><use href="#i-scan"></use></svg>
+            <span>Experiencia</span>
+          </a>
+          <a class="sidebar-link" href="#recursos" data-nav-link>
+            <svg aria-hidden="true"><use href="#i-box"></use></svg>
+            <span>Recursos</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <b>Universidad de América</b>
+          Facultad de Ciencias Administrativas · Bogotá
+        </div>
+      </aside>
+
+      <!-- ===========================================================
+           WORKSPACE
+      =========================================================== -->
+      <div class="workspace">
+
+        <!-- TOPBAR -->
+        <header class="topbar" id="inicio">
+          <!-- Collage decorativo: las 3 disciplinas referenciadas -->
+          <div class="topbar-collage" aria-hidden="true">
+            <img src="assets/images/banner-simulador-inteligente.png" alt="" loading="eager" />
+          </div>
+
+          <div class="topbar-inner">
+            <div class="topbar-copy">
+              <span class="topbar-eyebrow" data-hero-eyebrow>Ciencias Administrativas</span>
+
+              <h1 class="topbar-title" data-hero-title>
+                <span class="line">Simulador</span>
+                <span class="line"><span class="accent" data-hero-accent>Inteligente</span></span>
+                <span class="line">de Experiencias</span>
+                <span class="line">Empresariales</span>
+                <span class="line">y Económicas.</span>
+              </h1>
+
+              <p class="topbar-lede" data-hero-lede>
+                Aprende administración, economía y negocios internacionales con casos reales,
+                simuladores con consecuencias y reflexión guiada. La teoría se vuelve decisión
+                y la decisión se vuelve aprendizaje argumentable.
+              </p>
+
+              <div class="topbar-actions" data-hero-actions>
+                <a class="btn btn-primary" href="#programas">
+                  <span>Elegir un programa</span>
+                  <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+                </a>
+                <a class="btn btn-ghost" href="#experiencia">
+                  <span>Cómo aprendes</span>
+                </a>
+              </div>
+            </div>
+
+            <aside class="topbar-outcomes" data-reveal>
+              <div class="topbar-outcomes-head">
+                <small>Lo que vas a poder hacer</small>
+                <span class="badge">Visión general</span>
+              </div>
+              <h2>Al recorrer la plataforma serás capaz de:</h2>
+              <ul>
+                <li><span><strong>Interpretar</strong> marcos teóricos aplicados a casos reales.</span></li>
+                <li><span><strong>Decidir</strong> bajo restricciones haciendo explícitos criterios y supuestos.</span></li>
+                <li><span><strong>Argumentar</strong> consecuencias con evidencia y referencias.</span></li>
+              </ul>
+            </aside>
+          </div>
+        </header>
+
+        <!-- DASHBOARD -->
+        <main class="dashboard">
+
+          <!-- PROGRAMS -->
+          <section class="programs" id="programas" data-section>
+            <header class="section-head">
+              <h2 data-reveal-text>Tres disciplinas, un mismo <em>método</em>.</h2>
+              <p data-reveal>
+                Cada programa se compone de bloques teóricos, casos integradores y un simulador
+                final. Estructura consistente: marco, evidencia, decisión, reflexión.
+              </p>
+            </header>
+
+            <div class="programs-grid">
+              <article class="program-card admin" data-program-card>
+                <span class="program-card-tag"><b>01</b>Programa</span>
+                <div class="program-card-media"><div class="program-card-media-bg" data-parallax="0.04"></div></div>
+                <div class="program-card-body">
+                  <h3>Administración de Empresas</h3>
+                  <div class="program-card-outcome">
+                    <small>Lo que aprenderás</small>
+                    <p>Diagnosticar problemas organizacionales y argumentar decisiones gerenciales usando teoría administrativa.</p>
+                  </div>
+                  <ul class="program-card-skills">
+                    <li>Lee organizaciones desde Taylor, Fayol y Mayo</li>
+                    <li>Aplica PESTEL, Porter y Balanced Scorecard a casos reales</li>
+                    <li>Justifica decisiones con Maslow, Herzberg y PDCA</li>
+                  </ul>
+                  <div class="program-card-meta">
+                    <span><b>2</b> bloques</span>
+                    <span><b>1</b> reto · TechCorp</span>
+                  </div>
+                  <a class="program-card-cta" href="programa-administracion.html" data-magnetic>
+                    <span>Explorar la disciplina</span>
+                    <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+                  </a>
+                </div>
+              </article>
+
+              <article class="program-card economy" data-program-card>
+                <span class="program-card-tag"><b>02</b>Programa</span>
+                <div class="program-card-media"><div class="program-card-media-bg" data-parallax="0.04"></div></div>
+                <div class="program-card-body">
+                  <h3>Economía</h3>
+                  <div class="program-card-outcome">
+                    <small>Lo que aprenderás</small>
+                    <p>Leer fenómenos económicos micro y macro con herramientas analíticas y criterio de sostenibilidad.</p>
+                  </div>
+                  <ul class="program-card-skills">
+                    <li>Modela oferta, demanda y costo de oportunidad</li>
+                    <li>Interpreta inflación, tasas y tipo de cambio</li>
+                    <li>Distingue entre correlación y causalidad, e internaliza externalidades</li>
+                  </ul>
+                  <div class="program-card-meta">
+                    <span><b>4</b> bloques</span>
+                    <span><b>1</b> reto · BioPack</span>
+                  </div>
+                  <a class="program-card-cta" href="programa-economia.html" data-magnetic>
+                    <span>Explorar la disciplina</span>
+                    <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+                  </a>
+                </div>
+              </article>
+
+              <article class="program-card business" data-program-card>
+                <span class="program-card-tag"><b>03</b>Programa</span>
+                <div class="program-card-media"><div class="program-card-media-bg" data-parallax="0.04"></div></div>
+                <div class="program-card-body">
+                  <h3>Negocios Internacionales</h3>
+                  <div class="program-card-outcome">
+                    <small>Lo que aprenderás</small>
+                    <p>Identificar, documentar y costear oportunidades de inserción internacional con fuentes oficiales.</p>
+                  </div>
+                  <ul class="program-card-skills">
+                    <li>Cruza vocación productiva, oferta exportable y política comercial</li>
+                    <li>Simula costos de exportación con Incoterms y riesgo país</li>
+                    <li>Articula financiamiento con Bancóldex y cooperación internacional</li>
+                  </ul>
+                  <div class="program-card-meta">
+                    <span><b>4</b> bloques</span>
+                    <span><b>1</b> reto · Café Andino</span>
+                  </div>
+                  <a class="program-card-cta" href="programa-negocios.html" data-magnetic>
+                    <span>Explorar la disciplina</span>
+                    <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+                  </a>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- PROCESS -->
+          <section class="process" id="experiencia" data-section>
+            <header class="section-head">
+              <h2 data-reveal-text>Cinco momentos para que la teoría <em>se vuelva criterio</em>.</h2>
+              <p data-reveal>
+                Cada bloque sigue el mismo recorrido: presenta el marco, te invita a actuar,
+                te devuelve consecuencias y cierra con una reflexión que conecta lo aprendido.
+              </p>
+            </header>
+
+            <div class="process-flow">
+              <article class="process-step accent-green">
+                <div class="process-step-num">01<small>Marco</small></div>
+                <span class="process-step-icon"><svg><use href="#i-book"></use></svg></span>
+                <h3>Explora conceptos</h3>
+                <p>Marco teórico con referencias bibliográficas reales y ejemplos claros.</p>
+              </article>
+
+              <article class="process-step accent-orange">
+                <div class="process-step-num">02<small>Activa</small></div>
+                <span class="process-step-icon"><svg><use href="#i-gamepad"></use></svg></span>
+                <h3>Vive la experiencia</h3>
+                <p>Simuladores con datos reales: decisiones con consecuencias visibles.</p>
+              </article>
+
+              <article class="process-step accent-teal">
+                <div class="process-step-num">03<small>Decide</small></div>
+                <span class="process-step-icon"><svg><use href="#i-branch"></use></svg></span>
+                <h3>Toma decisiones</h3>
+                <p>Define criterio dominante y argumenta el supuesto que sostiene tu decisión.</p>
+              </article>
+
+              <article class="process-step accent-purple">
+                <div class="process-step-num">04<small>Mide</small></div>
+                <span class="process-step-icon"><svg><use href="#i-chart"></use></svg></span>
+                <h3>Ve resultados</h3>
+                <p>Métricas e indicadores que reaccionan según el camino que elegiste.</p>
+              </article>
+
+              <article class="process-step accent-lime">
+                <div class="process-step-num">05<small>Conecta</small></div>
+                <span class="process-step-icon"><svg><use href="#i-lightbulb"></use></svg></span>
+                <h3>Reflexiona</h3>
+                <p>Conecta lo que decidiste con la teoría. Aprender es poder explicarlo.</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- RECURSOS placeholder -->
+          <section id="recursos" data-section style="display:none;"></section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="workspace-footer">
+          <div class="workspace-footer-meta">
+            <b>Universidad de América</b> · Ciencias Administrativas · Bogotá
+          </div>
+          <div class="workspace-footer-social" aria-label="Redes sociales">
+            <a href="#" aria-label="Instagram"><svg><use href="#i-instagram"></use></svg></a>
+            <a href="#" aria-label="Facebook"><svg><use href="#i-facebook"></use></svg></a>
+            <a href="#" aria-label="YouTube"><svg><use href="#i-youtube"></use></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg><use href="#i-linkedin"></use></svg></a>
+          </div>
+        </footer>
+
+      </div><!-- /.workspace -->
+    </div><!-- /.app-shell -->
+    </div><!-- /.page-content -->
+
+    <!-- ACCESSIBILITY (fuera de .page-content) -->
+    <button class="a11y-fab" type="button" aria-label="Opciones de accesibilidad" aria-expanded="false" data-a11y-fab>
+      <svg aria-hidden="true"><use href="#i-a11y"></use></svg>
+    </button>
+
+    <aside class="a11y-panel" role="dialog" aria-label="Panel de accesibilidad" data-a11y-panel>
+      <div class="a11y-panel-head">
+        <div>
+          <h3>Accesibilidad</h3>
+          <small>Ajusta la experiencia</small>
+        </div>
+        <button class="a11y-panel-close" type="button" aria-label="Cerrar panel" data-a11y-close>
+          <svg aria-hidden="true"><use href="#i-close"></use></svg>
+        </button>
+      </div>
+
+      <div class="a11y-group">
+        <span class="a11y-group-label">Tamaño de fuente <b data-mono>A</b></span>
+        <div class="a11y-options">
+          <button type="button" data-pref="textSize" data-value="sm"><span>A</span></button>
+          <button type="button" data-pref="textSize" data-value="md"><span>A</span></button>
+          <button type="button" data-pref="textSize" data-value="lg"><span>A</span></button>
+          <button type="button" data-pref="textSize" data-value="xl"><span>A</span></button>
+        </div>
+      </div>
+
+      <div class="a11y-group">
+        <span class="a11y-group-label">Contraste</span>
+        <div class="a11y-options is-2">
+          <button type="button" data-pref="contrast" data-value="default">Normal</button>
+          <button type="button" data-pref="contrast" data-value="high">Alto</button>
+        </div>
+      </div>
+
+      <div class="a11y-group">
+        <span class="a11y-group-label">Daltonismo</span>
+        <div class="a11y-options is-5" style="grid-template-columns: repeat(5, minmax(0,1fr));">
+          <button type="button" data-pref="colorMode" data-value="default" title="Sin filtro">Off</button>
+          <button type="button" data-pref="colorMode" data-value="protanopia" title="Protanopia (rojo)">Pro</button>
+          <button type="button" data-pref="colorMode" data-value="deuteranopia" title="Deuteranopia (verde)">Deu</button>
+          <button type="button" data-pref="colorMode" data-value="tritanopia" title="Tritanopia (azul)">Tri</button>
+          <button type="button" data-pref="colorMode" data-value="achromatopsia" title="Achromatopsia (grises)">Acro</button>
+        </div>
+      </div>
+
+      <button type="button" class="a11y-reset" data-a11y-reset>↺ Restaurar valores por defecto</button>
+    </aside>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="src/js/accessibility.js" defer></script>
+    <script src="src/js/app.js" defer></script>
+  </body>
+</html>

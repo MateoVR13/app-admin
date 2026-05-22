@@ -1,0 +1,154 @@
+:root {
+  /* ============================================================
+     UA — Identidad cromática institucional
+     ============================================================ */
+  --ua-green-950: #002f20;
+  --ua-green-900: #003d28;
+  --ua-green-850: #004a30;
+  --ua-green-800: #005a38;
+  --ua-green-700: #007442;
+  --ua-green-600: #0a8c54;
+  --ua-green-100: #d9ebde;
+  --ua-green-50:  #f0f7f1;
+
+  --ua-yellow:     #ffd21a;
+  --ua-yellow-600: #e6b800;
+  --ua-yellow-50:  #fff7ce;
+
+  --ua-orange:     #ff7900;
+  --ua-orange-600: #d96400;
+  --ua-orange-50:  #fff0e0;
+
+  --ua-teal:       #00a4b5;
+  --ua-teal-700:   #006f7a;
+  --ua-teal-50:    #defafc;
+
+  --ua-purple:     #7223b7;
+  --ua-purple-700: #4f1481;
+  --ua-purple-50:  #f3e8ff;
+
+  --ua-lime:       #bbd55b;
+  --ua-lime-700:   #6b9000;
+  --ua-lime-50:    #f3f9d9;
+
+  --ua-blue-900:   #062f52;
+  --ua-blue-800:   #064b82;
+  --ua-blue-700:   #0a65a8;
+
+  /* ============================================================
+     Superficies — LIGHT-FIRST · cuaderno académico cálido
+     ============================================================ */
+  --paper:          #fdf9ec;        /* canvas principal cream cálido */
+  --paper-soft:     #f8f2dc;
+  --paper-warm:     #fff6e3;
+  --paper-deep:     #efe6c8;
+  --paper-line:     #e4d9b7;
+  --paper-line-strong: #cfc28e;
+
+  --slate:          #ffffff;        /* tarjetas sobre paper */
+  --slate-soft:     #fbfaf4;
+  --slate-line:     #ebe6d3;
+
+  /* Slab oscuro solo para secciones de énfasis puntual */
+  --slab:           #002f20;
+  --slab-2:         #003d28;
+  --slab-line:      rgba(255, 255, 255, 0.1);
+
+  /* ============================================================
+     Texto
+     ============================================================ */
+  --ink:            #0a1c16;         /* texto principal sobre paper */
+  --ink-soft:       #1f2e27;
+  --muted:          #5d6a66;
+  --muted-soft:     #818b85;
+  --faint:          #9ea59d;
+
+  /* Sobre slab oscuro */
+  --ink-light:      #ffffff;
+  --ink-mute-light: rgba(255, 255, 255, 0.78);
+  --ink-soft-light: rgba(255, 255, 255, 0.58);
+
+  /* Alias compat */
+  --canvas:  var(--paper);
+  --surface: var(--slate);
+  --line:    var(--paper-line);
+
+  /* ============================================================
+     Radius — escala disciplinada
+     ============================================================ */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius:    10px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+  --radius-full: 50%;
+
+  /* ============================================================
+     Sombras — sutiles, calidas, sobre paper
+     ============================================================ */
+  --shadow-1: 0 1px 2px rgba(34, 28, 4, 0.06);
+  --shadow-2: 0 1px 2px rgba(34, 28, 4, 0.06), 0 6px 14px rgba(34, 28, 4, 0.06);
+  --shadow-3: 0 2px 4px rgba(34, 28, 4, 0.07), 0 14px 28px rgba(34, 28, 4, 0.09);
+  --shadow-4: 0 4px 8px rgba(34, 28, 4, 0.09), 0 22px 48px rgba(34, 28, 4, 0.12);
+
+  --glow-yellow: 0 14px 32px rgba(255, 210, 26, 0.34);
+  --glow-orange: 0 14px 32px rgba(255, 121, 0, 0.28);
+  --glow-teal:   0 14px 32px rgba(0, 164, 181, 0.28);
+  --glow-purple: 0 14px 32px rgba(114, 35, 183, 0.26);
+  --glow-lime:   0 14px 32px rgba(187, 213, 91, 0.32);
+  --glow-green:  0 14px 32px rgba(0, 90, 56, 0.22);
+
+  /* ============================================================
+     Espaciado — escala 4pt
+     ============================================================ */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-7:  32px;
+  --space-8:  40px;
+  --space-9:  48px;
+  --space-10: 64px;
+  --space-11: 80px;
+  --space-12: 112px;
+  --space-13: 144px;
+
+  /* ============================================================
+     Tipografía
+     ============================================================ */
+  --font-sans:    "Inter", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Montserrat", "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:    "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+
+  --font-hero:    clamp(2.6rem, 1.8rem + 4.8vw, 6rem);
+  --font-h1:      clamp(2rem, 1.5rem + 2.4vw, 3.4rem);
+  --font-h2:      clamp(1.6rem, 1.25rem + 1.4vw, 2.4rem);
+  --font-h3:      clamp(1.18rem, 1rem + 0.6vw, 1.5rem);
+  --font-eyebrow: 0.78rem;
+  --font-mono-sm: 0.74rem;
+
+  /* ============================================================
+     Motion
+     ============================================================ */
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-expo:   cubic-bezier(0.87, 0, 0.13, 1);
+
+  --motion-fast:    140ms;
+  --motion-base:    240ms;
+  --motion-slow:    420ms;
+  --motion-slower:  680ms;
+
+  /* ============================================================
+     Layout
+     ============================================================ */
+  --max-w:       1320px;
+  --max-w-wide:  1480px;
+  --max-w-text:  680px;
+  --gutter:      clamp(20px, 4vw, 64px);
+}

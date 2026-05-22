@@ -1,0 +1,683 @@
+﻿<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/webp" href="assets/brand/favicon.ico" />
+    <title>Bloque 2 · Macroeconomía · Universidad de América</title>
+    <meta name="description" content="Bloque 2 del programa de Economía: entorno macroeconómico." />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        try {
+          var p = JSON.parse(localStorage.getItem("ua-a11y-prefs") || "{}");
+          var h = document.documentElement;
+          h.setAttribute("data-text-size", p.textSize || "md");
+          h.setAttribute("data-contrast", p.contrast || "default");
+          h.setAttribute("data-color-mode", p.colorMode || "default");
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="programa" data-program="economy">
+    <svg class="svg-defs" aria-hidden="true" focusable="false">
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></symbol>
+      <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5" /><path d="m11 6-6 6 6 6" /></symbol>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8" /><path d="M5 10v11h5v-7h4v7h5V10" /></symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2" /><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" /></symbol>
+      <symbol id="i-scan" viewBox="0 0 24 24"><path d="M5 7V5h2" /><path d="M17 5h2v2" /><path d="M19 17v2h-2" /><path d="M7 19H5v-2" /><circle cx="12" cy="12" r="3" /></symbol>
+      <symbol id="i-box" viewBox="0 0 24 24"><path d="m12 3 9 4-9 5-9-5z" /><path d="M3 7v10l9 5 9-5V7" /><path d="M12 12v10" /></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12" /><path d="M18 6L6 18" /></symbol>
+      <symbol id="i-a11y" viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="1.6" /><path d="M5 8h14" /><path d="M9 8v5" /><path d="M15 8v5" /><path d="M9 13l-2 8" /><path d="M15 13l2 8" /></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a3 3 0 0 1 3-3h13v17H7a3 3 0 0 0-3 3z" /><path d="M4 5v17" /><path d="M9 6h6" /><path d="M9 10h7" /></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></symbol>
+      <symbol id="i-trending" viewBox="0 0 24 24"><path d="m3 17 6-6 4 4 8-8" /><path d="M14 7h7v7" /></symbol>
+      <symbol id="i-trending-down" viewBox="0 0 24 24"><path d="m3 7 6 6 4-4 8 8" /><path d="M14 17h7v-7" /></symbol>
+      <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 3 4 14h7l-1 7 9-11h-7Z" /></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M3 12h18" /><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18" /></symbol>
+      <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" /><rect x="14" y="5" width="4" height="14" /></symbol>
+      <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6" width="14" height="12" rx="2" /><path d="m17 10 4-2v8l-4-2z" /></symbol>
+      <symbol id="i-headphones" viewBox="0 0 24 24"><path d="M4 14a8 8 0 0 1 16 0v3" /><path d="M4 14v4a2 2 0 0 0 2 2h2v-7H6a2 2 0 0 0-2 2Z" /><path d="M20 14v4a2 2 0 0 1-2 2h-2v-7h2a2 2 0 0 1 2 2Z" /></symbol>
+      <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h9l5 5v13H6Z" /><path d="M14 3v6h6" /><path d="M9 14h6" /><path d="M9 18h4" /></symbol>
+      <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" /><circle cx="9" cy="10" r="2" /><path d="m4 18 5-5 5 5 3-3 3 3" /></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="4" /><circle cx="12" cy="12" r="3" /><path d="M16.5 7.5h.01" /></symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 8h2V5h-2a4 4 0 0 0-4 4v2H8v3h2v5h3v-5h3l1-3h-4V9a1 1 0 0 1 1-1Z" /></symbol>
+      <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M4 8a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3Z" /><path d="m10 9 5 3-5 3Z" /></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M6 10v9" /><path d="M6 6v.01" /><path d="M11 19v-9" /><path d="M11 14a4 4 0 0 1 8 0v5" /></symbol>
+    </svg>
+
+    <svg class="a11y-defs" aria-hidden="true" focusable="false">
+      <defs>
+        <filter id="a11y-protanopia"><feColorMatrix type="matrix" values="0.567,0.433,0,0,0  0.558,0.442,0,0,0  0,0.242,0.758,0,0  0,0,0,1,0" /></filter>
+        <filter id="a11y-deuteranopia"><feColorMatrix type="matrix" values="0.625,0.375,0,0,0  0.7,0.3,0,0,0  0,0.3,0.7,0,0  0,0,0,1,0" /></filter>
+        <filter id="a11y-tritanopia"><feColorMatrix type="matrix" values="0.95,0.05,0,0,0  0,0.433,0.567,0,0  0,0.475,0.525,0,0  0,0,0,1,0" /></filter>
+        <filter id="a11y-achromatopsia"><feColorMatrix type="matrix" values="0.299,0.587,0.114,0,0  0.299,0.587,0.114,0,0  0.299,0.587,0.114,0,0  0,0,0,1,0" /></filter>
+      </defs>
+    </svg>
+
+    <div class="page-content">
+    <div class="app-shell">
+
+      <aside class="sidebar" aria-label="Navegación principal">
+        <a class="sidebar-brand" href="app.html#inicio" aria-label="Universidad de América">
+          <img src="assets/brand/logo-ua.png" alt="Universidad de América" />
+        </a>
+        <nav class="sidebar-nav">
+          <span class="sidebar-nav-label">Aplicativo</span>
+          <a class="sidebar-link" href="app.html#inicio"><svg aria-hidden="true"><use href="#i-home"></use></svg><span>Inicio</span></a>
+          <a class="sidebar-link is-active" href="app.html#programas"><svg aria-hidden="true"><use href="#i-briefcase"></use></svg><span>Programas</span></a>
+          <a class="sidebar-link" href="app.html#experiencia"><svg aria-hidden="true"><use href="#i-scan"></use></svg><span>Experiencia</span></a>
+          <a class="sidebar-link" href="app.html#recursos"><svg aria-hidden="true"><use href="#i-box"></use></svg><span>Recursos</span></a>
+        </nav>
+        <div class="sidebar-footer">
+          <b>Universidad de América</b>
+          Facultad de Ciencias Administrativas · Bogotá
+        </div>
+      </aside>
+
+      <div class="workspace">
+
+        <header class="bloque-head">
+          <div class="bloque-head-inner">
+            <nav class="module-breadcrumb" aria-label="Migas de pan">
+              <a href="programa-economia.html">
+                <svg aria-hidden="true"><use href="#i-arrow-left"></use></svg>
+                Economía
+              </a>
+              <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+              <span>Bloque 2</span>
+            </nav>
+
+            <span class="bloque-head-tag"><b>2</b>Bloque teórico</span>
+
+            <h1>Macroeconomía: convertir el <em>ruido del país</em> en <em>señales de decisión</em>.</h1>
+
+            <p class="bloque-head-lede">
+              Cuando lees en las noticias que «subió la inflación»,
+              «cambió la tasa del Banco de la República» o «el dólar
+              está disparado», no son titulares para preocupar: son
+              <b>señales reales</b> que cambian el precio del café, el
+              valor de tu próximo crédito y la utilidad de cualquier
+              empresa. Aquí aprendes a leerlas.
+            </p>
+
+            <div class="bloque-head-meta">
+              <span class="module-meta-pill">
+                <svg aria-hidden="true"><use href="#i-book"></use></svg>
+                <b>4</b> temas
+              </span>
+              <span class="module-meta-pill">
+                <svg aria-hidden="true"><use href="#i-clock"></use></svg>
+                <b>~80</b> min
+              </span>
+            </div>
+          </div>
+          <aside class="bloque-head-figure" aria-hidden="true">
+            <img src="assets/images/hero-eco-b2-macroeconomia.png" alt="" loading="lazy" />
+          </aside>
+        </header>
+
+        <div class="bloque-layout is-toc-left">
+
+          <aside class="bloque-toc" aria-label="Índice del bloque">
+            <div class="bloque-toc-head">
+              <small>En este bloque</small>
+              <span>4 temas</span>
+            </div>
+            <ol class="bloque-toc-list" data-toc>
+              <li><a class="bloque-toc-link" href="#crecimiento">Crecimiento económico</a></li>
+              <li><a class="bloque-toc-link" href="#inflacion">Inflación</a></li>
+              <li><a class="bloque-toc-link" href="#politica-monetaria">Política monetaria</a></li>
+              <li><a class="bloque-toc-link" href="#divisas">Tipo de cambio</a></li>
+            </ol>
+            <div class="bloque-toc-actions">
+              <a class="bloque-toc-action" href="programa-eco-bloque-1.html">Bloque 1 · Microeconomía</a>
+              <a class="bloque-toc-action is-next" href="programa-eco-bloque-3.html">Bloque 3 · Modelación y analítica</a>
+            </div>
+          </aside>
+
+          <main class="bloque-content">
+
+            <div class="module-callout" data-reveal>
+              <small>Resultado de aprendizaje</small>
+              <p>
+                Interpreto el comportamiento macroeconómico mediante crecimiento,
+                inflación, tasas de interés y tipo de cambio para anticipar
+                efectos sobre hogares, empresas y país.
+              </p>
+            </div>
+
+            <!-- TEMA 01 — CRECIMIENTO -->
+            <section class="module-tema" id="crecimiento" data-tema>
+              <header class="module-tema-head is-stacked" data-reveal>
+                <span class="module-tema-num" data-label="Tema">01</span>
+                <div class="module-tema-copy">
+                  <span class="module-tema-eyebrow">Crecimiento económico</span>
+                  <h2 class="module-tema-title">El tamaño del pastel decide cuántos pueden comer.</h2>
+                  <p class="module-tema-lede">
+                    Cuando escuchas que «el país creció 2%», significa
+                    que el pastel económico (lo que produce Colombia en
+                    un año) se hizo un poco más grande. Ese número, que
+                    se llama <abbr title="Producto Interno Bruto: la suma de todo lo producido en el país en un año.">PIB</abbr>,
+                    decide qué tantas oportunidades de empleo, inversión
+                    y consumo aparecen.
+                  </p>
+                </div>
+        </header>
+
+              <div class="module-grid is-3" data-reveal>
+                <article class="module-card is-top-accent">
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-trending"></use></svg></div>
+                  <span class="module-card-tag">Expansión</span>
+                  <h4 class="module-card-title">Cuando el país crece</h4>
+                  <p class="module-card-text">
+                    Las empresas contratan más gente, abren proyectos
+                    nuevos y se animan a pedir crédito porque confían
+                    en que van a vender. Para ti aparecen más
+                    oportunidades laborales y la economía «se siente»
+                    más activa.
+                  </p>
+                </article>
+                <article class="module-card is-top-accent">
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-trending-down"></use></svg></div>
+                  <span class="module-card-tag">Recesión</span>
+                  <h4 class="module-card-title">Cuando el país se encoge</h4>
+                  <p class="module-card-text">
+                    Si el pastel se hace más pequeño dos trimestres
+                    seguidos hablamos de recesión. Las oportunidades se
+                    escasean, el crédito se usa con miedo y los hogares
+                    recortan gasto, lo que profundiza la caída como un
+                    círculo vicioso.
+                  </p>
+                </article>
+                <article class="module-card is-top-accent">
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-zap"></use></svg></div>
+                  <span class="module-card-tag">Productividad</span>
+                  <h4 class="module-card-title">Crecer mejor, no solo crecer más</h4>
+                  <p class="module-card-text">
+                    Una empresa con buena tecnología y trabajadores
+                    capacitados produce más valor con los mismos
+                    recursos. Esa eficiencia se llama productividad y
+                    es el verdadero motor del crecimiento a largo
+                    plazo, no la simple expansión del PIB año a año.
+                  </p>
+                </article>
+              </div>
+
+              <details class="module-accordion" data-reveal>
+                <summary class="module-accordion-head">
+                  <span class="module-accordion-tag">+</span>
+                  <span class="module-accordion-title">¿Cómo se calcula el PIB? La versión corta</span>
+                  <span class="module-accordion-toggle"><svg aria-hidden="true"><use href="#i-arrow-down"></use></svg></span>
+                </summary>
+                <div class="module-accordion-body">
+                  <p>
+                    El PIB suma <b>todo lo que se produce dentro del
+                    país en un año</b>: lo que producen las empresas,
+                    lo que paga el Estado, lo que invierten los hogares
+                    y el saldo entre lo que se exporta y se importa.
+                  </p>
+                  <p>
+                    En Colombia lo calcula el DANE cada trimestre. La
+                    cifra siempre se compara con el mismo trimestre del
+                    año anterior para descontar el efecto de la
+                    inflación. Cuando lees «crecimiento del 2%», ya
+                    está limpio de subida de precios.
+                  </p>
+                </div>
+              </details>
+            </section>
+
+            <!-- TEMA 02 — INFLACIÓN -->
+            <section class="module-tema" id="inflacion" data-tema>
+              <header class="module-tema-head is-stacked" data-reveal>
+                <span class="module-tema-num" data-label="Tema">02</span>
+                <div class="module-tema-copy">
+                  <span class="module-tema-eyebrow">Inflación</span>
+                  <h2 class="module-tema-title">El ladrón silencioso de tu plata.</h2>
+                  <p class="module-tema-lede">
+                    Inflación es lo que pasa cuando, con los mismos
+                    pesos del año pasado, alcanzas para comprar menos
+                    cosas este año. No solo aprieta el mercado: cambia
+                    cómo decides ahorrar, endeudarte e invertir.
+                  </p>
+                </div>
+        </header>
+
+              <div class="module-aha" data-reveal>
+                <div class="module-aha-icon"><img src="assets/images/aha-eco-b2-almuerzo-fonda.png" alt="" loading="lazy" /></div>
+                <div class="module-aha-copy">
+                  <small>Para entenderlo</small>
+                  <p>
+                    Hace tres años un almuerzo corriente en una fonda
+                    costaba $10.000. Hoy ese mismo almuerzo cuesta
+                    $15.000. <b>El billete de $10.000 no cambió, pero
+                    ya no alcanza para almorzar</b>. Eso es inflación:
+                    los precios subieron y tu plata vale menos sin que
+                    te dieras cuenta.
+                  </p>
+                </div>
+              </div>
+
+              <div class="module-pricecomp" data-reveal>
+                <div class="module-pricecomp-side">
+                  <small>Antes</small>
+                  <b>$100</b>
+                  <p>Alcanzan para el combo completo.</p>
+                </div>
+                <div class="module-pricecomp-arrow">↑</div>
+                <div class="module-pricecomp-side is-after">
+                  <small>Precios suben · después</small>
+                  <b>$100</b>
+                  <p>Compran menos bienes o servicios.</p>
+                </div>
+              </div>
+
+              <div class="module-slider-demo" data-slider-demo data-reveal>
+                <div class="module-slider-demo-head">
+                  <div>
+                    <small>Calcula tú mismo</small>
+                    <h5>¿Cuánto vale dentro de 5 años $1.000.000 con esta inflación?</h5>
+                  </div>
+                </div>
+                <div class="module-slider-demo-control">
+                  <div class="module-slider-demo-control-row">
+                    <b>Inflación anual</b>
+                    <var data-slider-value data-suffix="%">5%</var>
+                  </div>
+                  <input type="range" min="0" max="20" value="5" step="1" />
+                </div>
+                <div class="module-slider-demo-output">
+                  <div class="module-slider-demo-output-cell" data-slider-output="1000000 / Math.pow(1 + v/100, 5)" data-suffix=" pesos" data-decimals="0">
+                    <small>Poder de compra en 5 años</small>
+                    <b>—</b>
+                  </div>
+                  <div class="module-slider-demo-output-cell" data-slider-output="1000000 - 1000000 / Math.pow(1 + v/100, 5)" data-suffix=" pesos" data-decimals="0">
+                    <small>Lo que «pierdes»</small>
+                    <b>—</b>
+                  </div>
+                </div>
+                <p class="module-slider-demo-note" data-slider-note
+                  data-template="Si dejas $1.000.000 quieto en una caja durante 5 años con una inflación de <b>{v}%</b> anual, al final del periodo solo te alcanzará para comprar lo equivalente a <b>${1000000 / Math.pow(1 + v/100, 5)}</b> pesos de hoy. Por eso el ahorro debajo del colchón pierde valor sin que te des cuenta.">
+                  Mueve el deslizador para ver el efecto.
+                </p>
+              </div>
+
+              <div class="module-prose" data-reveal>
+                <p>
+                  Aunque tengas el mismo billete, lo que puedes hacer
+                  con él se reduce. Esa pérdida de capacidad de compra
+                  cambia un montón de decisiones: <b>el ahorro pierde
+                  valor</b> si la cuenta paga menos que la inflación,
+                  los contratos de arriendo o de servicios se
+                  renegocian al alza y las tasas de interés suelen
+                  subir para compensar.
+                </p>
+                <p>
+                  Por eso el Banco de la República tiene una sola
+                  misión grande: mantener la inflación baja y estable.
+                  Sin esa estabilidad nadie puede planear ahorrar para
+                  un carro, comprar vivienda o abrir un negocio con
+                  proyección a varios años.
+                </p>
+              </div>
+
+              <figure class="module-infografia is-reversed" data-reveal>
+                <div class="module-infografia-image">
+                  <img src="assets/images/infografia-eco-b2-canasta-familiar.png" alt="La inflación que sí se siente: 15 años de canasta básica" loading="lazy" />
+                </div>
+                <div class="module-infografia-text">
+                  <small>Infografía</small>
+                  <h5>La inflación que sí se siente: 15 años de canasta básica</h5>
+                  <p>Cuatro productos cotidianos — arroz, leche, transporte y datos móviles — comparados en tres momentos del tiempo: 2010, 2017 y 2025.</p>
+                  <p>La línea ascendente muestra que con los mismos .000 cada vez alcanza para menos. Eso es <b>inflación</b> en acción, no como dato abstracto del DANE sino como cosa que ves cuando vas al mercado.</p>
+                </div>
+              </figure>
+            </section>
+
+            <!-- TEMA 03 — POLÍTICA MONETARIA -->
+            <section class="module-tema" id="politica-monetaria" data-tema>
+              <header class="module-tema-head is-stacked" data-reveal>
+                <span class="module-tema-num" data-label="Tema">03</span>
+                <div class="module-tema-copy">
+                  <span class="module-tema-eyebrow">Política monetaria</span>
+                  <h2 class="module-tema-title">La tasa de interés es el precio de pedir dinero prestado.</h2>
+                  <p class="module-tema-lede">
+                    El Banco de la República no decide los precios uno
+                    por uno. Mueve una sola palanca —la <b>tasa de
+                    interés</b>— y deja que la economía entera reaccione.
+                    Esa palanca funciona como un acelerador o como un
+                    freno.
+                  </p>
+                </div>
+        </header>
+
+              <div class="module-grid is-2" style="grid-template-columns: repeat(2, minmax(0,1fr));" data-reveal>
+                <article class="module-card is-top-accent">
+                  <span class="module-card-tag">Tasas bajas · acelerador</span>
+                  <h4 class="module-card-title">Pedir prestado cuesta poco</h4>
+                  <p class="module-card-text">
+                    Los créditos están baratos, así que las familias se
+                    animan a comprar carro o vivienda y las empresas a
+                    pedir plata para crecer. El consumo se prende. El
+                    ahorro, en cambio, pierde atractivo: dejar la plata
+                    quieta paga muy poco.
+                  </p>
+                </article>
+                <article class="module-card is-top-accent">
+                  <span class="module-card-tag">Tasas altas · freno</span>
+                  <h4 class="module-card-title">El crédito sale caro</h4>
+                  <p class="module-card-text">
+                    Los créditos se encarecen. La gente compra menos a
+                    plazos, las empresas frenan inversión y la inflación
+                    se enfría. El precio: la economía se desacelera y
+                    aparecer oportunidades nuevas cuesta más trabajo.
+                  </p>
+                </article>
+              </div>
+
+              <div class="module-spotlight is-diagonal" data-reveal>
+                <small>Por qué te debería importar</small>
+                <h4>Si financias tu carrera con crédito, esta tasa decide tu futuro.</h4>
+                <p>
+                  Con una tasa baja, tu crédito educativo es una
+                  obligación manejable. Con una tasa alta puede
+                  <b>casi duplicar lo que pagas al final</b>, sin que
+                  tu sueldo aumente al mismo ritmo. Esto mismo pasa con
+                  el crédito de vivienda, el del carro, las tarjetas de
+                  crédito y los créditos rotativos. La macro no es solo
+                  un titular: te toca el bolsillo.
+                </p>
+              </div>
+
+              <details class="module-accordion" data-reveal>
+                <summary class="module-accordion-head">
+                  <span class="module-accordion-tag">+</span>
+                  <span class="module-accordion-title">Espera, ¿por qué subir la tasa baja la inflación?</span>
+                  <span class="module-accordion-toggle"><svg aria-hidden="true"><use href="#i-arrow-down"></use></svg></span>
+                </summary>
+                <div class="module-accordion-body">
+                  <p>
+                    Cuando los créditos están caros, la gente y las
+                    empresas <b>compran menos a plazos</b>. Si hay menos
+                    compradores empujando, los vendedores ya no pueden
+                    subir tanto los precios. Con el tiempo, la
+                    inflación baja.
+                  </p>
+                  <p>
+                    Tiene un costo: la economía se desacelera, hay
+                    menos inversión y a veces sube el desempleo. Por
+                    eso los bancos centrales caminan en una cuerda
+                    floja entre controlar precios sin frenar de más al
+                    país.
+                  </p>
+                </div>
+              </details>
+
+              <div class="module-resource" data-reveal>
+                <div class="module-resource-icon"><svg aria-hidden="true"><use href="#i-video"></use></svg></div>
+                <div class="module-resource-copy">
+                  <small data-format="Video · 6 min">Recurso recomendado</small>
+                  <h5>Explicado: cómo decide el Banco de la República la tasa</h5>
+                  <p>
+                    Una pieza audiovisual que muestre el funcionamiento
+                    de la Junta Directiva del Banco Central colombiano:
+                    qué datos miran, cómo discuten y por qué la
+                    decisión se anuncia cada mes.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <!-- TEMA 04 — TIPO DE CAMBIO -->
+            <section class="module-tema" id="divisas" data-tema>
+              <header class="module-tema-head is-stacked" data-reveal>
+                <span class="module-tema-num" data-label="Tema">04</span>
+                <div class="module-tema-copy">
+                  <span class="module-tema-eyebrow">Tipo de cambio</span>
+                  <h2 class="module-tema-title">El mismo dólar le pega distinto a cada quien.</h2>
+                  <p class="module-tema-lede">
+                    El tipo de cambio (la <abbr title="Tasa Representativa del Mercado: el precio promedio del dólar en pesos colombianos cada día.">TRM</abbr>)
+                    dice cuántos pesos vale un dólar. Cuando ese precio
+                    se mueve, no afecta a todos por igual: algunos ganan,
+                    otros pierden. Pasa por los cuatro escenarios y
+                    mira a quién le va mejor en cada uno.
+                  </p>
+                </div>
+        </header>
+
+              <div class="module-tabs" data-tabs data-reveal>
+                <div class="module-tabs-nav" role="tablist">
+                  <button class="module-tabs-btn is-active" type="button" role="tab" data-tab="s-bajo">
+                    <span>↓</span> Dólar bajo
+                  </button>
+                  <button class="module-tabs-btn" type="button" role="tab" data-tab="s-base">
+                    <span>=</span> Dólar normal
+                  </button>
+                  <button class="module-tabs-btn" type="button" role="tab" data-tab="s-alto">
+                    <span>↑</span> Dólar alto
+                  </button>
+                  <button class="module-tabs-btn" type="button" role="tab" data-tab="s-choque">
+                    <span>↑↑</span> Choque cambiario
+                  </button>
+                </div>
+                <div class="module-tabs-panels">
+                  <div class="module-tabs-panel is-active" role="tabpanel" data-panel="s-bajo">
+                    <h5>Dólar bajo · todo lo importado se abarata</h5>
+                    <p>
+                      Cuando el dólar baja, traer cosas de afuera (carros,
+                      tecnología, suscripciones, insumos) cuesta menos en
+                      pesos. <b>El importador celebra</b>. Quien sufre es
+                      el exportador: vende café o flores afuera y recibe
+                      menos pesos por cada dólar que le pagan.
+                    </p>
+                    <div class="module-tabs-panel-meta">
+                      <span>Importador · <b>costo 90</b></span>
+                      <span>Exportador · <b>ingreso 90</b></span>
+                      <span>Consumidor · <b>poder 100</b></span>
+                      <span>BioPack · <b>margen +</b></span>
+                    </div>
+                  </div>
+
+                  <div class="module-tabs-panel" role="tabpanel" data-panel="s-base">
+                    <h5>Dólar normal · todo el mundo planea sobre esto</h5>
+                    <p>
+                      Es el escenario «en equilibrio»: los precios de
+                      importar y exportar están en niveles habituales y
+                      las empresas pueden planear sin sorpresas. La
+                      tarea del negocio aquí es <b>prepararse para lo
+                      que viene</b>, no celebrar la calma.
+                    </p>
+                    <div class="module-tabs-panel-meta">
+                      <span>Importador · <b>costo 100</b></span>
+                      <span>Exportador · <b>ingreso 100</b></span>
+                      <span>Consumidor · <b>poder 100</b></span>
+                      <span>BioPack · <b>margen =</b></span>
+                    </div>
+                  </div>
+
+                  <div class="module-tabs-panel" role="tabpanel" data-panel="s-alto">
+                    <h5>Dólar alto · importar duele, exportar premia</h5>
+                    <p>
+                      Cuando el dólar sube, todo lo que viene de afuera
+                      se encarece y el consumidor pierde poder de compra.
+                      En cambio el exportador recibe más pesos por cada
+                      dólar vendido afuera, así que <b>los exportadores
+                      ganan terreno</b>. BioPack pierde ventaja si
+                      depende de insumos importados.
+                    </p>
+                    <div class="module-tabs-panel-meta">
+                      <span>Importador · <b>costo 110</b></span>
+                      <span>Exportador · <b>ingreso 110</b></span>
+                      <span>Consumidor · <b>poder 92</b></span>
+                      <span>BioPack · <b>margen 8%</b></span>
+                    </div>
+                  </div>
+
+                  <div class="module-tabs-panel" role="tabpanel" data-panel="s-choque">
+                    <h5>Choque cambiario · el dólar se dispara</h5>
+                    <p>
+                      Es el escenario extremo. La macro premia a los que
+                      venden afuera, castiga duro a los que importan y
+                      al consumidor le sube el costo de los viajes,
+                      tecnología y bienes importados. <b>Aquí planear
+                      sin cobertura es jugársela completa</b>. Las
+                      empresas que dependen de insumos importados deben
+                      diseñar coberturas y revisar precios.
+                    </p>
+                    <div class="module-tabs-panel-meta">
+                      <span>Importador · <b>costo 117</b></span>
+                      <span>Exportador · <b>ingreso 117</b></span>
+                      <span>Consumidor · <b>poder 85</b></span>
+                      <span>BioPack · <b>margen 8%</b></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="module-subtema">
+                <h3 class="module-subtema-title">Tres lecturas que te llevas</h3>
+                <div class="module-grid is-3" data-reveal>
+                  <article class="module-card is-top-accent">
+                    <span class="module-card-tag">Dólar alto</span>
+                    <h4 class="module-card-title">Importar cuesta más</h4>
+                    <p class="module-card-text">
+                      Viajes, consolas, tecnología, insumos y suscripciones
+                      pueden volverse más caros.
+                    </p>
+                  </article>
+                  <article class="module-card is-top-accent">
+                    <span class="module-card-tag">Dólar alto</span>
+                    <h4 class="module-card-title">Exportar puede mejorar ingresos</h4>
+                    <p class="module-card-text">
+                      Quien vende café, flores o servicios al exterior recibe
+                      más pesos por cada dólar.
+                    </p>
+                  </article>
+                  <article class="module-card is-top-accent">
+                    <span class="module-card-tag">Dólar volátil</span>
+                    <h4 class="module-card-title">Planear exige cobertura</h4>
+                    <p class="module-card-text">
+                      Empresas con compras internacionales deben diseñar
+                      precios, inventarios y contratos con cuidado.
+                    </p>
+                  </article>
+                </div>
+              </div>
+
+              <div class="module-quickcheck" data-quickcheck data-reveal>
+                <div class="module-quickcheck-head">
+                  <small>Comprueba si lo entendiste</small>
+                </div>
+                <p class="module-quickcheck-q">
+                  Tu familia importa repuestos para autos desde Alemania y
+                  los vende en Colombia. Si el euro se dispara 25%, ¿qué
+                  le pasa al negocio?
+                </p>
+                <div class="module-quickcheck-opts">
+                  <button type="button" class="module-quickcheck-opt" data-letter="A">
+                    <span>Mejora porque los repuestos europeos suben de valor.</span>
+                  </button>
+                  <button type="button" class="module-quickcheck-opt" data-letter="B" data-correct="true">
+                    <span>Empeora porque cada repuesto cuesta más pesos al importarse, y los clientes locales compran menos a precios más altos.</span>
+                  </button>
+                  <button type="button" class="module-quickcheck-opt" data-letter="C">
+                    <span>No le pasa nada porque las ventas son en Colombia.</span>
+                  </button>
+                </div>
+                <div class="module-quickcheck-feedback"
+                  data-correct-msg="Correcto. La familia es <b>importadora</b>, así que un euro alto le encarece los repuestos. Si traslada el alza al precio, vende menos; si la absorbe, pierde margen. Es el mismo dilema de BioPack en el reto integrador del programa."
+                  data-wrong-msg="No es esa. La familia <b>importa</b> los repuestos, así que paga en euros. Cuando el euro sube, cada repuesto cuesta más pesos. Eso le encarece su producto y le presiona el margen, aunque venda en Colombia. La opción correcta es la B."></div>
+              </div>
+
+              <div class="module-resource" data-reveal>
+                <div class="module-resource-icon"><svg aria-hidden="true"><use href="#i-globe"></use></svg></div>
+                <div class="module-resource-copy">
+                  <small data-format="Simulador interactivo">Recurso recomendado</small>
+                  <h5>Mesa USD/COP — escenarios cambiarios en vivo</h5>
+                  <p>
+                    Un mini-simulador donde el estudiante mueve el slider de
+                    la TRM y ve actualizarse en tiempo real los indicadores
+                    de los cuatro agentes. Esta tabla estática es la versión
+                    de papel; el simulador es el siguiente paso natural.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+          </main>
+        </div>
+
+        <nav class="bloque-nav-foot" aria-label="Navegación entre bloques">
+          <a class="bloque-nav-card" href="programa-eco-bloque-1.html">
+            <small><svg aria-hidden="true"><use href="#i-arrow-left"></use></svg> Bloque anterior</small>
+            <h5>Bloque 1 · Microeconomía</h5>
+          </a>
+          <a class="bloque-nav-card is-next" href="programa-eco-bloque-3.html">
+            <small>Siguiente bloque <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg></small>
+            <h5>Bloque 3 · Modelación y analítica</h5>
+          </a>
+        </nav>
+
+        <footer class="workspace-footer">
+          <div class="workspace-footer-meta">
+            <b>Universidad de América</b> · Ciencias Administrativas · Bogotá
+          </div>
+          <div class="workspace-footer-social" aria-label="Redes sociales">
+            <a href="#" aria-label="Instagram"><svg><use href="#i-instagram"></use></svg></a>
+            <a href="#" aria-label="Facebook"><svg><use href="#i-facebook"></use></svg></a>
+            <a href="#" aria-label="YouTube"><svg><use href="#i-youtube"></use></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg><use href="#i-linkedin"></use></svg></a>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+    </div>
+
+    <button class="a11y-fab" type="button" aria-label="Opciones de accesibilidad" aria-expanded="false" data-a11y-fab>
+      <svg aria-hidden="true"><use href="#i-a11y"></use></svg>
+    </button>
+
+    <aside class="a11y-panel" role="dialog" aria-label="Panel de accesibilidad" data-a11y-panel>
+      <div class="a11y-panel-head">
+        <div><h3>Accesibilidad</h3><small>Ajusta la experiencia</small></div>
+        <button class="a11y-panel-close" type="button" aria-label="Cerrar panel" data-a11y-close>
+          <svg aria-hidden="true"><use href="#i-close"></use></svg>
+        </button>
+      </div>
+      <div class="a11y-group">
+        <span class="a11y-group-label">Tamaño de fuente <b data-mono>A</b></span>
+        <div class="a11y-options">
+          <button type="button" data-pref="textSize" data-value="sm"><span>A</span></button>
+          <button type="button" data-pref="textSize" data-value="md"><span>A</span></button>
+          <button type="button" data-pref="textSize" data-value="lg"><span>A</span></button>
+          <button type="button" data-pref="textSize" data-value="xl"><span>A</span></button>
+        </div>
+      </div>
+      <div class="a11y-group">
+        <span class="a11y-group-label">Contraste</span>
+        <div class="a11y-options is-2">
+          <button type="button" data-pref="contrast" data-value="default">Normal</button>
+          <button type="button" data-pref="contrast" data-value="high">Alto</button>
+        </div>
+      </div>
+      <div class="a11y-group">
+        <span class="a11y-group-label">Daltonismo</span>
+        <div class="a11y-options is-5" style="grid-template-columns: repeat(5, minmax(0,1fr));">
+          <button type="button" data-pref="colorMode" data-value="default">Off</button>
+          <button type="button" data-pref="colorMode" data-value="protanopia">Pro</button>
+          <button type="button" data-pref="colorMode" data-value="deuteranopia">Deu</button>
+          <button type="button" data-pref="colorMode" data-value="tritanopia">Tri</button>
+          <button type="button" data-pref="colorMode" data-value="achromatopsia">Acro</button>
+        </div>
+      </div>
+      <button type="button" class="a11y-reset" data-a11y-reset>↺ Restaurar valores por defecto</button>
+    </aside>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="src/js/accessibility.js" defer></script>
+    <script src="src/js/programa-modulo.js" defer></script>
+  </body>
+</html>
