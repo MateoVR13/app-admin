@@ -63,11 +63,13 @@
           <a class="sidebar-link is-active" href="app.html#programas">
             <svg aria-hidden="true"><use href="#i-briefcase"></use></svg><span>Programas</span>
           </a>
+          <div class="sidebar-sublinks">
+            <a class="sidebar-sublink is-active" href="programa-administracion.html">Administración</a>
+            <a class="sidebar-sublink" href="programa-negocios.html">Negocios Internacionales</a>
+            <a class="sidebar-sublink" href="programa-economia.html">Economía</a>
+          </div>
           <a class="sidebar-link" href="app.html#experiencia">
             <svg aria-hidden="true"><use href="#i-scan"></use></svg><span>Experiencia</span>
-          </a>
-          <a class="sidebar-link" href="app.html#recursos">
-            <svg aria-hidden="true"><use href="#i-box"></use></svg><span>Recursos</span>
           </a>
         </nav>
 
@@ -137,8 +139,80 @@
           </div>
         </header>
 
-        <!-- ÍNDICE DE BLOQUES -->
         <main class="module-body">
+          <!-- LA CARRERA -->
+          <section class="module-bloque" data-section>
+            <header class="module-bloque-head" data-reveal>
+              <span class="module-bloque-tag"><b>§</b>La Carrera</span>
+              <h2 class="module-bloque-title">
+                Conoce en qué te estás formando como <em>administrador</em>.
+              </h2>
+              <p class="module-bloque-lede">
+                Antes de entrar a los bloques teóricos, dimensiona qué hace un
+                administrador, dónde se desempeña y por qué su rol es crítico
+                hoy.
+              </p>
+            </header>
+
+            <div class="module-carrera-grid">
+              <div class="module-index module-index--stacked">
+                <article class="module-card" data-reveal>
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-book"></use></svg></div>
+                  <span class="module-card-tag">¿Qué es?</span>
+                  <h3 class="module-card-title">Administración de Empresas</h3>
+                  <p class="module-card-text">
+                    Organiza personas, recursos y procesos para que la empresa funcione
+                    y crezca. Combina <strong>estrategia, talento, finanzas y operaciones</strong>
+                    en una sola práctica: diagnosticar, decidir y rendir cuentas.
+                  </p>
+                </article>
+
+                <article class="module-card" data-reveal>
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-briefcase"></use></svg></div>
+                  <span class="module-card-tag">Rol del profesional</span>
+                  <h3 class="module-card-title">Traducir estrategia en ejecución</h3>
+                  <p class="module-card-text">
+                    <strong>Lee el entorno</strong>, prioriza y asigna recursos escasos.
+                    Toma decisiones que mezclan lo financiero, humano y cultural —
+                    sostenidas con criterio y datos.
+                  </p>
+                </article>
+
+                <article class="module-card" data-reveal>
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-target"></use></svg></div>
+                  <span class="module-card-tag">Áreas de desempeño</span>
+                  <h3 class="module-card-title">Dónde puedes ejercer</h3>
+                  <p class="module-card-text">
+                    <strong>Gerencia</strong> en PyMEs, startups y multinacionales ·
+                    <strong>Talento humano</strong> · <strong>Finanzas corporativas</strong>
+                    · <strong>Operaciones</strong> · <strong>Consultoría</strong> ·
+                    <strong>Emprendimiento</strong>.
+                  </p>
+                </article>
+              </div>
+
+              <aside class="module-carrera-video" data-reveal aria-label="Video introductorio">
+                <div class="module-carrera-video-frame">
+                  <div class="wistia_responsive_padding" style="padding:75.0% 0 0 0;position:relative;">
+                    <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
+                      <iframe src="https://fast.wistia.net/embed/iframe/6slqpoqeho?web_component=true&seo=false"
+                              title="VideoIntroAdmin2"
+                              allow="autoplay; fullscreen"
+                              allowtransparency="true"
+                              frameborder="0"
+                              scrolling="no"
+                              class="wistia_embed"
+                              name="wistia_embed"
+                              width="100%"
+                              height="100%"></iframe>
+                    </div>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </section>
+
+          <!-- ÍNDICE DE BLOQUES -->
           <section class="module-bloque" data-section>
             <header class="module-bloque-head" data-reveal>
               <span class="module-bloque-tag"><b>§</b>Estructura del programa</span>
@@ -291,6 +365,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://fast.wistia.net/player.js" async></script>
     <script src="src/js/mobile-nav.js" defer></script>
     <script src="src/js/accessibility.js" defer></script>
     <script src="src/js/programa-modulo.js" defer></script>

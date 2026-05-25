@@ -76,13 +76,36 @@
           <a class="sidebar-link is-active" href="app.html#programas">
             <svg aria-hidden="true"><use href="#i-briefcase"></use></svg><span>Programas</span>
           </a>
+          <div class="sidebar-sublinks">
+            <a class="sidebar-sublink is-active" href="programa-administracion.html">Administración</a>
+            <a class="sidebar-sublink" href="programa-negocios.html">Negocios Internacionales</a>
+            <a class="sidebar-sublink" href="programa-economia.html">Economía</a>
+          </div>
           <a class="sidebar-link" href="app.html#experiencia">
             <svg aria-hidden="true"><use href="#i-scan"></use></svg><span>Experiencia</span>
           </a>
-          <a class="sidebar-link" href="app.html#recursos">
-            <svg aria-hidden="true"><use href="#i-box"></use></svg><span>Recursos</span>
-          </a>
         </nav>
+
+        <nav class="sidebar-toc" aria-label="Índice del bloque">
+            <span class="sidebar-nav-label">Índice del bloque</span>
+            <div class="bloque-toc-head">
+              <small>En este bloque</small>
+              <span>6 temas</span>
+            </div>
+            <ol class="bloque-toc-list" data-toc>
+              <li><a class="bloque-toc-link" href="#planeacion">Planeación</a></li>
+              <li><a class="bloque-toc-link" href="#pestel">PESTEL</a></li>
+              <li><a class="bloque-toc-link" href="#porter">5 Fuerzas de Porter</a></li>
+              <li><a class="bloque-toc-link" href="#organizacion">Organización</a></li>
+              <li><a class="bloque-toc-link" href="#direccion">Dirección</a></li>
+              <li><a class="bloque-toc-link" href="#control">Control · BSC y PDCA</a></li>
+            </ol>
+            <div class="bloque-toc-actions">
+              <a class="bloque-toc-action" href="programa-admin-bloque-1.html">Bloque 1 · Fundamentos</a>
+              <a class="bloque-toc-action is-next" href="reto-admin-techcorp.html">Reto · TechCorp</a>
+            </div>
+          </nav>
+
 
         <div class="sidebar-footer">
           <b>Universidad de América</b>
@@ -132,7 +155,7 @@
             </div>
           </div>
           <aside class="bloque-head-figure" aria-hidden="true">
-            <img src="assets/images/hero-admin-b2-proceso.png" alt="" loading="lazy" />
+            <img src="assets/images/new-images/hero-admin-b2-proceso.png" alt="" loading="lazy" />
           </aside>
         </header>
 
@@ -204,7 +227,7 @@
               </div>
 
               <div class="module-aha" data-reveal>
-                <div class="module-aha-icon"><img src="assets/images/aha-admin-b2-juan-valdez.png" alt="" loading="lazy" /></div>
+                <div class="module-aha-icon"><img src="assets/images/new-images/aha-admin-b2-juan-valdez.png" alt="" loading="lazy" /></div>
                 <div class="module-aha-copy">
                   <small>Para entenderlo</small>
                   <p>
@@ -251,7 +274,7 @@
 
               <figure class="module-infografia" data-reveal>
                 <div class="module-infografia-image">
-                  <img src="assets/images/infografia-admin-b2-planeacion-pagina.png" alt="Tu plan estratégico en una sola hoja" loading="lazy" />
+                  <img src="assets/images/new-images/infografia-admin-b2-planeacion-pagina.png" alt="Tu plan estratégico en una sola hoja" loading="lazy" />
                 </div>
                 <div class="module-infografia-text">
                   <small>Infografía</small>
@@ -276,39 +299,200 @@
                 </div>
         </header>
 
-              <div class="module-pestel" data-reveal>
-                <div class="module-pestel-pill"><b>P</b><span>Político</span></div>
-                <div class="module-pestel-pill"><b>E</b><span>Económico</span></div>
-                <div class="module-pestel-pill"><b>S</b><span>Social</span></div>
-                <div class="module-pestel-pill"><b>T</b><span>Tecnológico</span></div>
-                <div class="module-pestel-pill"><b>E</b><span>Ecológico</span></div>
-                <div class="module-pestel-pill"><b>L</b><span>Legal</span></div>
+              <!-- HERO · 6 cards con icono, descripción y ejemplo colombiano -->
+              <div class="module-pestel-hero" data-reveal>
+                <article class="module-pestel-card" data-pestel="political">
+                  <header>
+                    <span class="module-pestel-card-letter">P</span>
+                    <div>
+                      <span class="module-pestel-card-name">Político</span>
+                      <small>Decisiones de gobierno y estabilidad institucional</small>
+                    </div>
+                    <svg class="module-pestel-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M3 21h18"/><path d="M5 21V10"/><path d="M19 21V10"/><path d="M9 21V14"/><path d="M15 21V14"/><path d="M3 10l9-6 9 6"/>
+                    </svg>
+                  </header>
+                  <p>Reformas, políticas públicas, acuerdos comerciales, riesgo país.</p>
+                  <div class="module-pestel-card-ex"><b>Ej.</b> Reforma tributaria 2024 sube IVA en bebidas azucaradas.</div>
+                </article>
+
+                <article class="module-pestel-card" data-pestel="economic">
+                  <header>
+                    <span class="module-pestel-card-letter">E</span>
+                    <div>
+                      <span class="module-pestel-card-name">Económico</span>
+                      <small>Indicadores macro y poder adquisitivo</small>
+                    </div>
+                    <svg class="module-pestel-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                    </svg>
+                  </header>
+                  <p>Inflación, tasa de interés, tipo de cambio, PIB, empleo, salario mínimo.</p>
+                  <div class="module-pestel-card-ex"><b>Ej.</b> Tasa BanRep al 9,75 % encarece créditos para PyMEs.</div>
+                </article>
+
+                <article class="module-pestel-card" data-pestel="social">
+                  <header>
+                    <span class="module-pestel-card-letter">S</span>
+                    <div>
+                      <span class="module-pestel-card-name">Sociocultural</span>
+                      <small>Hábitos, demografía, valores</small>
+                    </div>
+                    <svg class="module-pestel-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                  </header>
+                  <p>Tendencias de consumo, envejecimiento, urbanización, salud, género.</p>
+                  <div class="module-pestel-card-ex"><b>Ej.</b> 63 % de millennials prioriza productos saludables y de origen claro.</div>
+                </article>
+
+                <article class="module-pestel-card" data-pestel="tech">
+                  <header>
+                    <span class="module-pestel-card-letter">T</span>
+                    <div>
+                      <span class="module-pestel-card-name">Tecnológico</span>
+                      <small>Innovación, automatización, plataformas</small>
+                    </div>
+                    <svg class="module-pestel-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/>
+                    </svg>
+                  </header>
+                  <p>IA generativa, e-commerce, fintech, automatización, ciberseguridad.</p>
+                  <div class="module-pestel-card-ex"><b>Ej.</b> Rappi y domicilios desplazan al canal tradicional en barrios.</div>
+                </article>
+
+                <article class="module-pestel-card" data-pestel="ecological">
+                  <header>
+                    <span class="module-pestel-card-letter">E</span>
+                    <div>
+                      <span class="module-pestel-card-name">Ecológico</span>
+                      <small>Clima, recursos, sostenibilidad</small>
+                    </div>
+                    <svg class="module-pestel-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M12 2C8 6 6 10 6 14a6 6 0 0 0 12 0c0-4-2-8-6-12z"/><path d="M12 22V8"/>
+                    </svg>
+                  </header>
+                  <p>Cambio climático, escasez hídrica, economía circular, huella de carbono.</p>
+                  <div class="module-pestel-card-ex"><b>Ej.</b> Sequía 2024 sube 18 % el precio del aguacate hass nacional.</div>
+                </article>
+
+                <article class="module-pestel-card" data-pestel="legal">
+                  <header>
+                    <span class="module-pestel-card-letter">L</span>
+                    <div>
+                      <span class="module-pestel-card-name">Legal</span>
+                      <small>Normativa obligatoria y regulación</small>
+                    </div>
+                    <svg class="module-pestel-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M3 6l3 0 3 -1l3 1l3 -1l3 1l3 0"/><path d="M6 6l-3 11h6Z"/><path d="M18 6l3 11h-6Z"/><path d="M12 4v17"/><path d="M9 21h6"/>
+                    </svg>
+                  </header>
+                  <p>Etiquetado, laboral, datos personales (Habeas Data), competencia, sanitario.</p>
+                  <div class="module-pestel-card-ex"><b>Ej.</b> Etiquetado octogonal de advertencias en alimentos (Res. 810/2021).</div>
+                </article>
               </div>
 
-              <div class="module-split is-right" data-reveal>
-                <aside class="module-split-aside">
-                  <h5>Cómo se aplica</h5>
-                  <p>
-                    Para cada variable, escribe dos columnas: <b>oportunidades</b>
-                    que abre y <b>amenazas</b> que introduce. Luego prioriza las
-                    tres más relevantes para tu industria.
-                  </p>
-                </aside>
-                <div class="module-prose">
-                  <p>
-                    Las variables PESTEL no actúan aisladas. Una reforma tributaria
-                    (<em>política</em>) puede cambiar la rentabilidad
-                    (<em>económica</em>); una nueva preferencia de consumo
-                    (<em>social</em>) puede acelerar una transición tecnológica;
-                    una norma ambiental (<em>ecológica/legal</em>) puede cerrar un
-                    mercado de un día para otro.
-                  </p>
-                  <p>
-                    El valor del análisis no está en llenar la matriz, sino en
-                    detectar a tiempo las tres o cuatro fuerzas que sí pueden
-                    cambiar tu negocio.
-                  </p>
+              <!-- TABLA · oportunidades vs amenazas — caso panadería Colombia -->
+              <div class="module-pestel-table" data-reveal>
+                <header class="module-pestel-table-head">
+                  <small>Matriz aplicada · caso</small>
+                  <h4>Panadería de barrio en Bogotá · oportunidades vs amenazas</h4>
+                  <p>Aquí lo importante no es llenar la tabla, sino <b>detectar las 2-3 fuerzas</b> que sí pueden cambiar el negocio.</p>
+                </header>
+                <div class="module-pestel-table-scroll">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Variable</th>
+                        <th><span class="module-pestel-th-good">Oportunidad</span></th>
+                        <th><span class="module-pestel-th-bad">Amenaza</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><span class="module-pestel-row-letter" data-pestel="political">P</span> Política</td>
+                        <td>Incentivos a emprendimiento barrial vía Cámara de Comercio.</td>
+                        <td>Cambios tributarios suben costo de insumos (harina importada).</td>
+                      </tr>
+                      <tr>
+                        <td><span class="module-pestel-row-letter" data-pestel="economic">E</span> Económica</td>
+                        <td>Cae poder adquisitivo → cliente busca pan económico (formato familiar).</td>
+                        <td>Inflación de insumos &gt; subidas de precio que el cliente acepta.</td>
+                      </tr>
+                      <tr>
+                        <td><span class="module-pestel-row-letter" data-pestel="social">S</span> Sociocultural</td>
+                        <td>Tendencia salud abre línea integral, sin azúcar, fitness.</td>
+                        <td>Generación Z reduce consumo de pan blanco tradicional.</td>
+                      </tr>
+                      <tr>
+                        <td><span class="module-pestel-row-letter" data-pestel="tech">T</span> Tecnológica</td>
+                        <td>Domicilios y suscripción semanal vía WhatsApp Business.</td>
+                        <td>Apps desplazan al cliente del mostrador físico.</td>
+                      </tr>
+                      <tr>
+                        <td><span class="module-pestel-row-letter" data-pestel="ecological">E</span> Ecológica</td>
+                        <td>Empaques compostables como diferenciador frente a panaderías industriales.</td>
+                        <td>Sequías y heladas suben precio de trigo, huevo y mantequilla.</td>
+                      </tr>
+                      <tr>
+                        <td><span class="module-pestel-row-letter" data-pestel="legal">L</span> Legal</td>
+                        <td>Sello frontal puede educar al consumidor y posicionar productos sin advertencias.</td>
+                        <td>Etiquetado octogonal obligatorio: costo de rediseño + posible rechazo.</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
+              </div>
+
+              <!-- GRÁFICO · intensidad de cada variable por sector -->
+              <div class="module-pestel-intensity" data-reveal>
+                <header class="module-pestel-intensity-head">
+                  <small>Intensidad por sector</small>
+                  <h4>¿Qué variables pesan más según la industria?</h4>
+                  <p>Pista: la importancia de cada variable cambia radicalmente según el sector. Una pyme de software vive del cambio tecnológico; una agroindustria vive del clima.</p>
+                </header>
+                <div class="module-pestel-sector-tabs" role="tablist">
+                  <button type="button" class="module-pestel-sector-tab is-active" role="tab" data-sector="alimentos">Alimentos</button>
+                  <button type="button" class="module-pestel-sector-tab" role="tab" data-sector="software">Software/Tech</button>
+                  <button type="button" class="module-pestel-sector-tab" role="tab" data-sector="agro">Agro</button>
+                  <button type="button" class="module-pestel-sector-tab" role="tab" data-sector="banca">Banca</button>
+                </div>
+                <div class="module-pestel-bars">
+                  <!-- Cada fila se rellena vía data-sector-* en JS -->
+                  <div class="module-pestel-bar-row" data-letter="P">
+                    <span class="module-pestel-bar-label" data-pestel="political"><b>P</b> Político</span>
+                    <div class="module-pestel-bar"><div class="module-pestel-bar-fill" data-pestel="political" style="--w: 0%"></div></div>
+                    <span class="module-pestel-bar-value">—</span>
+                  </div>
+                  <div class="module-pestel-bar-row" data-letter="E">
+                    <span class="module-pestel-bar-label" data-pestel="economic"><b>E</b> Económico</span>
+                    <div class="module-pestel-bar"><div class="module-pestel-bar-fill" data-pestel="economic" style="--w: 0%"></div></div>
+                    <span class="module-pestel-bar-value">—</span>
+                  </div>
+                  <div class="module-pestel-bar-row" data-letter="S">
+                    <span class="module-pestel-bar-label" data-pestel="social"><b>S</b> Sociocultural</span>
+                    <div class="module-pestel-bar"><div class="module-pestel-bar-fill" data-pestel="social" style="--w: 0%"></div></div>
+                    <span class="module-pestel-bar-value">—</span>
+                  </div>
+                  <div class="module-pestel-bar-row" data-letter="T">
+                    <span class="module-pestel-bar-label" data-pestel="tech"><b>T</b> Tecnológico</span>
+                    <div class="module-pestel-bar"><div class="module-pestel-bar-fill" data-pestel="tech" style="--w: 0%"></div></div>
+                    <span class="module-pestel-bar-value">—</span>
+                  </div>
+                  <div class="module-pestel-bar-row" data-letter="E">
+                    <span class="module-pestel-bar-label" data-pestel="ecological"><b>E</b> Ecológico</span>
+                    <div class="module-pestel-bar"><div class="module-pestel-bar-fill" data-pestel="ecological" style="--w: 0%"></div></div>
+                    <span class="module-pestel-bar-value">—</span>
+                  </div>
+                  <div class="module-pestel-bar-row" data-letter="L">
+                    <span class="module-pestel-bar-label" data-pestel="legal"><b>L</b> Legal</span>
+                    <div class="module-pestel-bar"><div class="module-pestel-bar-fill" data-pestel="legal" style="--w: 0%"></div></div>
+                    <span class="module-pestel-bar-value">—</span>
+                  </div>
+                </div>
+                <p class="module-pestel-intensity-note" data-pestel-note>
+                  En <b>alimentos</b> manda la regulación legal (etiquetado, sanitario), seguido por lo ecológico (precio de insumos agrícolas). Lo tecnológico aún no es decisivo.
+                </p>
               </div>
 
               <div class="module-quickcheck" data-quickcheck data-reveal>
@@ -337,6 +521,35 @@
                   data-correct-msg="Correcto. Una norma obligatoria con sanción legal es <b>Legal</b>. Eso sí: puede generar efectos sobre lo económico (más costos) y lo tecnológico (nuevo equipo), pero el origen del cambio está en la ley."
                   data-wrong-msg="No es esa. La pista clave es que se trata de una <b>norma obligatoria</b> impuesta por el gobierno. Eso es la variable <b>Legal</b> del PESTEL. Tendrá efectos económicos y tecnológicos, claro, pero el origen es legal. La respuesta correcta es la B."></div>
               </div>
+
+              <!-- AFIANZA · Spot the issue · clasificación mal hecha -->
+              <div class="module-interactive" data-spot data-reveal>
+                <div class="module-interactive-head">
+                  <small>Afianza · Detecta el error</small>
+                  <h4>Un becario clasificó así estas variables. ¿Cuál clasificó mal?</h4>
+                </div>
+                <p class="module-interactive-prompt">
+                  Lee el análisis PESTEL y haz click sobre la frase que está mal
+                  clasificada según la teoría.
+                </p>
+                <div class="module-spot-text">
+                  En el análisis PESTEL de una distribuidora de frutas en Bogotá,
+                  el becario clasificó así:
+                  <ul style="margin-top: 10px; padding-left: 20px; display: grid; gap: 8px;">
+                    <li><b>Política:</b> <span data-spot-distractor>nueva reforma tributaria que sube el IVA.</span></li>
+                    <li><b>Económica:</b> <span data-spot-distractor>devaluación del peso colombiano.</span></li>
+                    <li><b>Sociocultural:</b> <span data-spot-target>tasa de interés del Banco de la República sube 1 punto.</span></li>
+                    <li><b>Tecnológica:</b> <span data-spot-distractor>apps de domicilios cambian la logística del sector.</span></li>
+                    <li><b>Ecológica:</b> <span data-spot-distractor>nueva norma de empaques biodegradables.</span></li>
+                  </ul>
+                </div>
+                <div class="module-interactive-feedback" data-spot-feedback
+                  data-correct-text="Bien visto. La tasa de interés del Banco de la República es una variable <b>económica</b>, no sociocultural. Sociocultural hablaría de hábitos de consumo, tendencias de salud, generaciones. El becario confundió los ámbitos."
+                  data-wrong-text="Esa clasificación es razonable. Mira con más detalle: una variable está claramente fuera de su categoría. Pista: hay una métrica financiera mal ubicada."></div>
+                <div class="module-interactive-actions">
+                  <button type="button" class="module-interactive-btn is-ghost" data-spot-reset>Reiniciar</button>
+                </div>
+              </div>
             </section>
 
             <!-- TEMA 03 — 5 FUERZAS DE PORTER -->
@@ -354,7 +567,7 @@
                 </div>
         </header>
 
-              <div class="module-grid" style="grid-template-columns: repeat(5, minmax(0,1fr));" data-reveal>
+              <div class="module-grid" style="grid-template-columns: 1fr;" data-reveal>
                 <article class="module-card">
                   <span class="module-card-tag">F1</span>
                   <h4 class="module-card-title">Rivalidad interna</h4>
@@ -388,7 +601,76 @@
                   conjunto de actividades distinto para entregar una mezcla
                   única de valor.
                 </p>
-                <footer>Fuente · <b>Michael Porter</b> · The Five Competitive Forces That Shape Strategy (2008)</footer>
+                <footer>— <b>Michael Porter</b>, The Five Competitive Forces That Shape Strategy (2008)</footer>
+              </div>
+
+              <!-- AFIANZA · Ranking · ordena las 5 fuerzas por intensidad -->
+              <div class="module-interactive" data-ranking data-reveal>
+                <div class="module-interactive-head">
+                  <small>Afianza · Ejercicio práctico</small>
+                  <h4>Caso: cafetería de especialidad en Chapinero</h4>
+                </div>
+                <div class="module-rank-brief">
+                  <p>
+                    Estás por abrir una <b>cafetería de especialidad</b> en Chapinero,
+                    Bogotá. Hay decenas de cafeterías a la redonda, los clientes son
+                    exigentes y existen muchos sustitutos (té, jugos, bebidas frías).
+                  </p>
+                  <p class="module-rank-task">
+                    <span class="module-rank-task-tag">Tu tarea</span>
+                    <span class="module-rank-task-text">Arrastra las 5 fuerzas en orden de <b>mayor amenaza</b> (arriba) a <b>menor amenaza</b> (abajo) para tu negocio.</span>
+                  </p>
+                </div>
+                <ol class="module-rank-list" data-ranking-items>
+                  <li class="module-rank-item" data-rank="1">
+                    <span class="module-rank-drag" aria-hidden="true"></span>
+                    <div class="module-rank-text">
+                      <b>Rivalidad entre competidores</b>
+                      <small>Decenas de cafeterías de especialidad ya operando en Chapinero. Cada una con clientela fiel.</small>
+                    </div>
+                    <span class="module-rank-pos"></span>
+                  </li>
+                  <li class="module-rank-item" data-rank="2">
+                    <span class="module-rank-drag" aria-hidden="true"></span>
+                    <div class="module-rank-text">
+                      <b>Sustitutos</b>
+                      <small>Té, jugos naturales, bebidas frías, energizantes — resuelven el mismo "pretexto social" que el café.</small>
+                    </div>
+                    <span class="module-rank-pos"></span>
+                  </li>
+                  <li class="module-rank-item" data-rank="3">
+                    <span class="module-rank-drag" aria-hidden="true"></span>
+                    <div class="module-rank-text">
+                      <b>Nuevos entrantes</b>
+                      <small>Abrir una cafetería tiene barreras bajas: inversión accesible, no se necesita licencia compleja.</small>
+                    </div>
+                    <span class="module-rank-pos"></span>
+                  </li>
+                  <li class="module-rank-item" data-rank="4">
+                    <span class="module-rank-drag" aria-hidden="true"></span>
+                    <div class="module-rank-text">
+                      <b>Poder del cliente</b>
+                      <small>El cliente decide entre muchas cafeterías y compara precio/calidad. Pero no negocia descuentos como un mayorista.</small>
+                    </div>
+                    <span class="module-rank-pos"></span>
+                  </li>
+                  <li class="module-rank-item" data-rank="5">
+                    <span class="module-rank-drag" aria-hidden="true"></span>
+                    <div class="module-rank-text">
+                      <b>Poder del proveedor</b>
+                      <small>Hay muchísimos tostadores de café especial en Colombia. Tú eliges al que mejor te sirva.</small>
+                    </div>
+                    <span class="module-rank-pos"></span>
+                  </li>
+                </ol>
+                <div class="module-interactive-actions">
+                  <button type="button" class="module-interactive-btn" data-ranking-check>Comprobar mi orden</button>
+                  <button type="button" class="module-interactive-btn is-ghost" data-ranking-reset>Barajar de nuevo</button>
+                </div>
+                <div class="module-interactive-feedback" data-ranking-feedback
+                  data-correct-msg="Ese es el orden ideal. Chapinero está <b>saturado de cafeterías</b> (rivalidad alta) y muchos productos resuelven el mismo deseo (sustitutos: té, jugos, bebidas frías). El proveedor de café tostado tiene poco poder porque hay muchos."
+                  data-close-msg="Casi. La rivalidad y los sustitutos suelen ser las amenazas dominantes en cafeterías; el proveedor de café tostado, la más débil porque hay muchísima oferta."
+                  data-wrong-msg="Reordena pensando en qué te quita ventas mañana. En Chapinero la rivalidad entre cafeterías es la más fuerte; el poder del proveedor de café es bajo porque hay muchos tostadores."></div>
               </div>
 
             </section>
@@ -408,6 +690,18 @@
                 </div>
               </header>
 
+              <figure class="module-hero-figure" data-reveal>
+                <img src="assets/images/new-images/estructura-hero.jpg"
+                     alt="Equipo de trabajo definiendo la estructura de la organización"
+                     loading="lazy" />
+                <figcaption>
+                  <small>De la estrategia a la estructura</small>
+                  Cada forma de organizar el trabajo tiene un costo y una virtud.
+                  Tu trabajo como administrador es elegir la que mejor sostiene
+                  tu estrategia hoy — y revisarla cuando el negocio cambia.
+                </figcaption>
+              </figure>
+
               <div class="module-tabs" data-tabs data-reveal>
                 <div class="module-tabs-nav" role="tablist">
                   <button class="module-tabs-btn is-active" type="button" role="tab" data-tab="e-func">
@@ -422,56 +716,71 @@
                 </div>
                 <div class="module-tabs-panels">
                   <div class="module-tabs-panel is-active" role="tabpanel" data-panel="e-func">
-                    <h5>Funcional · agrupar por especialidad</h5>
-                    <p>
-                      Todos los que saben de finanzas en un área, todos los
-                      de mercadeo en otra, todos los de operaciones en
-                      otra. Es el modelo más común y el más viejo. <b>Su
-                      ventaja</b>: la gente se especializa y mejora rápido
-                      en su tema. <b>Su límite</b>: las áreas pueden
-                      volverse «silos» que no se hablan entre sí.
-                    </p>
-                    <div class="module-tabs-panel-meta">
-                      <span>Útil cuando · <b>se necesita especialización y control técnico</b></span>
-                      <span>Ejemplo · <b>una fábrica tradicional</b></span>
+                    <div class="module-tabs-panel-grid">
+                      <img class="module-tabs-panel-img" src="assets/images/new-images/estructura-funcional.jpg" alt="Equipo organizado por departamentos especializados" loading="lazy" />
+                      <div>
+                        <h5>Funcional · agrupar por especialidad</h5>
+                        <p>
+                          Todos los que saben de finanzas en un área, todos los
+                          de mercadeo en otra, todos los de operaciones en
+                          otra. Es el modelo más común y el más viejo. <b>Su
+                          ventaja</b>: la gente se especializa y mejora rápido
+                          en su tema. <b>Su límite</b>: las áreas pueden
+                          volverse «silos» que no se hablan entre sí.
+                        </p>
+                        <div class="module-tabs-panel-meta">
+                          <span>Útil cuando · <b>se necesita especialización y control técnico</b></span>
+                          <span>Ejemplo · <b>una fábrica tradicional</b></span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div class="module-tabs-panel" role="tabpanel" data-panel="e-div">
-                    <h5>Divisional · agrupar por producto, región o cliente</h5>
-                    <p>
-                      Cada división opera casi como una mini-empresa,
-                      con su propio equipo de mercadeo, finanzas y
-                      operaciones. <b>Su ventaja</b>: cada división
-                      conoce muy bien su mercado y reacciona rápido.
-                      <b>Su límite</b>: hay duplicidad de funciones
-                      entre divisiones (varios equipos de finanzas,
-                      por ejemplo).
-                    </p>
-                    <div class="module-tabs-panel-meta">
-                      <span>Útil cuando · <b>se atienden mercados distintos y se requiere foco por segmento</b></span>
-                      <span>Ejemplo · <b>Bavaria con sus marcas Águila, Poker y Club Colombia</b></span>
+                    <div class="module-tabs-panel-grid">
+                      <img class="module-tabs-panel-img" src="assets/images/new-images/estructura-divisional.jpg" alt="Unidades autónomas operando como mini-empresas" loading="lazy" />
+                      <div>
+                        <h5>Divisional · agrupar por producto, región o cliente</h5>
+                        <p>
+                          Cada división opera casi como una mini-empresa,
+                          con su propio equipo de mercadeo, finanzas y
+                          operaciones. <b>Su ventaja</b>: cada división
+                          conoce muy bien su mercado y reacciona rápido.
+                          <b>Su límite</b>: hay duplicidad de funciones
+                          entre divisiones (varios equipos de finanzas,
+                          por ejemplo).
+                        </p>
+                        <div class="module-tabs-panel-meta">
+                          <span>Útil cuando · <b>se atienden mercados distintos y se requiere foco por segmento</b></span>
+                          <span>Ejemplo · <b>Bavaria con sus marcas Águila, Poker y Club Colombia</b></span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div class="module-tabs-panel" role="tabpanel" data-panel="e-matr">
-                    <h5>Matricial · combinar áreas y proyectos</h5>
-                    <p>
-                      Una misma persona responde a dos jefes: uno
-                      funcional (su área) y uno de proyecto. <b>Su
-                      ventaja</b>: máxima flexibilidad para combinar
-                      especialistas en proyectos puntuales. <b>Su
-                      límite</b>: la doble línea de mando puede
-                      generar tensiones si no se administra muy bien.
-                    </p>
-                    <div class="module-tabs-panel-meta">
-                      <span>Útil cuando · <b>se necesita colaboración entre áreas y flexibilidad</b></span>
-                      <span>Ejemplo · <b>una constructora con varios proyectos a la vez</b></span>
+                    <div class="module-tabs-panel-grid">
+                      <img class="module-tabs-panel-img" src="assets/images/new-images/estructura-matricial.jpg" alt="Colaboración cruzada entre áreas y proyectos" loading="lazy" />
+                      <div>
+                        <h5>Matricial · combinar áreas y proyectos</h5>
+                        <p>
+                          Una misma persona responde a dos jefes: uno
+                          funcional (su área) y uno de proyecto. <b>Su
+                          ventaja</b>: máxima flexibilidad para combinar
+                          especialistas en proyectos puntuales. <b>Su
+                          límite</b>: la doble línea de mando puede
+                          generar tensiones si no se administra muy bien.
+                        </p>
+                        <div class="module-tabs-panel-meta">
+                          <span>Útil cuando · <b>se necesita colaboración entre áreas y flexibilidad</b></span>
+                          <span>Ejemplo · <b>una constructora con varios proyectos a la vez</b></span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div class="module-aha" data-reveal>
-                <div class="module-aha-icon"><img src="assets/images/aha-admin-b2-evolucion-estructura.png" alt="" loading="lazy" /></div>
+                <div class="module-aha-icon"><img src="assets/images/new-images/aha-admin-b2-evolucion-estructura.png" alt="" loading="lazy" /></div>
                 <div class="module-aha-copy">
                   <small>Para entenderlo</small>
                   <p>
@@ -555,7 +864,7 @@
                   Un líder no se mide por las decisiones que toma, sino por el
                   clima emocional que deja en el equipo cuando sale de la sala.
                 </p>
-                <footer>Inspirado en · <b>Daniel Goleman</b> · El líder resonante crea más (2002)</footer>
+                <footer>— <b>Daniel Goleman</b>, El líder resonante crea más (2002)</footer>
               </div>
 
               <div class="module-subtema">
@@ -620,6 +929,61 @@
                   </p>
                 </div>
               </div>
+
+              <!-- AFIANZA · Slider de impacto · control vs autonomía -->
+              <div class="module-interactive" data-impact-slider data-reveal>
+                <div class="module-interactive-head">
+                  <small>Afianza · Simulación</small>
+                  <h4>El espectro Taylor ↔ Mayo</h4>
+                </div>
+                <p class="module-interactive-prompt">
+                  Mueve el slider para ver cómo cambian los indicadores cuando
+                  desplazas tu estilo de dirección entre <b>control rígido</b>
+                  (Taylor) y <b>autonomía total</b> (Mayo). No hay extremo
+                  ganador — hay que <b>encontrar tu balance</b>.
+                </p>
+                <div class="module-impact-input">
+                  <div class="module-impact-input-head">
+                    <label for="impact-bloque2-dir">Nivel de control vs autonomía</label>
+                    <span data-impact-value data-suffix=" % autonomía">50 % autonomía</span>
+                  </div>
+                  <input type="range" id="impact-bloque2-dir" min="0" max="100" value="50" />
+                  <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.66rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-top: 4px;">
+                    <span>0 · Solo control</span>
+                    <span>100 · Solo autonomía</span>
+                  </div>
+                </div>
+                <div class="module-impact-outputs">
+                  <div class="module-impact-cell"
+                       data-impact-output="Math.round(40 + v * 0.6 - Math.max(0, v - 70) * 1.5)"
+                       data-suffix=""
+                       data-tone-formula="(40 + v * 0.6 - Math.max(0, v - 70) * 1.5) >= 70 ? 'good' : (40 + v * 0.6 - Math.max(0, v - 70) * 1.5) >= 50 ? 'ok' : 'bad'">
+                    <small>Moral del equipo</small><b>—</b>
+                  </div>
+                  <div class="module-impact-cell"
+                       data-impact-output="Math.round(50 + (1 - Math.abs(v - 60) / 60) * 45)"
+                       data-suffix=""
+                       data-tone-formula="(50 + (1 - Math.abs(v - 60) / 60) * 45) >= 80 ? 'good' : (50 + (1 - Math.abs(v - 60) / 60) * 45) >= 65 ? 'ok' : 'bad'">
+                    <small>Productividad</small><b>—</b>
+                  </div>
+                  <div class="module-impact-cell"
+                       data-impact-output="Math.round(80 - v * 0.5 + Math.max(0, v - 70) * 1.2)"
+                       data-suffix=""
+                       data-tone-formula="(80 - v * 0.5 + Math.max(0, v - 70) * 1.2) <= 50 ? 'good' : (80 - v * 0.5 + Math.max(0, v - 70) * 1.2) <= 70 ? 'ok' : 'bad'">
+                    <small>Costo de supervisión</small><b>—</b>
+                  </div>
+                  <div class="module-impact-cell"
+                       data-impact-output="Math.round(20 + v * 0.7)"
+                       data-suffix=""
+                       data-tone-formula="(20 + v * 0.7) >= 70 ? 'good' : (20 + v * 0.7) >= 50 ? 'ok' : 'bad'">
+                    <small>Innovación</small><b>—</b>
+                  </div>
+                </div>
+                <p class="module-impact-note" data-impact-note
+                  data-template="Con {v} % de autonomía, tu equipo opera más como {v < 30 ? '<b>fábrica taylorista</b>: control alto, costo de supervisión grande, poca innovación' : v > 70 ? '<b>equipo mayoriano</b>: alta moral e innovación, pero productividad puede caer sin estructura' : '<b>híbrido balanceado</b>: el punto donde la mayoría de empresas modernas operan'}.">
+                  Mueve el slider para ver el efecto.
+                </p>
+              </div>
             </section>
 
             <!-- TEMA 06 — CONTROL -->
@@ -638,7 +1002,7 @@
               </header>
 
               <div class="module-aha" data-reveal>
-                <div class="module-aha-icon"><img src="assets/images/aha-admin-b2-tablero-carro.png" alt="" loading="lazy" /></div>
+                <div class="module-aha-icon"><img src="assets/images/new-images/aha-admin-b2-tablero-carro.png" alt="" loading="lazy" /></div>
                 <div class="module-aha-copy">
                   <small>Para entenderlo</small>
                   <p>
@@ -752,7 +1116,7 @@
 
               <figure class="module-infografia is-reversed" data-reveal>
                 <div class="module-infografia-image">
-                  <img src="assets/images/infografia-admin-b2-bsc-ejemplo.png" alt="Así se ve un tablero de control en la vida real" loading="lazy" />
+                  <img src="assets/images/new-images/infografia-admin-b2-bsc-ejemplo.png" alt="Así se ve un tablero de control en la vida real" loading="lazy" />
                 </div>
                 <div class="module-infografia-text">
                   <small>Infografía</small>
@@ -783,26 +1147,7 @@
 
           <!-- ============================
                TOC STICKY
-          ============================ -->
-          <aside class="bloque-toc" aria-label="Índice del bloque">
-            <div class="bloque-toc-head">
-              <small>En este bloque</small>
-              <span>6 temas</span>
-            </div>
-            <ol class="bloque-toc-list" data-toc>
-              <li><a class="bloque-toc-link" href="#planeacion">Planeación</a></li>
-              <li><a class="bloque-toc-link" href="#pestel">PESTEL</a></li>
-              <li><a class="bloque-toc-link" href="#porter">5 Fuerzas de Porter</a></li>
-              <li><a class="bloque-toc-link" href="#organizacion">Organización</a></li>
-              <li><a class="bloque-toc-link" href="#direccion">Dirección</a></li>
-              <li><a class="bloque-toc-link" href="#control">Control · BSC y PDCA</a></li>
-            </ol>
-            <div class="bloque-toc-actions">
-              <a class="bloque-toc-action" href="programa-admin-bloque-1.html">Bloque 1 · Fundamentos</a>
-              <a class="bloque-toc-action is-next" href="reto-admin-techcorp.html">Reto · TechCorp</a>
-            </div>
-          </aside>
-        </div>
+          ============================ --></div>
 
         <!-- FOOTER NAV -->
         <nav class="bloque-nav-foot" aria-label="Navegación entre bloques">

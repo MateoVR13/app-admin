@@ -69,8 +69,12 @@
           <span class="sidebar-nav-label">Aplicativo</span>
           <a class="sidebar-link" href="app.html#inicio"><svg aria-hidden="true"><use href="#i-home"></use></svg><span>Inicio</span></a>
           <a class="sidebar-link is-active" href="app.html#programas"><svg aria-hidden="true"><use href="#i-briefcase"></use></svg><span>Programas</span></a>
+          <div class="sidebar-sublinks">
+            <a class="sidebar-sublink" href="programa-administracion.html">Administración</a>
+            <a class="sidebar-sublink is-active" href="programa-negocios.html">Negocios Internacionales</a>
+            <a class="sidebar-sublink" href="programa-economia.html">Economía</a>
+          </div>
           <a class="sidebar-link" href="app.html#experiencia"><svg aria-hidden="true"><use href="#i-scan"></use></svg><span>Experiencia</span></a>
-          <a class="sidebar-link" href="app.html#recursos"><svg aria-hidden="true"><use href="#i-box"></use></svg><span>Recursos</span></a>
         </nav>
         <div class="sidebar-footer">
           <b>Universidad de América</b>
@@ -83,439 +87,245 @@
         <!-- ============================================================
              HEADER — banner del centro de operaciones globales
         ============================================================ -->
-        <header class="neg-head">
+        <header class="rn-head">
           <nav class="module-breadcrumb" aria-label="Migas de pan">
             <a href="programa-negocios.html">
               <svg aria-hidden="true"><use href="#i-arrow-left"></use></svg>
               Negocios Internacionales
             </a>
             <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg>
-            <span>Centro de Operaciones Globales</span>
+            <span>RutaCafé Mundo</span>
           </nav>
-
-          <div class="neg-head-row">
-            <div class="neg-head-meta">
-              <span class="neg-head-tag">
-                <svg aria-hidden="true"><use href="#i-globe"></use></svg>
-                RutaCafé · Operación Exportadora
-              </span>
-              <h1>De Risaralda <em>al mundo</em>: 4 decisiones de un negociador.</h1>
+          <div class="rn-head-row">
+            <div class="rn-head-meta">
+              <span class="rn-head-tag">Caso RutaCafé</span>
+              <h1>Lleva tu <em>café especial</em> al mundo.</h1>
+              <p class="rn-head-sub">Elige un mercado destino en el mapa, configura el envío (Incoterm + financiamiento) y traza tu plan de exportación.</p>
             </div>
-
-            <div class="neg-coords">
-              <div class="neg-coords-card">
-                <small>Origen</small>
-                <b>Pereira · Risaralda</b>
-                <span>4.81°N · 75.69°W</span>
-              </div>
-              <div class="neg-coords-divider" aria-hidden="true">
-                <svg><use href="#i-arrow-right"></use></svg>
-              </div>
-              <div class="neg-coords-card is-target" data-target-card>
-                <small>Mercado destino</small>
-                <b data-target-name>Por definir</b>
-                <span data-target-coords>—</span>
-              </div>
+            <div class="rn-progress">
+              <div class="rn-progress-bar"><div class="rn-progress-fill" data-progress-fill></div></div>
+              <span class="rn-progress-label" data-progress-label>Paso 1 de 4 · Elige un mercado</span>
             </div>
           </div>
         </header>
 
-        <main class="neg-body">
+        <main class="rn-app">
+          <!-- Estepador de fases (4 pasos visuales) -->
+          <nav class="rn-phase-nav" aria-label="Fases del simulador">
+            <button type="button" class="rn-phase is-active" data-phase-btn="1">
+              <span class="rn-phase-num">1</span>
+              <span class="rn-phase-label"><b>Analiza</b><small>Compara mercados</small></span>
+            </button>
+            <span class="rn-phase-sep"></span>
+            <button type="button" class="rn-phase" data-phase-btn="2" disabled>
+              <span class="rn-phase-num">2</span>
+              <span class="rn-phase-label"><b>Elige</b><small>SWOT del destino</small></span>
+            </button>
+            <span class="rn-phase-sep"></span>
+            <button type="button" class="rn-phase" data-phase-btn="3" disabled>
+              <span class="rn-phase-num">3</span>
+              <span class="rn-phase-label"><b>Configura</b><small>Incoterm + financiamiento</small></span>
+            </button>
+            <span class="rn-phase-sep"></span>
+            <button type="button" class="rn-phase" data-phase-btn="4" disabled>
+              <span class="rn-phase-num">4</span>
+              <span class="rn-phase-label"><b>Ejecuta</b><small>Cash flow + plan</small></span>
+            </button>
+          </nav>
 
           <!-- ============================================================
-               LEFT — PROTOCOLO DE EXPORTACIÓN (4 decisiones)
+               FASE 1 · Análisis comparativo
           ============================================================ -->
-          <section class="neg-protocol" aria-label="Protocolo de exportación">
-
-            <!-- Intro -->
-            <aside class="neg-howto" data-howto>
-              <svg class="neg-howto-icon" aria-hidden="true"><use href="#i-compass"></use></svg>
+          <section class="rn-phase-panel" data-phase-panel="1" aria-label="Fase 1 · Análisis de mercados">
+            <div class="rn-instructions">
+              <div class="rn-instructions-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 16v-5"/><path d="M11 16v-9"/><path d="M15 16v-7"/><path d="M19 16v-3"/></svg></div>
               <div>
-                <strong>Centro de operaciones globales</strong>
-                <p>Eres negociador en una agencia de exportación. <b>RutaCafé</b>, una asociación de productores de café especial de Risaralda, te pide diseñar la ruta de internacionalización. Tomarás <b>4 decisiones</b>: producto, mercado, logística y financiamiento. El <b>mapa-mundi a la derecha</b> reacciona en vivo y al final emites una <b>Hoja de Ruta de Exportación</b>.</p>
+                <h3>Analiza antes de decidir</h3>
+                <p>Selecciona <b>de 2 a 4 mercados</b> en los chips de abajo para compararlos. Verás un radar de 5 ejes y una tabla con los datos clave. <b>El radar más grande</b> generalmente indica el mercado más atractivo, pero un buen exportador no decide solo por intuición visual: lee los datos.</p>
               </div>
-            </aside>
+            </div>
 
-            <!-- Stepper -->
-            <nav class="neg-stepper" data-stepper aria-label="Pasos del protocolo">
-              <button class="neg-step" type="button" data-goto="1">
-                <span class="neg-step-icon"><svg><use href="#i-coffee"></use></svg></span>
-                <span class="neg-step-text"><small>Paso 01</small><b>Producto</b></span>
-              </button>
-              <button class="neg-step" type="button" data-goto="2">
-                <span class="neg-step-icon"><svg><use href="#i-target"></use></svg></span>
-                <span class="neg-step-text"><small>Paso 02</small><b>Mercado</b></span>
-              </button>
-              <button class="neg-step" type="button" data-goto="3">
-                <span class="neg-step-icon"><svg><use href="#i-ship"></use></svg></span>
-                <span class="neg-step-text"><small>Paso 03</small><b>Logística</b></span>
-              </button>
-              <button class="neg-step" type="button" data-goto="4">
-                <span class="neg-step-icon"><svg><use href="#i-banknote"></use></svg></span>
-                <span class="neg-step-text"><small>Paso 04</small><b>Financiamiento</b></span>
-              </button>
-            </nav>
+            <div class="rn-map-wrap">
+              <div id="rn-map" class="rn-map"></div>
+              <div class="rn-map-overlay-tip">Haz click en los pines del mapa para añadir mercados al comparador</div>
+            </div>
 
-            <!-- ============================================================
-                 PASO 1 — Producto: qué exportar
-            ============================================================ -->
-            <article class="neg-card" data-decision="1">
-              <header class="neg-card-head">
-                <span class="neg-card-icon is-product"><svg aria-hidden="true"><use href="#i-coffee"></use></svg></span>
-                <div>
-                  <small>Paso 1 · Identificación · Bloque 1</small>
-                  <h2>¿Qué producto exportar de la oferta de RutaCafé?</h2>
+            <div class="rn-comparator">
+              <div class="rn-comparator-head">
+                <h3>Tablero comparativo</h3>
+                <div class="rn-comparator-chips" data-comparator-chips></div>
+                <small class="rn-comparator-hint" data-comparator-hint>Selecciona al menos 2 mercados arriba.</small>
+              </div>
+
+              <div class="rn-comparator-body">
+                <div class="rn-comparator-radar">
+                  <div data-radar-chart></div>
+                  <small>Radar comparativo · 5 ejes</small>
+                  <div class="rn-comparator-insights" data-comparator-insights></div>
                 </div>
-              </header>
-              <p class="neg-card-prompt">
-                La asociación produce café especial de altura. Pueden vender
-                el grano tal cual o agregar valor. <b>Cada formato cambia el
-                tipo de mercado, los requisitos y el margen.</b>
-              </p>
-
-              <div class="neg-options" data-options="d1" data-multi="false">
-                <button class="neg-option" type="button" data-value="verde">
-                  <span class="neg-option-num">A</span>
-                  <div class="neg-option-body">
-                    <span class="neg-option-title">Café verde en grano</span>
-                    <p>El producto crudo, sin tostar. Es <b>commodity</b>: alto volumen, márgenes bajos, mercado masivo. Vendes rápido, pero el precio lo fija la bolsa de NY.</p>
-                    <div class="neg-option-tags">
-                      <span>Volumen alto</span><span>Margen 8%</span><span>Sin valor agregado</span>
-                    </div>
-                  </div>
-                </button>
-                <button class="neg-option" type="button" data-value="especial">
-                  <span class="neg-option-num">B</span>
-                  <div class="neg-option-body">
-                    <span class="neg-option-title">Café especial single-origin certificado</span>
-                    <p>Café tostado con certificaciones de origen + comercio justo. <b>Premium</b>: nicho de baristas y cafeterías de especialidad. Margen alto, requisitos altos.</p>
-                    <div class="neg-option-tags">
-                      <span>Premium</span><span>Margen 35%</span><span>Requiere certificaciones</span>
-                    </div>
-                  </div>
-                </button>
-                <button class="neg-option" type="button" data-value="rtd">
-                  <span class="neg-option-num">C</span>
-                  <div class="neg-option-body">
-                    <span class="neg-option-title">Café liofilizado / Ready-to-Drink</span>
-                    <p>Café procesado en lata o cápsula. <b>Innovación</b>: requiere planta de procesamiento, alta inversión, pero estable y diferenciado. Compite con multinacionales.</p>
-                    <div class="neg-option-tags">
-                      <span>Innovación</span><span>Margen 28%</span><span>Inversión planta</span>
-                    </div>
-                  </div>
-                </button>
-                <button class="neg-option" type="button" data-value="experiencia">
-                  <span class="neg-option-num">D</span>
-                  <div class="neg-option-body">
-                    <span class="neg-option-title">Exportar la experiencia (turismo cafetero)</span>
-                    <p>No exportas el grano: exportas la experiencia. Tours, masterclasses, catas en finca. <b>Servicios</b>: cero logística marítima, pero requiere visado turístico y promoción.</p>
-                    <div class="neg-option-tags">
-                      <span>Servicios</span><span>Margen 50%</span><span>Sin logística</span>
-                    </div>
-                  </div>
-                </button>
+                <div class="rn-comparator-bars" data-comparator-bars></div>
               </div>
 
-              <div class="neg-card-foot">
-                <button class="neg-nav-btn is-prev" type="button" data-nav="prev" disabled>
-                  <svg><use href="#i-arrow-left"></use></svg> Anterior
-                </button>
-                <button class="neg-nav-btn is-next" type="button" data-nav="next">
-                  Continuar al mercado <svg><use href="#i-arrow-right"></use></svg>
-                </button>
-              </div>
-            </article>
-
-            <!-- ============================================================
-                 PASO 2 — Mercado destino
-            ============================================================ -->
-            <article class="neg-card" data-decision="2">
-              <header class="neg-card-head">
-                <span class="neg-card-icon is-market"><svg aria-hidden="true"><use href="#i-target"></use></svg></span>
-                <div>
-                  <small>Paso 2 · Documentación · Bloque 2</small>
-                  <h2>¿A qué mercado internacional apuntar?</h2>
-                </div>
-              </header>
-              <p class="neg-card-prompt">
-                Colombia tiene <b>TLC vigente con varios países</b>. Cada mercado tiene su perfil de consumo, requisitos sanitarios y nivel de competencia. Elige uno según el producto que ya definiste.
-              </p>
-
-              <div class="neg-options" data-options="d2" data-multi="false">
-                <button class="neg-option" type="button" data-value="US">
-                  <span class="neg-option-flag"><img class="neg-flag-img" src="https://flagcdn.com/us.svg" alt="Bandera Estados Unidos" loading="lazy" /></span>
-                  <div class="neg-option-body">
-                    <span class="neg-option-title">Estados Unidos</span>
-                    <p>El mercado de café especial más grande del mundo. <b>TLC vigente</b>, demanda fuerte por single-origin. Competencia intensa con Centroamérica.</p>
-                    <div class="neg-option-tags">
-                      <span>USD 18B en café</span><span>FDA + USDA Organic</span><span>TLC vigente</span>
-                    </div>
-                  </div>
-                </button>
-                <button class="neg-option" type="button" data-value="DE">
-                  <span class="neg-option-flag"><img class="neg-flag-img" src="https://flagcdn.com/de.svg" alt="Bandera Alemania" loading="lazy" /></span>
-                  <div class="neg-option-body">
-                    <span class="neg-option-title">Alemania</span>
-                    <p>Mercado europeo más maduro en café especial. Consumidor exigente. <b>Acuerdo UE-Comunidad Andina</b>, pero requisitos sanitarios estrictos.</p>
-                    <div class="neg-option-tags">
-                      <span>Premium</span><span>EU Organic Reg.</span><span>Reembolso CO₂</span>
-                    </div>
-                  </div>
-                </button>
-                <button class="neg-option" type="button" data-value="KR">
-                  <span class="neg-option-flag"><img class="neg-flag-img" src="https://flagcdn.com/kr.svg" alt="Bandera Corea del Sur" loading="lazy" /></span>
-                  <div class="neg-option-body">
-                    <span class="neg-option-title">Corea del Sur</span>
-                    <p>Mercado emergente con boom de cafeterías de especialidad. <b>TLC vigente desde 2016</b>. Alta disposición a pagar premium, pero logística cara.</p>
-                    <div class="neg-option-tags">
-                      <span>Premium</span><span>K-Food Trends</span><span>Flete alto</span>
-                    </div>
-                  </div>
-                </button>
-                <button class="neg-option" type="button" data-value="AE">
-                  <span class="neg-option-flag"><img class="neg-flag-img" src="https://flagcdn.com/ae.svg" alt="Bandera Emiratos Árabes Unidos" loading="lazy" /></span>
-                  <div class="neg-option-body">
-                    <span class="neg-option-title">Emiratos Árabes Unidos</span>
-                    <p>Hub de lujo de Medio Oriente. Café como producto premium en hotelería 5★. <b>Sin TLC</b> directo, pero exenciones arancelarias para café crudo.</p>
-                    <div class="neg-option-tags">
-                      <span>Lujo</span><span>Halal + ESMA</span><span>Sin TLC</span>
-                    </div>
-                  </div>
-                </button>
-              </div>
-
-              <div class="neg-card-foot">
-                <button class="neg-nav-btn is-prev" type="button" data-nav="prev">
-                  <svg><use href="#i-arrow-left"></use></svg> Anterior
-                </button>
-                <button class="neg-nav-btn is-next" type="button" data-nav="next">
-                  Continuar a logística <svg><use href="#i-arrow-right"></use></svg>
-                </button>
-              </div>
-            </article>
-
-            <!-- ============================================================
-                 PASO 3 — Logística e Incoterm
-            ============================================================ -->
-            <article class="neg-card" data-decision="3">
-              <header class="neg-card-head">
-                <span class="neg-card-icon is-logistics"><svg aria-hidden="true"><use href="#i-ship"></use></svg></span>
-                <div>
-                  <small>Paso 3 · Costos · Bloque 3</small>
-                  <h2>¿Qué Incoterm negocias con el comprador?</h2>
-                </div>
-              </header>
-              <p class="neg-card-prompt">
-                Los <b>Incoterms</b> definen quién paga el transporte, asume el riesgo y maneja los trámites aduaneros. <b>Más control = más complejidad operativa pero mejor margen.</b>
-              </p>
-
-              <div class="neg-options" data-options="d3" data-multi="false">
-                <button class="neg-option" type="button" data-value="EXW">
-                  <span class="neg-option-num">A</span>
-                  <div class="neg-option-body">
-                    <span class="neg-option-title">EXW — Ex Works (entrega en finca)</span>
-                    <p>El comprador recoge en la finca y se encarga de TODO. <b>Mínimo riesgo y mínimo margen</b> para ti. Bueno si recién empiezas y no tienes operación logística.</p>
-                    <div class="neg-option-tags">
-                      <span>Riesgo bajo</span><span>Precio bajo</span><span>Complejidad mínima</span>
-                    </div>
-                  </div>
-                </button>
-                <button class="neg-option" type="button" data-value="FOB">
-                  <span class="neg-option-num">B</span>
-                  <div class="neg-option-body">
-                    <span class="neg-option-title">FOB — Free On Board (puerto Cartagena)</span>
-                    <p>Te encargas del transporte interno + trámites + carga en el barco. El comprador asume riesgo desde que cruza la borda. <b>El balance clásico</b>: control sin asumir el seguro marítimo.</p>
-                    <div class="neg-option-tags">
-                      <span>Riesgo medio</span><span>Precio medio</span><span>Estándar mundial</span>
-                    </div>
-                  </div>
-                </button>
-                <button class="neg-option" type="button" data-value="CIF">
-                  <span class="neg-option-num">C</span>
-                  <div class="neg-option-body">
-                    <span class="neg-option-title">CIF — Cost, Insurance, Freight (puerto destino)</span>
-                    <p>Pagas flete y seguro marítimo hasta el puerto destino. <b>Mejor precio</b>, pero asumes riesgo y costo del trayecto internacional. Necesitas relación con navieras.</p>
-                    <div class="neg-option-tags">
-                      <span>Riesgo medio</span><span>Precio alto</span><span>Requiere seguro</span>
-                    </div>
-                  </div>
-                </button>
-                <button class="neg-option" type="button" data-value="DAP">
-                  <span class="neg-option-num">D</span>
-                  <div class="neg-option-body">
-                    <span class="neg-option-title">DAP — Delivered At Place (puerta del cliente)</span>
-                    <p>Entregas en la dirección del comprador. <b>Máximo control + precio</b>, pero requiere agente aduanero en destino y manejo de impuestos locales.</p>
-                    <div class="neg-option-tags">
-                      <span>Riesgo alto</span><span>Precio máximo</span><span>Operación compleja</span>
-                    </div>
-                  </div>
-                </button>
-              </div>
-
-              <div class="neg-card-foot">
-                <button class="neg-nav-btn is-prev" type="button" data-nav="prev">
-                  <svg><use href="#i-arrow-left"></use></svg> Anterior
-                </button>
-                <button class="neg-nav-btn is-next" type="button" data-nav="next">
-                  Continuar a financiamiento <svg><use href="#i-arrow-right"></use></svg>
-                </button>
-              </div>
-            </article>
-
-            <!-- ============================================================
-                 PASO 4 — Financiamiento
-            ============================================================ -->
-            <article class="neg-card" data-decision="4">
-              <header class="neg-card-head">
-                <span class="neg-card-icon is-finance"><svg aria-hidden="true"><use href="#i-banknote"></use></svg></span>
-                <div>
-                  <small>Paso 4 · Financiamiento · Bloque 4</small>
-                  <h2>¿Con qué fuente financias la operación exportadora?</h2>
-                </div>
-              </header>
-              <p class="neg-card-prompt">
-                Exportar requiere capital de trabajo, certificaciones y promoción. <b>Cada fuente tiene su costo, su velocidad y sus condiciones.</b> Elige la que mejor encaje con tu plan.
-              </p>
-
-              <div class="neg-options" data-options="d4" data-multi="false">
-                <button class="neg-option" type="button" data-value="bancoldex">
-                  <span class="neg-option-num">A</span>
-                  <div class="neg-option-body">
-                    <span class="neg-option-title">Crédito exportador de Bancoldex</span>
-                    <p>Banca pública especializada en exportadores. <b>Tasa preferencial</b>, plazos largos, requiere proyección financiera sólida. Es el camino tradicional y confiable.</p>
-                    <div class="neg-option-tags">
-                      <span>Estatal</span><span>Tasa baja</span><span>Trámite 3 meses</span>
-                    </div>
-                  </div>
-                </button>
-                <button class="neg-option" type="button" data-value="cooperacion">
-                  <span class="neg-option-num">B</span>
-                  <div class="neg-option-body">
-                    <span class="neg-option-title">Convocatoria de cooperación internacional</span>
-                    <p>Fondos no reembolsables de organismos como BID, USAID o EU. <b>Dinero gratis</b> a cambio de impacto social y reportes. Trámite lento, competido, pero sin deuda.</p>
-                    <div class="neg-option-tags">
-                      <span>No reembolsable</span><span>Lento (6-9 meses)</span><span>Impacto social</span>
-                    </div>
-                  </div>
-                </button>
-                <button class="neg-option" type="button" data-value="ecommerce">
-                  <span class="neg-option-num">C</span>
-                  <div class="neg-option-body">
-                    <span class="neg-option-title">E-commerce directo (D2C internacional)</span>
-                    <p>Vendes directo en Shopify / Amazon / tu propia tienda. <b>Capital inicial bajo</b>, márgenes altos. Pero asumes marketing digital, devoluciones y atención al cliente global.</p>
-                    <div class="neg-option-tags">
-                      <span>D2C</span><span>Margen alto</span><span>Marketing digital</span>
-                    </div>
-                  </div>
-                </button>
-                <button class="neg-option" type="button" data-value="multinacional">
-                  <span class="neg-option-num">D</span>
-                  <div class="neg-option-body">
-                    <span class="neg-option-title">Alianza con multinacional (Nestlé, Starbucks)</span>
-                    <p>Vendes a un gigante que se encarga del canal. <b>Escala inmediata</b>, dinero rápido, pero margen exprimido y pierdes la marca en el cliente final.</p>
-                    <div class="neg-option-tags">
-                      <span>Escala</span><span>Margen comprimido</span><span>Sin marca propia</span>
-                    </div>
-                  </div>
-                </button>
-              </div>
-
-              <div class="neg-card-foot">
-                <button class="neg-nav-btn is-prev" type="button" data-nav="prev">
-                  <svg><use href="#i-arrow-left"></use></svg> Anterior
-                </button>
-                <button class="neg-nav-btn is-finish" type="button" data-nav="finish" disabled>
-                  Emitir Hoja de Ruta <svg><use href="#i-arrow-right"></use></svg>
-                </button>
-              </div>
-            </article>
-
+              <footer class="rn-comparator-foot">
+                <small data-comparator-summary>—</small>
+                <button type="button" class="rn-btn-primary" data-go-phase-2 disabled>Elegir mi mercado destino →</button>
+              </footer>
+            </div>
           </section>
 
           <!-- ============================================================
-               RIGHT — TABLERO GLOBAL (mapa + pasaporte + sellos KPI)
+               FASE 2 · SWOT del mercado elegido
           ============================================================ -->
-          <aside class="neg-dashboard" aria-label="Tablero global del negociador">
-
-            <!-- MAPA MUNDIAL — Leaflet con tiles de Carto Dark Matter (OSM) -->
-            <section class="neg-map" aria-label="Mapa de operaciones">
-              <div class="neg-map-overlay">
-                <small>Mapa de operaciones</small>
-                <span>Colombia → Mercado destino</span>
-              </div>
-              <div id="neg-leaflet-map" class="neg-leaflet-map" data-leaflet-map></div>
-            </section>
-
-            <!-- PASAPORTE del mercado destino seleccionado -->
-            <section class="neg-passport" data-passport>
-              <div class="neg-passport-empty">
-                <svg aria-hidden="true"><use href="#i-passport"></use></svg>
-                <p>Aún no has elegido un mercado. El pasaporte se completa en el <b>Paso 2</b>.</p>
-              </div>
-              <div class="neg-passport-content" data-passport-content hidden>
-                <header class="neg-passport-head">
-                  <div class="neg-passport-flag" data-passport-flag>🌎</div>
-                  <div class="neg-passport-id">
-                    <small>Pasaporte de mercado</small>
-                    <b data-passport-country>—</b>
-                  </div>
-                  <div class="neg-passport-stamp" data-passport-stamp>—</div>
-                </header>
-                <dl class="neg-passport-data" data-passport-data></dl>
-              </div>
-            </section>
-
-            <!-- SELLOS KPI — 4 indicadores tipo sellos de aduana -->
-            <section class="neg-stamps">
-              <h3 class="neg-stamps-title">Evaluación de la ruta</h3>
-              <ul class="neg-stamps-grid">
-                <li class="neg-stamp" data-stamp="encaje">
-                  <svg class="neg-stamp-icon" aria-hidden="true"><use href="#i-target"></use></svg>
-                  <span class="neg-stamp-label">Encaje producto-mercado</span>
-                  <b class="neg-stamp-value" data-stamp-value>—</b>
-                </li>
-                <li class="neg-stamp" data-stamp="costo">
-                  <svg class="neg-stamp-icon" aria-hidden="true"><use href="#i-trending"></use></svg>
-                  <span class="neg-stamp-label">Costo logístico</span>
-                  <b class="neg-stamp-value" data-stamp-value>—</b>
-                </li>
-                <li class="neg-stamp" data-stamp="riesgo">
-                  <svg class="neg-stamp-icon" aria-hidden="true"><use href="#i-shield"></use></svg>
-                  <span class="neg-stamp-label">Mitigación de riesgo</span>
-                  <b class="neg-stamp-value" data-stamp-value>—</b>
-                </li>
-                <li class="neg-stamp" data-stamp="cumplimiento">
-                  <svg class="neg-stamp-icon" aria-hidden="true"><use href="#i-clipboard-check"></use></svg>
-                  <span class="neg-stamp-label">Cumplimiento normativo</span>
-                  <b class="neg-stamp-value" data-stamp-value>—</b>
-                </li>
-              </ul>
-            </section>
-
-            <!-- Footer del dashboard -->
-            <div class="neg-dashboard-footer">
-              <div class="neg-progress-block">
-                <span class="neg-progress-text">
-                  <b data-dashboard-progress>0</b> de 4 decisiones tomadas
-                </span>
-                <div class="neg-progress-bar">
-                  <div class="neg-progress-bar-fill" data-progress-fill style="width:0%"></div>
-                </div>
-              </div>
-              <div class="neg-dashboard-actions">
-                <button class="neg-action-btn is-ghost" type="button" data-reset>
-                  <svg aria-hidden="true"><use href="#i-refresh"></use></svg>
-                  Reiniciar
-                </button>
-                <a class="neg-action-btn is-primary" href="programa-negocios.html">
-                  Salir
-                  <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg>
-                </a>
+          <section class="rn-phase-panel" data-phase-panel="2" hidden aria-label="Fase 2 · SWOT">
+            <div class="rn-instructions">
+              <div class="rn-instructions-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+              <div>
+                <h3>Confirma tu decisión con un SWOT</h3>
+                <p>El análisis SWOT (Fortalezas, Oportunidades, Debilidades, Amenazas) te obliga a mirar tu mercado desde 4 ángulos antes de comprometer capital. Los cuadrantes <b>internos</b> (F y D) hablan de RutaCafé como exportadora. Los <b>externos</b> (O y A) hablan del país destino.</p>
               </div>
             </div>
-          </aside>
 
+            <div class="rn-swot-wrap" data-swot></div>
+
+            <footer class="rn-phase-foot">
+              <button type="button" class="rn-btn-ghost" data-phase-back="1">← Volver a comparar</button>
+              <button type="button" class="rn-btn-primary" data-go-phase-3>Aceptar mercado y configurar →</button>
+            </footer>
+          </section>
+
+          <!-- ============================================================
+               FASE 3 · Configuración logística (Incoterm + financiamiento)
+          ============================================================ -->
+          <section class="rn-phase-panel" data-phase-panel="3" hidden aria-label="Fase 3 · Configuración logística">
+            <div class="rn-instructions">
+              <div class="rn-instructions-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.5 9.4 7.55 4.24"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96 12 12.01l8.73-5.05"/><path d="M12 22.08V12"/></svg></div>
+              <div>
+                <h3>Define hasta dónde llegas tú</h3>
+                <p>Los <b>Incoterms 2020</b> son el lenguaje universal del comercio internacional. Tu elección determina <b>quién paga, quién asegura y quién responde</b> en cada tramo del viaje. Haz click en el último punto de la cadena hasta donde tú asumes responsabilidad.</p>
+              </div>
+            </div>
+
+            <!-- Cadena Incoterm interactiva · estilo matriz ICC 2020 -->
+            <div class="rn-chain rn-chain--matrix">
+              <header class="rn-section-head">
+                <h4><span class="rn-section-num">1</span> Matriz Incoterms 2020 · Transferencia de riesgo</h4>
+                <span class="rn-section-theory"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg> Aplicas <b>Incoterms 2020</b> · Cámara de Comercio Internacional</span>
+              </header>
+              <p class="rn-section-hint">
+                Cada Incoterm define <b>hasta dónde llega tu responsabilidad</b> como vendedor (barra de color) y <b>desde dónde asume el comprador</b> (barra gris). El círculo marca el <b>punto exacto de transferencia de riesgo</b>. Haz click en el Incoterm que vas a usar — entre más a la derecha, más control y margen para ti, pero también más costo y exposición logística.
+              </p>
+
+              <!-- Cabecera de la matriz: los 5 puntos de la cadena -->
+              <div class="rn-matrix" role="table" aria-label="Matriz de Incoterms 2020">
+                <div class="rn-matrix-head" role="row">
+                  <span class="rn-matrix-corner"></span>
+                  <div class="rn-matrix-stops">
+                    <span data-stop="0"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V9l9-7 9 7v12"/><path d="M9 21V12h6v9"/></svg><b>Fábrica</b></span>
+                    <span data-stop="1"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3-2-2 2-2-2-2 2-2-2-2 2-2-2-3 2Z"/><path d="M5 12 9 4l6 0 4 8"/></svg><b>Puerto</b><small>Origen</small></span>
+                    <span data-stop="2"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 21c2-1 4 0 6 0s4-1 6-1 4 1 6 1"/><path d="M3 18V8l9-4 9 4v10"/><path d="M12 7v11"/></svg><b>Sobre</b><small>El barco</small></span>
+                    <span data-stop="3"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3-2-2 2-2-2-2 2-2-2-2 2-2-2-3 2Z"/><path d="M5 12 9 4l6 0 4 8"/></svg><b>Puerto</b><small>Destino</small></span>
+                    <span data-stop="4"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35Z"/><path d="M6 18h12"/></svg><b>Bodega</b><small>Cliente</small></span>
+                  </div>
+                </div>
+
+                <!-- Filas: cada Incoterm con su barra de obligación -->
+                <div class="rn-matrix-rows" data-matrix-rows>
+                  <!-- Las filas se renderizan vía JS -->
+                </div>
+              </div>
+
+              <!-- Leyenda -->
+              <div class="rn-matrix-legend">
+                <span><i class="rn-matrix-legend-seller"></i> Obligación del vendedor</span>
+                <span><i class="rn-matrix-legend-buyer"></i> Obligación del comprador</span>
+                <span><i class="rn-matrix-legend-risk"></i> Punto de transferencia de riesgo</span>
+              </div>
+
+              <div class="rn-chain-explainer" data-chain-explainer>
+                <b>Aún no has elegido.</b> Haz click en el Incoterm que vas a usar para tu envío.
+              </div>
+            </div>
+
+            <!-- Financiamiento con timelines visuales -->
+            <div class="rn-financing">
+              <header class="rn-section-head">
+                <h4><span class="rn-section-num">2</span> Cómo cobras la operación</h4>
+                <span class="rn-section-theory"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg> Aplicas <b>Instrumentos de pago internacional</b> · ICC UCP 600</span>
+              </header>
+              <p class="rn-section-hint">
+                Las líneas de tiempo muestran <b>cuándo entra la plata</b> (verde) y <b>cuándo sale</b> (rojo). <b>Pregúntate:</b> ¿necesitas liquidez inmediata aunque cueste un descuento, o puedes esperar pero exigir más margen? Cuanto más confías en el comprador, más arriesgas; cuanto menos confías, más costoso es protegerte.
+              </p>
+              <div class="rn-financing-grid" data-financing-grid></div>
+            </div>
+
+            <footer class="rn-phase-foot">
+              <button type="button" class="rn-btn-ghost" data-phase-back="2">← Volver al SWOT</button>
+              <button type="button" class="rn-btn-primary" data-execute disabled>Ejecutar plan →</button>
+            </footer>
+          </section>
+
+          <!-- ============================================================
+               FASE 4 · Ejecución y resultado
+          ============================================================ -->
+          <section class="rn-phase-panel" data-phase-panel="4" hidden aria-label="Fase 4 · Plan ejecutado">
+            <div class="rn-instructions">
+              <div class="rn-instructions-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></div>
+              <div>
+                <h3>Tu plan está en marcha</h3>
+                <p>El mapa muestra la ruta que acabas de trazar. Abajo verás la <b>proyección de caja a 12 meses</b> con tu configuración, y una comparación con el <b>benchmark</b> de exportadores colombianos al mismo destino.</p>
+              </div>
+            </div>
+
+            <div class="rn-map-wrap is-result">
+              <div id="rn-map-result" class="rn-map"></div>
+            </div>
+
+            <div class="rn-results-deep">
+              <div class="rn-results-kpis" data-results-kpis></div>
+
+              <section class="rn-results-card">
+                <h4>Proyección de caja · 12 meses</h4>
+                <div data-cashflow-chart></div>
+                <small class="rn-results-note" data-cashflow-note></small>
+              </section>
+
+              <section class="rn-results-card">
+                <h4>Tu plan vs benchmark de exportadores</h4>
+                <div data-benchmark-chart></div>
+                <small class="rn-results-note">Datos referencia: agremiaciones de exportadores de café colombiano a cada destino (promedio últimos 3 años).</small>
+              </section>
+
+              <section class="rn-results-card rn-results-narrative-card">
+                <h4>Veredicto</h4>
+                <p data-results-narrative></p>
+              </section>
+            </div>
+
+            <footer class="rn-phase-foot">
+              <button type="button" class="rn-btn-ghost" data-reset>Probar otra ruta</button>
+              <button type="button" class="rn-btn-primary" data-show-report>Ver plan completo →</button>
+            </footer>
+          </section>
+
+          <!-- Onboarding inicial -->
+          <div class="rn-onboarding" data-onboarding hidden>
+            <div class="rn-onboarding-backdrop"></div>
+            <div class="rn-onboarding-card" role="dialog" aria-modal="true" aria-labelledby="onboarding-title">
+              <button type="button" class="rn-onboarding-close" aria-label="Cerrar" data-onboarding-close>×</button>
+              <h2 id="onboarding-title">Bienvenido a RutaCafé Mundo</h2>
+              <p class="rn-onboarding-sub">Eres el responsable de exportación. Vas a llevar un café especial de Risaralda al mercado internacional. El simulador tiene 4 fases:</p>
+              <ol class="rn-onboarding-steps">
+                <li><b>Analiza:</b> compara 2-4 mercados destino con datos reales (radar + barras).</li>
+                <li><b>Elige:</b> revisa el SWOT del mercado seleccionado.</li>
+                <li><b>Configura:</b> define hasta dónde llega tu responsabilidad (Incoterm) y cómo cobras (financiamiento), con timelines visuales.</li>
+                <li><b>Ejecuta:</b> mira tu cash flow proyectado a 12 meses y compárate con exportadores reales.</li>
+              </ol>
+              <p class="rn-onboarding-tip"><b>Tiempo estimado:</b> 15-20 minutos.</p>
+              <button type="button" class="rn-btn-primary" data-onboarding-start>Empezar →</button>
+            </div>
+          </div>
         </main>
+
 
         <footer class="workspace-footer">
           <div class="workspace-footer-meta">
@@ -586,6 +396,23 @@
             <h4>Recomendaciones del negociador</h4>
             <div class="neg-plan-feedback" data-plan-feedback></div>
           </section>
+
+          <!-- Bloque 4: Certificación simbólica de cierre -->
+          <section class="neg-plan-section coo-board-cert" data-modal-cert>
+            <div class="coo-board-cert-frame">
+              <img class="coo-board-cert-logo" src="assets/brand/logo-ua-dark.png" alt="Universidad de América" />
+              <small class="coo-board-cert-eyebrow">Certificación simbólica</small>
+              <p class="coo-board-cert-otorga">Se otorga el presente reconocimiento a</p>
+              <p class="coo-board-cert-name" data-cert-name>Aspirante</p>
+              <p class="coo-board-cert-body">
+                <strong>Profesional en Negocios Internacionales en potencia,</strong> porque demostraste
+                que conectas mercados, culturas y oportunidades. La Universidad de América te acompaña
+                en este proceso.
+              </p>
+              <p class="coo-board-cert-date">Expedido el <span data-cert-date>—</span></p>
+              <span class="coo-board-cert-signature">Facultad de Ciencias Administrativas y Económicas</span>
+            </div>
+          </section>
         </div>
 
         <footer class="neg-plan-foot">
@@ -642,8 +469,11 @@
     </aside>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.49.1/dist/apexcharts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
     <script src="src/js/mobile-nav.js" defer></script>
     <script src="src/js/accessibility.js" defer></script>
     <script src="src/js/reto-neg.js" defer></script>
+    <script src="src/js/cert-download.js" defer></script>
   </body>
 </html>

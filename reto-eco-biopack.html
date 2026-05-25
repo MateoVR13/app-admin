@@ -63,8 +63,12 @@
           <span class="sidebar-nav-label">Aplicativo</span>
           <a class="sidebar-link" href="app.html#inicio"><svg aria-hidden="true"><use href="#i-home"></use></svg><span>Inicio</span></a>
           <a class="sidebar-link is-active" href="app.html#programas"><svg aria-hidden="true"><use href="#i-briefcase"></use></svg><span>Programas</span></a>
+          <div class="sidebar-sublinks">
+            <a class="sidebar-sublink" href="programa-administracion.html">Administración</a>
+            <a class="sidebar-sublink" href="programa-negocios.html">Negocios Internacionales</a>
+            <a class="sidebar-sublink is-active" href="programa-economia.html">Economía</a>
+          </div>
           <a class="sidebar-link" href="app.html#experiencia"><svg aria-hidden="true"><use href="#i-scan"></use></svg><span>Experiencia</span></a>
-          <a class="sidebar-link" href="app.html#recursos"><svg aria-hidden="true"><use href="#i-box"></use></svg><span>Recursos</span></a>
         </nav>
         <div class="sidebar-footer">
           <b>Universidad de América</b>
@@ -718,6 +722,23 @@
         <div class="reto-modal-body">
           <section class="reto-modal-summary" data-modal-summary></section>
           <section class="reto-modal-feedback" data-modal-feedback></section>
+
+          <!-- Certificación simbólica de cierre -->
+          <section class="coo-board-cert" data-modal-cert>
+            <div class="coo-board-cert-frame">
+              <img class="coo-board-cert-logo" src="assets/brand/logo-ua-dark.png" alt="Universidad de América" />
+              <small class="coo-board-cert-eyebrow">Certificación simbólica</small>
+              <p class="coo-board-cert-otorga">Se otorga el presente reconocimiento a</p>
+              <p class="coo-board-cert-name" data-cert-name>Aspirante</p>
+              <p class="coo-board-cert-body">
+                <strong>Economista en potencia,</strong> porque demostraste que entiendes los
+                datos detrás de cada decisión y los conviertes en estrategia. La Universidad
+                de América te acompaña en este proceso.
+              </p>
+              <p class="coo-board-cert-date">Expedido el <span data-cert-date>—</span></p>
+              <span class="coo-board-cert-signature">Facultad de Ciencias Administrativas y Económicas</span>
+            </div>
+          </section>
         </div>
         <div class="reto-modal-actions">
           <button class="reto-dashboard-btn is-ghost" type="button" data-reset>
@@ -775,5 +796,6 @@
     <script src="src/js/mobile-nav.js" defer></script>
     <script src="src/js/accessibility.js" defer></script>
     <script src="src/js/reto-biopack.js" defer></script>
+    <script src="src/js/cert-download.js" defer></script>
   </body>
 </html>

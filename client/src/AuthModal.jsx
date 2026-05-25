@@ -5,18 +5,18 @@ import { Recover } from "./components/Recover.jsx";
 
 const titles = {
   login: {
-    h1: "Simulador de",
-    h2: "Experiencias Empresariales y Económicas",
+    h1: "Iniciar sesión en el",
+    h2: "Simulador Inteligente de Experiencias Empresariales y Económicas",
     sub: "Bienvenido de nuevo",
   },
   signup: {
     h1: "Crear cuenta en el",
-    h2: "Simulador de Experiencias",
-    sub: "Únete al laboratorio interactivo",
+    h2: "Simulador Inteligente de Experiencias Empresariales y Económicas",
+    sub: "Únete al simulador",
   },
   recover: {
     h1: "Recuperar acceso al",
-    h2: "Simulador de Experiencias",
+    h2: "Simulador Inteligente de Experiencias Empresariales y Económicas",
     sub: "Verifica tu identidad con tu documento",
   },
 };

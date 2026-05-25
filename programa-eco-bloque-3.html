@@ -69,9 +69,32 @@
           <span class="sidebar-nav-label">Aplicativo</span>
           <a class="sidebar-link" href="app.html#inicio"><svg aria-hidden="true"><use href="#i-home"></use></svg><span>Inicio</span></a>
           <a class="sidebar-link is-active" href="app.html#programas"><svg aria-hidden="true"><use href="#i-briefcase"></use></svg><span>Programas</span></a>
+          <div class="sidebar-sublinks">
+            <a class="sidebar-sublink" href="programa-administracion.html">Administración</a>
+            <a class="sidebar-sublink" href="programa-negocios.html">Negocios Internacionales</a>
+            <a class="sidebar-sublink is-active" href="programa-economia.html">Economía</a>
+          </div>
           <a class="sidebar-link" href="app.html#experiencia"><svg aria-hidden="true"><use href="#i-scan"></use></svg><span>Experiencia</span></a>
-          <a class="sidebar-link" href="app.html#recursos"><svg aria-hidden="true"><use href="#i-box"></use></svg><span>Recursos</span></a>
         </nav>
+        <nav class="sidebar-toc" aria-label="Índice del bloque">
+            <span class="sidebar-nav-label">Índice del bloque</span>
+            <div class="bloque-toc-head">
+              <small>En este bloque</small>
+              <span>5 temas</span>
+            </div>
+            <ol class="bloque-toc-list" data-toc>
+              <li><a class="bloque-toc-link" href="#modelo">Modelación económica</a></li>
+              <li><a class="bloque-toc-link" href="#inferencia">Inferencia estadística</a></li>
+              <li><a class="bloque-toc-link" href="#riesgo">Probabilidad y riesgo</a></li>
+              <li><a class="bloque-toc-link" href="#correlacion">Correlación vs. causalidad</a></li>
+              <li><a class="bloque-toc-link" href="#big-data">Big data y algoritmos</a></li>
+            </ol>
+            <div class="bloque-toc-actions">
+              <a class="bloque-toc-action" href="programa-eco-bloque-2.html">Bloque 2 · Macroeconomía</a>
+              <a class="bloque-toc-action is-next" href="programa-eco-bloque-4.html">Bloque 4 · Desarrollo sostenible</a>
+            </div>
+          </nav>
+
         <div class="sidebar-footer">
           <b>Universidad de América</b>
           Facultad de Ciencias Administrativas · Bogotá
@@ -116,31 +139,11 @@
             </div>
           </div>
           <aside class="bloque-head-figure" aria-hidden="true">
-            <img src="assets/images/hero-eco-b3-modelacion.png" alt="" loading="lazy" />
+            <img src="assets/images/new-images/hero-eco-b3-modelacion.png" alt="" loading="lazy" />
           </aside>
         </header>
 
-        <div class="bloque-layout is-toc-left">
-
-          <aside class="bloque-toc" aria-label="Índice del bloque">
-            <div class="bloque-toc-head">
-              <small>En este bloque</small>
-              <span>5 temas</span>
-            </div>
-            <ol class="bloque-toc-list" data-toc>
-              <li><a class="bloque-toc-link" href="#modelo">Modelación económica</a></li>
-              <li><a class="bloque-toc-link" href="#inferencia">Inferencia estadística</a></li>
-              <li><a class="bloque-toc-link" href="#riesgo">Probabilidad y riesgo</a></li>
-              <li><a class="bloque-toc-link" href="#correlacion">Correlación vs. causalidad</a></li>
-              <li><a class="bloque-toc-link" href="#big-data">Big data y algoritmos</a></li>
-            </ol>
-            <div class="bloque-toc-actions">
-              <a class="bloque-toc-action" href="programa-eco-bloque-2.html">Bloque 2 · Macroeconomía</a>
-              <a class="bloque-toc-action is-next" href="programa-eco-bloque-4.html">Bloque 4 · Desarrollo sostenible</a>
-            </div>
-          </aside>
-
-          <main class="bloque-content">
+        <div class="bloque-layout is-toc-left"><main class="bloque-content">
 
             <div class="module-callout" data-reveal>
               <small>Resultado de aprendizaje</small>
@@ -169,8 +172,20 @@
                 </div>
         </header>
 
+              <figure class="module-hero-figure" data-reveal>
+                <img src="assets/images/new-images/eco-b3-hero.jpg"
+                     alt="Datos y análisis: el laboratorio del economista"
+                     loading="lazy" />
+                <figcaption>
+                  <small>Simular antes de decidir</small>
+                  Un modelo no es la realidad — es <b>una versión simplificada</b>
+                  que cabe en una hoja. Si las simplificaciones son razonables,
+                  el modelo te ayuda a anticipar consecuencias.
+                </figcaption>
+              </figure>
+
               <div class="module-aha" data-reveal>
-                <div class="module-aha-icon"><img src="assets/images/aha-eco-b3-transmilenio.png" alt="" loading="lazy" /></div>
+                <div class="module-aha-icon"><img src="assets/images/new-images/aha-eco-b3-transmilenio.png" alt="" loading="lazy" /></div>
                 <div class="module-aha-copy">
                   <small>Para entenderlo</small>
                   <p>
@@ -241,6 +256,18 @@
                   </p>
                 </div>
         </header>
+
+              <figure class="module-hero-figure" data-reveal>
+                <img src="assets/images/new-images/eco-b3-modelo.jpg"
+                     alt="Trabajo con datos: muestra y población"
+                     loading="lazy" />
+                <figcaption>
+                  <small>De la muestra a la población</small>
+                  Lo clave no es <b>cuántos</b> entrevistas, sino <b>cómo los
+                  eliges</b>. Una muestra aleatoria de 1.200 personas representa
+                  mejor al país que 100.000 personas mal seleccionadas.
+                </figcaption>
+              </figure>
 
               <div class="module-grid is-3" data-reveal>
                 <article class="module-card is-top-accent">
@@ -328,7 +355,7 @@
         </header>
 
               <div class="module-aha" data-reveal>
-                <div class="module-aha-icon"><img src="assets/images/aha-eco-b3-cucharada-sopa.png" alt="" loading="lazy" /></div>
+                <div class="module-aha-icon"><img src="assets/images/new-images/aha-eco-b3-cucharada-sopa.png" alt="" loading="lazy" /></div>
                 <div class="module-aha-copy">
                   <small>Para entenderlo</small>
                   <p>
@@ -388,6 +415,19 @@
                 </div>
         </header>
 
+              <figure class="module-hero-figure" data-reveal>
+                <img src="assets/images/new-images/eco-b3-correlacion.jpg"
+                     alt="Gráficos de datos: correlación no es causalidad"
+                     loading="lazy" />
+                <figcaption>
+                  <small>Correlación ≠ Causalidad</small>
+                  Dos variables pueden moverse al mismo tiempo por <b>pura
+                  casualidad</b>, por <b>una tercera variable oculta</b>, o
+                  porque <b>una causa a la otra</b>. Confundirlas lleva a
+                  decisiones costosas.
+                </figcaption>
+              </figure>
+
               <div class="module-diagram" data-reveal>
                 <div class="module-diagram-box">
                   <b>Coincidencia</b>
@@ -443,7 +483,7 @@
 
               <figure class="module-infografia" data-reveal>
                 <div class="module-infografia-image">
-                  <img src="assets/images/infografia-eco-b3-correlaciones-absurdas.png" alt="Cuando los datos «mienten»: tres correlaciones reales pero absurdas" loading="lazy" />
+                  <img src="assets/images/new-images/infografia-eco-b3-correlaciones-absurdas.png" alt="Cuando los datos «mienten»: tres correlaciones reales pero absurdas" loading="lazy" />
                 </div>
                 <div class="module-infografia-text">
                   <small>Infografía</small>
@@ -471,7 +511,7 @@
         </header>
 
               <div class="module-aha" data-reveal>
-                <div class="module-aha-icon"><img src="assets/images/aha-eco-b3-moneda-aire.png" alt="" loading="lazy" /></div>
+                <div class="module-aha-icon"><img src="assets/images/new-images/aha-eco-b3-moneda-aire.png" alt="" loading="lazy" /></div>
                 <div class="module-aha-copy">
                   <small>Para entenderlo</small>
                   <p>
