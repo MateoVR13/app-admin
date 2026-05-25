@@ -1101,9 +1101,9 @@
 .reto-options {
   display: grid;
   gap: 12px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
 }
-/* Fase 2 (5 fuentes) y fase 3 (3 caminos): mantener 2-col, las filas se ajustan */
+/* Stack vertical: cada opción ocupa toda la fila para mejor legibilidad */
 
 .reto-option {
   position: relative;
@@ -1740,4 +1740,101 @@ body.is-modal-open { overflow: hidden; }
   .reto-modal-actions { padding: 14px 22px 22px; justify-content: stretch; }
   .reto-modal-actions > * { flex: 1; }
   .reto-modal-summary li { grid-template-columns: 50px minmax(0, 1fr); gap: 8px; }
+}
+
+/* ============================================================
+   DEFENSIVE — todos los componentes reto-* respetan el ancho del
+   contenedor en tablet/móvil. Previene overflow horizontal y el
+   "todo pegado a la derecha" cuando los hijos exceden el viewport.
+   ============================================================ */
+@media (max-width: 880px) {
+  .reto-body,
+  .reto-phases,
+  .reto-phase,
+  .reto-dashboard,
+  .reto-dashboard-head,
+  .reto-dashboard-impact,
+  .reto-dashboard-impact-grid,
+  .reto-radar,
+  .reto-options,
+  .reto-option,
+  .reto-prompt,
+  .reto-howto,
+  .reto-phase-head,
+  .reto-phase-copy,
+  .reto-modal-content,
+  .reto-modal-body,
+  .reto-modal-summary,
+  .reto-modal-inds,
+  .reto-modal-feedback,
+  .reto-brief {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Texto largo puede partir palabras */
+  .reto-head h1,
+  .reto-dashboard-head h3,
+  .reto-dashboard-head p,
+  .reto-phase-title,
+  .reto-prompt p,
+  .reto-option-title,
+  .reto-option-text,
+  .reto-modal-feedback p,
+  .reto-modal-summary li b,
+  .reto-howto-text strong,
+  .reto-howto-text p {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    min-width: 0;
+  }
+}
+
+/* ============================================================
+   MÓVIL (≤640px) — refinements adicionales
+   ============================================================ */
+@media (max-width: 640px) {
+  /* Header del reto compacto */
+  .reto-head {
+    padding: 12px 14px 14px;
+  }
+  .reto-head-inner {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .reto-head-copy { flex-wrap: wrap; gap: 8px; }
+  .reto-head h1 { font-size: 1.05rem; line-height: 1.25; }
+  .reto-brief { padding: 6px 12px; gap: 10px; }
+  .reto-brief dl { gap: 10px; flex-wrap: wrap; }
+
+  /* Dashboard impact: 2 col en móvil para no apilar 4 stats verticalmente */
+  .reto-dashboard-impact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+  .reto-dashboard-impact-stat { padding: 8px 10px; }
+  .reto-dashboard-impact-stat b { font-size: 1rem; }
+
+  /* Modal feedback indicators: 2 col en móvil */
+  .reto-modal-inds {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+  .reto-modal-ind { padding: 8px 10px; }
+
+  /* Modal close más grande para touch */
+  .reto-modal-close { width: 36px; height: 36px; }
+
+  /* Phase progress bar */
+  .reto-progress { padding: 10px 14px; }
+  .reto-progress-step { font-size: 0.7rem; }
+}
+
+/* Móvil pequeño (≤420px) — stats en stack para evitar texto cortado */
+@media (max-width: 420px) {
+  .reto-dashboard-impact-grid { grid-template-columns: 1fr; }
+  .reto-modal-inds { grid-template-columns: 1fr; }
+  .reto-brief dl > div { flex-direction: column; gap: 2px; }
 }

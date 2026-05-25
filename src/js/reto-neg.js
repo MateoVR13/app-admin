@@ -1349,6 +1349,9 @@
     $$("[data-onboarding-close], [data-onboarding-start]").forEach(b => {
       b.addEventListener("click", hideOnboarding);
     });
+    $$("[data-show-onboarding]").forEach(b => {
+      b.addEventListener("click", showOnboarding);
+    });
 
     $$("[data-phase-btn]").forEach(btn => {
       btn.addEventListener("click", () => {
