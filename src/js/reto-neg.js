@@ -273,7 +273,7 @@
     if (!el || el._leaflet_id) return;
 
     map = L.map(el, {
-      center: [20, -30], zoom: 2, minZoom: 2, maxZoom: 6,
+      center: [ORIGEN.lat, ORIGEN.lng], zoom: 2, minZoom: 2, maxZoom: 6,
       zoomControl: true, scrollWheelZoom: false, attributionControl: false,
     });
 
@@ -320,7 +320,7 @@
     if (!el || el._leaflet_id) return;
 
     mapResult = L.map(el, {
-      center: [20, -30], zoom: 2, minZoom: 2, maxZoom: 6,
+      center: [ORIGEN.lat, ORIGEN.lng], zoom: 2, minZoom: 2, maxZoom: 6,
       zoomControl: false, scrollWheelZoom: false, attributionControl: false, dragging: false,
     });
 
@@ -365,9 +365,25 @@
       };
       step();
 
-      // Ajustar bounds para ver todo
-      mapResult.fitBounds(L.latLngBounds([[ORIGEN.lat, ORIGEN.lng], [m.lat, m.lng]]).pad(0.3));
+      // Mantener Risaralda como centro fijo; calcular zoom que también muestre el destino
+      const distKm = haversineKm(ORIGEN.lat, ORIGEN.lng, m.lat, m.lng);
+      let zoom = 2;
+      if (distKm < 3000) zoom = 4;
+      else if (distKm < 7000) zoom = 3;
+      else zoom = 2;
+      mapResult.setView([ORIGEN.lat, ORIGEN.lng], zoom);
     }
+  }
+
+  function haversineKm(lat1, lng1, lat2, lng2) {
+    const R = 6371;
+    const toRad = d => (d * Math.PI) / 180;
+    const dLat = toRad(lat2 - lat1);
+    const dLng = toRad(lng2 - lng1);
+    const a =
+      Math.sin(dLat / 2) ** 2 +
+      Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLng / 2) ** 2;
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   }
 
   function highlightComparingMarkers() {
@@ -773,8 +789,8 @@
         <div>
           <small>Destino confirmado</small>
           <h3>${m.name}</h3>
-          <p>${m.descripcion}</p>
         </div>
+        <p class="rn-swot-head-desc">${m.descripcion}</p>
         <div class="rn-swot-stats">
           <div><small>Aranceles</small><b>${m.aranceles}%</b></div>
           <div><small>Distancia</small><b>${m.distancia.toLocaleString("es")} km</b></div>
@@ -1176,12 +1192,13 @@
           },
           y: {
             beginAtZero: true,
-            max: Math.max(r.margen, r.benchmarkMargen, 40) * 1.2,
+            max: Math.ceil(Math.max(r.margen, r.benchmarkMargen, 40) * 1.2 / 10) * 10,
             grid: { color: "rgba(0,0,0,0.05)" },
             ticks: {
+              stepSize: 10,
               font: { family: "JetBrains Mono, monospace", size: 11 },
               color: "#666",
-              callback: v => `${v}%`,
+              callback: v => `${Math.round(v)}%`,
             },
           },
         },
@@ -1245,31 +1262,51 @@
 
     const routeEl = $("[data-plan-route]");
     if (routeEl) routeEl.innerHTML = `
-      <div class="rn-plan-route-track">
-        <div class="rn-plan-route-node is-origin">
-          <span>${flagEmoji("co")}</span><b>Risaralda</b><small>Colombia · Origen</small>
+      <div class="neg-plan-route-display">
+        <div class="neg-plan-route-node is-origin">
+          <div class="neg-plan-route-flag">${flagEmoji("co")}</div>
+          <small>Origen</small>
+          <b>Risaralda</b>
+          <span>Colombia</span>
         </div>
-        <div class="rn-plan-route-arrow">
-          <span class="rn-plan-route-arrow-line"></span>
-          <span class="rn-plan-route-arrow-tag">${m.distancia.toLocaleString("es")} km · ${m.transitoDias} días</span>
+        <div class="neg-plan-route-path" aria-hidden="true">
+          <span class="neg-plan-route-path-line"></span>
+          <svg class="neg-plan-route-path-plane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" />
+          </svg>
         </div>
-        <div class="rn-plan-route-node is-dest">
-          <span>${flagEmoji(m.id)}</span><b>${m.short}</b><small>${m.name}</small>
+        <div class="neg-plan-route-stats">
+          <div class="neg-plan-route-stat">
+            <small>Distancia</small>
+            <b>${m.distancia.toLocaleString("es")} km</b>
+          </div>
+          <div class="neg-plan-route-stat">
+            <small>Tránsito</small>
+            <b>${m.transitoDias} días</b>
+          </div>
+        </div>
+        <div class="neg-plan-route-node is-dest">
+          <div class="neg-plan-route-flag">${flagEmoji(m.id)}</div>
+          <small>Destino</small>
+          <b>${m.name}</b>
+          <span>${m.short}</span>
         </div>
       </div>`;
 
     const scoresEl = $("[data-plan-scores]");
     if (scoresEl) {
+      // Normalizamos cada métrica a porcentaje 0-100 para la barra
       const items = [
-        { label: "Margen estimado",   value: `${r.margen}%`,            tone: r.margen >= 35 ? "good" : r.margen >= 20 ? "ok" : "bad" },
-        { label: "Riesgo integral",   value: `${r.riesgo}/100`,         tone: r.riesgo <= 30 ? "good" : r.riesgo <= 55 ? "ok" : "bad" },
-        { label: "Tiempo de retorno", value: `${r.retorno} meses`,      tone: r.retorno <= 6 ? "good" : r.retorno <= 9 ? "ok" : "bad" },
-        { label: "Sostenibilidad",    value: `${r.sostenibilidad}/100`, tone: r.sostenibilidad >= 70 ? "good" : r.sostenibilidad >= 50 ? "ok" : "bad" },
+        { label: "Margen estimado",   value: `${r.margen}%`,            pct: Math.max(0, Math.min(100, r.margen * 2)),  tone: r.margen >= 35 ? "good" : r.margen >= 20 ? "mid" : "bad" },
+        { label: "Riesgo integral",   value: `${r.riesgo}/100`,         pct: 100 - r.riesgo,                              tone: r.riesgo <= 30 ? "good" : r.riesgo <= 55 ? "mid" : "bad" },
+        { label: "Tiempo de retorno", value: `${r.retorno} meses`,      pct: Math.max(0, Math.min(100, 100 - r.retorno * 8)), tone: r.retorno <= 6 ? "good" : r.retorno <= 9 ? "mid" : "bad" },
+        { label: "Sostenibilidad",    value: `${r.sostenibilidad}/100`, pct: r.sostenibilidad,                            tone: r.sostenibilidad >= 70 ? "good" : r.sostenibilidad >= 50 ? "mid" : "bad" },
       ];
       scoresEl.innerHTML = items.map(i => `
-        <div class="rn-plan-score rn-plan-score--${i.tone}">
+        <div class="neg-plan-score is-${i.tone}">
+          <span>${i.label}</span>
+          <div class="neg-plan-score-bar"><div class="neg-plan-score-fill" style="width:${i.pct}%"></div></div>
           <b>${i.value}</b>
-          <small>${i.label}</small>
         </div>`).join("");
     }
 

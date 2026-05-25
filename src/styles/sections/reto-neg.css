@@ -935,7 +935,7 @@
 /* Banner celebrativo */
 .neg-plan-cheer {
   display: grid;
-  grid-template-columns: 64px minmax(0, 1fr);
+  grid-template-columns: 64px minmax(0, 1fr) 32px;
   gap: 18px;
   align-items: center;
   padding: 22px 36px;
@@ -990,11 +990,28 @@
   letter-spacing: -0.018em;
   color: #1a1a1a;
   line-height: 1.2;
+  animation: negCheerSlide 600ms cubic-bezier(0.34, 1.56, 0.64, 1) 320ms backwards;
 }
 .neg-plan-cheer-text span {
   font-size: 0.95rem;
   color: rgba(26, 26, 26, 0.75);
   line-height: 1.45;
+  animation: negCheerSlide 600ms cubic-bezier(0.34, 1.56, 0.64, 1) 450ms backwards;
+}
+@keyframes negCheerSlide {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+.neg-plan-cheer-sparkle {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  color: rgba(26, 26, 26, 0.7);
+  animation: negCheerSparkle 1.6s ease-in-out infinite alternate 600ms;
+}
+@keyframes negCheerSparkle {
+  from { opacity: 0.5; transform: scale(0.9) rotate(0deg); }
+  to   { opacity: 1;   transform: scale(1.1) rotate(15deg); }
 }
 
 /* Letterhead */
@@ -1074,12 +1091,16 @@
   color: var(--program-accent-700);
 }
 
-/* Ruta visual de las 4 decisiones */
+/* Ruta visual legacy (4 pasos) */
 .neg-plan-route-track {
   display: grid;
   grid-template-columns: 1fr 22px 1fr 22px 1fr 22px 1fr;
   gap: 6px;
   align-items: stretch;
+}
+/* Si contiene el nuevo display de modal, deja que ocupe el ancho completo */
+.neg-plan-route-track:has(.neg-plan-route-display) {
+  display: block;
 }
 .neg-plan-step {
   padding: 10px 12px;
@@ -1141,6 +1162,201 @@
   font-weight: 900;
 }
 
+/* ============================================================
+   ROUTE DISPLAY · v2 (modal de cierre)
+   PC: origen [path animado con avión] destino → stats chips abajo
+   Móvil: stack vertical
+   ============================================================ */
+.neg-plan-route-display {
+  display: grid;
+  grid-template-columns: minmax(140px, 1fr) minmax(160px, 1.6fr) minmax(140px, 1fr);
+  grid-template-areas:
+    "origin path dest"
+    "stats stats stats";
+  gap: 20px 16px;
+  align-items: center;
+  padding: 26px 32px;
+  background: linear-gradient(135deg,
+    var(--paper-warm) 0%,
+    color-mix(in srgb, var(--program-accent-soft) 60%, #fff) 100%);
+  border: 1px solid color-mix(in srgb, var(--program-accent) 24%, var(--paper-line));
+  border-radius: var(--radius-md);
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: stretch;
+}
+
+.neg-plan-route-node {
+  display: grid;
+  gap: 2px;
+  text-align: center;
+  min-width: 0;
+  align-content: center;
+}
+.neg-plan-route-node.is-origin { grid-area: origin; }
+.neg-plan-route-node.is-dest { grid-area: dest; }
+
+.neg-plan-route-flag {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 8px;
+  border-radius: 50%;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  box-shadow: 0 4px 14px -4px rgba(0,0,0,0.18);
+  border: 3px solid var(--program-accent);
+}
+.neg-plan-route-node.is-dest .neg-plan-route-flag {
+  border-color: var(--ua-yellow);
+}
+
+.neg-plan-route-node small {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.neg-plan-route-node b {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-top: 4px;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+.neg-plan-route-node span {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  line-height: 1.3;
+  margin-top: 2px;
+}
+
+.neg-plan-route-path {
+  grid-area: path;
+  position: relative;
+  width: 100%;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.neg-plan-route-path-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--program-accent) 0,
+    var(--program-accent) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  transform: translateY(-50%);
+}
+.neg-plan-route-path-plane {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  color: var(--program-accent-700);
+  background: #fff;
+  border-radius: 50%;
+  padding: 6px;
+  box-shadow: 0 3px 12px -2px rgba(0,0,0,0.22);
+  animation: negPlaneFly 2.8s ease-in-out infinite;
+}
+@keyframes negPlaneFly {
+  0%, 100% { transform: translateX(-18px); }
+  50%      { transform: translateX(18px); }
+}
+
+.neg-plan-route-stats {
+  grid-area: stats;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.neg-plan-route-stat {
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--paper-line);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  min-width: 0;
+}
+.neg-plan-route-stat small {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.neg-plan-route-stat b {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .neg-plan-route-display {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "origin"
+      "path"
+      "dest"
+      "stats";
+    padding: 18px 16px;
+    gap: 8px;
+  }
+  .neg-plan-route-path {
+    height: 56px;
+    width: 56px;
+    justify-self: center;
+    transform: rotate(90deg);
+    transform-origin: center;
+    margin: 0;
+    overflow: visible;
+  }
+  .neg-plan-route-path-line {
+    left: 8px;
+    right: 8px;
+  }
+  .neg-plan-route-flag {
+    width: 56px;
+    height: 56px;
+    font-size: 1.7rem;
+  }
+  .neg-plan-route-node b {
+    font-size: 1rem;
+    margin-top: 6px;
+  }
+  .neg-plan-route-stats {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .neg-plan-route-stat { padding: 10px 14px; }
+  .neg-plan-route-stat b { font-size: 1rem; }
+  /* Recomendaciones: aseguramos el gap también en móvil */
+  .neg-plan-feedback { gap: 10px; }
+}
+
 /* Scorecard */
 .neg-plan-scores {
   display: grid;
@@ -1193,6 +1409,10 @@
 .neg-plan-score.is-bad b { color: #b91c1c; }
 
 /* Feedback */
+.neg-plan-feedback {
+  display: grid;
+  gap: 10px;
+}
 .neg-plan-feedback p {
   margin: 0;
   padding: 14px 16px;
@@ -1261,6 +1481,14 @@
   .neg-dashboard-footer { grid-template-columns: 1fr; }
   .neg-plan-head { padding: 18px 18px 14px; }
   .neg-plan-body { padding: 16px 18px 4px; }
+  .neg-plan-cheer {
+    grid-template-columns: 52px minmax(0, 1fr);
+    padding: 18px 18px;
+    gap: 14px;
+  }
+  .neg-plan-cheer-icon { width: 52px; height: 52px; }
+  .neg-plan-cheer-icon svg { width: 28px; height: 28px; }
+  .neg-plan-cheer-sparkle { display: none; }
   .neg-plan-score { grid-template-columns: 100px 1fr 50px; gap: 8px; padding: 8px 10px; }
   .neg-plan-foot { padding: 14px 18px 20px; flex-direction: column-reverse; }
   .neg-plan-foot > * { width: 100%; justify-content: center; }
@@ -2239,22 +2467,37 @@
   border-radius: var(--radius-md);
   overflow: hidden;
 }
+/* Layout: header (bandera + título arriba) | descripción justificada en medio | stats 4-col abajo */
 .rn-swot-head {
   display: grid;
-  grid-template-columns: 72px minmax(0, 1fr) auto;
-  gap: 18px;
+  grid-template-columns: 64px minmax(0, 1fr);
+  grid-template-areas:
+    "flag title"
+    "desc desc"
+    "stats stats";
+  gap: 14px 18px;
   padding: 22px;
   border-bottom: 1px solid var(--paper-line);
   align-items: center;
 }
-.rn-swot-head > div:nth-child(2) { min-width: 0; }
 .rn-swot-head-flag {
-  width: 72px; height: 72px;
+  grid-area: flag;
+  width: 64px; height: 64px;
   border-radius: var(--radius-md);
   background: var(--program-accent-soft);
   display: grid;
   place-items: center;
-  font-size: 2.4rem;
+  font-size: 2rem;
+  align-self: start;
+}
+.rn-swot-head > div:nth-child(2) {
+  grid-area: title;
+  min-width: 0;
+  align-self: center;
+}
+.rn-swot-head > div:nth-child(2) p {
+  /* mover el párrafo a su propio área */
+  display: none;
 }
 .rn-swot-head small {
   display: block;
@@ -2266,50 +2509,59 @@
   color: var(--muted);
 }
 .rn-swot-head h3 {
-  margin: 4px 0 6px;
+  margin: 4px 0 0;
   font-family: var(--font-display);
   font-size: 1.4rem;
   font-weight: 800;
   color: var(--ink);
   line-height: 1.15;
 }
-.rn-swot-head p {
+/* Párrafo de descripción ocupa toda la fila siguiente */
+.rn-swot-head-desc {
+  grid-area: desc;
   margin: 0;
   color: var(--ink-soft);
-  font-size: 0.9rem;
-  line-height: 1.5;
-  max-width: 60ch;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  max-width: 70ch;
 }
 .rn-swot-stats {
+  grid-area: stats;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
 }
-@media (max-width: 760px) { .rn-swot-stats { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; } }
 .rn-swot-stats > div {
-  padding: 10px 12px 12px;
+  padding: 12px 14px;
   border-radius: var(--radius-sm);
   background: var(--paper-deep);
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
+  min-width: 0;
 }
 .rn-swot-stats small {
-  align-self: flex-start;
   font-family: var(--font-mono);
-  font-size: 0.74rem;
+  font-size: 0.66rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
   line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .rn-swot-stats b {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 800;
   color: var(--ink);
-  text-align: center;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
 }
 
 .rn-swot-matrix {
@@ -3523,45 +3775,23 @@
   /* ====== FASE 2 — SWOT mobile ====== */
   .rn-swot-head {
     grid-template-columns: 52px minmax(0, 1fr);
-    grid-template-areas:
-      "flag title"
-      "desc desc";
     padding: 16px;
-    gap: 4px 12px;
+    gap: 10px 12px;
   }
   .rn-swot-head-flag {
-    grid-area: flag;
     width: 52px;
     height: 52px;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     border-radius: var(--radius-sm);
-    align-self: start;
-  }
-  .rn-swot-head > div:nth-child(2) {
-    grid-area: title;
-    align-items: flex-start;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .rn-swot-head p {
-    grid-area: desc;
-    text-align: justify;
-    hyphens: auto;
-    -webkit-hyphens: auto;
   }
   .rn-swot-head small { font-size: 0.62rem; letter-spacing: 0.08em; }
-  .rn-swot-head h3 { font-size: 1.2rem; line-height: 1.2; }
-  .rn-swot-head p { margin: 6px 0 0; font-size: 0.86rem; }
-  /* Stats: una sola fila en móvil */
-  .rn-swot-stats {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 6px;
-  }
-  .rn-swot-stats > div { padding: 8px 6px 10px; }
-  .rn-swot-stats small { font-size: 0.56rem; letter-spacing: 0.06em; }
-  .rn-swot-stats b { font-size: 0.92rem; }
+  .rn-swot-head h3 { font-size: 1.15rem; line-height: 1.2; }
+  .rn-swot-head-desc { font-size: 0.86rem; line-height: 1.5; }
+  /* Stats: 4 columnas se mantienen en móvil para preservar la fila horizontal */
+  .rn-swot-stats { gap: 6px; }
+  .rn-swot-stats > div { padding: 8px 8px 10px; }
+  .rn-swot-stats small { font-size: 0.54rem; letter-spacing: 0.04em; }
+  .rn-swot-stats b { font-size: 0.88rem; }
   .rn-swot-matrix { grid-template-columns: 1fr; }
   .rn-swot-cell { padding: 16px 18px; }
   .rn-swot-cell h4 { font-size: 0.92rem; }
@@ -3621,6 +3851,66 @@
   .rn-btn-primary, .rn-btn-ghost { font-size: 0.88rem; padding: 10px 16px; }
 }
 
+/* ============================================================
+   DEFENSIVE — todos los componentes rn-* respetan el ancho del
+   contenedor en tablet/móvil. Previene overflow horizontal y el
+   "todo pegado a la derecha" cuando los hijos exceden el viewport.
+   ============================================================ */
+@media (max-width: 880px) {
+  .rn-app,
+  .rn-phase-panel,
+  .rn-instructions,
+  .rn-map-wrap,
+  .rn-comparator,
+  .rn-comparator-body,
+  .rn-comparator-chips,
+  .rn-chain,
+  .rn-chain-explainer,
+  .rn-matrix,
+  .rn-matrix-head,
+  .rn-matrix-rows,
+  .rn-matrix-row,
+  .rn-matrix-legend,
+  .rn-financing,
+  .rn-financing-grid,
+  .rn-results-card,
+  .rn-results-kpis,
+  .rn-swot-wrap,
+  .rn-section-theory,
+  .rn-section-hint,
+  .rn-side,
+  .rn-market-card-head,
+  .rn-onboarding-card {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Texto largo puede partir palabras */
+  .rn-head h1,
+  .rn-head-sub,
+  .rn-instructions h3,
+  .rn-instructions p,
+  .rn-comparator-head h3,
+  .rn-matrix-row-label,
+  .rn-section-theory,
+  .rn-section-hint,
+  .rn-fin-card p,
+  .rn-results-note {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    min-width: 0;
+  }
+
+  /* Comparator chips no fuerzan ancho del padre */
+  .rn-comparator-chips {
+    flex-wrap: wrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
 /* Móvil pequeño (≤ 420px) — ajustes adicionales */
 @media (max-width: 420px) {
   .rn-phase-nav { padding: 10px 10px; }
@@ -3634,7 +3924,8 @@
   .rn-instructions-icon { width: 38px; height: 38px; }
 
   .rn-insights-grid { grid-template-columns: 1fr; }
-  .rn-swot-stats { grid-template-columns: 1fr; }
+  /* Stats: mantener 2 columnas en pantallas muy pequeñas (≤420px) */
+  .rn-swot-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .rn-results-kpis { grid-template-columns: 1fr; }
 
   .rn-chain-node { width: 78px; }

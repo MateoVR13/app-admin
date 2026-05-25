@@ -1,5 +1,5 @@
 /* ============================================================
-   Certificación simbólica · captura de usuario + descarga PDF
+   Certificado de participación · captura de usuario + descarga PDF
    Se incluye en los 3 retos (techcorp, biopack, rutacafe).
    Espera encontrar:
      - .coo-board-cert-frame  → contenedor del certificado

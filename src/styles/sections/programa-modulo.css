@@ -164,10 +164,10 @@
 
 .module-title {
   font-family: var(--font-display);
-  font-size: clamp(3.7rem, 2.4rem + 4.8vw, 5.7rem);
+  font-size: clamp(2.6rem, 1.6rem + 2.4vw, 4.4rem);
   font-weight: 900;
   letter-spacing: -0.038em;
-  line-height: 1.02;
+  line-height: 1.04;
   color: var(--ink);
   margin-bottom: 16px;
 }
@@ -1236,15 +1236,65 @@
 }
 .module-pestel-intensity-note b { color: var(--ink); font-weight: 700; }
 
-@media (max-width: 640px) {
-  .module-pestel-table { padding: 14px 14px; }
-  .module-pestel-intensity { padding: 14px 14px; }
-  .module-pestel-bar-row {
-    grid-template-columns: 110px minmax(0, 1fr) 50px;
-    gap: 8px;
+/* PESTEL responsive — desde 880px todos los componentes PESTEL deben caber */
+@media (max-width: 880px) {
+  .module-pestel-table,
+  .module-pestel-intensity,
+  .module-pestel-card,
+  .module-pestel-hero,
+  .module-pestel-bars,
+  .module-pestel-sector-tabs {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
   }
-  .module-pestel-bar-label { font-size: 0.76rem; }
+  .module-pestel-table { padding: 16px 14px; }
+  .module-pestel-intensity { padding: 16px 14px; }
   .module-pestel-card { padding: 14px 16px; }
+  /* Bar row: stack label/value arriba y bar abajo */
+  .module-pestel-bar-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "label value"
+      "bar bar";
+    gap: 4px 8px;
+  }
+  .module-pestel-bar-label {
+    grid-area: label;
+    font-size: 0.82rem;
+    min-width: 0;
+  }
+  .module-pestel-bar {
+    grid-area: bar;
+    min-width: 0;
+    width: 100%;
+  }
+  .module-pestel-bar-value {
+    grid-area: value;
+    font-size: 0.76rem;
+  }
+  /* Tabla PESTEL: scroll horizontal */
+  .module-pestel-table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+  }
+  .module-pestel-table table { min-width: 540px; }
+  /* Sector tabs: scroll horizontal sin empujar layout */
+  .module-pestel-sector-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+  .module-pestel-sector-tab { flex-shrink: 0; }
+  /* Header de card: deja respirar el texto largo */
+  .module-pestel-card > header { grid-template-columns: 38px minmax(0, 1fr); }
+  .module-pestel-card-icon { display: none; }
+  .module-pestel-card > header small {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
 }
 
 /* ============================================================
@@ -2174,6 +2224,7 @@
   display: grid;
   gap: clamp(20px, 2.6vw, 32px);
   scroll-margin-top: 24px;
+  min-width: 0;
 }
 
 .module-tema-head {
@@ -2277,6 +2328,7 @@
 .module-subtema {
   display: grid;
   gap: 14px;
+  min-width: 0;
 }
 .module-subtema-title {
   font-family: var(--font-display);
@@ -2784,9 +2836,11 @@
   .bloque-layout,
   .bloque-layout.is-toc-left {
     grid-template-columns: 1fr;
-    padding: 20px 14px;
+    padding: 20px 16px;
+    overflow-x: hidden;
   }
-  .bloque-content { gap: 28px; }
+  .bloque-content { gap: 28px; min-width: 0; max-width: 100%; }
+  .bloque-content > * { min-width: 0; max-width: 100%; }
 }
 
 /* Tema "stacked" — barra horizontal arriba con número, luego eyebrow/título */
@@ -3945,7 +3999,7 @@ abbr.gloss:hover,
 
 @media (max-width: 720px) {
   .module-aha {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 14px;
     padding: 16px 18px;
     text-align: left;
@@ -3953,12 +4007,14 @@ abbr.gloss:hover,
   }
   .module-aha-icon {
     width: 100%;
-    justify-self: stretch;
+    max-width: 280px;
+    margin: 0 auto;
+    justify-self: center;
   }
   .module-aha-icon img {
     width: 100%;
     height: auto;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 16 / 10;
     object-fit: cover;
     margin: 0;
     border-radius: var(--radius-md);
@@ -4578,6 +4634,78 @@ abbr.gloss:hover,
   .module-bloque-head { max-width: 100%; }
 }
 
+/* Tablet/large phone (641-880px): reduce padding y tema-num para mejor proporción */
+@media (max-width: 880px) and (min-width: 641px) {
+  .bloque-layout,
+  .bloque-layout.is-toc-left {
+    padding: 24px 20px;
+  }
+  .bloque-content { min-width: 0; max-width: 100%; }
+  .bloque-content > * { min-width: 0; max-width: 100%; }
+  .bloque-head {
+    padding: 24px 20px;
+  }
+  .module-tema-head {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 18px;
+    min-width: 0;
+  }
+  .module-tema-head.is-toggleable { padding-right: 44px; }
+  .module-tema-num {
+    width: 64px;
+    height: 64px;
+    font-size: 2rem;
+  }
+  .module-tema-copy { min-width: 0; }
+  .module-tema-title {
+    font-size: clamp(1.2rem, 1rem + 0.8vw, 1.6rem);
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+  .module-tema-lede {
+    font-size: 0.94rem;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  /* Componentes en general respetan el ancho del contenedor */
+  .module-quickcheck,
+  .module-interactive,
+  .module-flashcard,
+  .module-spotlight,
+  .module-callout,
+  .module-aha,
+  .module-hero-figure,
+  .module-infografia,
+  .module-accordion,
+  .module-tabs,
+  .module-card,
+  .module-grid,
+  .module-bsc,
+  .module-pdca,
+  .module-rank-list,
+  .module-impact-input,
+  .module-impact-outputs,
+  .module-spot-text,
+  .module-reto-cta,
+  .module-quote,
+  .module-prose {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  /* Texto largo de cards/prose puede partir palabras */
+  .module-card-text,
+  .module-card-title,
+  .module-quickcheck-q,
+  .module-interactive-prompt,
+  .module-prose p,
+  .module-accordion-title {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+}
+
 @media (max-width: 640px) {
   /* Hero del módulo */
   .module-head { padding: 18px 14px; }
@@ -4594,7 +4722,39 @@ abbr.gloss:hover,
   .module-bloque-lede { font-size: 0.92rem; }
 
   /* Tema head */
-  .module-tema-head { padding: 12px 4px 14px; }
+  .module-tema-head {
+    grid-template-columns: 52px minmax(0, 1fr);
+    gap: 14px;
+    padding: 14px 0 14px 0;
+    align-items: center;
+  }
+  .module-tema-head.is-toggleable { padding-right: 36px; }
+  .module-tema-head.is-toggleable::after {
+    right: 8px;
+    width: 12px;
+    height: 12px;
+  }
+  .module-tema-num {
+    width: 52px;
+    height: 52px;
+    font-size: 1.4rem;
+    border-radius: var(--radius-sm);
+  }
+  .module-tema-eyebrow { font-size: 0.62rem; letter-spacing: 0.1em; }
+  .module-tema-title {
+    font-size: 1.05rem;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+  .module-tema-copy { gap: 4px; }
+  .module-tema-lede {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-top: 4px;
+  }
 
   /* Prose */
   .module-prose { font-size: 0.94rem; }
@@ -4604,8 +4764,19 @@ abbr.gloss:hover,
 
   /* Quickcheck touch-friendly */
   .module-quickcheck { padding: 16px 14px; }
-  .module-quickcheck-opt { padding: 14px 14px; min-height: 44px; }
-  .module-quickcheck-opt span { font-size: 0.9rem; }
+  .module-quickcheck-q { font-size: 1rem; line-height: 1.4; }
+  .module-quickcheck-opt { padding: 12px 12px; min-height: 44px; }
+  .module-quickcheck-opt span { font-size: 0.88rem; }
+
+  /* Componentes interactivos compactos en móvil */
+  .module-interactive { padding: 16px 14px; }
+  .module-interactive-head { gap: 8px; flex-wrap: wrap; }
+  .module-interactive-head h4 { font-size: 0.96rem; line-height: 1.25; }
+  .module-interactive-prompt { font-size: 0.88rem; line-height: 1.5; }
+  .module-spot-text { padding: 12px 14px; font-size: 0.92rem; line-height: 1.6; }
+  .module-spot-text ul { padding-left: 16px !important; }
+  .module-interactive-feedback { padding: 10px 12px; }
+  .module-interactive-feedback p { font-size: 0.84rem; }
 
   /* Flashcard */
   .module-flashcard { padding: 16px 14px; }
@@ -4621,8 +4792,9 @@ abbr.gloss:hover,
   /* Bloque hero stack */
   .bloque-head {
     grid-template-columns: 1fr;
-    padding: 20px 14px;
+    padding: 20px 16px;
     gap: 14px;
+    overflow-x: hidden;
   }
   .bloque-head-banner { display: none; }
 

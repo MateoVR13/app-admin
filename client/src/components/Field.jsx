@@ -9,10 +9,24 @@ export function Field({
   autoFocus,
   placeholder,
   hint,
+  tooltip,
 }) {
   return (
     <label className="auth-field">
-      <span className="auth-field-label">{label}</span>
+      <span className="auth-field-label">
+        {label}
+        {tooltip && (
+          <button
+            type="button"
+            className="auth-field-info"
+            aria-label="Más información"
+            data-tooltip={tooltip}
+            tabIndex={0}
+          >
+            ?
+          </button>
+        )}
+      </span>
       <input
         className={`auth-input ${error ? "is-error" : ""}`}
         type={type}

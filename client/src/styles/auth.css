@@ -203,6 +203,79 @@
   color: var(--auth-ink-soft);
 }
 
+/* Botón de información con tooltip CSS-only */
+.auth-field-info {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.12);
+  color: var(--auth-ink-soft);
+  font-family: inherit;
+  font-size: 0.7rem;
+  font-weight: 900;
+  line-height: 1;
+  cursor: help;
+  transition: background 160ms ease, color 160ms ease;
+}
+.auth-field-info:hover,
+.auth-field-info:focus-visible {
+  background: var(--auth-accent, #ff7900);
+  color: #fff;
+  outline: none;
+}
+.auth-field-info::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translate(-50%, 4px);
+  width: max-content;
+  max-width: 260px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(20, 20, 30, 0.96);
+  color: #fff;
+  font-family: var(--auth-font, system-ui, sans-serif);
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: normal;
+  text-align: left;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 180ms ease, transform 180ms ease;
+  z-index: 30;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
+}
+.auth-field-info::before {
+  content: "";
+  position: absolute;
+  bottom: calc(100% + 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: rgba(20, 20, 30, 0.96);
+  opacity: 0;
+  transition: opacity 180ms ease;
+  z-index: 30;
+}
+.auth-field-info:hover::after,
+.auth-field-info:hover::before,
+.auth-field-info:focus-visible::after,
+.auth-field-info:focus-visible::before {
+  opacity: 1;
+}
+.auth-field-info:hover::after,
+.auth-field-info:focus-visible::after {
+  transform: translate(-50%, 0);
+}
+
 .auth-input {
   height: 48px;
   padding: 0 16px;

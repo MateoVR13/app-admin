@@ -57,13 +57,14 @@ export function Recover({ switchTo }) {
         autoFocus
       />
       <Field
-        label="Documento de identidad"
+        label="Número de seguridad"
         name="document"
         value={document}
         onChange={setDocument}
         error={errors.document}
         autoComplete="off"
         hint="El que registraste al crear tu cuenta."
+        tooltip="El número de seguridad es la clave que elegiste al registrarte (mínimo 5 dígitos) para poder recuperar tu contraseña. No es tu cédula."
       />
       <Field
         label="Nueva contraseña"

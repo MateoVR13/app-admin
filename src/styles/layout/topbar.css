@@ -289,6 +289,68 @@
   }
 }
 
+@media (max-width: 900px) {
+  .topbar-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
 @media (max-width: 720px) {
   .topbar-collage { display: none; }
+  .topbar {
+    padding: 24px 18px 28px;
+    overflow-x: hidden;
+  }
+  .topbar-outcomes {
+    padding: 18px 18px;
+  }
+  .topbar-outcomes h2 {
+    font-size: 1.1rem;
+    line-height: 1.25;
+  }
+  .topbar-outcomes-head {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .topbar-outcomes li {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+  .topbar-eyebrow {
+    width: 100%;
+    max-width: 100%;
+    white-space: normal;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    padding: 6px 12px 6px 10px;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  .topbar-title {
+    font-size: clamp(1.8rem, 7vw, 2.4rem);
+    line-height: 1.1;
+    margin-bottom: 14px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+  .topbar-title .line {
+    line-height: 1.1;
+    padding-bottom: 0.04em;
+  }
+  .topbar-lede {
+    font-size: 0.94rem;
+    max-width: none;
+  }
+  .topbar-actions {
+    gap: 8px;
+    margin-top: 18px;
+  }
+  .topbar-actions .btn {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 0 14px;
+    height: 42px;
+    font-size: 0.85rem;
+  }
 }

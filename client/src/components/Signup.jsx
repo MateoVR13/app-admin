@@ -58,13 +58,14 @@ export function Signup({ onSuccess, switchTo }) {
         hint="Mínimo 8 caracteres."
       />
       <Field
-        label="Documento de identidad"
+        label="Número de seguridad"
         name="document"
         value={document}
         onChange={setDocument}
         error={errors.document}
         autoComplete="off"
-        hint="Lo usaremos para verificar tu identidad si pierdes tu contraseña."
+        hint="Lo usarás para recuperar tu contraseña si la olvidas."
+        tooltip="El número de seguridad es una clave que TÚ ELIGES (mínimo 5 dígitos). No es tu cédula. Sirve solo para recuperar tu contraseña — anótalo en un lugar seguro porque sin él no podrás recuperar el acceso."
       />
 
       {serverError && <div className="auth-server-error">{serverError}</div>}
