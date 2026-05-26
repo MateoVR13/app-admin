@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/webp" href="/assets/brand/favicon.ico" />
+    <title>Reto · RutaCafé · Negocios Internacionales · Universidad de América</title>
+    <meta name="description" content="Simulador de exportación: lleva un café especial de Risaralda al mercado global." />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script>
+      (function () {
+        try {
+          var p = JSON.parse(localStorage.getItem("ua-a11y-prefs") || "{}");
+          var h = document.documentElement;
+          h.setAttribute("data-text-size", p.textSize || "md");
+          h.setAttribute("data-contrast", p.contrast || "default");
+          h.setAttribute("data-color-mode", p.colorMode || "default");
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="programa is-export-sim" data-program="business">
+    <svg class="svg-defs" aria-hidden="true" focusable="false">
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></symbol>
+      <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5" /><path d="m11 6-6 6 6 6" /></symbol>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8" /><path d="M5 10v11h5v-7h4v7h5V10" /></symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2" /><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" /></symbol>
+      <symbol id="i-scan" viewBox="0 0 24 24"><path d="M5 7V5h2" /><path d="M17 5h2v2" /><path d="M19 17v2h-2" /><path d="M7 19H5v-2" /><circle cx="12" cy="12" r="3" /></symbol>
+      <symbol id="i-box" viewBox="0 0 24 24"><path d="m12 3 9 4-9 5-9-5z" /><path d="M3 7v10l9 5 9-5V7" /><path d="M12 12v10" /></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12" /><path d="M18 6L6 18" /></symbol>
+      <symbol id="i-a11y" viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="1.6" /><path d="M5 8h14" /><path d="M9 8v5" /><path d="M15 8v5" /><path d="M9 13l-2 8" /><path d="M15 13l2 8" /></symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15-6.7L21 8" /><path d="M21 3v5h-5" /><path d="M21 12a9 9 0 0 1-15 6.7L3 16" /><path d="M3 21v-5h5" /></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="4" /><circle cx="12" cy="12" r="3" /><path d="M16.5 7.5h.01" /></symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 8h2V5h-2a4 4 0 0 0-4 4v2H8v3h2v5h3v-5h3l1-3h-4V9a1 1 0 0 1 1-1Z" /></symbol>
+      <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M4 8a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3Z" /><path d="m10 9 5 3-5 3Z" /></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M6 10v9" /><path d="M6 6v.01" /><path d="M11 19v-9" /><path d="M11 14a4 4 0 0 1 8 0v5" /></symbol>
+      <!-- Iconos del simulador de exportación (Lucide) -->
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+      <symbol id="i-ship" viewBox="0 0 24 24"><path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1s1.2 1 2.5 1c2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.76"/><path d="M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6"/><path d="M12 10v4"/><path d="M12 2v3"/></symbol>
+      <symbol id="i-coffee" viewBox="0 0 24 24"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></symbol>
+      <symbol id="i-trending" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="i-banknote" viewBox="0 0 24 24"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></symbol>
+      <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></symbol>
+      <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+      <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol>
+      <symbol id="i-passport" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="12" cy="14" r="3"/><path d="M9 17h6"/></symbol>
+      <symbol id="i-clipboard-check" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></symbol>
+      <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></symbol>
+    </svg>
+
+    <svg class="a11y-defs" aria-hidden="true" focusable="false">
+      <defs>
+        <filter id="a11y-protanopia"><feColorMatrix type="matrix" values="0.567,0.433,0,0,0  0.558,0.442,0,0,0  0,0.242,0.758,0,0  0,0,0,1,0" /></filter>
+        <filter id="a11y-deuteranopia"><feColorMatrix type="matrix" values="0.625,0.375,0,0,0  0.7,0.3,0,0,0  0,0.3,0.7,0,0  0,0,0,1,0" /></filter>
+        <filter id="a11y-tritanopia"><feColorMatrix type="matrix" values="0.95,0.05,0,0,0  0,0.433,0.567,0,0  0,0.475,0.525,0,0  0,0,0,1,0" /></filter>
+        <filter id="a11y-achromatopsia"><feColorMatrix type="matrix" values="0.299,0.587,0.114,0,0  0.299,0.587,0.114,0,0  0.299,0.587,0.114,0,0  0,0,0,1,0" /></filter>
+      </defs>
+    </svg>
+
+    <div class="page-content">
+    <div class="app-shell">
+
+      <aside class="sidebar" aria-label="Navegación principal">
+        <a class="sidebar-brand" href="/app#inicio" aria-label="Universidad de América">
+          <img src="/assets/brand/logo-ua.png" alt="Universidad de América" />
+        </a>
+        <nav class="sidebar-nav">
+          <span class="sidebar-nav-label">Aplicativo</span>
+          <a class="sidebar-link" href="/app#inicio"><svg aria-hidden="true"><use href="#i-home"></use></svg><span>Inicio</span></a>
+          <a class="sidebar-link is-active" href="/app#programas"><svg aria-hidden="true"><use href="#i-briefcase"></use></svg><span>Programas</span></a>
+          <div class="sidebar-sublinks">
+            <a class="sidebar-sublink" href="/administracion/programa">Administración</a>
+            <a class="sidebar-sublink is-active" href="/negocios/programa">Negocios Internacionales</a>
+            <a class="sidebar-sublink" href="/economia/programa">Economía</a>
+          </div>
+          <a class="sidebar-link" href="/app#experiencia"><svg aria-hidden="true"><use href="#i-scan"></use></svg><span>Experiencia</span></a>
+        </nav>
+        <div class="sidebar-footer">
+          <b>Universidad de América</b>
+          Facultad de Ciencias Administrativas · Bogotá
+        </div>
+      </aside>
+
+      <div class="workspace">
+
+        <!-- ============================================================
+             HEADER — banner del centro de operaciones globales
+        ============================================================ -->
+        <header class="rn-head">
+          <nav class="module-breadcrumb" aria-label="Migas de pan">
+            <a href="/negocios/programa">
+              <svg aria-hidden="true"><use href="#i-arrow-left"></use></svg>
+              Negocios Internacionales
+            </a>
+            <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+            <span>RutaCafé Mundo</span>
+          </nav>
+          <div class="rn-head-row">
+            <div class="rn-head-meta">
+              <span class="rn-head-tag">Caso RutaCafé</span>
+              <h1>Lleva tu <em>café especial</em> al mundo.</h1>
+              <p class="rn-head-sub">Elige un mercado destino en el mapa, configura el envío (Incoterm + financiamiento) y traza tu plan de exportación.</p>
+            </div>
+            <div class="rn-progress">
+              <div class="rn-progress-bar"><div class="rn-progress-fill" data-progress-fill></div></div>
+              <span class="rn-progress-label" data-progress-label>Paso 1 de 4 · Elige un mercado</span>
+            </div>
+          </div>
+        </header>
+
+        <main class="rn-app">
+          <!-- Estepador de fases (4 pasos visuales) -->
+          <nav class="rn-phase-nav" aria-label="Fases del simulador">
+            <button type="button" class="rn-phase is-active" data-phase-btn="1">
+              <span class="rn-phase-num">1</span>
+              <span class="rn-phase-label"><b>Analiza</b><small>Compara mercados</small></span>
+            </button>
+            <span class="rn-phase-sep"></span>
+            <button type="button" class="rn-phase" data-phase-btn="2" disabled>
+              <span class="rn-phase-num">2</span>
+              <span class="rn-phase-label"><b>Elige</b><small>SWOT del destino</small></span>
+            </button>
+            <span class="rn-phase-sep"></span>
+            <button type="button" class="rn-phase" data-phase-btn="3" disabled>
+              <span class="rn-phase-num">3</span>
+              <span class="rn-phase-label"><b>Configura</b><small>Incoterm + financiamiento</small></span>
+            </button>
+            <span class="rn-phase-sep"></span>
+            <button type="button" class="rn-phase" data-phase-btn="4" disabled>
+              <span class="rn-phase-num">4</span>
+              <span class="rn-phase-label"><b>Ejecuta</b><small>Cash flow + plan</small></span>
+            </button>
+            <button type="button" class="rn-show-onboarding" data-show-onboarding aria-label="Ver instrucciones">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+              <span>Ver instrucciones</span>
+            </button>
+          </nav>
+
+          <!-- ============================================================
+               FASE 1 · Análisis comparativo
+          ============================================================ -->
+          <section class="rn-phase-panel" data-phase-panel="1" aria-label="Fase 1 · Análisis de mercados">
+            <div class="rn-instructions">
+              <div class="rn-instructions-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 16v-5"/><path d="M11 16v-9"/><path d="M15 16v-7"/><path d="M19 16v-3"/></svg></div>
+              <div>
+                <h3>Analiza antes de decidir</h3>
+                <p>Selecciona <b>de 2 a 4 mercados</b> en los chips de abajo para compararlos. Verás un radar de 5 ejes y una tabla con los datos clave. <b>El radar más grande</b> generalmente indica el mercado más atractivo, pero un buen exportador no decide solo por intuición visual: lee los datos.</p>
+              </div>
+            </div>
+
+            <div class="rn-map-wrap">
+              <div id="rn-map" class="rn-map"></div>
+              <div class="rn-map-overlay-tip">Haz click en los pines del mapa para añadir mercados al comparador</div>
+            </div>
+
+            <div class="rn-comparator">
+              <div class="rn-comparator-head">
+                <h3>Tablero comparativo</h3>
+                <div class="rn-comparator-chips" data-comparator-chips></div>
+                <small class="rn-comparator-hint" data-comparator-hint>Selecciona al menos 2 mercados arriba.</small>
+              </div>
+
+              <div class="rn-comparator-body">
+                <div class="rn-comparator-radar">
+                  <div data-radar-chart></div>
+                  <small>Radar comparativo · 5 ejes</small>
+                  <div class="rn-comparator-insights" data-comparator-insights></div>
+                </div>
+                <div class="rn-comparator-bars" data-comparator-bars></div>
+              </div>
+
+              <footer class="rn-comparator-foot">
+                <small data-comparator-summary>—</small>
+                <button type="button" class="rn-btn-primary" data-go-phase-2 disabled>Elegir mi mercado destino →</button>
+              </footer>
+            </div>
+          </section>
+
+          <!-- ============================================================
+               FASE 2 · SWOT del mercado elegido
+          ============================================================ -->
+          <section class="rn-phase-panel" data-phase-panel="2" hidden aria-label="Fase 2 · SWOT">
+            <div class="rn-instructions">
+              <div class="rn-instructions-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+              <div>
+                <h3>Confirma tu decisión con un SWOT</h3>
+                <p>El análisis SWOT (Fortalezas, Oportunidades, Debilidades, Amenazas) te obliga a mirar tu mercado desde 4 ángulos antes de comprometer capital. Los cuadrantes <b>internos</b> (F y D) hablan de RutaCafé como exportadora. Los <b>externos</b> (O y A) hablan del país destino.</p>
+              </div>
+            </div>
+
+            <div class="rn-swot-wrap" data-swot></div>
+
+            <footer class="rn-phase-foot">
+              <button type="button" class="rn-btn-ghost" data-phase-back="1">← Volver a comparar</button>
+              <button type="button" class="rn-btn-primary" data-go-phase-3>Aceptar mercado y configurar →</button>
+            </footer>
+          </section>
+
+          <!-- ============================================================
+               FASE 3 · Configuración logística (Incoterm + financiamiento)
+          ============================================================ -->
+          <section class="rn-phase-panel" data-phase-panel="3" hidden aria-label="Fase 3 · Configuración logística">
+            <div class="rn-instructions">
+              <div class="rn-instructions-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.5 9.4 7.55 4.24"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96 12 12.01l8.73-5.05"/><path d="M12 22.08V12"/></svg></div>
+              <div>
+                <h3>Define hasta dónde llegas tú</h3>
+                <p>Los <b>Incoterms 2020</b> son el lenguaje universal del comercio internacional. Tu elección determina <b>quién paga, quién asegura y quién responde</b> en cada tramo del viaje. Haz click en el último punto de la cadena hasta donde tú asumes responsabilidad.</p>
+              </div>
+            </div>
+
+            <!-- Cadena Incoterm interactiva · estilo matriz ICC 2020 -->
+            <div class="rn-chain rn-chain--matrix">
+              <header class="rn-section-head">
+                <h4><span class="rn-section-num">1</span> Matriz Incoterms 2020 · Transferencia de riesgo</h4>
+                <span class="rn-section-theory"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg> Aplicas <b>Incoterms 2020</b> · Cámara de Comercio Internacional</span>
+              </header>
+              <p class="rn-section-hint">
+                Cada Incoterm define <b>hasta dónde llega tu responsabilidad</b> como vendedor (barra de color) y <b>desde dónde asume el comprador</b> (barra gris). El círculo marca el <b>punto exacto de transferencia de riesgo</b>. Haz click en el Incoterm que vas a usar — entre más a la derecha, más control y margen para ti, pero también más costo y exposición logística.
+              </p>
+
+              <!-- Cabecera de la matriz: los 5 puntos de la cadena -->
+              <div class="rn-matrix" role="table" aria-label="Matriz de Incoterms 2020">
+                <div class="rn-matrix-head" role="row">
+                  <span class="rn-matrix-corner"></span>
+                  <div class="rn-matrix-stops">
+                    <span data-stop="0"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V9l9-7 9 7v12"/><path d="M9 21V12h6v9"/></svg><b>Fábrica</b></span>
+                    <span data-stop="1"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3-2-2 2-2-2-2 2-2-2-2 2-2-2-3 2Z"/><path d="M5 12 9 4l6 0 4 8"/></svg><b>Puerto</b><small>Origen</small></span>
+                    <span data-stop="2"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 21c2-1 4 0 6 0s4-1 6-1 4 1 6 1"/><path d="M3 18V8l9-4 9 4v10"/><path d="M12 7v11"/></svg><b>Sobre</b><small>El barco</small></span>
+                    <span data-stop="3"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3-2-2 2-2-2-2 2-2-2-2 2-2-2-3 2Z"/><path d="M5 12 9 4l6 0 4 8"/></svg><b>Puerto</b><small>Destino</small></span>
+                    <span data-stop="4"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35Z"/><path d="M6 18h12"/></svg><b>Bodega</b><small>Cliente</small></span>
+                  </div>
+                </div>
+
+                <!-- Filas: cada Incoterm con su barra de obligación -->
+                <div class="rn-matrix-rows" data-matrix-rows>
+                  <!-- Las filas se renderizan vía JS -->
+                </div>
+              </div>
+
+              <!-- Leyenda -->
+              <div class="rn-matrix-legend">
+                <span><i class="rn-matrix-legend-seller"></i> Obligación del vendedor</span>
+                <span><i class="rn-matrix-legend-buyer"></i> Obligación del comprador</span>
+                <span><i class="rn-matrix-legend-risk"></i> Punto de transferencia de riesgo</span>
+              </div>
+
+              <div class="rn-chain-explainer" data-chain-explainer>
+                <b>Aún no has elegido.</b> Haz click en el Incoterm que vas a usar para tu envío.
+              </div>
+            </div>
+
+            <!-- Financiamiento con timelines visuales -->
+            <div class="rn-financing">
+              <header class="rn-section-head">
+                <h4><span class="rn-section-num">2</span> Cómo cobras la operación</h4>
+                <span class="rn-section-theory"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg> Aplicas <b>Instrumentos de pago internacional</b> · ICC UCP 600</span>
+              </header>
+              <p class="rn-section-hint">
+                Las líneas de tiempo muestran <b>cuándo entra la plata</b> (verde) y <b>cuándo sale</b> (rojo). <b>Pregúntate:</b> ¿necesitas liquidez inmediata aunque cueste un descuento, o puedes esperar pero exigir más margen? Cuanto más confías en el comprador, más arriesgas; cuanto menos confías, más costoso es protegerte.
+              </p>
+              <div class="rn-financing-grid" data-financing-grid></div>
+            </div>
+
+            <footer class="rn-phase-foot">
+              <button type="button" class="rn-btn-ghost" data-phase-back="2">← Volver al SWOT</button>
+              <button type="button" class="rn-btn-primary" data-execute disabled>Ejecutar plan →</button>
+            </footer>
+          </section>
+
+          <!-- ============================================================
+               FASE 4 · Ejecución y resultado
+          ============================================================ -->
+          <section class="rn-phase-panel" data-phase-panel="4" hidden aria-label="Fase 4 · Plan ejecutado">
+            <div class="rn-instructions">
+              <div class="rn-instructions-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></div>
+              <div>
+                <h3>Tu plan está en marcha</h3>
+                <p>El mapa muestra la ruta que acabas de trazar. Abajo verás la <b>proyección de caja a 12 meses</b> con tu configuración, y una comparación con el <b>benchmark</b> de exportadores colombianos al mismo destino.</p>
+              </div>
+            </div>
+
+            <div class="rn-map-wrap is-result">
+              <div id="rn-map-result" class="rn-map"></div>
+            </div>
+
+            <div class="rn-results-deep">
+              <div class="rn-results-kpis" data-results-kpis></div>
+
+              <section class="rn-results-card">
+                <h4>Proyección de caja · 12 meses</h4>
+                <div data-cashflow-chart></div>
+                <small class="rn-results-note" data-cashflow-note></small>
+              </section>
+
+              <section class="rn-results-card">
+                <h4>Tu plan vs benchmark de exportadores</h4>
+                <div data-benchmark-chart></div>
+                <small class="rn-results-note">Datos referencia: agremiaciones de exportadores de café colombiano a cada destino (promedio últimos 3 años).</small>
+              </section>
+
+              <section class="rn-results-card rn-results-narrative-card">
+                <h4>Veredicto</h4>
+                <p data-results-narrative></p>
+              </section>
+            </div>
+
+            <footer class="rn-phase-foot">
+              <button type="button" class="rn-btn-ghost" data-reset>Probar otra ruta</button>
+              <button type="button" class="rn-btn-primary" data-show-report>Ver plan completo →</button>
+            </footer>
+          </section>
+
+          <!-- Onboarding inicial -->
+          <div class="rn-onboarding" data-onboarding hidden>
+            <div class="rn-onboarding-backdrop"></div>
+            <div class="rn-onboarding-card" role="dialog" aria-modal="true" aria-labelledby="onboarding-title">
+              <button type="button" class="rn-onboarding-close" aria-label="Cerrar" data-onboarding-close>×</button>
+              <h2 id="onboarding-title">Bienvenido a RutaCafé Mundo</h2>
+              <p class="rn-onboarding-sub">Eres el responsable de exportación. Vas a llevar un café especial de Risaralda al mercado internacional. El simulador tiene 4 fases:</p>
+              <ol class="rn-onboarding-steps">
+                <li><b>Analiza:</b> compara 2-4 mercados destino con datos reales (radar + barras).</li>
+                <li><b>Elige:</b> revisa el SWOT del mercado seleccionado.</li>
+                <li><b>Configura:</b> define hasta dónde llega tu responsabilidad (Incoterm) y cómo cobras (financiamiento), con timelines visuales.</li>
+                <li><b>Ejecuta:</b> mira tu cash flow proyectado a 12 meses y compárate con exportadores reales.</li>
+              </ol>
+              <p class="rn-onboarding-tip"><b>Tiempo estimado:</b> 15-20 minutos.</p>
+              <button type="button" class="rn-btn-primary" data-onboarding-start>Empezar →</button>
+            </div>
+          </div>
+        </main>
+
+
+        <footer class="workspace-footer">
+          <div class="workspace-footer-meta">
+            <b>Universidad de América</b> · Ciencias Administrativas · Bogotá
+          </div>
+          <div class="workspace-footer-social" aria-label="Redes sociales">
+            <a href="#" aria-label="Instagram"><svg><use href="#i-instagram"></use></svg></a>
+            <a href="#" aria-label="Facebook"><svg><use href="#i-facebook"></use></svg></a>
+            <a href="#" aria-label="YouTube"><svg><use href="#i-youtube"></use></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg><use href="#i-linkedin"></use></svg></a>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+    </div>
+
+    <!-- ============================================================
+         HOJA DE RUTA — modal de cierre estilo plan de exportación
+    ============================================================ -->
+    <div class="neg-plan-modal" data-modal aria-hidden="true">
+      <div class="neg-plan-backdrop" data-modal-close></div>
+      <canvas class="neg-plan-confetti" data-confetti aria-hidden="true"></canvas>
+      <div class="neg-plan-content" role="dialog" aria-modal="true" aria-labelledby="plan-title">
+        <button class="neg-plan-close" type="button" aria-label="Cerrar" data-modal-close>
+          <svg aria-hidden="true"><use href="#i-close"></use></svg>
+        </button>
+
+        <!-- Banner celebrativo -->
+        <div class="neg-plan-cheer">
+          <div class="neg-plan-cheer-icon">
+            <svg aria-hidden="true"><use href="#i-trophy"></use></svg>
+          </div>
+          <div class="neg-plan-cheer-text">
+            <strong data-modal-cheer-title>¡Hoja de Ruta emitida!</strong>
+            <span data-modal-cheer-sub>RutaCafé tiene su plan de exportación.</span>
+          </div>
+          <svg class="neg-plan-cheer-sparkle" aria-hidden="true"><use href="#i-sparkles"></use></svg>
+        </div>
+
+        <!-- Letterhead -->
+        <header class="neg-plan-head">
+          <div class="neg-plan-letterhead">
+            <svg aria-hidden="true"><use href="#i-globe"></use></svg>
+            <div>
+              <small>Hoja de Ruta de Exportación · RutaCafé</small>
+              <span>Documento N° 001 · Negocios Internacionales UA</span>
+            </div>
+          </div>
+          <h2 id="plan-title" data-modal-title>Plan de Internacionalización</h2>
+          <p class="neg-plan-verdict" data-modal-verdict>—</p>
+        </header>
+
+        <div class="neg-plan-body">
+          <!-- Bloque 1: ruta visual -->
+          <section class="neg-plan-section neg-plan-route">
+            <h4>Ruta de exportación</h4>
+            <div class="neg-plan-route-track" data-plan-route></div>
+          </section>
+
+          <!-- Bloque 2: scorecard -->
+          <section class="neg-plan-section">
+            <h4>Evaluación de la ruta · 4 dimensiones</h4>
+            <div class="neg-plan-scores" data-plan-scores></div>
+          </section>
+
+          <!-- Bloque 3: recomendaciones -->
+          <section class="neg-plan-section">
+            <h4>Recomendaciones del negociador</h4>
+            <div class="neg-plan-feedback" data-plan-feedback></div>
+          </section>
+
+          <!-- Bloque 4: Certificado de participación de cierre -->
+          <section class="neg-plan-section coo-board-cert" data-modal-cert>
+            <div class="coo-board-cert-frame">
+              <img class="coo-board-cert-logo" src="/assets/brand/logo-ua-dark.png" alt="Universidad de América" />
+              <small class="coo-board-cert-eyebrow">Certificado de Participación</small>
+              <p class="coo-board-cert-otorga">Se otorga el presente reconocimiento a</p>
+              <p class="coo-board-cert-name" data-cert-name>Aspirante</p>
+              <p class="coo-board-cert-body">
+                <strong>Profesional en Negocios Internacionales en potencia,</strong> porque demostraste
+                que conectas mercados, culturas y oportunidades. La Universidad de América te acompaña
+                en este proceso.
+              </p>
+              <p class="coo-board-cert-date">Expedido el <span data-cert-date>—</span></p>
+              <span class="coo-board-cert-signature">Facultad de Ciencias Administrativas y Económicas</span>
+            </div>
+          </section>
+        </div>
+
+        <footer class="neg-plan-foot">
+          <button class="neg-action-btn is-ghost" type="button" data-reset>
+            <svg aria-hidden="true"><use href="#i-refresh"></use></svg>
+            Nueva hoja de ruta
+          </button>
+          <a class="neg-action-btn is-primary" href="/negocios/programa">
+            Volver al programa
+            <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+          </a>
+        </footer>
+      </div>
+    </div>
+
+    <button class="a11y-fab" type="button" aria-label="Opciones de accesibilidad" aria-expanded="false" data-a11y-fab>
+      <svg aria-hidden="true"><use href="#i-a11y"></use></svg>
+    </button>
+
+    <aside class="a11y-panel" role="dialog" aria-label="Panel de accesibilidad" data-a11y-panel>
+      <div class="a11y-panel-head">
+        <div><h3>Accesibilidad</h3><small>Ajusta la experiencia</small></div>
+        <button class="a11y-panel-close" type="button" aria-label="Cerrar panel" data-a11y-close>
+          <svg aria-hidden="true"><use href="#i-close"></use></svg>
+        </button>
+      </div>
+      <div class="a11y-group">
+        <span class="a11y-group-label">Tamaño de fuente <b data-mono>A</b></span>
+        <div class="a11y-options">
+          <button type="button" data-pref="textSize" data-value="sm"><span>A</span></button>
+          <button type="button" data-pref="textSize" data-value="md"><span>A</span></button>
+          <button type="button" data-pref="textSize" data-value="lg"><span>A</span></button>
+          <button type="button" data-pref="textSize" data-value="xl"><span>A</span></button>
+        </div>
+      </div>
+      <div class="a11y-group">
+        <span class="a11y-group-label">Contraste</span>
+        <div class="a11y-options is-2">
+          <button type="button" data-pref="contrast" data-value="default">Normal</button>
+          <button type="button" data-pref="contrast" data-value="high">Alto</button>
+        </div>
+      </div>
+      <div class="a11y-group">
+        <span class="a11y-group-label">Daltonismo</span>
+        <div class="a11y-options is-5" style="grid-template-columns: repeat(5, minmax(0,1fr));">
+          <button type="button" data-pref="colorMode" data-value="default">Off</button>
+          <button type="button" data-pref="colorMode" data-value="protanopia">Pro</button>
+          <button type="button" data-pref="colorMode" data-value="deuteranopia">Deu</button>
+          <button type="button" data-pref="colorMode" data-value="tritanopia">Tri</button>
+          <button type="button" data-pref="colorMode" data-value="achromatopsia">Acro</button>
+        </div>
+      </div>
+      <button type="button" class="a11y-reset" data-a11y-reset>↺ Restaurar valores por defecto</button>
+    </aside>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.49.1/dist/apexcharts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <script src="/src/js/mobile-nav.js" defer></script>
+    <script src="/src/js/accessibility.js" defer></script>
+    <script src="/src/js/reto-neg.js" defer></script>
+    <script src="/src/js/cert-download.js" defer></script>
+  </body>
+</html>

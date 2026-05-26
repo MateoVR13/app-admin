@@ -1,0 +1,652 @@
+﻿<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/webp" href="/assets/brand/favicon.ico" />
+    <title>Bloque 4 · Desarrollo sostenible · Universidad de América</title>
+    <meta name="description" content="Bloque 4 del programa de Economía: economía ambiental y desarrollo sostenible." />
+    <link rel="stylesheet" href="/styles.css" />
+    <script>
+      (function () {
+        try {
+          var p = JSON.parse(localStorage.getItem("ua-a11y-prefs") || "{}");
+          var h = document.documentElement;
+          h.setAttribute("data-text-size", p.textSize || "md");
+          h.setAttribute("data-contrast", p.contrast || "default");
+          h.setAttribute("data-color-mode", p.colorMode || "default");
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="programa" data-program="economy">
+    <svg class="svg-defs" aria-hidden="true" focusable="false">
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></symbol>
+      <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5" /><path d="m11 6-6 6 6 6" /></symbol>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8" /><path d="M5 10v11h5v-7h4v7h5V10" /></symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2" /><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" /></symbol>
+      <symbol id="i-scan" viewBox="0 0 24 24"><path d="M5 7V5h2" /><path d="M17 5h2v2" /><path d="M19 17v2h-2" /><path d="M7 19H5v-2" /><circle cx="12" cy="12" r="3" /></symbol>
+      <symbol id="i-box" viewBox="0 0 24 24"><path d="m12 3 9 4-9 5-9-5z" /><path d="M3 7v10l9 5 9-5V7" /><path d="M12 12v10" /></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12" /><path d="M18 6L6 18" /></symbol>
+      <symbol id="i-a11y" viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="1.6" /><path d="M5 8h14" /><path d="M9 8v5" /><path d="M15 8v5" /><path d="M9 13l-2 8" /><path d="M15 13l2 8" /></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a3 3 0 0 1 3-3h13v17H7a3 3 0 0 0-3 3z" /><path d="M4 5v17" /><path d="M9 6h6" /><path d="M9 10h7" /></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></symbol>
+      <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 7v10" /><path d="M9.5 9.5c0-1.2 1-2 2.5-2s2.5.7 2.5 2-1 1.6-2.5 1.6-2.5.4-2.5 1.6 1 2 2.5 2 2.5-.8 2.5-2" /></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.4" /><path d="M2.5 20c.5-3.6 3.4-5.5 6.5-5.5s6 1.9 6.5 5.5" /><circle cx="17" cy="8" r="2.6" /><path d="M16 14.6c2.7.4 4.7 2.4 5 5.4" /></symbol>
+      <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 4c-9 0-15 4-15 12 0 3 1 4 1 4s4-1 7-4 5-7 7-12" /><path d="M5 20c2-7 7-11 13-13" /></symbol>
+      <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4 2 20h20Z" /><path d="M12 10v5" /><circle cx="12" cy="18" r="0.6" fill="currentColor" /></symbol>
+      <symbol id="i-gift" viewBox="0 0 24 24"><path d="M3 11h18v9H3z" /><path d="M3 8h18v3H3z" /><path d="M12 8v12" /><path d="M12 8s-3-4-5-4a2 2 0 0 0 0 4" /><path d="M12 8s3-4 5-4a2 2 0 0 1 0 4" /></symbol>
+      <symbol id="i-recycle" viewBox="0 0 24 24"><path d="M7 14H4l3-5 3 5h-3v4H4" /><path d="M17 10h3l-3 5-3-5h3V6h3" /><path d="M14 20h-4l2-3z" /></symbol>
+      <symbol id="i-future" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 8v4l3 2" /><path d="M3 12a9 9 0 0 1 14-7" /></symbol>
+      <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6" width="14" height="12" rx="2" /><path d="m17 10 4-2v8l-4-2z" /></symbol>
+      <symbol id="i-headphones" viewBox="0 0 24 24"><path d="M4 14a8 8 0 0 1 16 0v3" /><path d="M4 14v4a2 2 0 0 0 2 2h2v-7H6a2 2 0 0 0-2 2Z" /><path d="M20 14v4a2 2 0 0 1-2 2h-2v-7h2a2 2 0 0 1 2 2Z" /></symbol>
+      <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h9l5 5v13H6Z" /><path d="M14 3v6h6" /><path d="M9 14h6" /><path d="M9 18h4" /></symbol>
+      <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" /><circle cx="9" cy="10" r="2" /><path d="m4 18 5-5 5 5 3-3 3 3" /></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="4" /><circle cx="12" cy="12" r="3" /><path d="M16.5 7.5h.01" /></symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 8h2V5h-2a4 4 0 0 0-4 4v2H8v3h2v5h3v-5h3l1-3h-4V9a1 1 0 0 1 1-1Z" /></symbol>
+      <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M4 8a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3Z" /><path d="m10 9 5 3-5 3Z" /></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M6 10v9" /><path d="M6 6v.01" /><path d="M11 19v-9" /><path d="M11 14a4 4 0 0 1 8 0v5" /></symbol>
+    </svg>
+
+    <svg class="a11y-defs" aria-hidden="true" focusable="false">
+      <defs>
+        <filter id="a11y-protanopia"><feColorMatrix type="matrix" values="0.567,0.433,0,0,0  0.558,0.442,0,0,0  0,0.242,0.758,0,0  0,0,0,1,0" /></filter>
+        <filter id="a11y-deuteranopia"><feColorMatrix type="matrix" values="0.625,0.375,0,0,0  0.7,0.3,0,0,0  0,0.3,0.7,0,0  0,0,0,1,0" /></filter>
+        <filter id="a11y-tritanopia"><feColorMatrix type="matrix" values="0.95,0.05,0,0,0  0,0.433,0.567,0,0  0,0.475,0.525,0,0  0,0,0,1,0" /></filter>
+        <filter id="a11y-achromatopsia"><feColorMatrix type="matrix" values="0.299,0.587,0.114,0,0  0.299,0.587,0.114,0,0  0.299,0.587,0.114,0,0  0,0,0,1,0" /></filter>
+      </defs>
+    </svg>
+
+    <div class="page-content">
+    <div class="app-shell">
+
+      <aside class="sidebar" aria-label="Navegación principal">
+        <a class="sidebar-brand" href="/app#inicio" aria-label="Universidad de América">
+          <img src="/assets/brand/logo-ua.png" alt="Universidad de América" />
+        </a>
+        <nav class="sidebar-nav">
+          <span class="sidebar-nav-label">Aplicativo</span>
+          <a class="sidebar-link" href="/app#inicio"><svg aria-hidden="true"><use href="#i-home"></use></svg><span>Inicio</span></a>
+          <a class="sidebar-link is-active" href="/app#programas"><svg aria-hidden="true"><use href="#i-briefcase"></use></svg><span>Programas</span></a>
+          <div class="sidebar-sublinks">
+            <a class="sidebar-sublink" href="/administracion/programa">Administración</a>
+            <a class="sidebar-sublink" href="/negocios/programa">Negocios Internacionales</a>
+            <a class="sidebar-sublink is-active" href="/economia/programa">Economía</a>
+          </div>
+          <a class="sidebar-link" href="/app#experiencia"><svg aria-hidden="true"><use href="#i-scan"></use></svg><span>Experiencia</span></a>
+        </nav>
+        <nav class="sidebar-toc" aria-label="Índice del bloque">
+            <span class="sidebar-nav-label">Índice del bloque</span>
+            <div class="bloque-toc-head">
+              <small>En este bloque</small>
+              <span>4 temas</span>
+            </div>
+            <ol class="bloque-toc-list" data-toc>
+              <li><a class="bloque-toc-link" href="#triple-impacto">Triple impacto</a></li>
+              <li><a class="bloque-toc-link" href="#externalidades">Externalidades</a></li>
+              <li><a class="bloque-toc-link" href="#circular">Economía circular</a></li>
+              <li><a class="bloque-toc-link" href="#equidad">Equidad generacional</a></li>
+            </ol>
+            <div class="bloque-toc-actions">
+              <a class="bloque-toc-action" href="/economia/bloque-3">Bloque 3 · Modelación</a>
+              <a class="bloque-toc-action is-next" href="/economia/reto-biopack">Reto · BioPack</a>
+            </div>
+          </nav>
+
+        <div class="sidebar-footer">
+          <b>Universidad de América</b>
+          Facultad de Ciencias Administrativas · Bogotá
+        </div>
+      </aside>
+
+      <div class="workspace">
+
+        <header class="bloque-head">
+          <div class="bloque-head-inner">
+            <nav class="module-breadcrumb" aria-label="Migas de pan">
+              <a href="/economia/programa">
+                <svg aria-hidden="true"><use href="#i-arrow-left"></use></svg>
+                Economía
+              </a>
+              <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+              <span>Bloque 4</span>
+            </nav>
+
+            <span class="bloque-head-tag"><b>4</b>Bloque teórico</span>
+
+            <h1>Desarrollo sostenible: convertir <em>límites</em> en <em>innovación</em>.</h1>
+
+            <p class="bloque-head-lede">
+              Un negocio que solo piensa en ganar plata puede tener éxito
+              un tiempo, pero rara vez dura. Las empresas que se mantienen
+              décadas son las que <b>resuelven un problema real</b> para
+              la gente y el planeta mientras ganan plata. Este bloque te
+              enseña a evaluar negocios desde esas tres dimensiones al
+              tiempo.
+            </p>
+
+            <div class="bloque-head-meta">
+              <span class="module-meta-pill">
+                <svg aria-hidden="true"><use href="#i-book"></use></svg>
+                <b>4</b> temas
+              </span>
+              <span class="module-meta-pill">
+                <svg aria-hidden="true"><use href="#i-clock"></use></svg>
+                <b>~65</b> min
+              </span>
+            </div>
+          </div>
+          <aside class="bloque-head-figure" aria-hidden="true">
+            <img src="/assets/images/new-images/hero-eco-b4-sostenibilidad.jpg" alt="" loading="lazy" />
+          </aside>
+        </header>
+
+        <div class="bloque-layout is-toc-left"><main class="bloque-content">
+
+            <div class="module-callout" data-reveal>
+              <small>Resultado de aprendizaje</small>
+              <p>
+                Evalúo estrategias de desarrollo sostenible mediante triple
+                impacto, externalidades, economía circular y equidad
+                generacional para proponer valor económico con responsabilidad
+                social y ambiental.
+              </p>
+            </div>
+
+            <!-- TEMA 01 — TRIPLE IMPACTO -->
+            <section class="module-tema" id="triple-impacto" data-tema>
+              <header class="module-tema-head is-stacked" data-reveal>
+                <span class="module-tema-num" data-label="Tema">01</span>
+                <div class="module-tema-copy">
+                  <span class="module-tema-eyebrow">Triple impacto</span>
+                  <h2 class="module-tema-title">Un buen negocio se para sobre tres patas, no sobre una.</h2>
+                  <p class="module-tema-lede">
+                    Una mesa de tres patas necesita las tres para
+                    pararse. Si le quitas una, se cae. Lo mismo le
+                    pasa a un negocio sostenible: necesita
+                    <b>ganancia</b>, <b>impacto social</b> e
+                    <b>impacto ambiental</b> al mismo tiempo. Ignorar
+                    cualquiera de las tres tumba a las otras dos con el
+                    tiempo.
+                  </p>
+                </div>
+        </header>
+
+              <figure class="module-hero-figure" data-reveal>
+                <img src="/assets/images/new-images/eco-b4-hero.jpg"
+                     alt="Sostenibilidad: el equilibrio entre ganancia, sociedad y planeta"
+                     loading="lazy" />
+                <figcaption>
+                  <small>Triple bottom line</small>
+                  Las empresas más resilientes del siglo XXI miden
+                  <b>People · Planet · Profit</b> al mismo tiempo. Las que solo
+                  miden utilidades suelen quebrar cuando las externalidades les
+                  llegan factura.
+                </figcaption>
+              </figure>
+
+              <div class="module-grid is-3" data-reveal>
+                <article class="module-card is-top-accent">
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-coin"></use></svg></div>
+                  <span class="module-card-tag">Económico</span>
+                  <h4 class="module-card-title">Rentabilidad</h4>
+                  <p class="module-card-text">
+                    La organización debe generar ingresos, eficiencia,
+                    inversión y continuidad. Sin viabilidad económica, los
+                    otros pilares se vuelven proyectos efímeros.
+                  </p>
+                </article>
+                <article class="module-card is-top-accent">
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-users"></use></svg></div>
+                  <span class="module-card-tag">Social</span>
+                  <h4 class="module-card-title">Dignidad</h4>
+                  <p class="module-card-text">
+                    El valor debe llegar a trabajadores, comunidades, clientes
+                    y territorios. Una empresa que crece a costa de su gente
+                    no sostiene el modelo.
+                  </p>
+                </article>
+                <article class="module-card is-top-accent">
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-leaf"></use></svg></div>
+                  <span class="module-card-tag">Ambiental</span>
+                  <h4 class="module-card-title">Regeneración</h4>
+                  <p class="module-card-text">
+                    El modelo debe reducir presión sobre ecosistemas y capital
+                    natural. Cuando es posible, debe regenerar lo que la
+                    actividad consume.
+                  </p>
+                </article>
+              </div>
+
+              <div class="module-spotlight is-diagonal" data-reveal>
+                <small>Ejemplo aplicado</small>
+                <h4>Zapatillas hechas con plástico recuperado del océano.</h4>
+                <p>
+                  Una empresa que fabrica zapatillas con material recuperado
+                  del mar puede limpiar ecosistemas, crear empleo en
+                  comunidades costeras y abrir un <b>mercado premium consciente</b>
+                  al mismo tiempo. El valor aparece cuando los tres pilares se
+                  refuerzan entre sí, no cuando se persiguen por separado.
+                </p>
+              </div>
+            </section>
+
+            <!-- TEMA 02 — EXTERNALIDADES -->
+            <section class="module-tema" id="externalidades" data-tema>
+              <header class="module-tema-head is-stacked" data-reveal>
+                <span class="module-tema-num" data-label="Tema">02</span>
+                <div class="module-tema-copy">
+                  <span class="module-tema-eyebrow">Costos invisibles</span>
+                  <h2 class="module-tema-title">Cuando el precio no dice la verdad, alguien más paga.</h2>
+                  <p class="module-tema-lede">
+                    En economía se llaman <b>externalidades</b>: efectos
+                    de un negocio que tocan a otras personas sin que
+                    aparezcan en el precio del producto. Pueden ser
+                    malas (alguien sufre y no se le compensa) o buenas
+                    (alguien gana sin pagar nada). El gobierno usa
+                    herramientas para que esos efectos sí se «vean» en
+                    el precio.
+                  </p>
+                </div>
+        </header>
+
+              <div class="module-aha" data-reveal>
+                <div class="module-aha-icon"><img src="/assets/images/new-images/aha-eco-b4-fabrica-rio.jpg" alt="" loading="lazy" /></div>
+                <div class="module-aha-copy">
+                  <small>Para entenderlo</small>
+                  <p>
+                    Una fábrica de baldosas vende a $5.000 cada una y
+                    contamina el río de la región. <b>Esos $5.000 no
+                    incluyen el costo de purificar el agua</b> que
+                    afecta a las familias del barrio. El costo real
+                    existe, pero lo paga otra persona. Por eso decimos
+                    que la fábrica «externaliza» ese costo.
+                  </p>
+                </div>
+              </div>
+
+              <div class="module-grid is-2" style="grid-template-columns: repeat(2, minmax(0,1fr));" data-reveal>
+                <article class="module-card is-top-accent">
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-alert"></use></svg></div>
+                  <span class="module-card-tag">Externalidad negativa</span>
+                  <h4 class="module-card-title">Contaminar sin pagar</h4>
+                  <p class="module-card-text">
+                    Una fábrica vierte químicos en un río para producir
+                    barato. El precio de la camiseta baja, pero las familias
+                    cercanas pierden agua limpia. El costo existe; solo se
+                    desplaza a terceros.
+                  </p>
+                </article>
+                <article class="module-card is-top-accent">
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-gift"></use></svg></div>
+                  <span class="module-card-tag">Externalidad positiva</span>
+                  <h4 class="module-card-title">Generar bienestar adicional</h4>
+                  <p class="module-card-text">
+                    Una empresa que capacita proveedores locales mejora su
+                    cadena de suministro y al mismo tiempo fortalece las
+                    capacidades técnicas de toda la comunidad.
+                  </p>
+                </article>
+              </div>
+
+              <div class="module-subtema">
+                <h3 class="module-subtema-title">Herramientas económicas para internalizar costos</h3>
+                <p class="module-subtema-lede">
+                  Cuando el mercado por sí solo no corrige una externalidad,
+                  el Estado usa estos cuatro instrumentos clásicos.
+                </p>
+                <div class="module-grid is-4" data-reveal>
+                  <article class="module-card is-top-accent">
+                    <h4 class="module-card-title">Impuestos verdes</h4>
+                    <p class="module-card-text">Tasan la actividad contaminante para encarecerla.</p>
+                  </article>
+                  <article class="module-card is-top-accent">
+                    <h4 class="module-card-title">Subsidios limpios</h4>
+                    <p class="module-card-text">Premian la actividad que genera externalidades positivas.</p>
+                  </article>
+                  <article class="module-card is-top-accent">
+                    <h4 class="module-card-title">Regulación inteligente</h4>
+                    <p class="module-card-text">Establece estándares, prohibiciones o cuotas técnicas.</p>
+                  </article>
+                  <article class="module-card is-top-accent">
+                    <h4 class="module-card-title">Mercados de carbono</h4>
+                    <p class="module-card-text">Crean un precio explícito para las emisiones.</p>
+                  </article>
+                </div>
+              </div>
+
+              <div class="module-quickcheck" data-quickcheck data-reveal>
+                <div class="module-quickcheck-head">
+                  <small>Comprueba si lo entendiste</small>
+                </div>
+                <p class="module-quickcheck-q">
+                  Una empresa de transporte planta árboles en zonas
+                  rurales como parte de su programa social. Los árboles
+                  capturan CO2 y limpian el aire de toda la región.
+                  ¿Qué tipo de externalidad genera?
+                </p>
+                <div class="module-quickcheck-opts">
+                  <button type="button" class="module-quickcheck-opt" data-letter="A" data-correct="true">
+                    <span>Positiva: terceros (la comunidad) reciben un beneficio sin pagar por él.</span>
+                  </button>
+                  <button type="button" class="module-quickcheck-opt" data-letter="B">
+                    <span>Negativa: la empresa gasta plata en algo que no le da utilidad.</span>
+                  </button>
+                  <button type="button" class="module-quickcheck-opt" data-letter="C">
+                    <span>Ninguna: la empresa lo hace voluntariamente, así que no cuenta.</span>
+                  </button>
+                </div>
+                <div class="module-quickcheck-feedback"
+                  data-correct-msg="Exacto. La acción de la empresa genera un <b>beneficio</b> (aire más limpio) que reciben terceros que no pagaron por él. Eso es una externalidad positiva, y es la base del argumento para que el gobierno pueda dar subsidios o reconocimientos a empresas que las generen."
+                  data-wrong-msg="No es esa. Una externalidad existe cuando una acción afecta a terceros sin que ese efecto aparezca en un precio. Aquí, la comunidad respira mejor sin haber pagado: eso es externalidad <b>positiva</b>. La respuesta correcta es la A."></div>
+              </div>
+            </section>
+
+            <!-- TEMA 03 — ECONOMÍA CIRCULAR -->
+            <section class="module-tema" id="circular" data-tema>
+              <header class="module-tema-head is-stacked" data-reveal>
+                <span class="module-tema-num" data-label="Tema">03</span>
+                <div class="module-tema-copy">
+                  <span class="module-tema-eyebrow">Economía circular</span>
+                  <h2 class="module-tema-title">De «sacar-hacer-tirar» a «sacar-hacer-recuperar-volver a usar».</h2>
+                  <p class="module-tema-lede">
+                    El modelo de toda la vida (el «lineal») saca materia
+                    prima, fabrica, vende y al final tira a la basura.
+                    El modelo circular cambia el final: <b>los desechos
+                    de hoy son la materia prima de mañana</b>. Esto no
+                    es solo discurso ambiental: es estrategia económica
+                    de largo plazo.
+                  </p>
+                </div>
+        </header>
+
+              <figure class="module-hero-figure" data-reveal>
+                <img src="/assets/images/new-images/eco-b4-economia-circular.jpg"
+                     alt="Economía circular: recuperar para volver a usar"
+                     loading="lazy" />
+                <figcaption>
+                  <small>El residuo como recurso</small>
+                  Empresas como <b>Patagonia, Ecopetrol o Bavaria</b> ya reciclan
+                  uniformes, captan CO₂ o reciclan vidrio. No es altruismo:
+                  cada kg recuperado <b>baja el costo de materia prima</b>.
+                </figcaption>
+              </figure>
+
+              <div class="module-aha" data-reveal>
+                <div class="module-aha-icon"><img src="/assets/images/new-images/aha-eco-b4-botella-circular.jpg" alt="" loading="lazy" /></div>
+                <div class="module-aha-copy">
+                  <small>Para entenderlo</small>
+                  <p>
+                    Una botella de plástico tradicional cuenta este
+                    cuento: <b>sacar petróleo → fabricar botella →
+                    venderte agua → tirar la botella al relleno</b>.
+                    Una botella en modelo circular cuenta otro:
+                    <b>sacar plástico → fabricar botella → venderte
+                    agua → reciclar la botella → fabricar otra
+                    botella</b>. La diferencia: el plástico no muere
+                    al final del primer uso.
+                  </p>
+                </div>
+              </div>
+
+              <div class="module-flow" data-reveal>
+                <article class="module-flow-step">
+                  <b>01</b>
+                  <h5>Diseñar</h5>
+                  <p>Productos pensados para durar, repararse y desmontarse al final de su vida útil.</p>
+                </article>
+                <article class="module-flow-step">
+                  <b>02</b>
+                  <h5>Usar</h5>
+                  <p>Modelos de consumo que prolongan vida útil y reducen desperdicio (reparación, alquiler, segunda mano).</p>
+                </article>
+                <article class="module-flow-step">
+                  <b>03</b>
+                  <h5>Recuperar</h5>
+                  <p>Los materiales vuelven como insumo para una nueva producción en lugar de ir al vertedero.</p>
+                </article>
+                <article class="module-flow-step">
+                  <b>04</b>
+                  <h5>Regenerar</h5>
+                  <p>El sistema reduce extracción y protege ecosistemas en lugar de depredarlos.</p>
+                </article>
+              </div>
+
+              <div class="module-flashcard" data-reveal>
+                <div class="module-flashcard-q">
+                  <small>Piensa antes de ver la respuesta</small>
+                  <p>
+                    En 2025, Nike empezó a vender zapatillas que tú
+                    devuelves al final de su vida útil y la empresa
+                    las reusa para fabricar nuevas. ¿Qué pieza del
+                    modelo circular están aplicando?
+                  </p>
+                </div>
+                <button type="button" class="module-flashcard-reveal">Ver respuesta</button>
+                <div class="module-flashcard-a">
+                  <small>Respuesta</small>
+                  <p>
+                    Las dos últimas piezas: <b>recuperar</b> (los
+                    materiales vuelven en lugar de ir a la basura) y
+                    en parte <b>regenerar</b> (la empresa deja de
+                    necesitar tanto material virgen). Pero la pieza
+                    más importante ocurrió antes que tú: en el paso
+                    de <b>diseñar</b>, porque alguien pensó la
+                    zapatilla desde el inicio para que se pudiera
+                    desarmar. Sin ese diseño, los otros pasos no
+                    serían posibles.
+                  </p>
+                </div>
+              </div>
+
+              <div class="module-quote" data-reveal>
+                <p>
+                  El verdadero reto no es producir más con menos, sino diseñar
+                  sistemas donde los residuos de una industria sean los
+                  insumos de otra.
+                </p>
+                <footer>— <b>Pearce &amp; Turner</b>, Economics of Natural Resources (1990)</footer>
+              </div>
+
+              <div class="module-spotlight is-diagonal" data-reveal>
+                <small>Ejemplo aplicado</small>
+                <h4>Un smartphone diseñado para recuperar litio, oro y cobalto.</h4>
+                <p>
+                  Si un teléfono se diseña pensando en cómo se desarmará al
+                  final de su vida útil, la empresa <b>reduce costos futuros</b>
+                  de materia prima y baja la presión sobre minería agresiva.
+                  El círculo no es solo discurso ambiental: es estrategia
+                  económica de largo plazo.
+                </p>
+              </div>
+
+              <div class="module-resource" data-reveal>
+                <div class="module-resource-icon"><svg aria-hidden="true"><use href="#i-video"></use></svg></div>
+                <div class="module-resource-copy">
+                  <small data-format="Video · 8 min">Recurso recomendado</small>
+                  <h5>Casos colombianos de economía circular</h5>
+                  <p>
+                    Una pieza que recorra dos o tres iniciativas locales
+                    (textiles, empaques, agroindustria) donde se vea el ciclo
+                    completo: cómo entran los materiales, qué transformación
+                    sufren y por qué cambia el modelo de negocio.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <!-- TEMA 04 — EQUIDAD GENERACIONAL -->
+            <section class="module-tema" id="equidad" data-tema>
+              <header class="module-tema-head is-stacked" data-reveal>
+                <span class="module-tema-num" data-label="Tema">04</span>
+                <div class="module-tema-copy">
+                  <span class="module-tema-eyebrow">Equidad generacional</span>
+                  <h2 class="module-tema-title">El crecimiento de hoy no debería ser el problema de mañana.</h2>
+                  <p class="module-tema-lede">
+                    Una empresa puede ganar mucho este trimestre talando
+                    bosque o usando agua sin pensar. La pregunta que se
+                    hace la economía sostenible es otra: <b>¿qué le
+                    dejamos a la gente que va a vivir aquí en 50
+                    años?</b>. Eso se llama equidad generacional y
+                    obliga a pensar fuera del próximo trimestre.
+                  </p>
+                </div>
+        </header>
+
+              <figure class="module-hero-figure" data-reveal>
+                <img src="/assets/images/new-images/eco-b4-indicadores.jpg"
+                     alt="Indicadores de desarrollo sostenible"
+                     loading="lazy" />
+                <figcaption>
+                  <small>Medir lo que dejamos atrás</small>
+                  Indicadores como <b>huella de carbono per cápita</b>,
+                  <b>cobertura forestal</b> o <b>acceso a agua potable</b>
+                  miden si el crecimiento de hoy le quita o le suma futuro
+                  a la próxima generación.
+                </figcaption>
+              </figure>
+
+              <div class="module-grid is-3" data-reveal>
+                <article class="module-card is-top-accent">
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-future"></use></svg></div>
+                  <h4 class="module-card-title">Mirar a 50 años</h4>
+                  <p class="module-card-text">
+                    La economía sostenible evalúa efectos que no caben en un
+                    trimestre financiero. Cambia el horizonte de la decisión.
+                  </p>
+                </article>
+                <article class="module-card is-top-accent">
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-leaf"></use></svg></div>
+                  <h4 class="module-card-title">Valorar el futuro</h4>
+                  <p class="module-card-text">
+                    Invertir en energía limpia puede parecer costoso hoy, pero
+                    protege estabilidad económica, social y climática futura.
+                  </p>
+                </article>
+                <article class="module-card is-top-accent">
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-gift"></use></svg></div>
+                  <h4 class="module-card-title">Construir legado</h4>
+                  <p class="module-card-text">
+                    Una política o empresa responsable deja capacidades, no
+                    deudas ecológicas ni sociales para quienes vienen detrás.
+                  </p>
+                </article>
+              </div>
+
+              <div class="module-quote" data-reveal>
+                <p>
+                  Desarrollo sostenible es aquel que satisface las
+                  necesidades del presente sin comprometer la capacidad de
+                  las generaciones futuras para satisfacer sus propias
+                  necesidades.
+                </p>
+                <footer>— <b>Informe Brundtland</b>, Nuestro futuro común (1987)</footer>
+              </div>
+
+              <div class="module-callout is-activity" data-reveal>
+                <small>Actividad de cierre del programa</small>
+                <h4>Evalúa una empresa que admires desde el triple impacto</h4>
+                <p>
+                  Elige una empresa que conozcas bien y analízala por las
+                  tres dimensiones: ¿es económicamente sostenible?, ¿genera
+                  dignidad para sus trabajadores y comunidades?, ¿reduce o
+                  aumenta la presión ambiental? Identifica el pilar más débil
+                  y propón un cambio concreto. Esta es la base del reto
+                  integrador.
+                </p>
+              </div>
+
+              <aside class="module-reto-cta" data-reveal aria-label="Llamado al reto integrador">
+                <div class="module-reto-cta-decor" aria-hidden="true"></div>
+                <span class="module-reto-cta-tag"><b>R</b> Reto integrador</span>
+                <h3>¿Listo para poner a prueba lo que aprendiste?</h3>
+                <p>
+                  Cuatro decisiones reales sobre <b>BioPack</b>, una empresa
+                  colombiana exportando empaques biodegradables a Europa. Tu
+                  tablero reacciona en vivo a cada elección y al final
+                  descubres tu perfil de estratega.
+                </p>
+                <a class="module-reto-cta-btn" href="/economia/reto-biopack">
+                  Empezar el reto
+                  <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+                </a>
+              </aside>
+            </section>
+
+          </main>
+        </div>
+
+        <nav class="bloque-nav-foot" aria-label="Navegación entre bloques">
+          <a class="bloque-nav-card" href="/economia/bloque-3">
+            <small><svg aria-hidden="true"><use href="#i-arrow-left"></use></svg> Bloque anterior</small>
+            <h5>Bloque 3 · Modelación y analítica</h5>
+          </a>
+          <a class="bloque-nav-card is-next" href="/economia/reto-biopack">
+            <small>Reto integrador <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg></small>
+            <h5>BioPack · simulador de decisiones</h5>
+          </a>
+        </nav>
+
+        <footer class="workspace-footer">
+          <div class="workspace-footer-meta">
+            <b>Universidad de América</b> · Ciencias Administrativas · Bogotá
+          </div>
+          <div class="workspace-footer-social" aria-label="Redes sociales">
+            <a href="#" aria-label="Instagram"><svg><use href="#i-instagram"></use></svg></a>
+            <a href="#" aria-label="Facebook"><svg><use href="#i-facebook"></use></svg></a>
+            <a href="#" aria-label="YouTube"><svg><use href="#i-youtube"></use></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg><use href="#i-linkedin"></use></svg></a>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+    </div>
+
+    <button class="a11y-fab" type="button" aria-label="Opciones de accesibilidad" aria-expanded="false" data-a11y-fab>
+      <svg aria-hidden="true"><use href="#i-a11y"></use></svg>
+    </button>
+
+    <aside class="a11y-panel" role="dialog" aria-label="Panel de accesibilidad" data-a11y-panel>
+      <div class="a11y-panel-head">
+        <div><h3>Accesibilidad</h3><small>Ajusta la experiencia</small></div>
+        <button class="a11y-panel-close" type="button" aria-label="Cerrar panel" data-a11y-close>
+          <svg aria-hidden="true"><use href="#i-close"></use></svg>
+        </button>
+      </div>
+      <div class="a11y-group">
+        <span class="a11y-group-label">Tamaño de fuente <b data-mono>A</b></span>
+        <div class="a11y-options">
+          <button type="button" data-pref="textSize" data-value="sm"><span>A</span></button>
+          <button type="button" data-pref="textSize" data-value="md"><span>A</span></button>
+          <button type="button" data-pref="textSize" data-value="lg"><span>A</span></button>
+          <button type="button" data-pref="textSize" data-value="xl"><span>A</span></button>
+        </div>
+      </div>
+      <div class="a11y-group">
+        <span class="a11y-group-label">Contraste</span>
+        <div class="a11y-options is-2">
+          <button type="button" data-pref="contrast" data-value="default">Normal</button>
+          <button type="button" data-pref="contrast" data-value="high">Alto</button>
+        </div>
+      </div>
+      <div class="a11y-group">
+        <span class="a11y-group-label">Daltonismo</span>
+        <div class="a11y-options is-5" style="grid-template-columns: repeat(5, minmax(0,1fr));">
+          <button type="button" data-pref="colorMode" data-value="default">Off</button>
+          <button type="button" data-pref="colorMode" data-value="protanopia">Pro</button>
+          <button type="button" data-pref="colorMode" data-value="deuteranopia">Deu</button>
+          <button type="button" data-pref="colorMode" data-value="tritanopia">Tri</button>
+          <button type="button" data-pref="colorMode" data-value="achromatopsia">Acro</button>
+        </div>
+      </div>
+      <button type="button" class="a11y-reset" data-a11y-reset>↺ Restaurar valores por defecto</button>
+    </aside>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="/src/js/mobile-nav.js" defer></script>
+    <script src="/src/js/accessibility.js" defer></script>
+    <script src="/src/js/programa-modulo.js" defer></script>
+  </body>
+</html>

@@ -98,9 +98,9 @@
   z-index: 1;
 }
 
-.program-card.admin    .program-card-media-bg { background-image: url("../../../assets/modules/administracion-empresas.png"); }
-.program-card.economy  .program-card-media-bg { background-image: url("../../../assets/modules/economia.png"); }
-.program-card.business .program-card-media-bg { background-image: url("../../../assets/modules/negocios-internacionales.png"); }
+.program-card.admin    .program-card-media-bg { background-image: url("../../../assets/modules/administracion-empresas.jpg"); }
+.program-card.economy  .program-card-media-bg { background-image: url("../../../assets/modules/economia.jpg"); }
+.program-card.business .program-card-media-bg { background-image: url("../../../assets/modules/negocios-internacionales.jpg"); }
 
 .program-card-body {
   display: flex;

@@ -1,0 +1,835 @@
+﻿<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/webp" href="/assets/brand/favicon.ico" />
+    <title>Bloque 1 · Microeconomía · Universidad de América</title>
+    <meta name="description" content="Bloque 1 del programa de Economía: fundamentos de microeconomía." />
+    <link rel="stylesheet" href="/styles.css" />
+    <script>
+      (function () {
+        try {
+          var p = JSON.parse(localStorage.getItem("ua-a11y-prefs") || "{}");
+          var h = document.documentElement;
+          h.setAttribute("data-text-size", p.textSize || "md");
+          h.setAttribute("data-contrast", p.contrast || "default");
+          h.setAttribute("data-color-mode", p.colorMode || "default");
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="programa" data-program="economy">
+    <svg class="svg-defs" aria-hidden="true" focusable="false">
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></symbol>
+      <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5" /><path d="m11 6-6 6 6 6" /></symbol>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8" /><path d="M5 10v11h5v-7h4v7h5V10" /></symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2" /><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" /></symbol>
+      <symbol id="i-scan" viewBox="0 0 24 24"><path d="M5 7V5h2" /><path d="M17 5h2v2" /><path d="M19 17v2h-2" /><path d="M7 19H5v-2" /><circle cx="12" cy="12" r="3" /></symbol>
+      <symbol id="i-box" viewBox="0 0 24 24"><path d="m12 3 9 4-9 5-9-5z" /><path d="M3 7v10l9 5 9-5V7" /><path d="M12 12v10" /></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12" /><path d="M18 6L6 18" /></symbol>
+      <symbol id="i-a11y" viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="1.6" /><path d="M5 8h14" /><path d="M9 8v5" /><path d="M15 8v5" /><path d="M9 13l-2 8" /><path d="M15 13l2 8" /></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a3 3 0 0 1 3-3h13v17H7a3 3 0 0 0-3 3z" /><path d="M4 5v17" /><path d="M9 6h6" /><path d="M9 10h7" /></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></symbol>
+      <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 7v10" /><path d="M9.5 9.5c0-1.2 1-2 2.5-2s2.5.7 2.5 2-1 1.6-2.5 1.6-2.5.4-2.5 1.6 1 2 2.5 2 2.5-.8 2.5-2" /></symbol>
+      <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 4c-9 0-15 4-15 12 0 3 1 4 1 4s4-1 7-4 5-7 7-12" /><path d="M5 20c2-7 7-11 13-13" /></symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21S4 14 4 9a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 5-8 12-8 12Z" /></symbol>
+      <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8z" /><circle cx="8" cy="8" r="1.4" /></symbol>
+      <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 4v16" /><path d="M6 20h12" /><path d="m6 8 6-2 6 2" /><path d="M3 14c0-3 3-6 3-6s3 3 3 6Z" /><path d="M15 14c0-3 3-6 3-6s3 3 3 6Z" /></symbol>
+      <symbol id="i-trending" viewBox="0 0 24 24"><path d="m3 17 6-6 4 4 8-8" /><path d="M14 7h7v7" /></symbol>
+      <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6" width="14" height="12" rx="2" /><path d="m17 10 4-2v8l-4-2z" /></symbol>
+      <symbol id="i-headphones" viewBox="0 0 24 24"><path d="M4 14a8 8 0 0 1 16 0v3" /><path d="M4 14v4a2 2 0 0 0 2 2h2v-7H6a2 2 0 0 0-2 2Z" /><path d="M20 14v4a2 2 0 0 1-2 2h-2v-7h2a2 2 0 0 1 2 2Z" /></symbol>
+      <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h9l5 5v13H6Z" /><path d="M14 3v6h6" /><path d="M9 14h6" /><path d="M9 18h4" /></symbol>
+      <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" /><circle cx="9" cy="10" r="2" /><path d="m4 18 5-5 5 5 3-3 3 3" /></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="4" /><circle cx="12" cy="12" r="3" /><path d="M16.5 7.5h.01" /></symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 8h2V5h-2a4 4 0 0 0-4 4v2H8v3h2v5h3v-5h3l1-3h-4V9a1 1 0 0 1 1-1Z" /></symbol>
+      <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M4 8a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3Z" /><path d="m10 9 5 3-5 3Z" /></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M6 10v9" /><path d="M6 6v.01" /><path d="M11 19v-9" /><path d="M11 14a4 4 0 0 1 8 0v5" /></symbol>
+    </svg>
+
+    <svg class="a11y-defs" aria-hidden="true" focusable="false">
+      <defs>
+        <filter id="a11y-protanopia"><feColorMatrix type="matrix" values="0.567,0.433,0,0,0  0.558,0.442,0,0,0  0,0.242,0.758,0,0  0,0,0,1,0" /></filter>
+        <filter id="a11y-deuteranopia"><feColorMatrix type="matrix" values="0.625,0.375,0,0,0  0.7,0.3,0,0,0  0,0.3,0.7,0,0  0,0,0,1,0" /></filter>
+        <filter id="a11y-tritanopia"><feColorMatrix type="matrix" values="0.95,0.05,0,0,0  0,0.433,0.567,0,0  0,0.475,0.525,0,0  0,0,0,1,0" /></filter>
+        <filter id="a11y-achromatopsia"><feColorMatrix type="matrix" values="0.299,0.587,0.114,0,0  0.299,0.587,0.114,0,0  0.299,0.587,0.114,0,0  0,0,0,1,0" /></filter>
+      </defs>
+    </svg>
+
+    <div class="page-content">
+    <div class="app-shell">
+
+      <aside class="sidebar" aria-label="Navegación principal">
+        <a class="sidebar-brand" href="/app#inicio" aria-label="Universidad de América">
+          <img src="/assets/brand/logo-ua.png" alt="Universidad de América" />
+        </a>
+        <nav class="sidebar-nav">
+          <span class="sidebar-nav-label">Aplicativo</span>
+          <a class="sidebar-link" href="/app#inicio"><svg aria-hidden="true"><use href="#i-home"></use></svg><span>Inicio</span></a>
+          <a class="sidebar-link is-active" href="/app#programas"><svg aria-hidden="true"><use href="#i-briefcase"></use></svg><span>Programas</span></a>
+          <div class="sidebar-sublinks">
+            <a class="sidebar-sublink" href="/administracion/programa">Administración</a>
+            <a class="sidebar-sublink" href="/negocios/programa">Negocios Internacionales</a>
+            <a class="sidebar-sublink is-active" href="/economia/programa">Economía</a>
+          </div>
+          <a class="sidebar-link" href="/app#experiencia"><svg aria-hidden="true"><use href="#i-scan"></use></svg><span>Experiencia</span></a>
+        </nav>
+        <nav class="sidebar-toc" aria-label="Índice del bloque">
+            <span class="sidebar-nav-label">Índice del bloque</span>
+            <div class="bloque-toc-head">
+              <small>En este bloque</small>
+              <span>5 temas</span>
+            </div>
+            <ol class="bloque-toc-list" data-toc>
+              <li><a class="bloque-toc-link" href="#introduccion">Introducción</a></li>
+              <li><a class="bloque-toc-link" href="#escasez">Escasez y elección</a></li>
+              <li><a class="bloque-toc-link" href="#costo-oportunidad">Costo de oportunidad</a></li>
+              <li><a class="bloque-toc-link" href="#consumidor">Teoría del consumidor</a></li>
+              <li><a class="bloque-toc-link" href="#mercado">Oferta y demanda</a></li>
+            </ol>
+            <div class="bloque-toc-actions">
+              <a class="bloque-toc-action is-disabled" aria-disabled="true">Inicio del programa</a>
+              <a class="bloque-toc-action is-next" href="/economia/bloque-2">Bloque 2 · Macroeconomía</a>
+            </div>
+          </nav>
+
+        <div class="sidebar-footer">
+          <b>Universidad de América</b>
+          Facultad de Ciencias Administrativas · Bogotá
+        </div>
+      </aside>
+
+      <div class="workspace">
+
+        <header class="bloque-head">
+          <div class="bloque-head-inner">
+            <nav class="module-breadcrumb" aria-label="Migas de pan">
+              <a href="/economia/programa">
+                <svg aria-hidden="true"><use href="#i-arrow-left"></use></svg>
+                Economía
+              </a>
+              <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+              <span>Bloque 1</span>
+            </nav>
+
+            <span class="bloque-head-tag"><b>1</b>Bloque teórico</span>
+
+            <h1>Microeconomía: el <em> arte </em> de <em>maximizar</em> resultados con <em>recursos limitados</em>.</h1>
+
+            <p class="bloque-head-lede">
+              Imagina que tienes mil pesos y dos antojos: un helado o un
+              café. Elegir uno significa renunciar al otro. La
+              microeconomía estudia precisamente eso: cómo las personas
+              y las empresas deciden qué hacer con recursos que nunca
+              alcanzan para todo. Al final del bloque vas a poder
+              <b>leer cualquier decisión de compra o de precio</b>
+              como lo que es: una señal dentro de un sistema.
+            </p>
+
+            <div class="bloque-head-meta">
+              <span class="module-meta-pill">
+                <svg aria-hidden="true"><use href="#i-book"></use></svg>
+                <b>5</b> temas
+              </span>
+              <span class="module-meta-pill">
+                <svg aria-hidden="true"><use href="#i-clock"></use></svg>
+                <b>~70</b> min
+              </span>
+            </div>
+          </div>
+          <aside class="bloque-head-figure" aria-hidden="true">
+            <img src="/assets/images/new-images/hero-eco-b1-microeconomia.jpg" alt="" loading="lazy" />
+          </aside>
+        </header>
+
+        <!-- TOC izquierda + contenido derecha -->
+        <div class="bloque-layout is-toc-left"><main class="bloque-content">
+
+            <div class="module-callout" data-reveal>
+              <small>Resultado de aprendizaje</small>
+              <p>
+                Analizo decisiones económicas individuales mediante el estudio
+                de escasez, costo de oportunidad, oferta, demanda y formación
+                de precios para explicar el comportamiento de consumidores y
+                productores en el mercado.
+              </p>
+            </div>
+
+            <!-- TEMA 01 — INTRODUCCIÓN -->
+            <section class="module-tema" id="introduccion" data-tema>
+              <header class="module-tema-head is-stacked" data-reveal>
+                <span class="module-tema-num" data-label="Tema">01</span>
+                <div class="module-tema-copy">
+                  <span class="module-tema-eyebrow">Introducción</span>
+                  <h2 class="module-tema-title">Cada vez que eliges algo, ya estás haciendo economía.</h2>
+                  <p class="module-tema-lede">
+                    No vas a estudiar economía solo para entender el
+                    dólar o las noticias del Banco de la República. La
+                    vas a estudiar para reconocer las decisiones
+                    económicas que ya tomas todos los días: en qué
+                    gastas tu plata, en qué inviertes tu tiempo y a
+                    qué le dices que no.
+                  </p>
+                </div>
+        </header>
+
+              <figure class="module-hero-figure" data-reveal>
+                <img src="/assets/images/new-images/eco-b1-hero.jpg"
+                     alt="Mercado: el escenario natural donde se hace economía cada día"
+                     loading="lazy" />
+                <figcaption>
+                  <small>La economía vive en lo cotidiano</small>
+                  No es solo el Banco de la República. Es <b>tu mercado del sábado,
+                  tu suscripción mensual, tu turno extra en el trabajo</b>. Cada
+                  decisión es una elección económica.
+                </figcaption>
+              </figure>
+
+              <div class="module-aha" data-reveal>
+                <div class="module-aha-icon"><img src="/assets/images/new-images/aha-eco-b1-cuatro-horas.jpg" alt="" loading="lazy" /></div>
+                <div class="module-aha-copy">
+                  <small>Para entenderlo</small>
+                  <p>
+                    Tienes <b>cuatro horas libres el sábado</b>. Puedes
+                    estudiar para un parcial, salir con tus amigos,
+                    descansar o trabajar en un proyecto personal. Solo
+                    puedes hacer una bien. Cualquier opción que escojas
+                    <b>renuncia</b> a las otras tres. Acabas de tomar
+                    una decisión económica sin darte cuenta.
+                  </p>
+                </div>
+              </div>
+
+              <div class="module-prose" data-reveal>
+                <p>
+                  La microeconomía estudia ese tipo de decisión, pero
+                  llevado a otra escala: lo que decide una persona cuando
+                  compra, lo que decide una empresa cuando produce y lo
+                  que decide un mercado entero cuando fija un precio.
+                </p>
+                <p>
+                  Al final del bloque vas a poder mirar cualquier compra
+                  cotidiana, cualquier precio o anuncio publicitario y
+                  entenderlo como lo que realmente es: <b>una pieza dentro
+                  de un sistema de elecciones bajo restricción</b>.
+                </p>
+              </div>
+
+              <div class="module-callout" data-reveal>
+                <small>Lo que vas a poder hacer</small>
+                <p>
+                  Analizar decisiones cotidianas usando los conceptos de
+                  escasez, costo de oportunidad, teoría del consumidor y
+                  oferta-demanda. Vas a poder explicar por qué la gente
+                  compra lo que compra y por qué los precios se mueven
+                  como se mueven.
+                </p>
+              </div>
+
+              <details class="module-accordion" data-reveal>
+                <summary class="module-accordion-head">
+                  <span class="module-accordion-tag">+</span>
+                  <span class="module-accordion-title">¿Por qué se llama «micro»? ¿Hay también «macro»?</span>
+                  <span class="module-accordion-toggle"><svg aria-hidden="true"><use href="#i-arrow-down"></use></svg></span>
+                </summary>
+                <div class="module-accordion-body">
+                  <p>
+                    «Micro» viene del griego y significa <b>pequeño</b>.
+                    Aquí estudias decisiones de actores concretos: una
+                    persona, una familia, una empresa, un mercado puntual.
+                  </p>
+                  <p>
+                    La <b>macroeconomía</b> mira lo grande: el país entero,
+                    la inflación, el empleo, la tasa del Banco de la
+                    República. Es el siguiente bloque del programa. Las
+                    dos miradas se complementan: nadie decide bien sin
+                    entender las dos escalas.
+                  </p>
+                </div>
+              </details>
+
+            </section>
+
+            <!-- TEMA 02 — ESCASEZ -->
+            <section class="module-tema" id="escasez" data-tema>
+              <header class="module-tema-head is-stacked" data-reveal>
+                <span class="module-tema-num" data-label="Tema">02</span>
+                <div class="module-tema-copy">
+                  <span class="module-tema-eyebrow">Concepto central</span>
+                  <h2 class="module-tema-title">Escasez no es pobreza: es que <em>nunca alcanza para todo</em>.</h2>
+                  <p class="module-tema-lede">
+                    Aunque tengas mucho dinero, tu día sigue teniendo solo
+                    24 horas. La escasez es la condición permanente de la
+                    vida económica y aparece en tres dimensiones que
+                    seguro reconoces. Pasa por las tres pestañas.
+                  </p>
+                </div>
+              </header>
+
+              <div class="module-tabs" data-tabs data-reveal>
+                <div class="module-tabs-nav" role="tablist">
+                  <button class="module-tabs-btn is-active" type="button" role="tab" data-tab="t-tiempo">
+                    <span>01</span> Tiempo
+                  </button>
+                  <button class="module-tabs-btn" type="button" role="tab" data-tab="t-dinero">
+                    <span>02</span> Dinero
+                  </button>
+                  <button class="module-tabs-btn" type="button" role="tab" data-tab="t-natural">
+                    <span>03</span> Recursos del planeta
+                  </button>
+                </div>
+                <div class="module-tabs-panels">
+                  <div class="module-tabs-panel is-active" role="tabpanel" data-panel="t-tiempo">
+                    <h5>Tiempo: la única restricción que no se compra</h5>
+                    <p>
+                      El día tiene 24 horas para todos: el millonario y el
+                      estudiante. Cuando dedicas una hora a estudiar, esa
+                      hora ya no la puedes usar para trabajar, descansar
+                      o ver a alguien. Por eso decimos que el tiempo es
+                      la <b>primera restricción económica</b>: no se
+                      acumula, no se devuelve y no se compra con dinero.
+                    </p>
+                    <div class="module-tabs-panel-meta">
+                      <span>Ejemplo · <b>tu próximo sábado</b></span>
+                      <span>Pregunta clave · <b>¿en qué lo gasto?</b></span>
+                    </div>
+                  </div>
+                  <div class="module-tabs-panel" role="tabpanel" data-panel="t-dinero">
+                    <h5>Dinero: tu presupuesto cuenta tus prioridades</h5>
+                    <p>
+                      Un presupuesto no es solo un límite: es un
+                      <b>retrato de lo que valoras</b>. Si pagas más por
+                      café de especialidad que por la suscripción al gym,
+                      eso dice algo de ti. La pregunta importante en
+                      economía no es «¿cuánto tengo?» sino «¿qué valor
+                      saco de cada peso que gasto?».
+                    </p>
+                    <div class="module-tabs-panel-meta">
+                      <span>Ejemplo · <b>tu mesada o tu sueldo</b></span>
+                      <span>Pregunta clave · <b>¿qué me da más valor?</b></span>
+                    </div>
+                  </div>
+                  <div class="module-tabs-panel" role="tabpanel" data-panel="t-natural">
+                    <h5>Recursos del planeta: el límite que no negocias</h5>
+                    <p>
+                      La escasez no es solo personal. El agua, la energía,
+                      la tierra y los minerales también se agotan. Eso
+                      empuja a las empresas y a los países a
+                      <b>innovar</b> (encontrar cómo hacer lo mismo con
+                      menos) y a redefinir qué significa «crecer» cuando
+                      el planeta pone el techo.
+                    </p>
+                    <div class="module-tabs-panel-meta">
+                      <span>Ejemplo · <b>el agua del país en verano</b></span>
+                      <span>Pregunta clave · <b>¿hasta cuándo alcanza?</b></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- TEMA 03 — COSTO DE OPORTUNIDAD -->
+            <section class="module-tema" id="costo-oportunidad" data-tema>
+              <header class="module-tema-head is-stacked" data-reveal>
+                <span class="module-tema-num" data-label="Tema">03</span>
+                <div class="module-tema-copy">
+                  <span class="module-tema-eyebrow">Concepto clave</span>
+                  <h2 class="module-tema-title">El verdadero costo de algo es lo que dejas de ganar al elegirlo.</h2>
+                  <p class="module-tema-lede">
+                    Cada decisión cierra puertas. La economía le pone nombre
+                    a esa puerta cerrada: <b>costo de oportunidad</b>. Es,
+                    junto con la escasez, el concepto más útil que vas a
+                    aprender en este bloque.
+                  </p>
+                </div>
+              </header>
+
+              <figure class="module-hero-figure" data-reveal>
+                <img src="/assets/images/new-images/eco-b1-costo.jpg"
+                     alt="Una decisión cierra otras puertas: el costo de oportunidad"
+                     loading="lazy" />
+                <figcaption>
+                  <small>Toda elección tiene un precio invisible</small>
+                  Lo que pagas no es solo dinero. Es <b>el tiempo que no usaste
+                  en otra cosa</b>, <b>la fiesta a la que no fuiste</b>, <b>el sueño
+                  que dejaste para después</b>.
+                </figcaption>
+              </figure>
+
+              <div class="module-aha" data-reveal>
+                <div class="module-aha-icon"><img src="/assets/images/new-images/aha-eco-b1-netflix-domingo.jpg" alt="" loading="lazy" /></div>
+                <div class="module-aha-copy">
+                  <small>Para entenderlo</small>
+                  <p>
+                    Maratoneas una serie en Netflix durante cuatro horas
+                    un domingo. ¿Cuánto te costó? <b>Cero pesos</b> si solo
+                    miras la suscripción. Pero si en esas cuatro horas
+                    podrías haber ganado $80.000 en un domiciliero, o
+                    haber adelantado un trabajo que te tomará la noche
+                    entera ahora, <b>esos $80.000 (o esa noche perdida) son
+                    tu costo de oportunidad real</b>. El contador no lo ve,
+                    el economista sí.
+                  </p>
+                </div>
+              </div>
+
+              <div class="module-split" data-reveal>
+                <div class="module-prose">
+                  <p>
+                    El costo de oportunidad sirve para
+                    <b>cualquier decisión</b>, desde cómo organizas tu
+                    semana hasta si una empresa abre una sucursal. La
+                    diferencia con el costo «contable» (el de la
+                    factura) es enorme: el contador mira lo que pagaste
+                    en plata; el economista mira lo que dejaste de ganar.
+                  </p>
+                  <p>
+                    Y eso cambia las preguntas que te haces. En lugar de
+                    <em>«¿puedo pagar esto?»</em> empiezas a preguntarte
+                    <em>«¿es esto lo mejor que puedo hacer con este
+                    tiempo, dinero o esfuerzo?»</em>.
+                  </p>
+                </div>
+                <aside class="module-split-aside">
+                  <h5>Tres miradas a un mismo costo</h5>
+                  <dl>
+                    <div>
+                      <dt>Precio visible</dt>
+                      <dd>Lo que pagas en plata o recursos directos. Lo que dice la factura.</dd>
+                    </div>
+                    <div>
+                      <dt>Costo económico</dt>
+                      <dd>Lo que dejas de ganar por no elegir otra opción que también valía la pena.</dd>
+                    </div>
+                    <div>
+                      <dt>Decisión inteligente</dt>
+                      <dd>Comparar plata, sacrificio y efectos a futuro antes de actuar.</dd>
+                    </div>
+                  </dl>
+                </aside>
+              </div>
+
+              <details class="module-accordion" data-reveal>
+                <summary class="module-accordion-head">
+                  <span class="module-accordion-tag">+</span>
+                  <span class="module-accordion-title">¿Cómo lo aplica una empresa de verdad?</span>
+                  <span class="module-accordion-toggle"></span>
+                </summary>
+                <div class="module-accordion-body">
+                  <p>
+                    Imagina que una panadería del barrio tiene $20 millones
+                    libres. Puede usarlos para:
+                  </p>
+                  <ul>
+                    <li>Comprar un horno más grande y producir más pan.</li>
+                    <li>Abrir un punto nuevo en otro barrio.</li>
+                    <li>Dejar el dinero en un CDT al 11% anual.</li>
+                  </ul>
+                  <p>
+                    Si elige el horno, el costo de oportunidad real no es
+                    «20 millones»: es <b>la utilidad extra que habría
+                    generado el punto nuevo</b> (digamos $4M al año) o el
+                    interés del CDT ($2.2M al año). Decidir bien es elegir
+                    la opción cuyo retorno sea mayor que el de las
+                    alternativas. Por eso los economistas hablan de
+                    «costo» aun cuando no hay factura de por medio.
+                  </p>
+                </div>
+              </details>
+
+              <div class="module-quote" data-reveal>
+                <p>
+                  El costo de algo es aquello a lo que renuncias para
+                  obtenerlo.
+                </p>
+                <footer>— <b>Gregory Mankiw</b>, Principios de Economía (2012)</footer>
+              </div>
+
+              <div class="module-quickcheck" data-quickcheck data-reveal>
+                <div class="module-quickcheck-head">
+                  <small>Comprueba si lo entendiste</small>
+                </div>
+                <p class="module-quickcheck-q">
+                  Tienes una entrada gratis a un concierto que vale $200.000.
+                  Tu segunda mejor opción para esa noche es trabajar y ganar
+                  $80.000. ¿Cuál es el costo de oportunidad real de ir al
+                  concierto?
+                </p>
+                <div class="module-quickcheck-opts">
+                  <button type="button" class="module-quickcheck-opt" data-letter="A">
+                    <span>$0, porque la entrada fue gratis.</span>
+                  </button>
+                  <button type="button" class="module-quickcheck-opt" data-letter="B" data-correct="true">
+                    <span>$80.000, porque es lo que dejaste de ganar al no trabajar esa noche.</span>
+                  </button>
+                  <button type="button" class="module-quickcheck-opt" data-letter="C">
+                    <span>$200.000, porque ese es el valor que tenía la entrada.</span>
+                  </button>
+                </div>
+                <div class="module-quickcheck-feedback"
+                  data-correct-msg="Exacto. Aunque la entrada no te costó plata, ir al concierto te impide ganar los $80.000 del trabajo. Esa es la mejor alternativa que sacrificas, y por eso es el verdadero costo económico de la decisión."
+                  data-wrong-msg="Recuerda: el costo de oportunidad es <b>lo que dejas de ganar al elegir</b>, no el precio que pagaste. La entrada fue gratis, así que el costo visible es cero. Pero al ir al concierto renuncias a los $80.000 del trabajo. Esa es la respuesta correcta."></div>
+              </div>
+
+              <figure class="module-infografia" data-reveal>
+                <div class="module-infografia-image">
+                  <img src="/assets/images/new-images/infografia-eco-b1-precio-vs-costo.jpg" alt="Lo que pagas no siempre es lo que cuesta" loading="lazy" />
+                </div>
+                <div class="module-infografia-text">
+                  <small>Infografía</small>
+                  <h5>Lo que pagas no siempre es lo que cuesta</h5>
+                  <p>Esta tabla compara tres decisiones cotidianas — estudiar un posgrado, comprar un carro, aceptar un empleo — desde dos ángulos: el <b>precio visible</b> que aparece en la factura y el <b>costo económico</b> que es lo que dejas de ganar al elegir.</p>
+                  <p>La diferencia entre las dos columnas suele ser mucho mayor de lo que parece. Por eso el costo de oportunidad es la métrica más usada por los economistas para evaluar si una decisión vale la pena.</p>
+                </div>
+              </figure>
+            </section>
+
+            <!-- TEMA 04 — TEORÍA DEL CONSUMIDOR -->
+            <section class="module-tema" id="consumidor" data-tema>
+              <header class="module-tema-head is-stacked" data-reveal>
+                <span class="module-tema-num" data-label="Tema">04</span>
+                <div class="module-tema-copy">
+                  <span class="module-tema-eyebrow">Teoría del consumidor</span>
+                  <h2 class="module-tema-title">Comprar nunca es solo comprar: dice algo de ti.</h2>
+                  <p class="module-tema-lede">
+                    Dos personas con el mismo sueldo gastan muy distinto.
+                    La economía no juzga el gusto de nadie: estudia cómo
+                    cada quien combina lo que quiere, lo que puede pagar
+                    y lo que le da satisfacción para decidir qué comprar.
+                  </p>
+                </div>
+        </header>
+
+              <figure class="module-hero-figure" data-reveal>
+                <img src="/assets/images/new-images/eco-b1-decision.jpg"
+                     alt="Persona eligiendo entre productos: la decisión del consumidor"
+                     loading="lazy" />
+                <figcaption>
+                  <small>Cada compra es una pequeña teoría</small>
+                  El consumidor combina <b>preferencias</b> (gusto), <b>presupuesto</b>
+                  (lo que puede pagar) y <b>utilidad</b> (qué tan feliz queda). La economía
+                  describe cómo decide.
+                </figcaption>
+              </figure>
+
+              <div class="module-grid is-3" data-reveal>
+                <article class="module-card is-top-accent">
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-heart"></use></svg></div>
+                  <h4 class="module-card-title">Utilidad</h4>
+                  <p class="module-card-text">
+                    Es la satisfacción que esperas obtener al comprar
+                    algo. No siempre va con lo más barato ni lo más
+                    funcional: a veces lo que te «llena» es la marca,
+                    el diseño o la experiencia.
+                  </p>
+                </article>
+                <article class="module-card is-top-accent">
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-scale"></use></svg></div>
+                  <h4 class="module-card-title">Preferencias</h4>
+                  <p class="module-card-text">
+                    Lo que valoras más que el resto. Algunas personas
+                    prefieren estatus, otras comodidad, otras ahorro o
+                    pertenencia. No hay preferencia «buena» o «mala»:
+                    cada quien tiene la suya y eso explica decisiones
+                    distintas con ingresos iguales.
+                  </p>
+                </article>
+                <article class="module-card is-top-accent">
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-tag"></use></svg></div>
+                  <h4 class="module-card-title">Restricción presupuestal</h4>
+                  <p class="module-card-text">
+                    Tu cuenta bancaria pone el límite. La economía
+                    estudia cómo combinas lo que deseas con lo que sí
+                    puedes pagar, sin juzgar si tu gusto es «racional»
+                    o no.
+                  </p>
+                </article>
+              </div>
+
+              <div class="module-spotlight is-diagonal" data-reveal>
+                <small>Caso para discutir</small>
+                <h4>¿Por qué alguien ahorra tres meses por unas zapatillas?</h4>
+                <p>
+                  Pagar 800 mil pesos por unas zapatillas de edición
+                  limitada parece irracional si unas genéricas de 80 mil
+                  cumplen la misma función. La teoría del consumidor da
+                  vuelta a la pregunta: <b>¿qué satisfacción extra</b>
+                  entrega el diseño, la identidad o la pertenencia
+                  frente al sacrificio de no usar esa plata en otra
+                  cosa? El precio que está dispuesto a pagar refleja
+                  todas esas utilidades, no solo el cuero y la suela.
+                </p>
+              </div>
+
+              <details class="module-accordion" data-reveal>
+                <summary class="module-accordion-head">
+                  <span class="module-accordion-tag">+</span>
+                  <span class="module-accordion-title">¿Y eso de la «utilidad marginal»? Lo escuchas mucho</span>
+                  <span class="module-accordion-toggle"><svg aria-hidden="true"><use href="#i-arrow-down"></use></svg></span>
+                </summary>
+                <div class="module-accordion-body">
+                  <p>
+                    Utilidad marginal es <b>la satisfacción adicional</b>
+                    que te da una unidad extra de algo. La primera porción
+                    de pizza un viernes en la noche es maravillosa. La
+                    cuarta ya no tanto. La sexta puede ser incómoda.
+                  </p>
+                  <p>
+                    Esa caída se llama <b>utilidad marginal decreciente</b>
+                    y explica un montón de cosas: por qué las promociones
+                    «lleve 3 pague 2» funcionan solo para algunos
+                    productos, por qué el primer carro de la familia es
+                    más valioso que el tercero, y por qué nadie quiere
+                    comprar 20 botellas de agua a la vez.
+                  </p>
+                </div>
+              </details>
+
+              <details class="module-accordion" data-reveal>
+                <summary class="module-accordion-head">
+                  <span class="module-accordion-tag">+</span>
+                  <span class="module-accordion-title">¿Las decisiones del consumidor son siempre racionales?</span>
+                  <span class="module-accordion-toggle"><svg aria-hidden="true"><use href="#i-arrow-down"></use></svg></span>
+                </summary>
+                <div class="module-accordion-body">
+                  <p>
+                    No. La economía clásica asume que el consumidor es
+                    racional, pero <b>la economía conductual</b> (popular
+                    desde el premio Nobel de Daniel Kahneman en 2002)
+                    demostró que caemos en sesgos predecibles: nos cuesta
+                    elegir entre demasiadas opciones, valoramos más lo
+                    que está por perderse que lo que podemos ganar, y nos
+                    influyen el orden de las opciones o el color del
+                    empaque.
+                  </p>
+                  <p>
+                    Esto no invalida la teoría del consumidor; la
+                    complementa. Las dos miradas conviven en cualquier
+                    análisis serio de mercado.
+                  </p>
+                </div>
+              </details>
+
+              <div class="module-resource" data-reveal>
+                <div class="module-resource-icon"><svg aria-hidden="true"><use href="#i-headphones"></use></svg></div>
+                <div class="module-resource-copy">
+                  <small data-format="Podcast · 15 min">Recurso recomendado</small>
+                  <h5>«Tu cerebro al comprar» — psicología del consumidor</h5>
+                  <p>
+                    Una pieza de audio que conecte la economía clásica
+                    con la economía conductual de Kahneman: por qué a
+                    veces decidimos bien y por qué a veces caemos en
+                    sesgos predecibles.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <!-- TEMA 05 — OFERTA Y DEMANDA -->
+            <section class="module-tema" id="mercado" data-tema>
+              <header class="module-tema-head is-stacked" data-reveal>
+                <span class="module-tema-num" data-label="Tema">05</span>
+                <div class="module-tema-copy">
+                  <span class="module-tema-eyebrow">Mecanismo de mercado</span>
+                  <h2 class="module-tema-title">El precio no se inventa: nace de un acuerdo silencioso.</h2>
+                  <p class="module-tema-lede">
+                    En cada precio que ves hay una conversación callada
+                    entre dos lados: <b>los que quieren comprar</b> y
+                    <b>los que quieren vender</b>. Cuando esa
+                    conversación llega a un acuerdo, aparece el precio.
+                    Cuando se rompe, el precio se mueve.
+                  </p>
+                </div>
+        </header>
+
+              <div class="module-aha" data-reveal>
+                <div class="module-aha-icon"><img src="/assets/images/new-images/aha-eco-b1-boleta-concierto.jpg" alt="" loading="lazy" /></div>
+                <div class="module-aha-copy">
+                  <small>Para entenderlo</small>
+                  <p>
+                    Una boleta para el concierto de Bad Bunny en Bogotá
+                    salió a $400.000. Se agotó en 12 minutos. Al día
+                    siguiente alguien la revende en $1.200.000 y
+                    <b>aún así la compran</b>. ¿Qué pasó? La oferta era
+                    fija (un solo concierto, X sillas) y la demanda
+                    explotó. El precio subió hasta encontrar a alguien
+                    dispuesto a pagarlo. Eso es oferta y demanda en
+                    vivo.
+                  </p>
+                </div>
+              </div>
+
+              <div class="module-grid is-2" style="grid-template-columns: repeat(2, minmax(0,1fr));" data-reveal>
+                <article class="module-card is-top-accent">
+                  <span class="module-card-tag">Demanda</span>
+                  <h4 class="module-card-title">Si el precio sube, la mayoría compra menos</h4>
+                  <p class="module-card-text">
+                    Cuando algo se vuelve más caro, la gente busca
+                    proteger su presupuesto o cambiar a una alternativa
+                    más barata. Por eso decimos que <b>precio y cantidad
+                    demandada se mueven al revés</b>: uno sube, el otro
+                    baja.
+                  </p>
+                </article>
+                <article class="module-card is-top-accent">
+                  <div class="module-card-icon"><svg aria-hidden="true"><use href="#i-trending"></use></svg></div>
+                  <span class="module-card-tag">Oferta</span>
+                  <h4 class="module-card-title">Si el precio sube, producir más se vuelve atractivo</h4>
+                  <p class="module-card-text">
+                    Los productores ven el precio alto como una
+                    invitación a vender más, siempre que sus costos lo
+                    permitan. Aquí <b>precio y cantidad ofrecida se mueven
+                    igual</b>: uno sube, el otro también.
+                  </p>
+                </article>
+              </div>
+
+              <div class="module-meter" data-reveal>
+                <div class="module-meter-row">
+                  <b>Demanda</b>
+                  <div class="module-meter-track">
+                    <div class="module-meter-fill" style="width: 62%;"></div>
+                  </div>
+                  <var>62/100</var>
+                </div>
+                <div class="module-meter-row">
+                  <b>Oferta</b>
+                  <div class="module-meter-track">
+                    <div class="module-meter-fill" style="width: 62%;"></div>
+                  </div>
+                  <var>62/100</var>
+                </div>
+                <div class="module-meter-foot">
+                  <span>Señal de precio</span>
+                  <b>Equilibrio posible</b>
+                </div>
+                <p style="font-size: 0.86rem; color: var(--muted); line-height: 1.55; margin-top: 4px;">
+                  Cuando compradores y vendedores tienen fuerzas
+                  parecidas, el precio se estabiliza. Si una de las dos
+                  fuerzas se dispara o se hunde, el precio se mueve
+                  hasta encontrar un nuevo equilibrio. <b>El número de
+                  arriba es solo una escala 0–100 de fuerza de mercado,
+                  no unidades vendidas.</b>
+                </p>
+              </div>
+
+              <div class="module-flashcard" data-reveal>
+                <div class="module-flashcard-q">
+                  <small>Piénsalo antes de ver la respuesta</small>
+                  <p>
+                    En diciembre, el precio del tomate sube en todas las
+                    plazas de mercado del país. ¿Es por oferta o por
+                    demanda?
+                  </p>
+                </div>
+                <button type="button" class="module-flashcard-reveal">Ver respuesta</button>
+                <div class="module-flashcard-a">
+                  <small>Respuesta</small>
+                  <p>
+                    Por las dos, pero con distinto peso según el año.
+                    Del lado de la <b>oferta</b>: las lluvias y las
+                    heladas de fin de año dañan cultivos y reducen
+                    cuánto tomate llega al mercado. Del lado de la
+                    <b>demanda</b>: en diciembre se cocina más en casa
+                    por las festividades, así que la gente compra más.
+                    Las dos fuerzas empujan el precio hacia arriba al
+                    mismo tiempo. Por eso en Navidad el tomate siempre
+                    parece caro.
+                  </p>
+                </div>
+              </div>
+
+              <div class="module-callout is-activity" data-reveal>
+                <small>Para hacer antes de seguir</small>
+                <h4>Detecta un cambio de precio reciente</h4>
+                <p>
+                  Piensa en un producto cuyo precio haya cambiado
+                  notoriamente en los últimos meses: café, huevos,
+                  gasolina, una suscripción de streaming. Identifica si
+                  el cambio se explica mejor por algo que pasó del lado
+                  de la <b>oferta</b> (escasez de materia prima, una
+                  huelga, una sequía), del lado de la <b>demanda</b>
+                  (cambio de moda, nuevo impuesto al consumo) o de las
+                  dos al tiempo. Este ejercicio prepara el terreno para
+                  lo que viene.
+                </p>
+              </div>
+            </section>
+
+          </main>
+        </div>
+
+        <nav class="bloque-nav-foot" aria-label="Navegación entre bloques">
+          <a class="bloque-nav-card is-disabled" aria-disabled="true">
+            <small><svg aria-hidden="true"><use href="#i-arrow-left"></use></svg> Bloque anterior</small>
+            <h5>—</h5>
+          </a>
+          <a class="bloque-nav-card is-next" href="/economia/bloque-2">
+            <small>Siguiente bloque <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg></small>
+            <h5>Bloque 2 · Macroeconomía</h5>
+          </a>
+        </nav>
+
+        <footer class="workspace-footer">
+          <div class="workspace-footer-meta">
+            <b>Universidad de América</b> · Ciencias Administrativas · Bogotá
+          </div>
+          <div class="workspace-footer-social" aria-label="Redes sociales">
+            <a href="#" aria-label="Instagram"><svg><use href="#i-instagram"></use></svg></a>
+            <a href="#" aria-label="Facebook"><svg><use href="#i-facebook"></use></svg></a>
+            <a href="#" aria-label="YouTube"><svg><use href="#i-youtube"></use></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg><use href="#i-linkedin"></use></svg></a>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+    </div>
+
+    <button class="a11y-fab" type="button" aria-label="Opciones de accesibilidad" aria-expanded="false" data-a11y-fab>
+      <svg aria-hidden="true"><use href="#i-a11y"></use></svg>
+    </button>
+
+    <aside class="a11y-panel" role="dialog" aria-label="Panel de accesibilidad" data-a11y-panel>
+      <div class="a11y-panel-head">
+        <div><h3>Accesibilidad</h3><small>Ajusta la experiencia</small></div>
+        <button class="a11y-panel-close" type="button" aria-label="Cerrar panel" data-a11y-close>
+          <svg aria-hidden="true"><use href="#i-close"></use></svg>
+        </button>
+      </div>
+      <div class="a11y-group">
+        <span class="a11y-group-label">Tamaño de fuente <b data-mono>A</b></span>
+        <div class="a11y-options">
+          <button type="button" data-pref="textSize" data-value="sm"><span>A</span></button>
+          <button type="button" data-pref="textSize" data-value="md"><span>A</span></button>
+          <button type="button" data-pref="textSize" data-value="lg"><span>A</span></button>
+          <button type="button" data-pref="textSize" data-value="xl"><span>A</span></button>
+        </div>
+      </div>
+      <div class="a11y-group">
+        <span class="a11y-group-label">Contraste</span>
+        <div class="a11y-options is-2">
+          <button type="button" data-pref="contrast" data-value="default">Normal</button>
+          <button type="button" data-pref="contrast" data-value="high">Alto</button>
+        </div>
+      </div>
+      <div class="a11y-group">
+        <span class="a11y-group-label">Daltonismo</span>
+        <div class="a11y-options is-5" style="grid-template-columns: repeat(5, minmax(0,1fr));">
+          <button type="button" data-pref="colorMode" data-value="default">Off</button>
+          <button type="button" data-pref="colorMode" data-value="protanopia">Pro</button>
+          <button type="button" data-pref="colorMode" data-value="deuteranopia">Deu</button>
+          <button type="button" data-pref="colorMode" data-value="tritanopia">Tri</button>
+          <button type="button" data-pref="colorMode" data-value="achromatopsia">Acro</button>
+        </div>
+      </div>
+      <button type="button" class="a11y-reset" data-a11y-reset>↺ Restaurar valores por defecto</button>
+    </aside>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="/src/js/mobile-nav.js" defer></script>
+    <script src="/src/js/accessibility.js" defer></script>
+    <script src="/src/js/programa-modulo.js" defer></script>
+  </body>
+</html>

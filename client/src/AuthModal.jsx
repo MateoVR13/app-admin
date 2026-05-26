@@ -44,7 +44,7 @@ export function AuthModal({ initialMode = "login", onClose }) {
 
   // Tras login/signup exitoso → al dashboard
   const onSuccess = useCallback(() => {
-    window.location.href = "app.html";
+    window.location.href = "/app";
   }, []);
 
   const onBackdrop = (e) => {

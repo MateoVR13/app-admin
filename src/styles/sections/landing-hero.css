@@ -32,7 +32,7 @@
   inset: 0;
   z-index: -3;
   background:
-    var(--landing-hero-bg, url("../../../assets/modules/administracion-empresas.png"))
+    var(--landing-hero-bg, url("../../../assets/modules/administracion-empresas.jpg"))
       center/cover no-repeat;
   filter: grayscale(0.2) saturate(0.6);
 }
