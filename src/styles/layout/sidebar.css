@@ -262,8 +262,8 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--ua-lime, #bbd55b);
-  box-shadow: 0 0 0 3px rgba(187, 213, 91, 0.18);
+  background: var(--ua-lime, #c8ff01);
+  box-shadow: 0 0 0 3px rgba(200, 255, 1, 0.18);
 }
 
 .sidebar-user-logout {

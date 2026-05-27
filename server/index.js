@@ -3,6 +3,7 @@ import cookieParser from "cookie-parser";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import authRoutes from "./routes/auth.js";
+import { getSession, COOKIE_NAME } from "./auth.js";
 import "./db.js"; // dispara migraciones al cargar
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -44,6 +45,46 @@ app.use((req, res, next) => {
   const target = LEGACY_REDIRECTS[key];
   if (target && target !== req.path) return res.redirect(301, target);
   next();
+});
+
+// ============================================================
+// Gate de autenticación para páginas privadas.
+//
+// Protege el dashboard (/app) y todas las páginas de módulos
+// (administracion/, economia/, negocios/). La landing, los
+// diplomados, la API y los assets (js/css/img) quedan públicos.
+//
+// Un visitante sin sesión válida es redirigido a /#auth=login,
+// donde la landing abre el modal de login automáticamente.
+// ============================================================
+const PROTECTED_PREFIXES = [
+  "/app",
+  "/core/app",
+  "/administracion/",
+  "/economia/",
+  "/negocios/",
+];
+
+function isProtectedPath(p) {
+  // Normaliza: minúsculas, sin .html, sin trailing slash (excepto raíz de prefijo).
+  const norm = p.toLowerCase().replace(/\.html$/i, "");
+  return PROTECTED_PREFIXES.some((prefix) => {
+    if (prefix.endsWith("/")) return norm.startsWith(prefix);
+    // exacto ("/app") o subruta ("/app/...")
+    return norm === prefix || norm.startsWith(prefix + "/");
+  });
+}
+
+app.use((req, res, next) => {
+  if (!isProtectedPath(req.path)) return next();
+
+  const sess = getSession(req.cookies?.[COOKIE_NAME]);
+  if (sess) {
+    req.session = sess;
+    return next();
+  }
+  // Sin sesión → a la landing con el modal de login.
+  return res.redirect(302, "/#auth=login");
 });
 
 // Rutas explícitas para los HTML de "core" (landing + app shell).

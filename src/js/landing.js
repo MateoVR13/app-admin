@@ -133,7 +133,7 @@
 
     let W, H, particles;
     const COLORS = [
-      "rgba(117, 195, 62, 0.6)",   // #75c33e — landing accent
+      "rgba(200, 255, 1, 0.6)",   // #c8ff01 — landing accent
       "rgba(167, 220, 130, 0.45)", // verde lima más claro
       "rgba(255, 255, 255, 0.4)",  // blanco suave
     ];

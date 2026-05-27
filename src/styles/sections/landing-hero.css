@@ -6,7 +6,7 @@
 /* La página del landing usa un fondo verde profundo en lugar de paper.
    --landing-accent es el verde lima de la marca para esta vista. */
 .landing-page {
-  --landing-accent: #75c33e;
+  --landing-accent: #c8ff01;
   background: var(--ua-green-950);
   color: var(--ink-light);
   min-height: 100vh;
@@ -77,34 +77,38 @@
   filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.5));
 }
 
-/* Eyebrow pill — borde + texto + icono en #75c33e, fondo translúcido
+/* Eyebrow pill — borde + texto + icono en #c8ff01, fondo translúcido
    de un verde un poco más oscuro para coherencia con el acento. */
 .landing-hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
+  display: inline-block;
+  text-align: center;
+  padding: 10px 20px;
   border-radius: var(--radius-pill);
   background: rgba(90, 154, 48, 0.22);    /* verde más oscuro translúcido */
-  color: var(--landing-accent);            /* #75c33e */
-  border: 1px solid var(--landing-accent); /* #75c33e */
+  color: var(--landing-accent);            /* #c8ff01 */
+  border: 1px solid var(--landing-accent); /* #c8ff01 */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   font-family: var(--font-mono);
   font-size: 0.67rem;       /* equivale a 0.89rem × 0.75 (escala hero) */
   font-weight: 700;
   letter-spacing: 0.08em;
+  line-height: 1.35;
   text-transform: uppercase;
+  max-width: min(92vw, 460px);
   margin-bottom: clamp(18px, 2.5vw, 28px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
   animation: landingFadeUp 700ms 120ms var(--ease-out) both;
 }
 
 .landing-hero-eyebrow svg {
+  display: inline-block;
   width: 14px;
   height: 14px;
   stroke-width: 2;
-  color: var(--landing-accent);   /* mismo #75c33e */
+  vertical-align: -3px;           /* alinea con la baseline de la primera línea */
+  margin-right: 8px;
+  color: var(--landing-accent);   /* mismo #c8ff01 */
 }
 
 /* Headline gigante — clamp × 0.75 para escala hero */
@@ -196,20 +200,20 @@
 }
 
 .landing-cta-primary {
-  background: var(--landing-accent);   /* #75c33e */
-  color: #fff;
+  background: var(--landing-accent);   /* #c8ff01 */
+  color: var(--ua-green-950);
   border-color: var(--landing-accent);
   box-shadow:
-    0 10px 24px rgba(117, 195, 62, 0.45),
+    0 10px 24px rgba(200, 255, 1, 0.45),
     inset 0 1px 0 rgba(255, 255, 255, 0.22);
 }
 
 .landing-cta-primary:hover {
   transform: translateY(-2px);
-  background: #65b02e;                 /* +1 paso más oscuro */
-  border-color: #65b02e;
+  background: #b0e500;                 /* +1 paso más oscuro */
+  border-color: #b0e500;
   box-shadow:
-    0 16px 32px rgba(117, 195, 62, 0.55),
+    0 16px 32px rgba(200, 255, 1, 0.55),
     inset 0 1px 0 rgba(255, 255, 255, 0.26);
 }
 
