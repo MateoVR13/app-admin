@@ -54,8 +54,7 @@ app.use((req, res, next) => {
 // (administracion/, economia/, negocios/). La landing, los
 // diplomados, la API y los assets (js/css/img) quedan públicos.
 //
-// Un visitante sin sesión válida es redirigido a /#auth=login,
-// donde la landing abre el modal de login automáticamente.
+// Un visitante sin sesión válida es redirigido a la landing (/).
 // ============================================================
 const PROTECTED_PREFIXES = [
   "/app",
@@ -83,8 +82,8 @@ app.use((req, res, next) => {
     req.session = sess;
     return next();
   }
-  // Sin sesión → a la landing con el modal de login.
-  return res.redirect(302, "/#auth=login");
+  // Sin sesión → a la landing page (no al login).
+  return res.redirect(302, "/");
 });
 
 // Rutas explícitas para los HTML de "core" (landing + app shell).

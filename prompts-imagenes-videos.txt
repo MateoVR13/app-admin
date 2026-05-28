@@ -1,0 +1,256 @@
+================================================================
+PROMPTS DE IMÁGENES · FRAMES DE LOS VIDEOS
+Universidad de América · estilo infográfico-pedagógico
+================================================================
+
+Cada prompt es autónomo: incluye el estilo completo y está
+escrito en español. Relación de aspecto 4:3 en todos.
+
+Texto en imagen: SIEMPRE en español.
+Paleta UA: verde oliva oscuro #1A2403 (fondos), lima vibrante
+#C8FF01 (dato/concepto clave), amarillo #FFCE00 (resaltado
+secundario), blanco #FFFFFF (texto).
+
+
+################################################################
+VIDEO 1 — "El proceso administrativo explicado con una panadería"
+(administracion/bloque-2) · 6 frames
+################################################################
+
+----------------------------------------------------------------
+FRAME 1 · [0:00] Apertura
+----------------------------------------------------------------
+PROMPT:
+Frame de infografía pedagógica, relación de aspecto 4:3. Estilo:
+infografía educativa con elementos realistas (ilustración
+semi-realista del objeto + capa de diagrama plano encima), no foto
+pura ni plano total. Ilustración semi-realista de la fachada de
+una panadería llamada "El Buen Pan" vista desde afuera, con iluminación cálida
+y realista sobre el pan y el mostrador de madera. Sobre la imagen,
+una capa infográfica limpia con el título en español, en
+tipografía sans-serif geométrica gruesa y de alto contraste:
+"El proceso administrativo" y debajo, más pequeño, "4 funciones
+que ocurren juntas". En la parte inferior, cuatro insignias
+circulares en fila (una brújula, una cuadrícula, una persona, un
+chulo de verificación) unidas por una línea fina de color lima.
+Paleta institucional: fondo verde oliva oscuro #1A2403, acentos y
+línea en lima vibrante #C8FF01, texto en blanco, resaltado
+secundario en amarillo #FFCE00. Todo el texto de la imagen en
+español. Estética de diagrama explicativo, alto contraste.
+
+----------------------------------------------------------------
+FRAME 2 · [0:15] Planeación
+----------------------------------------------------------------
+PROMPT:
+Frame de infografía pedagógica, relación de aspecto 4:3. Estilo:
+infografía educativa con elementos realistas (ilustración
+semi-realista + capa de diagrama plano), no foto pura. Ilustración
+semi-realista de la mano de un panadero trazando una ruta o flecha
+simple sobre un tablero o cuaderno, con un pan y una taza de café
+al lado bajo luz cálida y realista. Capa infográfica encima, en
+tipografía sans-serif geométrica gruesa: palabra grande en español
+"PLANEAR" y subtítulo "Definir el rumbo antes de gastar el primer
+peso". Una flecha punteada de color lima apunta desde "pan" hacia
+"almuerzos" como la dirección elegida. Paleta institucional: base
+verde oliva oscuro #1A2403, flecha y palabra clave en lima
+vibrante #C8FF01, texto de apoyo en blanco, meta resaltada en
+amarillo #FFCE00. Todo el texto de la imagen en español. Estética
+de diagrama limpio, alto contraste.
+
+----------------------------------------------------------------
+FRAME 3 · [0:35] Organización
+----------------------------------------------------------------
+PROMPT:
+Frame de infografía pedagógica, relación de aspecto 4:3. Estilo:
+infografía educativa con elementos realistas (ilustración
+semi-realista + capa de diagrama plano), no foto pura. Vista
+semi-realista en planta (desde arriba) de la cocina de una
+panadería organizándose: horno, mesa de preparación y estaciones
+de trabajo rotuladas, con texturas realistas en los equipos. Capa
+infográfica encima, en tipografía sans-serif geométrica gruesa:
+palabra en español "ORGANIZAR" y subtítulo "Repartir el trabajo y
+los recursos". Un organigrama simple con tres insignias de rol
+(cocinera, hornero, atención) conectadas con líneas de color lima
+que muestran quién hace qué. Paleta institucional: fondo verde
+oliva oscuro #1A2403, líneas del organigrama y palabra clave en
+lima vibrante #C8FF01, marcadores de estación en amarillo #FFCE00,
+texto en blanco. Todo el texto de la imagen en español. Estética
+de infografía educativa, alto contraste.
+
+----------------------------------------------------------------
+FRAME 4 · [0:55] Dirección
+----------------------------------------------------------------
+PROMPT:
+Frame de infografía pedagógica, relación de aspecto 4:3. Estilo:
+infografía educativa con elementos realistas (ilustración
+semi-realista + capa de diagrama plano), no foto pura. Ilustración
+semi-realista del equipo de una panadería en un momento de mucha
+actividad: una figura líder explicando el menú del día a dos
+miembros del personal detrás del mostrador, con una pequeña fila de
+clientes esperando y luz cálida y realista. Capa infográfica
+encima, en tipografía sans-serif geométrica gruesa: palabra en
+español "DIRIGIR" y subtítulo "Guiar a las personas mientras el
+plan se ejecuta". Pequeños íconos de globos de diálogo y una flecha
+de color lima que muestra el flujo de comunicación del líder al
+equipo. Paleta institucional: acentos verde oliva oscuro #1A2403,
+palabra clave y flechas en lima vibrante #C8FF01, resaltado en
+amarillo #FFCE00, texto en blanco. Todo el texto de la imagen en
+español. Estética de diagrama, alto contraste.
+
+----------------------------------------------------------------
+FRAME 5 · [1:10] Control
+----------------------------------------------------------------
+PROMPT:
+Frame de infografía pedagógica, relación de aspecto 4:3. Estilo:
+infografía educativa con elementos realistas (ilustración
+semi-realista + capa de diagrama plano), no foto pura. Ilustración
+semi-realista del cierre de jornada en una panadería: un recibo o
+planilla de conteo y un gráfico de barras simple sobre una tabla
+con sujetapapeles, junto a pan que sobró, con luz cálida y
+realista. Capa infográfica encima, en tipografía sans-serif
+geométrica gruesa: palabra en español "CONTROLAR" y subtítulo
+"Medir los resultados para aprender y corregir". Un comparativo
+visual: "esperado" frente a "logrado" como dos barras pequeñas,
+con un chulo de verificación en lima y una flecha de ajuste en
+amarillo. Paleta institucional: base verde oliva oscuro #1A2403,
+gráfico y palabra clave en lima vibrante #C8FF01, marcador de
+ajuste en amarillo #FFCE00, texto en blanco. Todo el texto de la
+imagen en español. Estética de infografía educativa, alto
+contraste.
+
+----------------------------------------------------------------
+FRAME 6 · [1:20] Cierre
+----------------------------------------------------------------
+PROMPT:
+Frame de infografía pedagógica, relación de aspecto 4:3. Estilo:
+infografía educativa con elementos realistas (íconos
+semi-realistas + capa de diagrama plano), no foto pura. Diagrama
+de ciclo circular centrado con cuatro etapas conectadas, rotuladas
+en español "PLANEAR", "ORGANIZAR", "DIRIGIR", "CONTROLAR", cada una
+con un pequeño ícono semi-realista de panadería (ruta, distribución
+de cocina, equipo, planilla). Flechas curvas de color lima forman
+un bucle continuo entre ellas. Título arriba, en tipografía
+sans-serif geométrica gruesa: "Un ciclo que se repite". Paleta
+institucional: fondo verde oliva oscuro #1A2403, flechas del ciclo
+y anillos de etapa en lima vibrante #C8FF01, acentos en amarillo
+#FFCE00, texto en blanco. Todo el texto de la imagen en español.
+Infografía de ciclo de proceso, limpia y de alto contraste.
+
+
+################################################################
+VIDEO 2 — "Qué convierte un producto en una oportunidad de
+exportación" (negocios/bloque-1) · 5 frames
+################################################################
+
+----------------------------------------------------------------
+FRAME 1 · [0:00] Apertura
+----------------------------------------------------------------
+PROMPT:
+Frame de infografía pedagógica, relación de aspecto 4:3. Estilo:
+infografía educativa con elementos realistas (ilustración
+semi-realista + capa de diagrama plano), no foto pura. Ilustración
+semi-realista de un contenedor de carga junto a un signo de
+interrogación, con un mapamundi tenue de fondo. Capa infográfica
+encima, en tipografía sans-serif geométrica gruesa: título en
+español "¿Producto u oportunidad?" y subtítulo "Un buen producto
+no basta para exportar". Dos flechas de color morado que divergen
+e insinúan los caminos de "éxito" y "fracaso". Paleta del módulo
+de Negocios Internacionales: fondo verde oliva oscuro #1A2403,
+flechas y acento del título en morado vibrante #7223B7, resaltado
+en amarillo #FFCE00, texto en blanco. Todo el texto de la imagen
+en español. Infografía educativa, alto contraste.
+
+----------------------------------------------------------------
+FRAME 2 · [0:12] El caso que funciona — flores
+----------------------------------------------------------------
+PROMPT:
+Frame de infografía pedagógica, relación de aspecto 4:3. Estilo:
+infografía educativa con elementos realistas (ilustración
+semi-realista + capa de diagrama plano), no foto pura. Ilustración
+semi-realista de un cultivo de flores en el altiplano colombiano
+(hileras de rosas bajo luz pareja, invernadero) con una línea de
+ruta de avión hacia un pin de Estados Unidos sobre un mapa. Capa
+infográfica encima, en tipografía sans-serif geométrica gruesa:
+título en español "Oportunidad bien leída" y subtítulo "Flores: la
+ventaja del territorio". Tres pequeños íconos rotulados en morado:
+"luz pareja todo el año", "clima de altiplano", "cercanía a EE.
+UU.". Paleta del módulo de Negocios Internacionales: base verde
+oliva oscuro #1A2403, íconos y ruta en morado vibrante #7223B7, pin
+de EE. UU. resaltado en amarillo #FFCE00, texto en blanco. Todo el
+texto de la imagen en español. Infografía tipo mapa educativo, alto
+contraste.
+
+----------------------------------------------------------------
+FRAME 3 · [0:40] El caso que falla
+----------------------------------------------------------------
+PROMPT:
+Frame de infografía pedagógica, relación de aspecto 4:3. Estilo:
+infografía educativa con elementos realistas (ilustración
+semi-realista + capa de diagrama plano), no foto pura. Ilustración
+semi-realista de una sola caja de fruta exótica en un muelle, con
+un contenedor que parte una vez y luego el muelle vacío (sensación
+de "sale una vez y no vuelve"). Capa infográfica encima, en
+tipografía sans-serif geométrica gruesa: título en español
+"Oportunidad mal leída" y subtítulo "Buen producto, pero falta lo
+esencial". Una lista de verificación con tres elementos NO
+cumplidos, como marcadores de advertencia: "volumen todo el año",
+"normas fitosanitarias", "costo logístico con margen". Paleta del
+módulo de Negocios Internacionales: base verde oliva oscuro
+#1A2403, marco de la lista en morado vibrante #7223B7, advertencias
+resaltadas en amarillo #FFCE00, texto en blanco. Todo el texto de
+la imagen en español. Infografía educativa de checklist, alto
+contraste.
+
+----------------------------------------------------------------
+FRAME 4 · [1:05] La lección
+----------------------------------------------------------------
+PROMPT:
+Frame de infografía pedagógica, relación de aspecto 4:3. Estilo:
+infografía educativa con elementos realistas (ilustración
+semi-realista + capa de diagrama plano), no foto pura. Ilustración
+semi-realista de una lupa sobre un territorio o mapa estilizado con
+cultivos, y un mercado de destino al otro lado. Capa infográfica
+encima, en tipografía sans-serif geométrica gruesa: título en
+español "Leer el territorio completo" y tres etiquetas conectadas
+en morado: "qué se produce bien", "con qué consistencia", "qué
+exige el mercado externo". Las tres etiquetas confluyen en una sola
+flecha de color morado que apunta a una insignia de "Oportunidad
+viable". Paleta del módulo de Negocios Internacionales: fondo verde
+oliva oscuro #1A2403, flecha y etiquetas en morado vibrante
+#7223B7, insignia viable en amarillo #FFCE00, texto en blanco. Todo
+el texto de la imagen en español. Infografía analítica, alto
+contraste.
+
+----------------------------------------------------------------
+FRAME 5 · [1:20] Cierre
+----------------------------------------------------------------
+PROMPT:
+Frame de infografía pedagógica, relación de aspecto 4:3. Estilo:
+infografía educativa con elementos realistas (ilustración
+semi-realista + capa de diagrama plano), no foto pura. Ilustración
+semi-realista del escritorio de un negociador: una carpeta o
+documento con un sello de color morado, un mapamundi y un pequeño
+ícono de contenedor, con luz cálida y realista. Capa infográfica
+encima, en tipografía sans-serif geométrica gruesa: frase de cierre
+en español "No vender un producto: documentar una oportunidad". Una
+flecha de transición que va de un ícono de producto a un ícono de
+documento, en color morado. Paleta del módulo de Negocios
+Internacionales: fondo verde oliva oscuro #1A2403, sello y flecha
+en morado vibrante #7223B7, acento en amarillo #FFCE00, texto en
+blanco. Todo el texto de la imagen en español. Infografía de
+cierre, alto contraste.
+
+
+================================================================
+NOTAS DE USO
+----------------------------------------------------------------
+- Generar cada frame en 4:3 (p. ej. 1024×768 o 1600×1200).
+- El texto en español debe quedar rotulado dentro de la imagen;
+  si el generador escribe mal el español, generar la base sin
+  texto y rotular después en edición con la tipografía del sitio.
+- Mantener consistencia de paleta entre los 11 frames para que
+  ambos videos se sientan de la misma familia visual UA.
+- Verde oliva #1A2403 domina los fondos; lima #C8FF01 marca SIEMPRE
+  el dato o concepto clave de cada frame; amarillo #FFCE00 solo
+  para resaltados secundarios.
+================================================================

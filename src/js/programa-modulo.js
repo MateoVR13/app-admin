@@ -11,6 +11,7 @@
     initFallback();
     initInfografiaLightbox();
     initTemaAccordion();
+    initPodcast();
     return;
   }
 
@@ -988,7 +989,75 @@
     initSpotIssue();
     initRanking();
     initPestelIntensity();
+    initPodcast();
     initReveals();
+  }
+
+  /* ----------------------------------------------------------
+     PODCAST — reproductor custom (play/pause, progreso, tiempos)
+     ---------------------------------------------------------- */
+  function initPodcast() {
+    document.querySelectorAll("[data-podcast]").forEach((root) => {
+      const audio = root.querySelector("[data-podcast-audio]");
+      const toggle = root.querySelector("[data-podcast-toggle]");
+      const bar = root.querySelector("[data-podcast-bar]");
+      const fill = root.querySelector("[data-podcast-fill]");
+      const elCurrent = root.querySelector("[data-podcast-current]");
+      const elDuration = root.querySelector("[data-podcast-duration]");
+      if (!audio || !toggle) return;
+
+      const fmt = (s) => {
+        if (!isFinite(s) || s < 0) return "--:--";
+        const m = Math.floor(s / 60);
+        const sec = Math.floor(s % 60);
+        return `${m}:${String(sec).padStart(2, "0")}`;
+      };
+
+      const setDuration = () => {
+        if (isFinite(audio.duration)) elDuration.textContent = fmt(audio.duration);
+      };
+      // metadata puede haber cargado antes de adjuntar el listener
+      if (audio.readyState >= 1) setDuration();
+      audio.addEventListener("loadedmetadata", setDuration);
+      audio.addEventListener("durationchange", setDuration);
+
+      toggle.addEventListener("click", () => {
+        if (audio.paused) audio.play();
+        else audio.pause();
+      });
+
+      audio.addEventListener("play", () => {
+        root.setAttribute("data-playing", "");
+        toggle.setAttribute("aria-label", "Pausar");
+      });
+      audio.addEventListener("pause", () => {
+        root.removeAttribute("data-playing");
+        toggle.setAttribute("aria-label", "Reproducir");
+      });
+
+      audio.addEventListener("timeupdate", () => {
+        const d = audio.duration;
+        if (isFinite(d) && d > 0) {
+          fill.style.width = `${(audio.currentTime / d) * 100}%`;
+        }
+        elCurrent.textContent = fmt(audio.currentTime);
+      });
+
+      audio.addEventListener("ended", () => {
+        root.removeAttribute("data-playing");
+        fill.style.width = "0%";
+        elCurrent.textContent = "0:00";
+      });
+
+      // Seek al hacer click en la barra
+      bar.addEventListener("click", (e) => {
+        const d = audio.duration;
+        if (!isFinite(d) || d <= 0) return;
+        const rect = bar.getBoundingClientRect();
+        const ratio = Math.min(1, Math.max(0, (e.clientX - rect.left) / rect.width));
+        audio.currentTime = ratio * d;
+      });
+    });
   }
 
   if (document.readyState === "loading") {

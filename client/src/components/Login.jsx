@@ -3,7 +3,7 @@ import { Field } from "./Field.jsx";
 import { api } from "../api.js";
 
 export function Login({ onSuccess, switchTo }) {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
   const [serverError, setServerError] = useState("");
@@ -15,7 +15,7 @@ export function Login({ onSuccess, switchTo }) {
     setServerError("");
     setLoading(true);
     try {
-      const data = await api.login({ username, password });
+      const data = await api.login({ email, password });
       onSuccess(data.user);
     } catch (err) {
       if (err.errors) setErrors(err.errors);
@@ -28,12 +28,14 @@ export function Login({ onSuccess, switchTo }) {
   return (
     <form className="auth-form" onSubmit={submit} noValidate>
       <Field
-        label="Usuario"
-        name="username"
-        value={username}
-        onChange={setUsername}
-        error={errors.username}
-        autoComplete="username"
+        label="Correo electrónico"
+        name="email"
+        type="email"
+        value={email}
+        onChange={setEmail}
+        error={errors.email}
+        autoComplete="email"
+        placeholder="tucorreo@ejemplo.com"
         autoFocus
       />
       <Field

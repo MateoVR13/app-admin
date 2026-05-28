@@ -15,41 +15,45 @@ const router = Router();
 
 const trim = (s) => (typeof s === "string" ? s.trim() : "");
 
+// Validación de email razonable (no exhaustiva — el RFC completo es absurdo).
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+// PIN: exactamente 4 dígitos.
+const PIN_RE = /^\d{4}$/;
+
 // ============================================================
 // Validadores
 // ============================================================
 function validateSignup(body) {
   const fullName = trim(body.fullName);
-  const username = trim(body.username).toLowerCase();
+  const email = trim(body.email).toLowerCase();
+  const pin = trim(body.pin);
   const password = body.password ?? "";
-  const document = trim(body.document);
   const errors = {};
   if (fullName.length < 3) errors.fullName = "Nombre completo demasiado corto.";
-  if (!/^[a-z0-9_.\-]{3,30}$/.test(username))
-    errors.username = "Usuario: 3-30 caracteres (letras, números, _ . -).";
+  if (!EMAIL_RE.test(email)) errors.email = "Correo electrónico inválido.";
+  if (!PIN_RE.test(pin)) errors.pin = "El PIN debe ser exactamente 4 números.";
   if (password.length < 8) errors.password = "La contraseña debe tener al menos 8 caracteres.";
-  if (document.length < 5) errors.document = "Documento demasiado corto.";
-  return { fullName, username, password, document, errors };
+  return { fullName, email, pin, password, errors };
 }
 
 function validateLogin(body) {
-  const username = trim(body.username).toLowerCase();
+  const email = trim(body.email).toLowerCase();
   const password = body.password ?? "";
   const errors = {};
-  if (!username) errors.username = "Usuario requerido.";
+  if (!email) errors.email = "Correo requerido.";
   if (!password) errors.password = "Contraseña requerida.";
-  return { username, password, errors };
+  return { email, password, errors };
 }
 
 function validateRecover(body) {
-  const username = trim(body.username).toLowerCase();
-  const document = trim(body.document);
+  const email = trim(body.email).toLowerCase();
+  const pin = trim(body.pin);
   const newPassword = body.newPassword ?? "";
   const errors = {};
-  if (!username) errors.username = "Usuario requerido.";
-  if (!document) errors.document = "Documento requerido.";
+  if (!email) errors.email = "Correo requerido.";
+  if (!PIN_RE.test(pin)) errors.pin = "El PIN debe ser exactamente 4 números.";
   if (newPassword.length < 8) errors.newPassword = "Mínimo 8 caracteres.";
-  return { username, document, newPassword, errors };
+  return { email, pin, newPassword, errors };
 }
 
 // ============================================================
@@ -57,24 +61,24 @@ function validateRecover(body) {
 // ============================================================
 router.post("/signup", async (req, res) => {
   try {
-    const { fullName, username, password, document, errors } = validateSignup(
+    const { fullName, email, pin, password, errors } = validateSignup(
       req.body || {},
     );
     if (Object.keys(errors).length) return res.status(400).json({ errors });
 
-    if (stmts.getUserByUsername.get(username)) {
+    if (stmts.getUserByEmail.get(email)) {
       return res
         .status(409)
-        .json({ errors: { username: "Ese usuario ya existe." } });
+        .json({ errors: { email: "Ya existe una cuenta con ese correo." } });
     }
 
     const passwordHash = await hash(password);
-    const documentHash = await hash(document);
+    const pinHash = await hash(pin);
     const result = stmts.insertUser.run(
       fullName,
-      username,
+      email,
       passwordHash,
-      documentHash,
+      pinHash,
     );
 
     // node:sqlite puede devolver BigInt; lo coercemos a Number para JSON
@@ -83,7 +87,7 @@ router.post("/signup", async (req, res) => {
     setSessionCookie(res, token, expiresAt);
 
     res.json({
-      user: { id: userId, fullName, username },
+      user: { id: userId, fullName, email },
     });
   } catch (err) {
     console.error("[auth/signup]", err);
@@ -96,14 +100,14 @@ router.post("/signup", async (req, res) => {
 // ============================================================
 router.post("/login", async (req, res) => {
   try {
-    const { username, password, errors } = validateLogin(req.body || {});
+    const { email, password, errors } = validateLogin(req.body || {});
     if (Object.keys(errors).length) return res.status(400).json({ errors });
 
-    const user = stmts.getUserByUsername.get(username);
+    const user = stmts.getUserByEmail.get(email);
     if (!user || !(await verify(password, user.password_hash))) {
       return res
         .status(401)
-        .json({ error: "Usuario o contraseña incorrectos." });
+        .json({ error: "Correo o contraseña incorrectos." });
     }
 
     const userId = Number(user.id);
@@ -114,7 +118,7 @@ router.post("/login", async (req, res) => {
       user: {
         id: userId,
         fullName: user.full_name,
-        username: user.username,
+        email: user.email,
       },
     });
   } catch (err) {
@@ -134,20 +138,20 @@ router.post("/logout", (req, res) => {
 
 // ============================================================
 // POST /api/auth/recover
-// Usa documento como secreto para restablecer contraseña
+// Usa el PIN de 4 dígitos como secreto para restablecer contraseña
 // ============================================================
 router.post("/recover", async (req, res) => {
   try {
-    const { username, document, newPassword, errors } = validateRecover(
+    const { email, pin, newPassword, errors } = validateRecover(
       req.body || {},
     );
     if (Object.keys(errors).length) return res.status(400).json({ errors });
 
-    const user = stmts.getUserByUsername.get(username);
-    if (!user || !(await verify(document, user.document_hash))) {
+    const user = stmts.getUserByEmail.get(email);
+    if (!user || !(await verify(pin, user.pin_hash))) {
       return res
         .status(401)
-        .json({ error: "Usuario o documento incorrectos." });
+        .json({ error: "Correo o PIN incorrectos." });
     }
 
     const passwordHash = await hash(newPassword);

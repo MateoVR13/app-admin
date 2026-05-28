@@ -1,0 +1,237 @@
+================================================================
+GUIONES MULTIMEDIA · Diplomado / Bloques
+Universidad de América
+================================================================
+
+Reparto acordado: 5 bloques (los más densos en texto + los más
+pobres, ninguno con video/podcast propio antes).
+
+  administracion/bloque-1  → PODCAST  (≤ 1 min)
+  administracion/bloque-2  → VIDEO    (≤ 1 min 30 s)
+  negocios/bloque-1        → VIDEO    (≤ 1 min 30 s)
+  negocios/bloque-2        → PODCAST  (≤ 1 min)
+  negocios/bloque-4        → PODCAST  (≤ 1 min)
+
+  Total: 2 videos + 3 podcasts
+
+PRINCIPIO: el contenido es COMPLEMENTARIO. No repite lo que ya
+está en el texto del bloque; aporta otra capa (caso real, voz
+experta, contraste, testimonio).
+
+ESTADO: guiones listos para grabar/producir. El HTML NO se ha
+tocado — cuando exista el audio/video real, se embebe el
+reproductor con el ID/archivo definitivo.
+
+
+================================================================
+1) PODCAST — administracion/bloque-1
+   "Por qué la administración no se trata de mandar"
+   Duración objetivo: ≤ 1 min  ·  Formato: locución explicativa,
+   un solo locutor
+----------------------------------------------------------------
+Complementa: el bloque explica la teoría (escuelas, recursos,
+conceptos). Este podcast la ENCUADRA: para qué sirve realmente
+ese conocimiento.
+
+GUION:
+
+Existe una idea muy común sobre la administración: que administrar
+es dar órdenes. Que el jefe es el que manda y los demás obedecen.
+Esa idea es incompleta y, sobre todo, es vieja.
+
+Administrar es lograr que las cosas pasen con los recursos que
+tienes. Esos recursos casi nunca alcanzan de sobra: hay un
+presupuesto limitado, un equipo limitado, un tiempo limitado. El
+trabajo del administrador es coordinar todo eso para llegar a un
+objetivo, no simplemente repartir instrucciones.
+
+Por eso los fundamentos que estudias en este bloque importan. Las
+escuelas del pensamiento administrativo no son historia para
+memorizar: son distintas formas de responder a una misma pregunta,
+cómo organizar el trabajo humano para que sea más eficaz. Taylor
+miró las tareas, Fayol miró la estructura, la escuela de relaciones
+humanas miró a las personas.
+
+Cuando entiendes de dónde viene cada mirada, ganas algo concreto:
+criterio para leer cualquier organización y saber qué está
+funcionando y qué no.
+
+
+================================================================
+2) VIDEO — administracion/bloque-2
+   "El proceso administrativo explicado con una panadería"
+   Duración objetivo: ≤ 1 min 30 s  ·  Formato: locución
+   explicativa en off sobre imágenes / animación simple
+----------------------------------------------------------------
+Complementa: es el bloque con MÁS texto (planeación, PESTEL,
+Porter, BSC, PDCA). El video conecta las cuatro funciones en un
+mismo ejemplo concreto, en vez de re-explicarlas por separado.
+
+GUION (locución en off · las marcas de tiempo son guía de
+producción):
+
+[0:00 · Apertura]
+Las cuatro funciones del proceso administrativo suenan abstractas
+cuando se estudian por separado. Pero ocurren juntas en cualquier
+negocio, incluso en una panadería de barrio. Veamos cómo.
+
+[0:15 · Planeación]
+Supongamos que una panadería nota que el pan se queda sin vender
+por las tardes. Antes de cambiar nada, define un rumbo: por
+ejemplo, empezar a ofrecer almuerzos. Decidir hacia dónde ir, y
+con qué objetivo, es planear. Es el paso que ocurre antes de
+gastar el primer peso.
+
+[0:35 · Organización]
+Con el rumbo claro, hay que disponer los recursos: contratar a
+quien cocine, reacomodar el espacio, definir quién hace cada tarea.
+Repartir el trabajo y los recursos para que el plan sea posible es
+organizar.
+
+[0:55 · Dirección]
+En el día a día alguien explica el menú, resuelve los imprevistos y
+mantiene al equipo enfocado cuando hay clientes esperando. Guiar a
+las personas mientras el plan se ejecuta es dirigir.
+
+[1:10 · Control]
+Al cierre se compara lo logrado con lo esperado: cuántos almuerzos
+se vendieron, qué sobró, qué se puede ajustar mañana. Medir los
+resultados para aprender y corregir es controlar.
+
+[1:20 · Cierre]
+Planear, organizar, dirigir y controlar no son etapas aisladas:
+forman un ciclo que se repite. Reconocerlo en ejemplos sencillos es
+el primer paso para aplicarlo en organizaciones complejas.
+
+
+================================================================
+3) VIDEO — negocios/bloque-1
+   "Qué convierte un producto en una oportunidad de exportación"
+   Duración objetivo: ≤ 1 min 30 s  ·  Formato: locución
+   explicativa en off + mapa / gráficos
+----------------------------------------------------------------
+Complementa: el texto explica vocación productiva y oferta
+exportable con el ejemplo de las flores. El video amplía con el
+CONTRASTE: por qué un buen producto no basta si no se lee bien el
+territorio.
+
+GUION (locución en off · las marcas de tiempo son guía de
+producción):
+
+[0:00 · Apertura]
+Tener un buen producto no significa tener una oportunidad de
+exportación. La diferencia está en leer bien el territorio y el
+mercado de destino. Dos ejemplos ayudan a entenderlo.
+
+[0:12 · El caso que funciona]
+Las flores colombianas son un buen ejemplo de oportunidad bien
+leída. El país tiene luz pareja casi todo el año, clima de
+altiplano y cercanía con Estados Unidos. Sobre esas condiciones se
+construyó una industria que hoy ubica a Colombia entre los mayores
+exportadores de flores del mundo. La clave no fue solo el producto,
+sino reconocer la ventaja del territorio.
+
+[0:40 · El caso que falla]
+En contraste, muchos intentos de exportar productos exóticos
+fracasan aunque el producto sea de buena calidad. Suele faltar lo
+esencial: volumen constante durante todo el año, cumplimiento de
+las normas fitosanitarias del país de destino y un costo logístico
+que deje margen. Sin esas condiciones, una exportación puede salir
+una vez y no repetirse.
+
+[1:05 · La lección]
+La diferencia entre los dos casos no está en la calidad del
+producto, sino en haber leído el territorio completo: qué se
+produce bien, con qué consistencia y si encaja con lo que el
+mercado externo realmente exige.
+
+[1:20 · Cierre]
+Por eso el primer trabajo del negociador no es vender un producto,
+sino documentar una oportunidad. Ese análisis es lo que se
+desarrolla a lo largo de este bloque.
+
+
+================================================================
+4) PODCAST — negocios/bloque-2
+   "Por qué documentar una oportunidad no es burocracia"
+   Duración objetivo: ≤ 1 min  ·  Formato: locución explicativa,
+   un solo locutor
+----------------------------------------------------------------
+Complementa: es el bloque más pobre. El texto explica TLC,
+Procolombia, Bancóldex. El podcast EXPLICA por qué cruzar fuentes
+oficiales convierte una intuición en un caso defendible.
+
+GUION:
+
+Cuando alguien identifica una oportunidad de exportación, suele
+quedarse con un solo dato y dar el resto por hecho. Un ejemplo
+típico: ver que existe un Tratado de Libre Comercio con un país y
+concluir que el producto entra sin problema. El arancel es solo
+una parte de la historia.
+
+Documentar una oportunidad significa cruzar varias fuentes
+oficiales, no quedarse con una. El tratado dice qué aranceles
+aplican. Procolombia y las agencias de inversión informan sobre
+requisitos sanitarios, técnicos y de origen. La ruta exportadora
+indica los pasos y los tiempos de cada trámite. Recién cuando esas
+piezas coinciden, la oportunidad es viable.
+
+Lo importante es que toda esa información es pública y gratuita.
+No es un privilegio de las grandes empresas: está disponible para
+cualquiera que sepa dónde buscar.
+
+Por eso documentar no es llenar papeles por cumplir. Es lo que
+transforma una intuición en un caso que se puede sustentar con
+evidencia verificable.
+
+
+================================================================
+5) PODCAST — negocios/bloque-4
+   "Por qué una certificación multiplica el precio de un producto"
+   Duración objetivo: ≤ 1 min  ·  Formato: locución explicativa,
+   un solo locutor
+----------------------------------------------------------------
+Complementa: el texto explica certificaciones, Bancóldex,
+e-commerce, cooperación. El podcast EXPLICA el mecanismo económico
+detrás del salto de margen.
+
+GUION:
+
+Hay una pregunta que confunde a muchos productores: si mi producto
+ya es bueno, ¿por qué necesito certificarlo? La respuesta tiene que
+ver con cómo funcionan los mercados internacionales.
+
+Una certificación como Comercio Justo, orgánico o buenas prácticas
+no mejora el producto en sí. Lo que hace es documentar cómo se
+produjo: bajo qué condiciones ambientales, sociales y de calidad.
+Y eso es justo lo que los compradores internacionales exigen para
+pagar más, porque les permite vender a clientes que valoran ese
+respaldo.
+
+El efecto sobre el precio puede ser enorme. Un mismo producto
+agrícola, sin certificación, se vende barato a un intermediario
+local. Con certificación, puede venderse varias veces más caro y
+de forma directa a una cooperativa o comprador en el exterior. La
+calidad no cambió: cambió la evidencia que la respalda.
+
+Por eso las certificaciones no son trámites que quitan tiempo. Son
+multiplicadores de margen y, muchas veces, la llave que abre el
+mercado internacional.
+
+
+================================================================
+NOTAS DE PRODUCCIÓN
+----------------------------------------------------------------
+- Estilo: locución explicativa, un solo locutor. Tono didáctico y
+  neutro, claro y sin tecnicismos innecesarios.
+- No se narra en primera persona ni como testimonio; se explica el
+  concepto. Los ejemplos se cuentan en tercera persona neutra.
+- El texto va listo para leer: no incluye marcas de actuación
+  (nada de [tono], [actor], etc.). Las marcas de tiempo en los
+  videos son solo guía de edición.
+- Los videos se resuelven con narración en off + imágenes de
+  archivo o animación de bajo costo; no requieren rodaje.
+- Al producir cada pieza, embeber el reproductor real en el bloque
+  correspondiente (Wistia para video, audio para podcast). Hasta
+  entonces, NO dejar tarjetas-placeholder en el HTML.
+================================================================

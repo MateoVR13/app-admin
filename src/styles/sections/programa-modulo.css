@@ -1530,6 +1530,169 @@
   .module-video-caption h3 { font-size: 1rem; }
 }
 
+/* Variante compacta: limita el ancho para que el video no se vea enorme
+   dentro del contenido del tema. Centrado en su contenedor. */
+.module-video.is-compact {
+  max-width: 480px;
+  margin-inline: auto;
+}
+
+/* ============================================================
+   SPLIT · contenido a la izquierda (apilado) + recurso a la derecha
+   ============================================================ */
+.module-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(20px, 3vw, 36px);
+  align-items: start;
+  margin-top: clamp(20px, 3vw, 32px);
+}
+.module-split-main {
+  display: grid;
+  gap: clamp(16px, 2.5vw, 28px);
+  min-width: 0;
+}
+.module-split-aside {
+  position: sticky;
+  top: 24px;
+  min-width: 0;
+}
+@media (max-width: 900px) {
+  .module-split { grid-template-columns: 1fr; }
+  .module-split-aside { position: static; max-width: 520px; margin-inline: auto; }
+}
+
+/* ============================================================
+   PODCAST · reproductor con estilo propio
+   (botón play/pause + barra de progreso + tiempos)
+   ============================================================ */
+.podcast {
+  margin: clamp(28px, 4vw, 44px) 0 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--slate);
+  border: 1px solid var(--paper-line);
+  box-shadow: var(--shadow-1);
+  transition: border-color var(--motion-base) var(--ease-out),
+              box-shadow var(--motion-base) var(--ease-out);
+}
+.podcast:hover {
+  border-color: color-mix(in srgb, var(--program-accent) 28%, var(--paper-line));
+  box-shadow: var(--shadow-2);
+}
+
+.podcast-caption {
+  padding: 16px 20px 0;
+}
+.podcast-caption small {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--program-accent-700);
+  margin-bottom: 4px;
+}
+.podcast-caption h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 800;
+  letter-spacing: -0.018em;
+  line-height: 1.25;
+  color: var(--ink);
+}
+.podcast-caption p {
+  margin: 6px 0 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.podcast-player {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  margin-top: 14px;
+  border-top: 1px solid var(--paper-line);
+  background: var(--paper-warm);
+}
+
+.podcast-play {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+  background: var(--program-accent);
+  color: var(--slate);
+  transition: transform var(--motion-fast) var(--ease-out),
+              background var(--motion-fast) var(--ease-out),
+              box-shadow var(--motion-base) var(--ease-out);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--program-accent) 35%, transparent);
+}
+.podcast-play:hover {
+  transform: translateY(-1px);
+  background: var(--program-accent-700);
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--program-accent) 45%, transparent);
+}
+.podcast-play:active { transform: translateY(0); }
+.podcast-play:focus-visible {
+  outline: 2px solid var(--program-accent-700);
+  outline-offset: 2px;
+}
+.podcast-play svg { width: 22px; height: 22px; fill: currentColor; }
+/* alterna iconos según el estado en data-playing del figure */
+.podcast-play .podcast-icon-pause { display: none; }
+.podcast[data-playing] .podcast-play .podcast-icon-play { display: none; }
+.podcast[data-playing] .podcast-play .podcast-icon-pause { display: block; }
+
+.podcast-body {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.podcast-bar {
+  position: relative;
+  height: 6px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--program-accent) 18%, var(--paper-deep));
+  cursor: pointer;
+  overflow: hidden;
+}
+.podcast-bar-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0%;
+  background: var(--program-accent);
+  border-radius: var(--radius-pill);
+  transition: width 100ms linear;
+}
+
+.podcast-time {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+@media (max-width: 640px) {
+  .podcast-caption { padding: 14px 14px 0; }
+  .podcast-caption h3 { font-size: 1rem; }
+  .podcast-player { padding: 14px; gap: 12px; }
+  .podcast-play { width: 44px; height: 44px; }
+}
+
 /* ============================================================
    RETO CTA — llamado prominente al reto al final del último bloque
    ============================================================ */
@@ -2697,69 +2860,6 @@
     margin: 0;
     max-width: none;
   }
-}
-
-/* ============================================================
-   RECURSO — placeholder de contenido multiformato
-   ============================================================ */
-.module-resource {
-  display: grid;
-  grid-template-columns: 56px minmax(0, 1fr);
-  gap: 18px;
-  align-items: start;
-  padding: 18px 22px;
-  border-radius: var(--radius-md);
-  background: var(--slate);
-  border: 1px dashed color-mix(in srgb, var(--program-accent) 40%, var(--paper-line-strong));
-}
-
-.module-resource-icon {
-  display: grid;
-  place-items: center;
-  width: 56px;
-  height: 56px;
-  border-radius: var(--radius-sm);
-  background: var(--program-accent-soft);
-  color: var(--program-accent-700);
-}
-.module-resource-icon svg { width: 26px; height: 26px; stroke-width: 1.85; }
-
-.module-resource-copy { display: grid; gap: 4px; }
-
-.module-resource-copy small {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-mono);
-  font-size: 0.66rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--program-accent-700);
-}
-.module-resource-copy small::after {
-  content: attr(data-format);
-  padding: 2px 8px;
-  border-radius: var(--radius-pill);
-  background: var(--program-accent-soft);
-  color: var(--program-accent-700);
-  font-size: 0.62rem;
-  letter-spacing: 0.08em;
-}
-
-.module-resource-copy h5 {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: 1.02rem;
-  font-weight: 800;
-  letter-spacing: -0.016em;
-  color: var(--ink);
-}
-
-.module-resource-copy p {
-  font-size: 0.9rem;
-  color: var(--muted);
-  line-height: 1.55;
 }
 
 /* ============================================================

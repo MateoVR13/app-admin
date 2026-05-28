@@ -4,12 +4,15 @@ import { api } from "../api.js";
 
 export function Signup({ onSuccess, switchTo }) {
   const [fullName, setFullName] = useState("");
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [pin, setPin] = useState("");
   const [password, setPassword] = useState("");
-  const [document, setDocument] = useState("");
   const [errors, setErrors] = useState({});
   const [serverError, setServerError] = useState("");
   const [loading, setLoading] = useState(false);
+
+  // Solo dígitos, máximo 4
+  const onPin = (v) => setPin(v.replace(/\D/g, "").slice(0, 4));
 
   async function submit(e) {
     e.preventDefault();
@@ -17,7 +20,7 @@ export function Signup({ onSuccess, switchTo }) {
     setServerError("");
     setLoading(true);
     try {
-      const data = await api.signup({ fullName, username, password, document });
+      const data = await api.signup({ fullName, email, pin, password });
       onSuccess(data.user);
     } catch (err) {
       if (err.errors) setErrors(err.errors);
@@ -39,13 +42,27 @@ export function Signup({ onSuccess, switchTo }) {
         autoFocus
       />
       <Field
-        label="Nombre de usuario"
-        name="username"
-        value={username}
-        onChange={setUsername}
-        error={errors.username}
-        autoComplete="username"
-        hint="3-30 caracteres. Letras, números, _ . -"
+        label="Correo electrónico"
+        name="email"
+        type="email"
+        value={email}
+        onChange={setEmail}
+        error={errors.email}
+        autoComplete="email"
+        placeholder="tucorreo@ejemplo.com"
+      />
+      <Field
+        label="PIN de seguridad"
+        name="pin"
+        type="password"
+        value={pin}
+        onChange={onPin}
+        error={errors.pin}
+        autoComplete="off"
+        inputMode="numeric"
+        maxLength={4}
+        hint="4 números. Lo usarás para recuperar tu contraseña si la olvidas."
+        tooltip="El PIN de seguridad es una clave de 4 números que TÚ ELIGES. Sirve solo para recuperar tu contraseña — anótalo en un lugar seguro porque sin él no podrás recuperar el acceso."
       />
       <Field
         label="Contraseña"
@@ -56,16 +73,6 @@ export function Signup({ onSuccess, switchTo }) {
         error={errors.password}
         autoComplete="new-password"
         hint="Mínimo 8 caracteres."
-      />
-      <Field
-        label="Número de seguridad"
-        name="document"
-        value={document}
-        onChange={setDocument}
-        error={errors.document}
-        autoComplete="off"
-        hint="Lo usarás para recuperar tu contraseña si la olvidas."
-        tooltip="El número de seguridad es una clave que TÚ ELIGES (mínimo 5 dígitos). No es tu cédula. Sirve solo para recuperar tu contraseña — anótalo en un lugar seguro porque sin él no podrás recuperar el acceso."
       />
 
       {serverError && <div className="auth-server-error">{serverError}</div>}

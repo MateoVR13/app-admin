@@ -30,7 +30,7 @@ export function getSession(token) {
     user: {
       id: Number(row.uid),
       fullName: row.full_name,
-      username: row.username,
+      email: row.email,
     },
   };
 }

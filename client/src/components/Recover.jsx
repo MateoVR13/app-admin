@@ -3,13 +3,16 @@ import { Field } from "./Field.jsx";
 import { api } from "../api.js";
 
 export function Recover({ switchTo }) {
-  const [username, setUsername] = useState("");
-  const [document, setDocument] = useState("");
+  const [email, setEmail] = useState("");
+  const [pin, setPin] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [errors, setErrors] = useState({});
   const [serverError, setServerError] = useState("");
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
+
+  // Solo dígitos, máximo 4
+  const onPin = (v) => setPin(v.replace(/\D/g, "").slice(0, 4));
 
   async function submit(e) {
     e.preventDefault();
@@ -17,7 +20,7 @@ export function Recover({ switchTo }) {
     setServerError("");
     setLoading(true);
     try {
-      await api.recover({ username, document, newPassword });
+      await api.recover({ email, pin, newPassword });
       setDone(true);
     } catch (err) {
       if (err.errors) setErrors(err.errors);
@@ -48,23 +51,28 @@ export function Recover({ switchTo }) {
   return (
     <form className="auth-form" onSubmit={submit} noValidate>
       <Field
-        label="Usuario"
-        name="username"
-        value={username}
-        onChange={setUsername}
-        error={errors.username}
-        autoComplete="username"
+        label="Correo electrónico"
+        name="email"
+        type="email"
+        value={email}
+        onChange={setEmail}
+        error={errors.email}
+        autoComplete="email"
+        placeholder="tucorreo@ejemplo.com"
         autoFocus
       />
       <Field
-        label="Número de seguridad"
-        name="document"
-        value={document}
-        onChange={setDocument}
-        error={errors.document}
+        label="PIN de seguridad"
+        name="pin"
+        type="password"
+        value={pin}
+        onChange={onPin}
+        error={errors.pin}
         autoComplete="off"
-        hint="El que registraste al crear tu cuenta."
-        tooltip="El número de seguridad es la clave que elegiste al registrarte (mínimo 5 dígitos) para poder recuperar tu contraseña. No es tu cédula."
+        inputMode="numeric"
+        maxLength={4}
+        hint="El PIN de 4 números que registraste al crear tu cuenta."
+        tooltip="El PIN de seguridad es la clave de 4 números que elegiste al registrarte para poder recuperar tu contraseña."
       />
       <Field
         label="Nueva contraseña"

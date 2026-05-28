@@ -1,18 +1,12 @@
 -- ============================================================
--- Migración inicial — users + sessions
+-- Migración inicial — sessions
+--
+-- NOTA: la tabla `users` la define ahora la migración 002
+-- (esquema email + pin). Aquí solo queda `sessions`, que no
+-- cambió. Como las migraciones se reejecutan en cada arranque,
+-- crear `users` aquí con el esquema viejo entraría en conflicto
+-- con el DROP/CREATE de 002 ("no such column: username").
 -- ============================================================
-
-CREATE TABLE IF NOT EXISTS users (
-  id            INTEGER PRIMARY KEY AUTOINCREMENT,
-  full_name     TEXT NOT NULL,
-  username      TEXT NOT NULL UNIQUE COLLATE NOCASE,
-  password_hash TEXT NOT NULL,
-  document_hash TEXT NOT NULL,
-  created_at    INTEGER NOT NULL DEFAULT (unixepoch()),
-  updated_at    INTEGER NOT NULL DEFAULT (unixepoch())
-);
-
-CREATE INDEX IF NOT EXISTS idx_users_username ON users(username);
 
 CREATE TABLE IF NOT EXISTS sessions (
   token      TEXT PRIMARY KEY,

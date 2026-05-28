@@ -17,7 +17,7 @@ const titles = {
   recover: {
     h1: "Recuperar acceso al",
     h2: "Simulador Inteligente de Experiencias Empresariales y Económicas",
-    sub: "Verifica tu identidad con tu documento",
+    sub: "Verifica tu identidad con tu PIN de seguridad",
   },
 };
 

@@ -10,6 +10,8 @@ export function Field({
   placeholder,
   hint,
   tooltip,
+  inputMode,
+  maxLength,
 }) {
   return (
     <label className="auth-field">
@@ -36,6 +38,8 @@ export function Field({
         autoComplete={autoComplete}
         autoFocus={autoFocus}
         placeholder={placeholder}
+        inputMode={inputMode}
+        maxLength={maxLength}
         spellCheck={false}
       />
       {hint && !error && <span className="auth-field-hint">{hint}</span>}
