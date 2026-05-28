@@ -303,6 +303,51 @@
   background: var(--auth-orange-50);
 }
 
+/* Wrapper para campos con botón (toggle de contraseña) */
+.auth-input-wrap {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.auth-input-wrap .auth-input {
+  width: 100%;
+  box-sizing: border-box;
+}
+.auth-input-wrap.has-toggle .auth-input {
+  padding-right: 48px;
+}
+
+.auth-input-toggle {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--auth-faint);
+  cursor: pointer;
+  transition: color 140ms ease, background 140ms ease;
+}
+.auth-input-toggle:hover {
+  color: var(--auth-lime);
+  background: var(--auth-lime-soft);
+}
+.auth-input-toggle:focus-visible {
+  outline: 2px solid var(--auth-lime);
+  outline-offset: 1px;
+  color: var(--auth-lime);
+}
+.auth-input-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
 .auth-field-hint {
   font-size: 0.78rem;
   color: var(--auth-muted);
