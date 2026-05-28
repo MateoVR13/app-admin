@@ -77,6 +77,13 @@ function isProtectedPath(p) {
 app.use((req, res, next) => {
   if (!isProtectedPath(req.path)) return next();
 
+  // Las páginas privadas NUNCA deben quedar en caché del navegador:
+  // si no, tras hacer logout el browser sirve el HTML del dashboard
+  // desde su caché sin revalidar contra el servidor (saltándose el gate).
+  res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
+  res.setHeader("Pragma", "no-cache");
+  res.setHeader("Expires", "0");
+
   const sess = getSession(req.cookies?.[COOKIE_NAME]);
   if (sess) {
     req.session = sess;
